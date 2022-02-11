@@ -12,7 +12,7 @@
 <meta name="author" content="Martin Raden" />
 
 
-<title>Konsolenbasics</title>
+<title>Dateidetails</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -361,147 +361,176 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Konsolenbasics</h1>
+<h1 class="title toc-ignore">Dateidetails</h1>
 <h4 class="author">Martin Raden</h4>
 
 </div>
 
 
 <hr />
-<p>Einführung von <code>cd, cp, history, ln, ls, man, mkdir, mv, pwd, rm</code></p>
-<p>Die folgenden Videos von Bashino liefern einen ersten Eindruck, wie man sich auf der Kommandozeile in Ordnerstrukturen bewegt und wie Dateien und Ordner verwaltet werden können.</p>
-<p><a href="http://www.youtube.com/watch?v=-47iZzZssCg?t=7">Video: Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]</a> (ggf. Wiedergabegeschwindigkeit via “Einstellungen” ==&gt; “Wiedergabegeschwindigkeit” ==&gt; “1,25” erhöhen)</p>
-<p><a href="http://www.youtube.com/watch?v=-47iZzZssCg?t=7" title="Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]"><img src="http://img.youtube.com/vi/-47iZzZssCg/0.jpg" /></a></p>
-<p>Das Folgevideo <a href="https://youtu.be/ISPW4CXAEj4?t=7">#2 Befehle für Dateien (touch, cp, mv, rm etc) [7 min]</a> in der Playlist von Bashinho ist in der zweiten Hälfte etwas zu tief für diesen Kurs. Wenn man allerdings unseren “Grundlagen der Informatik” Kurs besucht hat, sollte man einige Sachen wiedererkennen und folgen können. :-D</p>
-<hr />
-<div id="handhabung" class="section level1">
-<h1>Handhabung</h1>
-<p>Die folgenden Dinge betreffen vorrangig das Windows Terminal.</p>
+<p>Einführung von</p>
 <ul>
-<li><strong>Markieren von Text</strong>: LINKE Maustaste oder SHIFT+Cursortasten</li>
-<li><strong>Kopieren von Textmarkierung</strong>: STRG+C oder RECHTE Maustaste</li>
-<li><strong>Einfügen</strong> (vom zuletzt Kopierten): STRG+V oder RECHTE Maustaste</li>
-<li><strong>Blockmarkierungen</strong>: ALT + LINKE Maustaste</li>
-<li><strong>Letzte(r) Befehl(e)</strong>: Cursortasten up/down</li>
-<li>Innerhalb der aktuellen Eingabe zum <strong>nächsten Wort</strong> springen: STRG + Cursortasten links/rechts</li>
-<li><strong>Autovervollständigung</strong>(svorschläge) der Eingabe: TAB</li>
-<li>(Windows) Zwischen Tabs wechseln: STRG+TAB</li>
-<li>(Windows) Zwischen Fenstern wechseln: ALT+TAB</li>
+<li><code>chmod, chown, chgrp, ls -l</code> in <a href="#dateirechte">Dateirechte</a></li>
+<li><code>tar, gzip, zip, zcat, zless, zgrep</code> in <a href="#kompression">Kompression</a></li>
 </ul>
+<p><a href="http://www.youtube.com/watch?v=C-89jT0pUso?t=7">Video: Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=C-89jT0pUso?t=7" title="Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]"><img src="http://img.youtube.com/vi/C-89jT0pUso/0.jpg" /></a></p>
+<p><a href="http://www.youtube.com/watch?v=pItowVnHDD0">Video: (en) Pedagogy - archive files using tar command in linux | create tar &amp; extract from tar file | tar command in linux [8 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=pItowVnHDD0" title="(en) Pedagogy - archive files using tar command in linux | create tar &amp; extract from tar file | tar command in linux [8 min]"><img src="http://img.youtube.com/vi/pItowVnHDD0/0.jpg" /></a></p>
+<p><a href="http://www.youtube.com/watch?v=n8OqvSW7GFc">Video: (en) Pedagogy - compress - decompress files using gzip &amp; bzip2 in linux | tar command to manage compressed files [12 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=n8OqvSW7GFc" title="(en) Pedagogy - compress - decompress files using gzip &amp; bzip2 in linux | tar command to manage compressed files [12 min]"><img src="http://img.youtube.com/vi/n8OqvSW7GFc/0.jpg" /></a></p>
 <hr />
-</div>
-<div id="pfade-und-trennzeichen" class="section level1">
-<h1>Pfade und Trennzeichen</h1>
-<p>Im allgemeinen gilt in Linux Shells:</p>
+<div id="dateirechte" class="section level1">
+<h1>Dateirechte</h1>
 <ul>
-<li>Es wird zwischen <strong>absoluten</strong> und <strong>relativen Pfaden</strong> unterschieden:
+<li>z.B. via “<code>ls -l</code>” <strong>am Anfang der Zeile</strong> angezeigt, z.B. <code>-rwxr-x--- 42 hans family 42 [DATUM] MeinSkript.sh</code>
 <ul>
-<li>absolut = vollständiger Pfad der immer mit einem “<code>/</code>” (der Wurzel, also obersten Ebene des Verzeichnisbaumes) beginnt</li>
-<li>relativ = Pfad in Relation zum derzeitigen Verzeichnis, beginnt mit
-<ul>
-<li>“<code>.</code>” (repräsentiert aktuelles Verzeichnis) oder</li>
-<li>“<code>..</code>” (repräsentiert übergeordneten Ordner)</li>
+<li>führendes “<code>-</code>” : weder link “<code>l</code>” noch verzeichnis “<code>d</code>”, daher Zeichen für normale Dateien</li>
+<li>erster Dreierblock “<code>rwx</code>” : Rechte des Besitzers (<code>u</code> = user) (hier hans) = (<code>r</code>)ead + (<code>w</code>)rite + e(<code>x</code>)ecute</li>
+<li>zweiter Dreierblock “<code>r-x</code>” : Gruppenrechte (<code>g</code> = group) (hier family = Gruppe von accounts), welche keine Schreibrechte “<code>w</code>” haben (daher an dessen Stelle ein “<code>-</code>”)</li>
+<li>dritter Dreierblock “<code>---</code>” : Rechte für den “Rest der Welt” (<code>o</code> = others), hier keinerlei Rechte eingeräumt (alles “<code>-</code>”)</li>
+<li>“<code>1</code>” (Zahl) = Anzahl Links für diese Datei (erstmal egal)</li>
+<li>“<code>hans</code>” = Eigentümername = es gibt <strong>nur EINEN Eigentümer</strong></li>
+<li>“<code>family</code>” = Gruppenname, zu welcher die Datei zugeordnet ist = nur <strong>EINE GRUPPE pro Datei</strong> zuweisbar!</li>
+<li>“<code>42</code>” = Dateigrösse in Bytes (oder zB <code>4K</code> wenn <code>ls -lh</code> verwendet)</li>
 </ul></li>
-<li>Ordnernamen werden mit “<code>/</code>” getrennt (Unterschied zu PowerShell/DOS, wo mit “<code>\</code>” getrennt wird!)</li>
-<li>ein “<code>*</code>” in einem Datei oder Pfadnamen dient als <strong>Platzhalter</strong> für kein oder <em>mehrere Zeichen</em></li>
-<li>ein “<code>?</code>” ist ein Platzhalter für <em>genau ein Zeichen</em></li>
+<li><strong>ausführbare Dateien</strong> (mit <code>x</code> für jeweilige Gruppe = hier z.B. für “<code>hans</code>” und andere der “<code>family</code>” Gruppe)
+<ul>
+<li>können direkt mit Pfadangabe ausgeführt werden, z.B. via <code>./MeinSkript.sh</code> anstatt <code>bash MeinSkript.sh</code></li>
+<li>werden direkt ausgeführt, wenn sie in einem Verzeichnis liegen, welches in <strong><code>PATH</code>-Variable</strong> gelistet ist (“<code>:</code>”-getrennte Liste), dh. direkt via <code>MeinSkript.sh</code> <strong>ohne Pfadangabe</strong> aufrufbar</li>
 </ul></li>
-<li>“<code>;</code>” <strong>beendet</strong> das vorangehende Kommando, sodass mehrere Kommandos hintereinander in einer Zeile geschrieben werden können</li>
-<li>Ordner-/Dateinamen mit <strong>Leer-/Sonderzeichen</strong> müssen “gequotet” (<code>".."</code>) oder “escaped” (<code>\..</code>) werden , daher besser derartige Namen vermeiden</li>
-<li>alles nach einer “<code>#</code>” wird ignoriert, da dieses Zeichen einen <strong>Kommentar</strong> einleitet</li>
+<li><strong>Versteckte Dateien</strong> = “<code>.</code>”-prefixed
+<ul>
+<li>Dateien, die mit “<code>.</code>” beginnen, werden standardmässig bei <code>ls</code> Aufruf ausgeblendet und nicht angezeigt</li>
+<li>mit “<code>ls -a</code>” werden diese gelistet</li>
+<li>i.d.R. Konfigurationsdateien, wie z.B. <code>$HOME/.bashrc</code> welche u.a. folgendes definiert:
+<ul>
+<li>das Aussehen der bash (Farbe, prompt, …)</li>
+<li>wie manche Kommandos reagieren (Länge der History, …)</li>
+<li>definiert u.a. Befehlskurzformen (via <code>alias</code>)</li>
+</ul></li>
+</ul></li>
 </ul>
-<hr />
+<div id="dateirechte-ändern" class="section level2">
+<h2>Dateirechte ändern</h2>
+<ul>
+<li><code>chmod</code> - <strong>Dateirechte ändern</strong>
+<ul>
+<li>kompakte <a href="https://www.shellbefehle.de/befehle/chmod/">Zusammenfassung mit Beispielen</a></li>
+<li>z.B. Datei <strong>für alle ausführbar</strong> machen via “<code>chmod a+rx MeinSkript.sh</code>” (“<code>r</code>” idR nicht nötig, da meist schon vorhanden)</li>
+<li>wenn nur “<strong>Änderung</strong>” von Interesse (d.h. hinzufügen oder wegnehmen), dann bietet sich die folgende (regex-codierte) Notation an:
+<ul>
+<li>[ugoa][+-]r?w?x? im Detail</li>
+<li>WER = (u)ser, (g)roup, (o)thers, (a)ll, d.h. alle drei</li>
+<li>WIE = “+” hinzufügen (wenn noch nicht vorhanden) oder “-” wegnehmen</li>
+<li>WAS = (r)ead, (w)rite, e(x)ecute rights</li>
+<li>z.B. chmod o+r MeinSkript.sh würde allen Nutzern Leserechte einräumen (unabhängig davon, ob sie diese schon besitzen oder nicht)</li>
+</ul></li>
+<li>für ein <strong>explizites Setzen</strong> aller Rechte auf einmal, ist ggf. die Zahlennotation (siehe obigen Link) besser</li>
+</ul></li>
+</ul>
 </div>
-<div id="basisbefehle" class="section level1">
-<h1>Basisbefehle…</h1>
-<p>… die man wissen muss:</p>
+<div id="eigentumgruppe-ändern" class="section level2">
+<h2>Eigentum/Gruppe ändern</h2>
 <ul>
-<li><code>ls</code> = listet aktuellen <strong>Ordnerinhalt</strong> auf (list)
+<li><code>chown</code> - <strong>Eigentumsrechte/-zuordnung ändern</strong>
 <ul>
-<li>“<code>-l</code>” = Tabellenansicht des Inhalts (ggf. Kurzform/Alias “<code>ll</code>” verfügbar)</li>
+<li>der Eigentümer (oder z.T. ein Admin) kann die Eigentumsrechte übergeben/ändern</li>
+<li>z.B. ein “<code>chown liesbeth MeinSkript.sh</code>” von <code>hans</code> würde die Datei von oben an <code>liesbeth</code> übertragen</li>
+<li>alles andere bleibt ungeändert, d.h. Ort, Dateirechte, …</li>
+<li>kann auch zur Gruppenänderung eingesetzt werden</li>
+<li><a href="https://www.howtoforge.de/anleitung/linux-chown-command-tutorial-fr-anfnger-12-beispiele/">Details und Beispiele</a> von howtoforge.de</li>
 </ul></li>
-<li><code>pwd</code> = gibt den (absoluten) <strong>Pfad des aktuellen Ordners</strong> aus (print working directory)</li>
-<li><code>cd</code> = <strong>wechselt das Verzeichnis</strong> (change directory) :
+<li><code>chgrp</code> - <strong>Gruppenzuordnung ändern</strong>
 <ul>
-<li>ohne Argument ins home dir</li>
-<li>mit Argument zum entsprechenden Ort</li>
-<li>mit “<code>..</code>” in den übergeordneten Ordner</li>
-<li><a href="https://www.geeksforgeeks.org/cp-command-linux-examples/?ref=lbp">Beispiele</a></li>
+<li>Gruppenzugehörigkeit von Dateien ändern</li>
+<li>z.B. “<code>chgrp parents MeinSkript.sh</code>” würde den Zugriff (bzw. die gesetzten Gruppen-Dateirechte) auf Nutzer der Gruppe <code>parents</code> einschränken. Alle anderen Nutzer (ausser dem Eigentümer) fallen dann unter die Dateirechtgruppe “<code>others</code>”.</li>
 </ul></li>
-<li><code>man</code> = liefert eine <strong>Hilfeseite</strong> zum nachfolgenden Befehl (manual)
+<li><code>groups</code> - <strong>Gruppen (eines Nutzers) anzeigen</strong>
 <ul>
-<li>browsen mit Cursortasten</li>
-<li>Taste <code>h</code> liefert Befehlsmöglichkeiten</li>
-<li>verlassen mit Taste <code>q</code></li>
-</ul></li>
-<li><code>rm</code> = <strong>löschen</strong> (remove)</li>
-<li><code>mkdir</code> = <strong>Ordner erstellen</strong> (make directory)</li>
-<li><code>cp</code> = <strong>kopieren</strong> einer Datei (copy)
-<ul>
-<li>“<code>-r</code>” = auch Unterverzeichnisse und deren Inhalt (recursive)</li>
-</ul></li>
-<li><code>ln</code> = <strong>Verknüpfung/Shortcut</strong> zu Datei (oder Verzeichnis) anlegen (link)
-<ul>
-<li>“<code>-s</code>” = <strong>WAS MAN MEISST WILL</strong> = symbolische Verknüpfung, d.h. link ist quasi Pfad zum Ziel
-<ul>
-<li>wenn Ziel gelöscht ist der Link ungültig (dangling)</li>
-<li>wenn Ziel (gleichnamig) ersetzt, zeigt der Link auf neue Variante</li>
-<li>geht auch mit Verzeichnissen</li>
-</ul></li>
-<li>Standardfall = hard link, d.h. Link ist quasi zweite Pseudodatei die direkt auf der gleichen Datenbasis arbeitet
-<ul>
-<li>geht nur für Dateien (da Verzeichnisse nicht wirklich auf Festplatte liegen)</li>
-<li>wenn Zieldatei gelöscht, bleibt der Link intakt, da er immer noch auf die Datenbasis zeigt und dort operiert (nur alternativer Zugang zu den Daten gelöscht)</li>
-</ul></li>
-</ul></li>
-<li><code>mv</code> = <strong>verschieben oder umbenennen</strong> (move)
-<ul>
-<li><a href="https://www.geeksforgeeks.org/mv-command-linux-examples/?ref=lbp">Beispiele</a></li>
-</ul></li>
-<li><code>cat</code> = <strong>Inhalt</strong> einer oder mehrerer Dateien <strong>ausgeben</strong> (concatenate)</li>
-<li><code>less</code> = Inhalt einer <strong>Datei betrachten</strong> (Dateibrowser)
-<ul>
-<li>Steuerung siehe “<code>man</code>” (weil letzteres less benutzt)</li>
-<li>kann <strong>auch als letztes Kommando</strong> in einer pipe verwendet werden, um die aktuelle Ausgabe zu testen</li>
-</ul></li>
-<li><code>history</code> = Liste der <strong>zuletzt eingegebenen Befehle</strong>
-<ul>
-<li>“<code>!XYZ</code>” = sucht in der history den letzten Befehl, der mit “<code>XYZ</code>” beginnt <em>und führt ihn erneut aus</em></li>
-<li>“<code>!XYZ:p</code>” = Ausgabe des letzten Befehls, der mit “<code>XYZ</code>” beginnt</li>
-<li>“<code>!$</code>” = liefert den Argumententeil des letzten Befehls (“<code>!$:p</code>” gibt ihn nur aus), um ihn z.B. im nächsten Befehl zu verwenden</li>
+<li>ein Nutzer kann mehreren Gruppen angehören</li>
+<li>“<code>groups</code>” - liefert die eigenen Gruppen</li>
+<li>“<code>groups hans</code>” - liefert die Gruppen des Nutzers hans</li>
 </ul></li>
 </ul>
 <hr />
 </div>
-<div id="befehl-abbrechen" class="section level1">
-<h1>Befehl abbrechen</h1>
-<p>Wenn man</p>
+</div>
+<div id="kompression" class="section level1">
+<h1>Kompression</h1>
+<p><strong>Datenarchivierung</strong> = meist 2 Schritte in einem:</p>
 <ul>
-<li>einen Befehl unvollständig eingegeben hat und die Konsole “hängt” (d.h. auf Eingabe wartet), oder</li>
-<li>man den gerade aktiven Befehl stoppen will (weil er zu lange dauert oder gaaaanz viel Output auf die Konsole schreibt),</li>
+<li><strong>Datenaggregation</strong> = mehrere Dateien/Ordner/… <strong>in einer Datei zusammenfassen</strong></li>
+<li><strong>Datenkompression</strong> = eine Datei (oder Datenstrom) verlustfrei <strong>kleiner speichern</strong></li>
 </ul>
-<p>kann man den Befehl mit “<strong>STRG+C</strong>” abbrechen (cancel).</p>
-<hr />
-</div>
-<div id="tutorials" class="section level1">
-<h1>&gt; Tutorials &lt;</h1>
-<div id="befehle-für-verzeichnisse" class="section level2">
-<h2>Befehle für Verzeichnisse</h2>
-</div>
-<div id="online-tutorials" class="section level2">
-<h2>Online Tutorials</h2>
+<div id="tar" class="section level2">
+<h2>tar</h2>
+<p><code>tar</code> = Datenaggregation = Archiverstellung</p>
 <ul>
-<li><a href="https://swcarpentry.github.io/shell-novice/01-intro/index.html">Shell Intro</a> von swcarpentry</li>
-<li><a href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Navigating Files and Directories</a> von swcarpentry</li>
-<li><a href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Working with Files and Directories</a> von swcarpentry</li>
-<li><a href="https://carpentries-incubator.github.io/shell-extras/01-man-pages/index.html">man Usage and Interpretation</a> von carpentries-incubator</li>
+<li>fasst mehrere Datein oder ganze Verzeichnisstrukturen zusammen</li>
+<li>Aufruf = <code>tar -[OPTIONS] -f ARCHIVDATEI [FILESorFOLDERS]</code></li>
+<li><code>ARCHIVDATEI</code> i.d.R. mit <strong>.tar Endung</strong> (wenn ohne Kompression verwendet), z.B. “<code>tar -cf bash-config-files.tar $HOME/.bash*</code>”</li>
+<li>Optionen steuern eigentliche <strong>Handlungen</strong> (können zusammengefasst werden):
+<ul>
+<li>“<code>-c</code>” = compress = <code>ARCHIVDATEI</code> wird angelegt und gefüllt</li>
+<li>“<code>-x</code>” = eXtract = <code>ARCHIVDATEI</code> wird “ausgepackt” und Dateien wiederhergestellt</li>
+<li>“<code>-r</code>” = add = weitere Dateien zu existierendem Archiv hinzufügen</li>
+<li>“<code>-t</code>” = list = alle enthaltenen Dateien anzeigen</li>
+</ul></li>
+<li>Zusätzlich kann <strong>Kompressionsverfahren</strong> gewählt werden (wählt entsprechendes Konsolenprogramm)
+<ul>
+<li>“<code>-z</code>” = gzip (siehe unten)</li>
+<li>“<code>-j</code>” = bzip2</li>
+<li>“<code>-J</code>” = xz</li>
+<li>falls gesetzt, sollte Archivname mit <strong>entsprechender Endung verwendet</strong> werden (nicht automatisch angehängt!), z.B. “<code>tar -czf bash-config-files.tar.gz $HOME/.bash*</code>”</li>
+<li>muss <strong>auch beim Entpacken, Auflisten, etc.</strong> entsprechend <strong>angegeben</strong> werden, z.B. “<code>tar -lzf bash-config-files.tar.gz</code>”</li>
+</ul></li>
 </ul>
 </div>
-<div id="hard-vs.-soft-links" class="section level2">
-<h2>Hard vs. Soft Links</h2>
-<p>Und wer noch herausfinden will, was der Unterschied zwischen “hard” und “soft” links ist, der sollte sich folgendes Video anschauen.</p>
-<p><a href="http://www.youtube.com/watch?v=p_g_--ztI6Y">Video: (en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]</a></p>
-<p><a href="http://www.youtube.com/watch?v=p_g_--ztI6Y" title="(en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]"><img src="http://img.youtube.com/vi/p_g_--ztI6Y/0.jpg" /></a></p>
+<div id="gzip" class="section level2">
+<h2>gzip</h2>
+<p><code>gzip</code> = Datenkompression = GNU Implementierung eines ZIP Kompressionsverfahrens</p>
+<ul>
+<li>ermöglicht das (de)komprimieren einzelner <strong>Dateien</strong>, z.B.
+<ul>
+<li>“<code>gzip test.txt</code>” erzeugt die Datei <code>test.txt.gz</code> mit <strong>Endung .gz</strong> und löscht <code>test.txt</code></li>
+<li>“<code>gunzip test.txt.gz</code>” dekomprimiert die Datei und benennt sie wieder um</li>
+</ul></li>
+<li>direkt in <strong>pipes</strong> verwendbar, z.B.
+<ul>
+<li>“<code>-c</code>” Ausgabe in STDOUT und Archiv erhalten, z.B. “<code>gunzip -c test.txt.gz | wc</code>”</li>
+<li>“<code>-</code>” als “Dateiname” liest STDIN und gibt komprimierte Daten in STDOUT aus, z.B. “<code>ls | gzip - &gt; ls-output.gz</code>”</li>
+</ul></li>
+<li>“<code>-k</code>” = keep = Originaldatei wird erhalten</li>
+<li>Varianten von bekannten Programmen, die direkt mit <strong>gzip-ten Text-Dateien</strong> umgehen können
+<ul>
+<li><code>zcat</code> - z.B. “<code>zcat ls-output.gz</code>” = entspricht “<code>gunzip -c</code>” aber ggf. intuitiver</li>
+<li><code>zless</code> - z.B. “<code>zless ls-output.gz</code>”</li>
+<li><code>zgrep</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="bzip2" class="section level2">
+<h2>bzip2</h2>
+<p>Mehr oder minder analog zu <code>gzip</code> (inklusive “<code>bz...</code>” tools) aber verwendet anderem Kompressionsalgorithmus.</p>
+</div>
+<div id="zip" class="section level2">
+<h2>zip</h2>
+<p><code>zip</code> = sowohl Datenaggregation als auch IMMER -kompression</p>
+<ul>
+<li>intern quasi eine Kombination von tar und einem anderen ZIP Verfahren (als gzip)</li>
+<li>Aufruf = <code>zip [OPTIONS] ARCHIVDATEI [FILESorFOLDERS]</code></li>
+<li>Entpacken mit “<code>unzip ARCHIVDATEI</code>”</li>
+<li><code>ARCHIVDATEI</code>
+<ul>
+<li>i.d.R. mit <strong>Endung .zip</strong></li>
+<li>wenn “-” dann lesen von STDIN und schreiben nach STDOUT zur Verwendung in pipes analog zu gzip</li>
+<li>wenn schon vorhanden, werden die neuen Dateien direkt hinzugefügt</li>
+</ul></li>
+<li>“<code>-r</code>” = recursive = alle Dateien/Unterverzeichnisse der angegeben Verzeichnisse</li>
+<li>Passwortschutz möglich</li>
+<li>für weitere Details bitte <strong>man page</strong> mit vielen Beispielen konsultieren!</li>
+</ul>
 </div>
 </div>
 
