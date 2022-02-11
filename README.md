@@ -6,7 +6,7 @@ Dieses Repository beinhaltet die Selbstlernmaterialien für unsere Kurs "Data BA
 
 Sie können die Materialien direkt via folgendem Link betrachten:
 
-[https://dr-eberle-zentrum.github.io/DataBASHing/i](https://dr-eberle-zentrum.github.io/DataBASHing/i)
+[https://dr-eberle-zentrum.github.io/DataBASHing](https://dr-eberle-zentrum.github.io/DataBASHing)
 
 
 Für jedwede Fragen [kontaktieren sie uns bitte](https://uni-tuebingen.de/de/151602).
