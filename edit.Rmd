@@ -8,7 +8,7 @@ author: "Martin Raden"
 Einführung von 
 
 - `awk` in [Zeilenweise Daten verarbeiten]
-- `vim, nano` in [Piping und Streams]
+- `vim, nano` in [Editoren in der Shell]
 
 
 [Video: Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]](http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7)
@@ -65,7 +65,7 @@ Folgende kompakte Online awk Tutorials sind ein guter Einstieg
 
 -------------------------------------------
 
-# Editoren in der BASH
+# Editoren in der Shell
 
 Warum bzw. wann muss man sich mit Kommandozeileneditoren herumschlagen?
 
