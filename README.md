@@ -1,8 +1,13 @@
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 # Data BASHing - Angewandte Datenverarbeitung in der Kommandozeile
 
-Dieses Repository beinhaltet Selbstlernmaterialien für unsere Kurs "Data BASHing - Angewandte Datenverarbeitung in der Kommandozeile" vom Dr. Eberle Zentrum für digitale Kompetenzen an der Eberhard-Karls Universität Tübingen.
+Dieses Repository beinhaltet die Selbstlernmaterialien für unsere Kurs "Data BASHing - Angewandte Datenverarbeitung in der Kommandozeile" vom Dr. Eberle Zentrum für digitale Kompetenzen an der Eberhard-Karls Universität Tübingen.
+
+Sie können die Materialien direkt via folgendem Link betrachten:
+
+[https://dr-eberle-zentrum.github.io/DataBASHing/i](https://dr-eberle-zentrum.github.io/DataBASHing/i)
+
 
 Für jedwede Fragen [kontaktieren sie uns bitte](https://uni-tuebingen.de/de/151602).
 
