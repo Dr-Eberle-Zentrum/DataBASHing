@@ -1,0 +1,116 @@
+---
+title: "Softwareinstallation"
+
+---
+
+
+-------------------------------------------
+
+Es gibt verschiedene Linux Distributionen (d.h. Zusammenstellungen von Softwarepaketen). In diesem Kurs nutzen wir als Standard **Ubuntu**, aber jedwede andere Distribution ist auch ok, aber wir können keine und nur begrenzte Unterstützung bei distibutionsspezifischen Fragen liefern..
+
+
+-------------------------------------------
+
+# Ubuntu in Windows 10
+
+Wer derzeit Windows 10 nutzt, kann ganz bequem "Linux als App" installieren, denn Windows 10 unterstützt direkt die Installation eines Linux Subsystems, quasi als zweites eingeschlossenes Betriebssystem. Die Basissoftware dazu heisst "Windows Subsystem Linux" (WSL) und ist mittlerweile in zwei Versionen verfügbar. WSL1 ist in der Regel direkt verfügbar. WSL2 ist neuer und schneller, braucht aber leistungsfähige Hardware und muss zusätzlich installiert/aktualisiert werden (siehe [hier](https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/)).
+
+Für diesen Kurs ist WSL1 völlig ausreichend, sodass in den meisten Win10 Rechnern direkt Folgendes gemacht werden kann (Stand Sept. 2021):
+
+1.    Microsoft Store App öffnen und die folgenden zwei Programme installieren:
+2.    "Ubuntu 20.04 LTS" suchen und installieren 
+      - falls nicht verfügbar oder nicht möglich, ggf. noch [WSL1 aktivieren](https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/)  
+      - Diese "App" ist das Linux Subsystem, welches dann eine Eingabeaufforderung/Konsole bereitstellt, von der aus losgelegt werden kann.
+3.    "Windows Terminal" suchen und installieren  
+      - Diese (optionale) App liefert eine leistungsfähigere Konsolenumgebung mit mehreren Tabs etc., was die Arbeit erleichtert
+      - Beachten sie: nach Installation können sie im Explorer in beliebigen Verzeichnissen mit "Rechtsklick" im Kontextmenü "Öffnen mit Windows Terminal" auswählen, und schon sind sie in der Konsole und an der richtigen Stelle!
+
+
+-------------------------------------------
+
+# Zudem nützlich
+
+- ein leistungfähiger Texteditor, z.B.
+  - Windows: [Notepad++](https://notepad-plus-plus.org/)
+  - Linux: [Sublime](https://www.sublimetext.com/)
+
+
+-------------------------------------------
+
+
+# Apple User aufgepasst
+
+Apple liefert aus lizenzrechtlichen Gründen nur eine **veraltete Version der Bash** aus, die teilweise für einige spätere Bash-Skripting Teile dieses Kurses nicht ausreicht (Version >= 4 nötig; check via `bash --version`). Daher müssen sie (jetzt oder später, ich weise noch einmal darauf hin), ihre *[bash auf Mac OS aktualisieren](https://www.shell-tips.com/mac/upgrade-bash/)* ([Alternative Anleitung](https://itnext.io/upgrading-bash-on-macos-7138bd1066ba)).
+
+
+-------------------------------------------
+
+# Nicht als root arbeiten!
+
+Falls sie in der Konsole als **Benutzernamen root** sehen (oder `echo $USER` dies ausgibt), dann sind sie als **Adminstrator** eingeloggt. Es ist anzuraten in einem **eingeschränkten Benutzerkonto** zu **arbeiten**!
+
+Hierzu empfehle ich zwei Schritte:
+
+1. das neue Standardbenutzerkonto **zuerst** in ein "sudoer" Konto umwandeln, mit dem später z.B. auch noch Software nachinstalliert werden kann. Dazu
+   - "root" Bash Konsole öffnen
+   - `usermod -a -G sudo [IhrBenutzerName]` ausführen
+2.    das Benutzerkonto zum Standardbenutzer machen (für WSL siehe unten).
+
+Der folgende Link zeigt, wie sie [in Win10 den WSL Standardnutzer ändern](https://winaero.com/set-default-user-wsl-windows-10/).
+
+
+
+\newpage
+
+-------------------------------------------
+
+
+# > Lernvideos & Tutorials < 
+
+
+-------------------------------------------
+
+
+## Welche Shell?
+
+Nachdem Linux installiert ist, sollen sie ihr erstes Abfrageergebnis (`echo $SHELL`) testen.
+
+Das ganze sollte ungefähr so aussehen:
+
+```{bash echo-shell}
+echo $SHELL
+```
+
+
+-------------------------------------------
+
+
+## Datendownload
+
+**In der Konsole:** [Daten für Online Tutorials](https://swcarpentry.github.io/shell-novice/setup.html) herunterladen und auspacken
+
+1.    Konsole öffnen
+2.    Ins Verzeichnis für temporäre Daten wechseln
+      -   `cd /tmp`
+3.    [Tutorialdaten](https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip) herunterladen
+      -   `wget https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip`
+4.    Falls ZIP noch nicht installiert ist (zB falls dies ein neues Ubuntu ist), dann noch schnell nachholen, in Ubuntu mit
+      -   `sudo apt install zip unzip`
+5.    Dateien und Ordnerstruktur auspacken
+      -   `unzip shell-lesson-data.zip`
+      
+
+Um sicher zu gehen, dass alles geklappt hat, prüfen sie ob sie für diesen Befehl
+
+```{bash ex-tail-lessen-data, eval=FALSE}
+tail -n 1 /tmp/shell-lesson-data/numbers.txt
+```
+
+diese Ausgabe erhalten.
+
+```{bash ex-tail-lessen-data-out, echo=FALSE}
+echo 6
+```
+
+
+

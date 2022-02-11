@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Datenverarbeitung</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="dez-style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div id="logo-section">
+
+    <a  class="logo-link"
+        title="Universität Tübingen"
+        href="https://www.uni-tuebingen.de"><img
+            alt="Logo der Universität Tübingen"
+            src="https://uni-tuebingen.de/typo3conf/ext/project/Resources/Public/Images/Logo_Universitaet_Tuebingen.svg"
+            width="269px"
+            height="70px"
+    ></a><a  class="logo-link"
+        id="logo-dez"
+        title="Dr. Eberle Zentrum für digitale Kompetenzen"
+        href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen</a>
+
+  </div>
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Data BASHing</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Intro</a></li>
+        <li><a href="install.html">Install</a></li>
+        <li><a href="basics.html">Basics</a></li>
+        <li><a href="data.html">Processing</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://uni-tuebingen.de/de/151602">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Datenverarbeitung</h1>
+
+</div>
+
+
+<p>Einführung von</p>
+<ul>
+<li><code>cat, head, tail, less, sort, uniq, wc</code> in <a href="#ein-erster-blick">Ein erster Blick</a></li>
+<li><code>&gt;, &gt;&gt;, &lt;, /dev/null</code> in <a href="#piping-und-streams">Piping und Streams</a></li>
+<li><code>cut, paste, join</code> in <a href="#datenspalten-verarbeiten">Datenspalten verarbeiten</a></li>
+</ul>
+<hr />
+<div id="ein-erster-blick" class="section level1">
+<h1>Ein erster Blick</h1>
+<hr />
+<div id="dateiinhalte-betrachten" class="section level2">
+<h2>Dateiinhalte betrachten</h2>
+<ul>
+<li><code>cat</code> = <strong>gibt</strong> den <strong>gesamten Inhalt</strong> einer Datei <strong>aus</strong> oder mehrerer nacheinander</li>
+<li><code>head</code> = gibt die <strong>ersten Zeilen</strong> aus
+<ul>
+<li>“<code>-n XXX</code>” - Ausgabe bis zur XXX-ten Zeile (die ersten XXX)</li>
+</ul></li>
+<li><code>tail</code> = gibt die <strong>letzten Zeilen</strong> aus
+<ul>
+<li>z.B. “<code>tail -n+2</code>” - alle Zeilen ab der 2-ten (ersten Zeilen werden ausgelassen)</li>
+</ul></li>
+<li><code>less</code> = <strong>interaktiver Textbetrachter</strong> der nicht in pipes (oder nur am Ende) verwendet werden kann
+<ul>
+<li>Taste <code>h</code> - Hilfe mit Kommandoübersicht (help)</li>
+<li>Taste <code>q</code> - schliessen des Betrachters (quit)</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="erste-dateioperationen" class="section level2">
+<h2>erste Dateioperationen</h2>
+<ul>
+<li><code>sort</code> = gibt den Inhalt (lexikographisch) <strong>sortiert</strong> aus
+<ul>
+<li>“<code>-n</code>” = Zahlensortierung (numeric)</li>
+<li>“<code>-r</code>” = umgekehrte Reihenfolge (reverse)</li>
+<li>“<code>-k</code>” = Spaltennummer für Sortierung (key) !!! Spaltentrennzeichen mittels “<code>-t</code>” beachten/einstellen</li>
+<li>check man page für weitere Sortieroptionen</li>
+<li><a href="https://www.geeksforgeeks.org/sort-command-linuxunix-examples/?ref=lbp">Beispiele</a></li>
+</ul></li>
+<li><code>uniq</code> = <strong>eliminiert doppelte</strong> (nacheinanderfolgende) <strong>Zeilen</strong>
+<ul>
+<li>i.d.R. in Kombination mit sort verwendet</li>
+<li>“<code>uniq -c</code>” liefert auch Anzahl der Wiederholungen</li>
+<li><a href="https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/?ref=lbp">Beispiele</a></li>
+</ul></li>
+<li><code>wc</code> = Zeichen-/Wort-/Zeilenstatistik (word count)
+<ul>
+<li>“<code>wc -l</code>” - <strong>Anzahl Zeilen</strong> (lines) einer Datei</li>
+</ul></li>
+</ul>
+<div style="page-break-after: always;"></div>
+<hr />
+</div>
+<div id="lernvideos-tutorials" class="section level2">
+<h2>&gt; Lernvideos &amp; Tutorials &lt;</h2>
+<p>lala</p>
+<div style="page-break-after: always;"></div>
+<hr />
+</div>
+</div>
+<div id="piping-und-streams" class="section level1">
+<h1>Piping und Streams</h1>
+<ul>
+<li>Konsolenausgabe <strong>in Datei umleiten</strong>
+<ul>
+<li>“<code>&gt;</code>” leitet die Ausgabe in eine (danach benannte) Datei um (und <em>überschreibt diese</em>!)</li>
+<li>“<code>&gt;&gt;</code>” leitet die Ausgabe in eine Datei um und <em>hängt die Ausgabe ans Ende</em> an</li>
+<li>die Ausgabe von Programmen wird in einem sogenannten “stream” (Datenstrom) geliefert (und i.d.R. direkt in der Konsole angezeigt)
+<ul>
+<li>dieser Ausgabestrom wird <strong>“standard output stream” (stdout)</strong> genannt</li>
+<li>genau dieser stdout wird über die obigen Umleitungen in eine Datei geschrieben/angehangen</li>
+</ul></li>
+</ul></li>
+<li>Konsolenausgabe <strong>an nächsten Befehl übergeben</strong>
+<ul>
+<li>Konsolenbefehle sind i.d.R. in der Lage den zu verarbeitenden Inhalt direkt einzulesen (ohne diese explizit aus einer Datei auszulesen)</li>
+<li>dies ist der <strong>“standard input stream” (stdin)</strong></li>
+<li>“<code>|</code>” leitet die Ausgabe als neue Eingabe in den darauffolgenden Befehl um (== piping)</li>
+</ul></li>
+<li><strong>stdin</strong>-Konsoleneingabe <strong>aus Datei</strong>
+<ul>
+<li>manche Programme können keine Datei direkt öffnen und auslesen, sondern erwarten die Eingabe via “standard input stream” (stdin)</li>
+<li>es gibt zwei Möglichkeiten
+<ul>
+<li>Via <code>cat</code> mit Piping: “<code>cat DATEI | wildesProgramm</code>”</li>
+<li>Via <code>&lt;</code> Operator: “<code>wildesProgramm &lt; DATEI</code>”</li>
+</ul></li>
+</ul></li>
+<li><strong>Beachten:</strong> Ausgabenumleitung gilt erst einmal “nur” für den “standard output stream” der Ausgabe (stdout) in dem normalerweise Ergebnisse geliefert werden. Es gibt aber auch noch einen <strong>“standard error stream” (stderr)</strong>, in welchem Fehlermeldungen ausgegeben werden. Diese sind beim piping weiterhin auf der Konsole sichtbar, es sei den sie werden mittels “<code>2&gt;</code>” oder “<code>2&gt;&gt;</code>” in eine Datei umgeleitet.
+<ul>
+<li><em>Ggf. irgenwann mal von Interesse:</em> es ist auch möglich beide streams in den jeweils anderen umzuleiten, um alle Ausgaben auf einmal abzufangen.</li>
+</ul></li>
+<li>Unerwünschte Ausgabe kann ins “<strong>Datennirvana</strong>” in das dummy file “<code>/dev/null</code>” umgeleitet werden, z.B.
+<ul>
+<li>Standardausgabe (stdout) ignorieren (weil z.B. nur Statusmeldungen) : “<code>&gt; /dev/null</code>”</li>
+<li>Fehlerausgabe (stderr) ignorieren (wenn z.B. “nur” Warnungen etc.) : “<code>2&gt; /dev/null</code>”</li>
+</ul></li>
+</ul>
+<div style="page-break-after: always;"></div>
+<hr />
+<div id="lernvideos-tutorials-1" class="section level2">
+<h2>&gt; Lernvideos &amp; Tutorials &lt;</h2>
+<hr />
+</div>
+</div>
+<div id="datenspalten-verarbeiten" class="section level1">
+<h1>Datenspalten verarbeiten</h1>
+<ul>
+<li><code>cut</code> = <strong>Ausgabe bestimmter Spalten</strong>/Felder/Teile <strong>pro Zeile</strong> = Spaltenextraktion
+<ul>
+<li>Standardspaltentrennzeichen = Tabulator</li>
+<li>“<code>-d</code>” = Spaltentrennzeichen (delimiter)</li>
+<li>“<code>-f</code>” = Spaltennummer (field)</li>
+<li>“<code>-c</code>” = Buchstabennummer (character) für festbreitenformatierte Dateien</li>
+<li><a href="https://www.geeksforgeeks.org/cut-command-linux-examples/?ref=lbp">Beispiele</a></li>
+</ul></li>
+<li><code>paste</code> = <strong>spaltenweises</strong> (horizontales) <strong>Zusammenführen</strong> mehrerer Dateien
+<ul>
+<li>“<code>-d</code>” = Trennzeichen der beiden Dateiinhalte pro Zeile (delimiter); Standardtrennzeichen ist wieder Tabulator</li>
+<li>i.d.R. sinnvoll, wenn gleiche Anzahl von Zeilen in allen Dateien</li>
+<li><a href="https://www.geeksforgeeks.org/paste-command-in-linux-with-examples/">Beispiele</a></li>
+</ul></li>
+<li><code>join</code> = <strong>schlüsselbasiertes Zusammenführen</strong> zweier Dateien
+<ul>
+<li>d.h. nur Zeilen mit gleichem Schlüsselwert (in der entsprechenden Spalte) werden zusammengeführt</li>
+<li>“<code>-t</code>” = Spaltentrennzeichen (Standard = Leerzeichen)</li>
+<li>eine Eingabe kann auch von stdin (z.B. via piping kommen); dann muss als entsprechender “Dateiname” ein - angegeben werden</li>
+</ul></li>
+</ul>
+<div style="page-break-after: always;"></div>
+<hr />
+<div id="lernvideos-tutorials-2" class="section level2">
+<h2>&gt; Lernvideos &amp; Tutorials &lt;</h2>
+</div>
+</div>
+
+
+
+<div id="foot-section">
+  <div style="display:inline-block">
+    This work is licensed under a
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+      Creative Commons Attribution-ShareAlike 4.0 International License.</a>
+      <br>
+    by
+    <a title="Dr. Eberle Zentrum für digitale Kompetenzen"
+      href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen, Universität Tübingen</a>
+  </div>
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+    <img
+          alt="Creative Commons License"
+          style="border-width:0; margin-left:10px"
+          src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

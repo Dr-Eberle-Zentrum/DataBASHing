@@ -1,0 +1,16 @@
+name: "Data-BASHing"
+output_dir: "www"
+author: "Martin Raden"
+date: "WiSe-2021"
+language: de
+output:
+  html_document :
+    self_contained: no # ensure no html embedding of plots etc
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+    theme: "sandstone"
+    includes:
+      after_body: "footer.html"
+    css: "dez-style.css"

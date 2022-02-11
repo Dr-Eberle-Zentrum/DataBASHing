@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Konsolenbasics</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="dez-style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div id="logo-section">
+
+    <a  class="logo-link"
+        title="Universität Tübingen"
+        href="https://www.uni-tuebingen.de"><img
+            alt="Logo der Universität Tübingen"
+            src="https://uni-tuebingen.de/typo3conf/ext/project/Resources/Public/Images/Logo_Universitaet_Tuebingen.svg"
+            width="269px"
+            height="70px"
+    ></a><a  class="logo-link"
+        id="logo-dez"
+        title="Dr. Eberle Zentrum für digitale Kompetenzen"
+        href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen</a>
+
+  </div>
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Data BASHing</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Intro</a></li>
+        <li><a href="install.html">Install</a></li>
+        <li><a href="basics.html">Basics</a></li>
+        <li><a href="data.html">Processing</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://uni-tuebingen.de/de/151602">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Konsolenbasics</h1>
+
+</div>
+
+
+<p>Einführung von <code>cd, cp, history, ln, ls, man, mkdir, mv, pwd, rm</code></p>
+<hr />
+<div id="handhabung" class="section level1">
+<h1>Handhabung</h1>
+<p>Die folgenden Dinge betreffen vorrangig das Windows Terminal.</p>
+<ul>
+<li><strong>Markieren von Text</strong>: LINKE Maustaste oder SHIFT+Cursortasten</li>
+<li><strong>Kopieren von Textmarkierung</strong>: STRG+C oder RECHTE Maustaste</li>
+<li><strong>Einfügen</strong> (vom zuletzt Kopierten): STRG+V oder RECHTE Maustaste</li>
+<li><strong>Blockmarkierungen</strong>: ALT + LINKE Maustaste</li>
+<li><strong>Letzte(r) Befehl(e)</strong>: Cursortasten up/down</li>
+<li>Innerhalb der aktuellen Eingabe zum <strong>nächsten Wort</strong> springen: STRG + Cursortasten links/rechts</li>
+<li><strong>Autovervollständigung</strong>(svorschläge) der Eingabe: TAB</li>
+<li>(Windows) Zwischen Tabs wechseln: STRG+TAB</li>
+<li>(Windows) Zwischen Fenstern wechseln: ALT+TAB</li>
+</ul>
+<hr />
+</div>
+<div id="pfade-und-trennzeichen" class="section level1">
+<h1>Pfade und Trennzeichen</h1>
+<p>Im allgemeinen gilt in Linux Shells:</p>
+<ul>
+<li>Es wird zwischen <strong>absoluten</strong> und <strong>relativen Pfaden</strong> unterschieden:
+<ul>
+<li>absolut = vollständiger Pfad der immer mit einem “<code>/</code>” (der Wurzel, also obersten Ebene des Verzeichnisbaumes) beginnt</li>
+<li>relativ = Pfad in Relation zum derzeitigen Verzeichnis, beginnt mit
+<ul>
+<li>“<code>.</code>” (repräsentiert aktuelles Verzeichnis) oder</li>
+<li>“<code>..</code>” (repräsentiert übergeordneten Ordner)</li>
+</ul></li>
+<li>Ordnernamen werden mit “<code>/</code>” getrennt (Unterschied zu PowerShell/DOS, wo mit “<code>\</code>” getrennt wird!)</li>
+<li>ein “<code>*</code>” in einem Datei oder Pfadnamen dient als <strong>Platzhalter</strong> für kein oder <em>mehrere Zeichen</em></li>
+<li>ein “<code>?</code>” ist ein Platzhalter für <em>genau ein Zeichen</em></li>
+</ul></li>
+<li>“<code>;</code>” <strong>beendet</strong> das vorangehende Kommando, sodass mehrere Kommandos hintereinander in einer Zeile geschrieben werden können</li>
+<li>Ordner-/Dateinamen mit <strong>Leer-/Sonderzeichen</strong> müssen “gequotet” (<code>".."</code>) oder “escaped” (<code>\..</code>) werden , daher besser derartige Namen vermeiden</li>
+<li>alles nach einer “<code>#</code>” wird ignoriert, da dieses Zeichen einen <strong>Kommentar</strong> einleitet</li>
+</ul>
+<hr />
+</div>
+<div id="basisbefehle" class="section level1">
+<h1>Basisbefehle…</h1>
+<p>… die man wissen muss:</p>
+<ul>
+<li><code>ls</code> = listet aktuellen <strong>Ordnerinhalt</strong> auf (list)
+<ul>
+<li>“<code>-l</code>” = Tabellenansicht des Inhalts (ggf. Kurzform/Alias “<code>ll</code>” verfügbar)</li>
+</ul></li>
+<li><code>pwd</code> = gibt den (absoluten) <strong>Pfad des aktuellen Ordners</strong> aus (print working directory)</li>
+<li><code>cd</code> = <strong>wechselt das Verzeichnis</strong> (change directory) :
+<ul>
+<li>ohne Argument ins home dir</li>
+<li>mit Argument zum entsprechenden Ort</li>
+<li>mit “<code>..</code>” in den übergeordneten Ordner</li>
+<li><a href="https://www.geeksforgeeks.org/cp-command-linux-examples/?ref=lbp">Beispiele</a></li>
+</ul></li>
+<li><code>man</code> = liefert eine <strong>Hilfeseite</strong> zum nachfolgenden Befehl (manual)
+<ul>
+<li>browsen mit Cursortasten</li>
+<li>Taste <code>h</code> liefert Befehlsmöglichkeiten</li>
+<li>verlassen mit Taste <code>q</code></li>
+</ul></li>
+<li><code>rm</code> = <strong>löschen</strong> (remove)</li>
+<li><code>mkdir</code> = <strong>Ordner erstellen</strong> (make directory)</li>
+<li><code>cp</code> = <strong>kopieren</strong> einer Datei (copy)
+<ul>
+<li>“<code>-r</code>” = auch Unterverzeichnisse und deren Inhalt (recursive)</li>
+</ul></li>
+<li><code>ln</code> = <strong>Verknüpfung/Shortcut</strong> zu Datei (oder Verzeichnis) anlegen (link)
+<ul>
+<li>“<code>-s</code>” = WAS MAN MEISST WILL = symbolische Verknüpfung, d.h. link ist quasi Pfad zum Ziel
+<ul>
+<li>wenn Ziel gelöscht ist der Link ungültig (dangling)</li>
+<li>wenn Ziel (gleichnamig) ersetzt, zeigt der Link auf neue Variante</li>
+<li>geht auch mit Verzeichnissen</li>
+</ul></li>
+<li>Standardfall = hard link, d.h. Link ist quasi zweite Pseudodatei die direkt auf der gleichen Datenbasis arbeitet
+<ul>
+<li>geht nur für Dateien (da Verzeichnisse nicht wirklich auf Festplatte liegen)</li>
+<li>wenn Zieldatei gelöscht, bleibt der Link intakt, da er immer noch auf die Datenbasis zeigt und dort operiert (nur alternativer Zugang zu den Daten gelöscht)</li>
+</ul></li>
+</ul></li>
+<li><code>mv</code> = <strong>verschieben oder umbenennen</strong> (move)
+<ul>
+<li><a href="https://www.geeksforgeeks.org/mv-command-linux-examples/?ref=lbp">Beispiele</a></li>
+</ul></li>
+<li><code>cat</code> = <strong>Inhalt</strong> einer oder mehrerer Dateien <strong>ausgeben</strong> (concatenate)</li>
+<li><code>less</code> = Inhalt einer <strong>Datei betrachten</strong> (Dateibrowser)
+<ul>
+<li>Steuerung siehe “<code>man</code>” (weil letzteres less benutzt)</li>
+<li>kann auch als letztes Kommando in einer pipe verwendet werden, um die aktuelle Ausgabe zu testen</li>
+</ul></li>
+<li><code>history</code> = Liste der <strong>zuletzt eingegebenen Befehle</strong>
+<ul>
+<li>“<code>!XYZ</code>” = sucht in der history den letzten Befehl, der mit “<code>XYZ</code>” beginnt und führt ihn erneut aus</li>
+<li>“<code>!XYZ:p</code>” = Ausgabe des letzten Befehls, der mit “<code>XYZ</code>” beginnt</li>
+<li>“<code>!$</code>” = liefert den Argumententeil des letzten Befehls (“<code>!$:p</code>” gibt ihn nur aus), um ihn z.B. im nächsten Befehl zu verwenden</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="befehl-abbrechen" class="section level1">
+<h1>Befehl abbrechen</h1>
+<p>Wenn man</p>
+<ul>
+<li>einen Befehl unvollständig eingegeben hat und die Konsole “hängt” (d.h. auf Eingabe wartet), oder</li>
+<li>man den gerade aktiven Befehl stoppen will (weil er zu lange dauert oder gaaaanz viel Output auf die Konsole schreibt),</li>
+</ul>
+<p>kann man den Befehl mit “<strong>STRG+C</strong>” abbrechen (cancel).</p>
+<div style="page-break-after: always;"></div>
+<hr />
+</div>
+<div id="lernvideos-tutorials" class="section level1">
+<h1>&gt; Lernvideos &amp; Tutorials &lt;</h1>
+<p>Die folgenden Videos von Bashino sind:</p>
+<ul>
+<li>am Anfang leider recht laut und nervig, aber insgesamt m.E. gut</li>
+<li>etwas laaaangsaaaam eeeeiiingeeeeesprooooocheeeen, was man aber mit “Einstellungen” ==&gt; “Wiedergabegeschwindigkeit” ==&gt; “1,25” oder höher gut korrigieren kann</li>
+</ul>
+<div id="befehle-für-verzeichnisse" class="section level2">
+<h2>Befehle für Verzeichnisse</h2>
+<p><a href="http://www.youtube.com/watch?v=-47iZzZssCg">Video: Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=-47iZzZssCg" title="Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]"><img src="http://img.youtube.com/vi/-47iZzZssCg/0.jpg" /></a></p>
+<p>Das Folgevideo <a href="https://youtu.be/ISPW4CXAEj4">#2 Befehle für Dateien (touch, cp, mv, rm etc) [7 min]</a> in der Playlist von Bashinho ist in der zweiten Hälfte etwas zu tief für diesen Kurs. Wenn man allerdings unseren “Grundlagen der Informatik” Kurs besucht hat, sollte man einige Sachen wiedererkennen und folgen können. :-D</p>
+</div>
+<div id="online-tutorials" class="section level2">
+<h2>Online Tutorials</h2>
+<ul>
+<li><a href="https://swcarpentry.github.io/shell-novice/01-intro/index.html">Shell Intro</a></li>
+<li><a href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Navigating Files and Directories</a></li>
+<li><a href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Working with Files and Directories</a></li>
+<li><a href="https://carpentries-incubator.github.io/shell-extras/01-man-pages/index.html">man Usage and Interpretation</a></li>
+</ul>
+</div>
+<div id="hard-vs.-soft-links" class="section level2">
+<h2>Hard vs. Soft Links</h2>
+<p>Und wer noch herausfinden will, was der Unterschied zwischen “hard” und “soft” links ist, der sollte sich folgendes Video anschauen.</p>
+<p><a href="http://www.youtube.com/watch?v=p_g_--ztI6Y">Video: (en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=p_g_--ztI6Y" title="(en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]"><img src="http://img.youtube.com/vi/p_g_--ztI6Y/0.jpg" /></a></p>
+</div>
+</div>
+
+
+
+<div id="foot-section">
+  <div style="display:inline-block">
+    This work is licensed under a
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+      Creative Commons Attribution-ShareAlike 4.0 International License.</a>
+      <br>
+    by
+    <a title="Dr. Eberle Zentrum für digitale Kompetenzen"
+      href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen, Universität Tübingen</a>
+  </div>
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+    <img
+          alt="Creative Commons License"
+          style="border-width:0; margin-left:10px"
+          src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

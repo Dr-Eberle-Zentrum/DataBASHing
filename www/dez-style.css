@@ -1,0 +1,52 @@
+
+#logo-section {
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.logo-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:30px;
+  min-height:130px
+}
+
+#logo-dez {
+  font-family: 'Open Sans',Arial,Helvetica;
+  color: #444e57;
+}
+
+#foot-section {
+  margin-top:50px;
+  border-top: 1px solid gray;
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: gray;
+  min-height: 32px;
+  text-align: center;
+}
+
+hr {
+  border-top: 1px solid black;
+  margin-top: 20px;
+}
+
+/* print-specific changes */
+@media print {
+
+  #TOC {
+    display: none;
+  }
+
+  #foot-section {
+    position:static;
+    bottom:auto;
+  }
+}
+
