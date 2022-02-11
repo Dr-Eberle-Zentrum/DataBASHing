@@ -1,14 +1,28 @@
 ---
 title: "Datenverarbeitung"
-
+author: "Martin Raden"
 ---
 
+
+-------------------------------------------
 
 Einführung von 
 
 - `cat, head, tail, less, sort, uniq, wc` in [Ein erster Blick]
 - `>, >>, <, /dev/null` in [Piping und Streams]
 - `cut, paste, join` in [Datenspalten verarbeiten]
+
+Um zu sehen, wo es hingehen soll, gibts die folgenden beiden Videos.
+
+[Video: Bashino - #05 Daten sortieren (sort uniq sort) [5 min]](http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7)
+
+[![](http://img.youtube.com/vi/EhuHvJwUMKY/0.jpg)](http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7 "Bashino - #05 Daten sortieren (sort uniq sort) [5 min]")
+
+
+[Video: (en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]](http://www.youtube.com/watch?v=2_lgnCzwUEM)
+
+[![](http://img.youtube.com/vi/2_lgnCzwUEM/0.jpg)](http://www.youtube.com/watch?v=2_lgnCzwUEM "(en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]")
+
 
 -------------------------------------------
 
@@ -27,6 +41,8 @@ Einführung von
 - `less` = **interaktiver Textbetrachter** der nicht in pipes (oder nur am Ende) verwendet werden kann
   - Taste `h` - Hilfe mit Kommandoübersicht (help)
   - Taste `q` - schliessen des Betrachters (quit)
+- `wc` = Zeichen-/Wort-/Zeilenstatistik (word count)
+  - "`wc -l`" - **Anzahl Zeilen** (lines) einer Datei
 
 
 -------------------------------------------
@@ -44,24 +60,9 @@ Einführung von
   - i.d.R. in Kombination mit sort verwendet
   - "`uniq -c`" liefert auch Anzahl der Wiederholungen
   - [Beispiele](https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/?ref=lbp)
-- `wc` = Zeichen-/Wort-/Zeilenstatistik (word count)
-  - "`wc -l`" - **Anzahl Zeilen** (lines) einer Datei
 
-\newpage
 
 -------------------------------------------
-
-
-## > Lernvideos & Tutorials < 
-
-lala
-
-
-
-\newpage
-
--------------------------------------------
-
 
 
 Piping und Streams
@@ -90,13 +91,16 @@ Piping und Streams
   - Fehlerausgabe (stderr) ignorieren (wenn z.B. "nur" Warnungen etc.) : "`2> /dev/null`"
 
 
-\newpage
 
 -------------------------------------------
 
 
-## > Lernvideos & Tutorials < 
+## > Tutorials < 
 
+
+Im Anschluss empfehlen wir das folgende
+
+- Tutorial zu [Pipes and Filters](https://swcarpentry.github.io/shell-novice/04-pipefilter/index.html) von swcarpentry
 
 -------------------------------------------
 
@@ -119,9 +123,5 @@ Piping und Streams
   - eine Eingabe kann auch von stdin (z.B. via piping kommen); dann muss als entsprechender "Dateiname" ein - angegeben werden
 
 
-\newpage
-
--------------------------------------------
 
 
-## > Lernvideos & Tutorials < 

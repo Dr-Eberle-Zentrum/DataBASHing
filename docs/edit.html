@@ -12,7 +12,7 @@
 <meta name="author" content="Martin Raden" />
 
 
-<title>Konsolenbasics</title>
+<title>Textbearbeitung</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -347,6 +347,7 @@ div.tocify {
         <li><a href="basics.html">Basics</a></li>
         <li><a href="data.html">Processing</a></li>
         <li><a href="regex.html">RegEx</a></li>
+        <li><a href="edit.html">Edit</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="https://uni-tuebingen.de/de/151602">Contact</a></li>
@@ -359,147 +360,123 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Konsolenbasics</h1>
+<h1 class="title toc-ignore">Textbearbeitung</h1>
 <h4 class="author">Martin Raden</h4>
 
 </div>
 
 
 <hr />
-<p>Einführung von <code>cd, cp, history, ln, ls, man, mkdir, mv, pwd, rm</code></p>
-<p>Die folgenden Videos von Bashino liefern einen ersten Eindruck, wie man sich auf der Kommandozeile in Ordnerstrukturen bewegt und wie Dateien und Ordner verwaltet werden können.</p>
-<p><a href="http://www.youtube.com/watch?v=-47iZzZssCg?t=7">Video: Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]</a> (ggf. Wiedergabegeschwindigkeit via “Einstellungen” ==&gt; “Wiedergabegeschwindigkeit” ==&gt; “1,25” erhöhen)</p>
-<p><a href="http://www.youtube.com/watch?v=-47iZzZssCg?t=7" title="Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]"><img src="http://img.youtube.com/vi/-47iZzZssCg/0.jpg" /></a></p>
-<p>Das Folgevideo <a href="https://youtu.be/ISPW4CXAEj4?t=7">#2 Befehle für Dateien (touch, cp, mv, rm etc) [7 min]</a> in der Playlist von Bashinho ist in der zweiten Hälfte etwas zu tief für diesen Kurs. Wenn man allerdings unseren “Grundlagen der Informatik” Kurs besucht hat, sollte man einige Sachen wiedererkennen und folgen können. :-D</p>
-<hr />
-<div id="handhabung" class="section level1">
-<h1>Handhabung</h1>
-<p>Die folgenden Dinge betreffen vorrangig das Windows Terminal.</p>
+<p>Einführung von</p>
 <ul>
-<li><strong>Markieren von Text</strong>: LINKE Maustaste oder SHIFT+Cursortasten</li>
-<li><strong>Kopieren von Textmarkierung</strong>: STRG+C oder RECHTE Maustaste</li>
-<li><strong>Einfügen</strong> (vom zuletzt Kopierten): STRG+V oder RECHTE Maustaste</li>
-<li><strong>Blockmarkierungen</strong>: ALT + LINKE Maustaste</li>
-<li><strong>Letzte(r) Befehl(e)</strong>: Cursortasten up/down</li>
-<li>Innerhalb der aktuellen Eingabe zum <strong>nächsten Wort</strong> springen: STRG + Cursortasten links/rechts</li>
-<li><strong>Autovervollständigung</strong>(svorschläge) der Eingabe: TAB</li>
-<li>(Windows) Zwischen Tabs wechseln: STRG+TAB</li>
-<li>(Windows) Zwischen Fenstern wechseln: ALT+TAB</li>
+<li><code>awk</code> in <a href="#zeilenweise-daten-verarbeiten">Zeilenweise Daten verarbeiten</a></li>
+<li><code>vim, nano</code> in [Piping und Streams]</li>
 </ul>
+<p><a href="http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7">Video: Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7" title="Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]"><img src="http://img.youtube.com/vi/Swtrh7z6FnE/0.jpg" /></a></p>
+<p><a href="http://www.youtube.com/watch?v=M28zU56xWHY?t=7">Video: Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]</a></p>
+<p><a href="http://www.youtube.com/watch?v=M28zU56xWHY?t=7" title="Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]"><img src="http://img.youtube.com/vi/M28zU56xWHY/0.jpg" /></a></p>
 <hr />
-</div>
-<div id="pfade-und-trennzeichen" class="section level1">
-<h1>Pfade und Trennzeichen</h1>
-<p>Im allgemeinen gilt in Linux Shells:</p>
+<div id="zeilenweise-daten-verarbeiten" class="section level1">
+<h1>Zeilenweise Daten verarbeiten</h1>
 <ul>
-<li>Es wird zwischen <strong>absoluten</strong> und <strong>relativen Pfaden</strong> unterschieden:
+<li><code>awk</code> = “Programmiersprache” zur (<strong>zeilenweisen</strong>) Datenverarbeitung
 <ul>
-<li>absolut = vollständiger Pfad der immer mit einem “<code>/</code>” (der Wurzel, also obersten Ebene des Verzeichnisbaumes) beginnt</li>
-<li>relativ = Pfad in Relation zum derzeitigen Verzeichnis, beginnt mit
+<li>Programme entweder direkt im Aufruf (<code>echo "A B" | awk '{print $2}'</code>) oder in Datei definiert (<code>awk -f programFile</code>)
 <ul>
-<li>“<code>.</code>” (repräsentiert aktuelles Verzeichnis) oder</li>
-<li>“<code>..</code>” (repräsentiert übergeordneten Ordner)</li>
+<li>Programme im Direktaufruf immer mit single tick <code>'</code> quoten “<code>-F</code>” = field separator zur spaltenweisen Datentrennung pro Zeile (setzt “<code>FS</code>” und “<code>OFS</code>” Variable, siehe unten)</li>
 </ul></li>
-<li>Ordnernamen werden mit “<code>/</code>” getrennt (Unterschied zu PowerShell/DOS, wo mit “<code>\</code>” getrennt wird!)</li>
-<li>ein “<code>*</code>” in einem Datei oder Pfadnamen dient als <strong>Platzhalter</strong> für kein oder <em>mehrere Zeichen</em></li>
-<li>ein “<code>?</code>” ist ein Platzhalter für <em>genau ein Zeichen</em></li>
+<li>Variablen
+<ul>
+<li>Spaltenelemente mittel <code>$SPALTENNUMMER</code> ansprechbar; <code>$0</code> = ganze Zeile</li>
+<li>lokale Variablen via Zuweisung mit “<code>=</code>” angelegt (<code>echo 4 | awk '{i=$1+2; print i}'</code>)</li>
+<li>Spaltenelemente/-variablen können auch überschrieben werden!!
+<ul>
+<li><code>echo A B | awk '{$2="D"; print $0}'</code></li>
+<li><code>$0</code> = Zusammensetzung der aktuellen Spaltenelemente/Felder mit aktuellem (output) field separator (<code>OFS</code>) (kann auch geändert werden)</li>
 </ul></li>
-<li>“<code>;</code>” <strong>beendet</strong> das vorangehende Kommando, sodass mehrere Kommandos hintereinander in einer Zeile geschrieben werden können</li>
-<li>Ordner-/Dateinamen mit <strong>Leer-/Sonderzeichen</strong> müssen “gequotet” (<code>".."</code>) oder “escaped” (<code>\..</code>) werden , daher besser derartige Namen vermeiden</li>
-<li>alles nach einer “<code>#</code>” wird ignoriert, da dieses Zeichen einen <strong>Kommentar</strong> einleitet</li>
-</ul>
-<hr />
-</div>
-<div id="basisbefehle" class="section level1">
-<h1>Basisbefehle…</h1>
-<p>… die man wissen muss:</p>
+<li><code>NF</code> = Anzahl Spalten (<code>$NF</code> = letzte Spalte) (number of fields), z.B. letzte Spalte ausgeben (<code>echo A B | awk '{print $NF}'</code>) oder Anzahl Spalten ausgeben (<code>echo A B | awk '{print NF}'</code>)</li>
+<li><code>NR</code> = aktuelle Zeilennummer (number of rows), z.B. zeilennumerierte Ausgabe (<code>ls -l | awk '{print "Zeile "NR" : "$0}'</code>)</li>
+<li><code>FS</code> = verwendetes Spaltentrennzeichen (field separator)
 <ul>
-<li><code>ls</code> = listet aktuellen <strong>Ordnerinhalt</strong> auf (list)
-<ul>
-<li>“<code>-l</code>” = Tabellenansicht des Inhalts (ggf. Kurzform/Alias “<code>ll</code>” verfügbar)</li>
+<li>entweder via “<code>-F</code>” setzen (<code>echo "A;B" | awk -F ";" '{print $1}'</code>) (setzt auch OFS)</li>
+<li>oder explizit für alle Zeilen vorm Einlesen (<code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code>)</li>
 </ul></li>
-<li><code>pwd</code> = gibt den (absoluten) <strong>Pfad des aktuellen Ordners</strong> aus (print working directory)</li>
-<li><code>cd</code> = <strong>wechselt das Verzeichnis</strong> (change directory) :
+<li><code>OFS</code> = aktuelles Spaltentrennzeichen der Ausgabe (output field separator); muss (für alle Zeilen) im “<code>BEGIN</code>”-block (siehe unten) gesetzt werden (<code>echo "A B" | awk 'BEGIN{OFS=":"}{print $1,"lala"}'</code>)
 <ul>
-<li>ohne Argument ins home dir</li>
-<li>mit Argument zum entsprechenden Ort</li>
-<li>mit “<code>..</code>” in den übergeordneten Ordner</li>
-<li><a href="https://www.geeksforgeeks.org/cp-command-linux-examples/?ref=lbp">Beispiele</a></li>
-</ul></li>
-<li><code>man</code> = liefert eine <strong>Hilfeseite</strong> zum nachfolgenden Befehl (manual)
-<ul>
-<li>browsen mit Cursortasten</li>
-<li>Taste <code>h</code> liefert Befehlsmöglichkeiten</li>
-<li>verlassen mit Taste <code>q</code></li>
-</ul></li>
-<li><code>rm</code> = <strong>löschen</strong> (remove)</li>
-<li><code>mkdir</code> = <strong>Ordner erstellen</strong> (make directory)</li>
-<li><code>cp</code> = <strong>kopieren</strong> einer Datei (copy)
-<ul>
-<li>“<code>-r</code>” = auch Unterverzeichnisse und deren Inhalt (recursive)</li>
-</ul></li>
-<li><code>ln</code> = <strong>Verknüpfung/Shortcut</strong> zu Datei (oder Verzeichnis) anlegen (link)
-<ul>
-<li>“<code>-s</code>” = <strong>WAS MAN MEISST WILL</strong> = symbolische Verknüpfung, d.h. link ist quasi Pfad zum Ziel
-<ul>
-<li>wenn Ziel gelöscht ist der Link ungültig (dangling)</li>
-<li>wenn Ziel (gleichnamig) ersetzt, zeigt der Link auf neue Variante</li>
-<li>geht auch mit Verzeichnissen</li>
-</ul></li>
-<li>Standardfall = hard link, d.h. Link ist quasi zweite Pseudodatei die direkt auf der gleichen Datenbasis arbeitet
-<ul>
-<li>geht nur für Dateien (da Verzeichnisse nicht wirklich auf Festplatte liegen)</li>
-<li>wenn Zieldatei gelöscht, bleibt der Link intakt, da er immer noch auf die Datenbasis zeigt und dort operiert (nur alternativer Zugang zu den Daten gelöscht)</li>
+<li>“<code>;</code>” = Befehlstrennzeichen (Beispiel weiter unten)</li>
 </ul></li>
 </ul></li>
-<li><code>mv</code> = <strong>verschieben oder umbenennen</strong> (move)
+<li><code>print</code> = Ausgabe mit Zeilenumbruch (<code>echo "Hans Peter" | awk '{print "Name="$2"\nVorname="$1}'</code>)
 <ul>
-<li><a href="https://www.geeksforgeeks.org/mv-command-linux-examples/?ref=lbp">Beispiele</a></li>
+<li>Ausgaben mit <strong>double tick</strong> <code>"</code> quoten</li>
+<li><strong>Variablen nicht in quotes</strong> einschliessen (stehen vor/zwischen/hinter den gequoteten Strings, siehe obiges Beispiel oder hier nachfolgend)</li>
 </ul></li>
-<li><code>cat</code> = <strong>Inhalt</strong> einer oder mehrerer Dateien <strong>ausgeben</strong> (concatenate)</li>
-<li><code>less</code> = Inhalt einer <strong>Datei betrachten</strong> (Dateibrowser)
+<li><code>printf</code> = Ausgabe OHNE Zeilenumbruch (<code>echo "17" | awk '{printf "input="$0; printf "next"; print "linebreak"}'</code>)</li>
+<li>Kontrollstrukturen
 <ul>
-<li>Steuerung siehe “<code>man</code>” (weil letzteres less benutzt)</li>
-<li>kann <strong>auch als letztes Kommando</strong> in einer pipe verwendet werden, um die aktuelle Ausgabe zu testen</li>
+<li><code>if( NR%2 == 0 ) {print "gerade"} else {print $0}</code> = <strong>if</strong> conditional</li>
+<li><code>for( i=0; i&lt;5; i++ ) { printf " i="i; }</code> = <strong>for</strong> looping</li>
 </ul></li>
-<li><code>history</code> = Liste der <strong>zuletzt eingegebenen Befehle</strong>
-<ul>
-<li>“<code>!XYZ</code>” = sucht in der history den letzten Befehl, der mit “<code>XYZ</code>” beginnt <em>und führt ihn erneut aus</em></li>
-<li>“<code>!XYZ:p</code>” = Ausgabe des letzten Befehls, der mit “<code>XYZ</code>” beginnt</li>
-<li>“<code>!$</code>” = liefert den Argumententeil des letzten Befehls (“<code>!$:p</code>” gibt ihn nur aus), um ihn z.B. im nächsten Befehl zu verwenden</li>
+<li>Vor- und Nachbereitung der Ausgabe (z.B. für Kopf-/Fusszeilen oder zum initialisieren von Variablen) mittels “<code>BEGIN{}</code>” und “<code>END{}</code>”-Block (jeweils optional), z.B. <code>echo "Doe,John" | awk -F "," 'BEGIN{print "Vorname Nachname"}{print $2" "$1}END{print "#Ende"}'</code></li>
 </ul></li>
 </ul>
 <hr />
-</div>
-<div id="befehl-abbrechen" class="section level1">
-<h1>Befehl abbrechen</h1>
-<p>Wenn man</p>
+<div id="tutorials" class="section level2">
+<h2>&gt; Tutorials &lt;</h2>
+<p>Folgende kompakte Online awk Tutorials sind ein guter Einstieg</p>
 <ul>
-<li>einen Befehl unvollständig eingegeben hat und die Konsole “hängt” (d.h. auf Eingabe wartet), oder</li>
-<li>man den gerade aktiven Befehl stoppen will (weil er zu lange dauert oder gaaaanz viel Output auf die Konsole schreibt),</li>
+<li><a href="https://riptutorial.com/awk/topic/937/getting-started-with-awk">Getting started with awk</a> von riptutorial.com</li>
+<li><a href="https://riptutorial.com/awk/example/28060/extract-specific-column-field-from-specific-line">Extract specific column/field from specific line</a> von riptutorial.com</li>
 </ul>
-<p>kann man den Befehl mit “<strong>STRG+C</strong>” abbrechen (cancel).</p>
 <hr />
 </div>
-<div id="tutorials" class="section level1">
-<h1>&gt; Tutorials &lt;</h1>
-<div id="befehle-für-verzeichnisse" class="section level2">
-<h2>Befehle für Verzeichnisse</h2>
 </div>
-<div id="online-tutorials" class="section level2">
-<h2>Online Tutorials</h2>
+<div id="editoren-in-der-bash" class="section level1">
+<h1>Editoren in der BASH</h1>
+<p>Warum bzw. wann muss man sich mit Kommandozeileneditoren herumschlagen?</p>
 <ul>
-<li><a href="https://swcarpentry.github.io/shell-novice/01-intro/index.html">Shell Intro</a> von swcarpentry</li>
-<li><a href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Navigating Files and Directories</a> von swcarpentry</li>
-<li><a href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Working with Files and Directories</a> von swcarpentry</li>
-<li><a href="https://carpentries-incubator.github.io/shell-extras/01-man-pages/index.html">man Usage and Interpretation</a> von carpentries-incubator</li>
+<li>weil man ein Nerd ist und es kann…</li>
+<li>weil das Betriebssystem keine graphische Benutzeroberfläche hat (z.B. high performance Rechencluster etc.)</li>
+<li>weil die (Inter)netzverbindung schlecht ist</li>
+<li>weil man keine Maus braucht und ggf. damit “mal schnell(er)” was ändern kann (man ist ja schon vor Ort und muss sich nicht erst im “Datei öffnen”-Menü hinwühlen)</li>
+<li>…</li>
 </ul>
+<div id="vim" class="section level2">
+<h2>vi(m)</h2>
+<ul>
+<li><code>vi</code> oder <code>vim</code> = Kommandozeileneditor
+<ul>
+<li><strong>ESC</strong>-Taste = Wechsel in den “Kommandomodus”</li>
+<li>im Kommandomodus
+<ul>
+<li>Taste “<strong>i</strong>” oder “<strong>a</strong>” = Wechsel in den “Einfügemodus” (insert/append), d.h. Eingaben werden an der Cursorposition eingefügt</li>
+<li>Taste “<strong>R</strong>” = Wechsel in den “Überschreibmodus” (replace), d.h. Eingaben überschreiben die aktuelle Cursorposition</li>
+<li>“<code>:</code>”-Präfix leitet Kommandos ein, z.B.
+<ul>
+<li>“<code>:w</code>” = speichert die aktuelle Datei (write)</li>
+<li>“<code>:w myFile.txt</code>” = speichert den Inhalt in Datei “myFile.txt”</li>
+<li>“<code>:w!</code>” = überschreiben der Datei auch wenn geschützt etc.</li>
+<li>“<code>:q</code>” = <strong>beendet vim</strong> (quit); nicht möglich bei ungespeicherten Änderungen</li>
+<li>“<code>:q!</code>” = wirklich beenden und ungespeicherte Änderungen gehen verloren</li>
+<li>“<code>:wq</code>” = speichern und beenden (in einem Rutsch)</li>
+</ul></li>
+<li>“<code>d</code>”+ENTER = löscht aktuelle Zeile</li>
+<li>“<code>d2</code>”+ENTER = löscht aktuelle plus 2 Folgezeilen (also 3!)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Wer sich an vim versuchen will, sollte das schon direkt in Linux vorhandene “vim tutorial” bearbeiten, in dem man einfach <code>vimtutor</code> in der Konsole eingibt/aufruft!</p>
 </div>
-<div id="hard-vs.-soft-links" class="section level2">
-<h2>Hard vs. Soft Links</h2>
-<p>Und wer noch herausfinden will, was der Unterschied zwischen “hard” und “soft” links ist, der sollte sich folgendes Video anschauen.</p>
-<p><a href="http://www.youtube.com/watch?v=p_g_--ztI6Y">Video: (en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]</a></p>
-<p><a href="http://www.youtube.com/watch?v=p_g_--ztI6Y" title="(en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]"><img src="http://img.youtube.com/vi/p_g_--ztI6Y/0.jpg" /></a></p>
+<div id="nano" class="section level2">
+<h2>nano</h2>
+<p><code>nano</code> ist ein alternativer Editor zu <code>vim</code>, welcher einen anderen Befehlssatz bzw. eine andere Nutzerführung verwendet.</p>
+<p>Um mit <code>nano</code> vertraut zu werden, sollte man einen ersten Blick auf dessen <strong>eingebaute Hilfe</strong> werfen. Dazu</p>
+<ul>
+<li><code>nano</code> aufrufen</li>
+<li>mit “STRG+G” die Hilfe aufrufen</li>
+<li>mit “STRG+X” kann man diese und anschliessen das Programm verlassen</li>
+</ul>
 </div>
 </div>
 

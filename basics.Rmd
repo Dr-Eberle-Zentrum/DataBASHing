@@ -1,10 +1,22 @@
 ---
 title: "Konsolenbasics"
-
+author: "Martin Raden"
 ---
 
 
+-------------------------------------------
+
 Einführung von `cd, cp, history, ln, ls, man, mkdir, mv, pwd, rm`
+
+Die folgenden Videos von Bashino liefern einen ersten Eindruck, wie man sich auf der Kommandozeile in Ordnerstrukturen bewegt und wie Dateien und Ordner verwaltet werden können.
+
+[Video: Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]](http://www.youtube.com/watch?v=-47iZzZssCg?t=7) (ggf. Wiedergabegeschwindigkeit via "Einstellungen" ==> "Wiedergabegeschwindigkeit" ==> "1,25" erhöhen)
+
+[![](http://img.youtube.com/vi/-47iZzZssCg/0.jpg)](http://www.youtube.com/watch?v=-47iZzZssCg?t=7 "Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]")
+
+
+Das Folgevideo [#2 Befehle für Dateien (touch, cp, mv, rm etc) [7 min]](https://youtu.be/ISPW4CXAEj4?t=7) in der Playlist von Bashinho ist in der zweiten Hälfte etwas zu tief für diesen Kurs. Wenn man allerdings unseren "Grundlagen der Informatik" Kurs besucht hat, sollte man einige Sachen wiedererkennen und folgen können. :-D
+
 
 -------------------------------------------
 
@@ -67,7 +79,7 @@ Im allgemeinen gilt in Linux Shells:
 - `cp` = **kopieren** einer Datei (copy)
   - "`-r`" = auch Unterverzeichnisse und deren Inhalt (recursive)
 - `ln` = **Verknüpfung/Shortcut** zu Datei (oder Verzeichnis) anlegen (link)
-  - "`-s`" = WAS MAN MEISST WILL = symbolische Verknüpfung, d.h. link ist quasi Pfad zum Ziel
+  - "`-s`" = **WAS MAN MEISST WILL** = symbolische Verknüpfung, d.h. link ist quasi Pfad zum Ziel
     - wenn Ziel gelöscht ist der Link ungültig (dangling)
     - wenn Ziel (gleichnamig) ersetzt, zeigt der Link auf neue Variante
     - geht auch mit Verzeichnissen
@@ -79,9 +91,9 @@ Im allgemeinen gilt in Linux Shells:
 - `cat` = **Inhalt** einer oder mehrerer Dateien **ausgeben** (concatenate)
 - `less` = Inhalt einer **Datei betrachten** (Dateibrowser)
   - Steuerung siehe "`man`" (weil letzteres less benutzt)
-  - kann auch als letztes Kommando in einer pipe verwendet werden, um die aktuelle Ausgabe zu testen
+  - kann **auch als letztes Kommando** in einer pipe verwendet werden, um die aktuelle Ausgabe zu testen
 - `history` = Liste der **zuletzt eingegebenen Befehle**
-  - "`!XYZ`" = sucht in der history den letzten Befehl, der mit "`XYZ`" beginnt und führt ihn erneut aus
+  - "`!XYZ`" = sucht in der history den letzten Befehl, der mit "`XYZ`" beginnt *und führt ihn erneut aus*
   - "`!XYZ:p`" = Ausgabe des letzten Befehls, der mit "`XYZ`" beginnt
   - "`!$`" = liefert den Argumententeil des letzten Befehls ("`!$:p`" gibt ihn nur aus), um ihn z.B. im nächsten Befehl zu verwenden
 
@@ -98,35 +110,23 @@ Wenn man
 
 kann man den Befehl mit "**STRG+C**" abbrechen (cancel).
 
-\newpage
 
 -------------------------------------------
 
 
-# > Lernvideos & Tutorials <
-
-Die folgenden Videos von Bashino sind:
-
--    am Anfang leider recht laut und nervig, aber insgesamt m.E. gut
--    etwas laaaangsaaaam eeeeiiingeeeeesprooooocheeeen, was man aber mit "Einstellungen" ==> "Wiedergabegeschwindigkeit" ==> "1,25" oder höher gut korrigieren kann
+# > Tutorials <
 
 
 
 ## Befehle für Verzeichnisse
 
-[Video: Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]](http://www.youtube.com/watch?v=-47iZzZssCg)
-
-[![](http://img.youtube.com/vi/-47iZzZssCg/0.jpg)](http://www.youtube.com/watch?v=-47iZzZssCg "Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]")
-
-
-Das Folgevideo [#2 Befehle für Dateien (touch, cp, mv, rm etc) [7 min]](https://youtu.be/ISPW4CXAEj4) in der Playlist von Bashinho ist in der zweiten Hälfte etwas zu tief für diesen Kurs. Wenn man allerdings unseren "Grundlagen der Informatik" Kurs besucht hat, sollte man einige Sachen wiedererkennen und folgen können. :-D
 
 ## Online Tutorials
 
--    [Shell Intro](https://swcarpentry.github.io/shell-novice/01-intro/index.html)
--    [Navigating Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir/index.html)
--    [Working with Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir/index.html)
--    [man Usage and Interpretation](https://carpentries-incubator.github.io/shell-extras/01-man-pages/index.html)
+-    [Shell Intro](https://swcarpentry.github.io/shell-novice/01-intro/index.html) von swcarpentry
+-    [Navigating Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir/index.html) von swcarpentry
+-    [Working with Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir/index.html) von swcarpentry
+-    [man Usage and Interpretation](https://carpentries-incubator.github.io/shell-extras/01-man-pages/index.html) von carpentries-incubator
 
 
 ## Hard vs. Soft Links

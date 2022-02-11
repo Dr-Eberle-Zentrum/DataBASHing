@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Martin Raden" />
+
+
+<title>regex</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="dez-style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div id="logo-section">
+
+    <a  class="logo-link"
+        title="Universität Tübingen"
+        href="https://www.uni-tuebingen.de"><img
+            alt="Logo der Universität Tübingen"
+            src="https://uni-tuebingen.de/typo3conf/ext/project/Resources/Public/Images/Logo_Universitaet_Tuebingen.svg"
+            width="269px"
+            height="70px"
+    ></a><a  class="logo-link"
+        id="logo-dez"
+        title="Dr. Eberle Zentrum für digitale Kompetenzen"
+        href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen</a>
+
+  </div>
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Data BASHing</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Intro</a></li>
+        <li><a href="install.html">Install</a></li>
+        <li><a href="basics.html">Basics</a></li>
+        <li><a href="data.html">Processing</a></li>
+        <li><a href="regex.html">RegEx</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://uni-tuebingen.de/de/151602">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">regex</h1>
+<h4 class="author">Martin Raden</h4>
+
+</div>
+
+
+<hr />
+<p>Einführung von</p>
+<ul>
+<li><a href="#reguläre-ausdrücke">Reguläre Ausdrücke</a></li>
+<li><code>grep</code> in <a href="#zeilen-filtern">Zeilen filtern</a></li>
+<li><code>tr, sed</code>in <a href="#text-ersetzen">Text ersetzen</a></li>
+<li>Probleme mit <a href="#zeilenumbrüche">Zeilenumbrüche</a>n</li>
+</ul>
+<p>Zum Warmwerden gibts die folgenden Videos.</p>
+<p><a href="http://www.youtube.com/watch?v=uDh2RGg0ybo?t=7">Video: Bashino - #02: was soll das Ganze &amp; mehr von egrep [5 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=uDh2RGg0ybo?t=7" title="Bashino - #02: was soll das Ganze &amp; mehr von egrep [5 min]"><img src="http://img.youtube.com/vi/uDh2RGg0ybo/0.jpg" /></a></p>
+<p><a href="http://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7">Video: Bashino - #01 cat und egrep [11 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7" title="Bashino - #01 cat und egrep [11 min]"><img src="http://img.youtube.com/vi/nfdVQmS3e_Q/0.jpg" /></a></p>
+<p><a href="http://www.youtube.com/watch?v=wm35zPJOknI?t=7">Video: Bashino - #10 mit sed suchen und ersetzen [7 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=wm35zPJOknI?t=7" title="Bashino - #10 mit sed suchen und ersetzen [7 min]"><img src="http://img.youtube.com/vi/wm35zPJOknI/0.jpg" /></a></p>
+<p>Im (optionalen) <a href="https://youtu.be/LZ4lB10FgiU?t=7">Folgevideo #11 Gezieltes Ersetzen mit sed [8 min]</a> wird noch einmal mehr auf sed und reguläre Ausdrücke eingegangen.</p>
+<p>Wer immer noch nicht genug hat, kann sich im <a href="https://youtu.be/l7Fpujdp8CQ">sed Video von Pedagogy (en) [18 min]</a> noch haufenweise andere “sed magics” anschauen.</p>
+<hr />
+<div id="reguläre-ausdrücke" class="section level1">
+<h1>Reguläre Ausdrücke</h1>
+<p>Reguläre Ausdrücke sind einer der Grundpfeiler für die konsolengestützte Datenprozessierung. Damit kann man automatisiert und/oder mit wenig Aufwand</p>
+<ul>
+<li><strong>nach</strong> Vorkommen von <strong>Textmustern suchen</strong> (z.B. via <code>grep</code>), um
+<ul>
+<li>nur gesuchte Muster anzeigen</li>
+<li>alle Zeilen(nummern) anzuzeigen, die das Muster enthalten</li>
+<li>alle Dateien zu finden, die ein Textmuster beinhalten</li>
+</ul></li>
+<li>Textblöcke <strong>verändern und ersetzen</strong> (z.B. via <code>sed</code>)</li>
+</ul>
+<p>Dabei ist unter “Textmuster” nicht ein exaktes Wort oder dergleichen zu verstehen, sondern eine Suchkodierung, welche Variabilität zulässt.</p>
+<p>Als Einsteig ein kleines Beispiel: Wir haben die folgenden Worte</p>
+<table>
+<thead>
+<tr class="header">
+<th>soll gefunden werden</th>
+<th>soll nicht gefunden werden</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Frida</td>
+<td>Fritz</td>
+</tr>
+<tr class="even">
+<td>Erna</td>
+<td>Hugo</td>
+</tr>
+<tr class="odd">
+<td>Lisa</td>
+<td>Lino</td>
+</tr>
+</tbody>
+</table>
+<p>Die einfachste (und am wenigsten flexible) Lösung wäre es, die gesuchten Worte alle als Alternativen hintereinander zu hängen:</p>
+<ul>
+<li>“<code>Frida|Erna|Lisa</code>” = wobei “<code>|</code>” für ein “ODER” steht</li>
+</ul>
+<p>Wenn man reguläre Ausdrücke baut, muss man genau schauen, was die gesuchten Wörter (oder Textpassagen) gemeinsam haben. In unserem Fall enden alle gesuchten Namen mit “a”, was wir verwenden können. Was davor für Buchstaben kommen (und wieviele), ist erst einmal unerheblich, um die Worte von den nicht gesuchten zu unterscheiden. Daher könnten wir folgendes verwenden:</p>
+<ul>
+<li>“<code>.*a</code>” = wobei “<code>.</code>” für ein beliebiges Zeichen (Buchstaben, Zahlen, Leer-, Satzzeichen, …) steht und “<code>*</code>” für eine beliebige Anzahl (auch 0) des vorherigen Teils (also hier “<code>.</code>”)</li>
+</ul>
+<p>Das funktioniert, liefert aber ggf. zu viel Variabilität, was ein häufiger Fallstrick bei regulären Ausdrücken ist. Sprich sie sind zu unkonkret. In unserem Fall passt der Ausdruck auch auf: “..a”, “lala”, “Hans-Anna”, … Sie sehen das Problem? Um dieses zu Umgehen, könnte man folgende Sachen machen:</p>
+<ul>
+<li>“<code>.+a</code>” = wir fordern mit “<code>+</code>”, dass vor dem “a” mindestens ein Buchstabe ist</li>
+<li>“<code>[a-zA-Z]+a</code>” = wir geben in “<code>[]</code>” ganz genau an, welche Buchstaben wir erlauben (hier z.B. keine Umlaute)</li>
+<li>“<code>\w+a</code>” = dazu könnten wir auch eine vordefinierte character class (hier <code>\w</code> für Wortbuchstabe) nehmen</li>
+<li>“<code>[A-Z][a-z]*a</code>” = mit “<code>[A-Z</code>” sichern wir, dass der erste Buchstabe grossgeschrieben ist und anschliessend können (da “<code>*</code>”) nur Kleinbuchstaben in der Wortmitte sein</li>
+<li>… und so weiter</li>
+</ul>
+<p>Das Beispiel zeigt, dass reguläre Ausdrücke ganz allgemein (“<code>.*a</code>”) oder sehr präzise (“<code>Frida|Erna|Lisa</code>”) sein können. Die Kunst ist es nun, den für die anstehende Aufgabe passenden regulären Ausdruck zu erdenken. Dazu hilft einem das beiliegende CheatSheet, welches man sicher auch in Zukunft immer wieder heraus holen muss.</p>
+<p>Um regulären Ausdrücken zu entwickeln oder um damit herumzuspielen um Effekte von Änderungen zu beobachten, eigenen sich online regex tester. Diese könnten ihnen u.a. auch beim Bearbeiten der Übungen oder Tests behilflich sein. Ein solcher ist zum Beispiel</p>
+<p><a href="https://www.regextester.com/">https://www.regextester.com/</a></p>
+<hr />
+<div id="cheatsheet" class="section level2">
+<h2>CheatSheet</h2>
+<p><a href="regex/regular-expressions-cheat-sheet-v2_600_0.png"><img src="regex/regular-expressions-cheat-sheet-v2_600_0.png" /></a></p>
+<hr />
+</div>
+<div id="tutorials" class="section level2">
+<h2>&gt; Tutorials &lt;</h2>
+<ul>
+<li><a href="https://regexone.com/">step-by-step Tutorial zu regulären Ausdrücken</a> von regexone.com</li>
+<li>Spielerisch können sie mit <a href="https://regexcrossword.com/">RegEx-Kreuzworträtseln</a> das lesen (und verstehen) von regulären Ausdrücken üben. Bis zu welchem Level kommen sie?</li>
+<li>Zum “RegEx schreiben üben” sind die <a href="http://regextutorials.com/">“Exercises” von regextutorials.com</a> hilfreich!</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="zeilen-filtern" class="section level1">
+<h1>Zeilen filtern</h1>
+<ul>
+<li><code>grep</code> = Suche (und Ausgabe) von Zeilen (oder Teilen) die ein gegebenes Textmuster oder -stück enthalten
+<ul>
+<li>wichtige Suchmodi
+<ul>
+<li>“<code>-P</code>” = Perl RegEx Modus = seeehr umfangreicher RegEx Support</li>
+<li>“<code>-F</code>” = (fixiertes) Stringmatching (z.B. zur Suche von RegEx-Syntax in Texten)</li>
+<li>“<code>-E</code>” = egrep = extended POSIX RegEx matching = Suche mit standardisierten Ausdrücken</li>
+</ul></li>
+<li>“<code>-i</code>” = Gross-Klein-Schreibung egal</li>
+<li>“<code>-c</code>” = Anzahl der Zeilen, die einen Match enthalten</li>
+<li>“<code>-v</code>” = Gegenteilige Ausgabe (inverted), d.h. alle Zeilen die NICHT matchen</li>
+<li>“<code>-n</code>” = Zeilennummern</li>
+<li>“<code>-o</code>” = nur matchig parts (z.B. für reguläre Ausdrücke wichtig)</li>
+<li>“<code>-A XX</code>” = matching line und XX nachfolgende Zeilen ausgeben (append)</li>
+<li>“<code>-B XX</code>” = wie -A nur für vorangehende Zeilen (before)</li>
+<li><a href="https://www.geeksforgeeks.org/grep-command-in-unixlinux/">Beispiele</a></li>
+</ul></li>
+</ul>
+<div id="regex-mit-grep" class="section level2">
+<h2>RegEx mit grep</h2>
+<ul>
+<li>am besten <strong>immer</strong> im “<code>-P</code>” <strong>(Perl) Modus nutzen</strong>, da nur so wirklich alle regex-Feature wie “<code>\</code>”-based character classes (z.B. “<code>\d</code>” etc) verfügbar sind, z.B. <code>grep --help | grep -P "^\s+-\w\W"</code></li>
+<li>Ausdrücke müssen i.d.R. ge<strong>quote</strong>t werden, s.o.
+<ul>
+<li>ggf. sogar mit single quotes, wenn “<code>$</code>” etc. im Ausdruck verwendet wird</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="tutorials-1" class="section level2">
+<h2>&gt; Tutorials &lt;</h2>
+<p>Dieses <a href="https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux">Online-grep-regex-Tutorial</a> gibt einen guten Einstieg in die Nutzung von regulären Ausdrücken und <code>grep</code>!</p>
+<hr />
+</div>
+</div>
+<div id="text-ersetzen" class="section level1">
+<h1>Text ersetzen</h1>
+<ul>
+<li><code>tr</code> = ersetzt/löscht <strong>EINZELbuchstaben</strong>/-character (translate)
+<ul>
+<li>Bsp. <code>echo "1,2,3" | tr "," "\n"</code> ersetzt Kommas mit Zeilenumbrüchen</li>
+<li><strong>mehrere Zeichen auf einmal möglich</strong>, aber gleiche Anzahl an Ersetzungen nötig, z.B. <code>echo "1,2 3" | tr ", " "\n\n"</code> ersetzt sowohl Komma als auch Leerzeichen JEWEILS mit Zeilenumbruch (unabhängig voneinander!)</li>
+<li>“<code>-d</code>” löscht entsprechende Zeichen, z.B. <code>echo "Hans-Peter" | tr -d "-"</code> löscht alle Trennstriche</li>
+<li>versteht auch einige <strong>regex-Gruppen</strong> (siehe tr Manpage)</li>
+</ul></li>
+<li><code>sed</code> = stream editor = u.a. für <strong>beliebige Textersetzung</strong>
+<ul>
+<li>d.h. man definiert vorher, was passieren soll, und lässt das “Programm” dann auf einen Text etc. anwenden (keine Benutzeroberfläche!)</li>
+<li>Eingabe wird nur einmal verarbeitet (input -&gt; Verarbeitung -&gt; output), sodass sed gut in pipelines verwendet werden kann (analog zu awk)</li>
+<li>“<code>s/text/replacement/</code>” = (ersten) <strong>suchen und ersetzen von Texten</strong> (substitute), z.B. <code>echo "1,2,3" | sed "s/,/ - /"</code>
+<ul>
+<li>“<code>s/../../g</code>” = <strong>ALLE</strong> ersetzen, z.B. <code>echo "1,2,3" | sed "s/,/ - /g"</code></li>
+<li>“<code>s/../../4</code>” = vierten Treffer (pro Zeile) ersetzen</li>
+<li>“<code>s/../../I</code>” = Gross-/Kleinschreibung ignorieren (ignore case), z.B. <code>echo "a,A" | sed "s/a/b/Ig"</code></li>
+<li>Kombinationen (siehe “<code>/Ig</code>” in “ignore case” Beispiel</li>
+</ul></li>
+<li>“<code>-r</code>” ermöglicht die Verwendung von <strong>erweiterten RegEx Ausdrücken als Suchtext</strong>
+<ul>
+<li>z.B. <code>echo "1. a." | sed "s/[^a]?\./x-ter/g"</code></li>
+</ul></li>
+<li><strong>mehrere Ersetzungen mit Semikolon trennen</strong>, z.B. <code>echo "a,A" | sed "s/a/b/g; s/A/B/g"</code> (werden nacheinander ausgeführt, pro Zeile)</li>
+<li><strong>Filter</strong>n der verarbeiteten Zeilen mittels <strong>vorangestellt</strong>er Bedingungen
+<ul>
+<li><strong>Zeilennummer</strong>, z.B. <code>echo -e "Zeile 1\nZeile 2" | sed "2 s/i/l/"</code></li>
+<li><strong>Zeilenbereich</strong>, z.B. <code>echo "1,2,33,4" | tr "," "\n" | sed "2,3 s/./X/"</code></li>
+<li><strong>ab Zeile X</strong> via “<code>$</code>” (“<code>$</code>” = Platzhalter für “letzte Zeile”), z.B. <code>echo "1,2,3,4" | tr "," "\n" | sed "2,$ s/./X/"</code></li>
+<li><strong>RegEx</strong>-Match (in Zeile), z.B. <code>echo -e "#1\n2" | sed -r "/^#/ s/[:digit:]/X/"</code> (dieser Aufruf geht zwar auch ohne “<code>-r</code>”, aber sicher ist sicher! ;) )</li>
+<li>alle gematchten Zeilen werden verarbeitet und am Ende ausgeben</li>
+</ul></li>
+<li>“<code>-n</code>” verhindert den automatischen output
+<ul>
+<li>sinnvoll in Kombination mit “<code>p</code>” Befehl (print), z.B. <code>echo "1,2,3,4" | tr "," "\n" | sed -n "2 p"</code> liefert die zweite Zeile (ohne “<code>-n</code>” würde jeder Zeile standardmässig ausgegeben und die Zweite noch ein zweites mal aufgrund des print Befehls!)</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="zeilenumbrüche" class="section level1">
+<h1>Zeilenumbrüche</h1>
+<ul>
+<li>je nach Betriebssystem unterschiedliche “Kodierung”
+<ul>
+<li>“<code>\n</code>” = LF : Linux (line feed = ASCII 10)</li>
+<li>“<code>\r</code>” = CR : (altes) MacOs (carriage return = ASCII 13)</li>
+<li>“<code>\r\n</code>” = CR LF : Windows (DOS)</li>
+</ul></li>
+<li>entweder <a href="https://youtu.be/obqYfwzR-bQ">via Texteditor</a> ändern, oder <a href="http://mikiwiki.org/wiki/Zeilenumbruch">via Kommandozeile</a>
+<ul>
+<li><code>dos2unix</code> = einfaches Tool um Eingabe von Windows-Kodierung in Linux-Kodierung umzuwandeln
+<ul>
+<li>installieren via <code>sudo apt install dos2unix</code> (ggf. zuvor noch <code>sudo apt-get update</code> notwendig, falls Paket noch nicht verfügbar)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Kodierung von Zeilenumbrüchen sorgt immer wieder für Probleme bei Textersetzungen/-formatierung! Daher immer (wieder) dran denken!</strong></p>
+</div>
+
+
+
+<div id="foot-section">
+  <div style="display:inline-block">
+    This work is licensed under a
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+      Creative Commons Attribution-ShareAlike 4.0 International License.</a>
+      <br>
+    by
+    <a title="Dr. Eberle Zentrum für digitale Kompetenzen"
+      href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen, Universität Tübingen</a>
+  </div>
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+    <img
+          alt="Creative Commons License"
+          style="border-width:0; margin-left:10px"
+          src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Martin Raden" />
 
 
 <title>Datenverarbeitung</title>
@@ -345,6 +346,7 @@ div.tocify {
         <li><a href="install.html">Install</a></li>
         <li><a href="basics.html">Basics</a></li>
         <li><a href="data.html">Processing</a></li>
+        <li><a href="regex.html">RegEx</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="https://uni-tuebingen.de/de/151602">Contact</a></li>
@@ -358,16 +360,23 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Datenverarbeitung</h1>
+<h4 class="author">Martin Raden</h4>
 
 </div>
 
 
+<hr />
 <p>Einführung von</p>
 <ul>
 <li><code>cat, head, tail, less, sort, uniq, wc</code> in <a href="#ein-erster-blick">Ein erster Blick</a></li>
 <li><code>&gt;, &gt;&gt;, &lt;, /dev/null</code> in <a href="#piping-und-streams">Piping und Streams</a></li>
 <li><code>cut, paste, join</code> in <a href="#datenspalten-verarbeiten">Datenspalten verarbeiten</a></li>
 </ul>
+<p>Um zu sehen, wo es hingehen soll, gibts die folgenden beiden Videos.</p>
+<p><a href="http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7">Video: Bashino - #05 Daten sortieren (sort uniq sort) [5 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7" title="Bashino - #05 Daten sortieren (sort uniq sort) [5 min]"><img src="http://img.youtube.com/vi/EhuHvJwUMKY/0.jpg" /></a></p>
+<p><a href="http://www.youtube.com/watch?v=2_lgnCzwUEM">Video: (en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=2_lgnCzwUEM" title="(en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]"><img src="http://img.youtube.com/vi/2_lgnCzwUEM/0.jpg" /></a></p>
 <hr />
 <div id="ein-erster-blick" class="section level1">
 <h1>Ein erster Blick</h1>
@@ -389,6 +398,10 @@ div.tocify {
 <li>Taste <code>h</code> - Hilfe mit Kommandoübersicht (help)</li>
 <li>Taste <code>q</code> - schliessen des Betrachters (quit)</li>
 </ul></li>
+<li><code>wc</code> = Zeichen-/Wort-/Zeilenstatistik (word count)
+<ul>
+<li>“<code>wc -l</code>” - <strong>Anzahl Zeilen</strong> (lines) einer Datei</li>
+</ul></li>
 </ul>
 <hr />
 </div>
@@ -409,18 +422,7 @@ div.tocify {
 <li>“<code>uniq -c</code>” liefert auch Anzahl der Wiederholungen</li>
 <li><a href="https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/?ref=lbp">Beispiele</a></li>
 </ul></li>
-<li><code>wc</code> = Zeichen-/Wort-/Zeilenstatistik (word count)
-<ul>
-<li>“<code>wc -l</code>” - <strong>Anzahl Zeilen</strong> (lines) einer Datei</li>
-</ul></li>
 </ul>
-<div style="page-break-after: always;"></div>
-<hr />
-</div>
-<div id="lernvideos-tutorials" class="section level2">
-<h2>&gt; Lernvideos &amp; Tutorials &lt;</h2>
-<p>lala</p>
-<div style="page-break-after: always;"></div>
 <hr />
 </div>
 </div>
@@ -462,10 +464,13 @@ div.tocify {
 <li>Fehlerausgabe (stderr) ignorieren (wenn z.B. “nur” Warnungen etc.) : “<code>2&gt; /dev/null</code>”</li>
 </ul></li>
 </ul>
-<div style="page-break-after: always;"></div>
 <hr />
-<div id="lernvideos-tutorials-1" class="section level2">
-<h2>&gt; Lernvideos &amp; Tutorials &lt;</h2>
+<div id="tutorials" class="section level2">
+<h2>&gt; Tutorials &lt;</h2>
+<p>Im Anschluss empfehlen wir das folgende</p>
+<ul>
+<li>Tutorial zu <a href="https://swcarpentry.github.io/shell-novice/04-pipefilter/index.html">Pipes and Filters</a> von swcarpentry</li>
+</ul>
 <hr />
 </div>
 </div>
@@ -493,11 +498,6 @@ div.tocify {
 <li>eine Eingabe kann auch von stdin (z.B. via piping kommen); dann muss als entsprechender “Dateiname” ein - angegeben werden</li>
 </ul></li>
 </ul>
-<div style="page-break-after: always;"></div>
-<hr />
-<div id="lernvideos-tutorials-2" class="section level2">
-<h2>&gt; Lernvideos &amp; Tutorials &lt;</h2>
-</div>
 </div>
 
 

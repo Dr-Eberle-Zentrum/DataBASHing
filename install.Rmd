@@ -1,6 +1,6 @@
 ---
 title: "Softwareinstallation"
-
+author: "Martin Raden"
 ---
 
 
@@ -65,7 +65,7 @@ Der folgende Link zeigt, wie sie [in Win10 den WSL Standardnutzer ändern](https
 -------------------------------------------
 
 
-# > Lernvideos & Tutorials < 
+# > Videos & Tutorials < 
 
 
 -------------------------------------------
