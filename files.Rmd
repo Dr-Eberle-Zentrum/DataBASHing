@@ -129,9 +129,9 @@ Einführung von
   - "`-`" als "Dateiname" liest STDIN und gibt komprimierte Daten in STDOUT aus, z.B. "`ls | gzip - > ls-output.gz`"
 - "`-k`" = keep = Originaldatei wird erhalten
 - Varianten von bekannten Programmen, die direkt mit **gzip-ten Text-Dateien** umgehen können
-  - `zcat` - z.B. "`zcat ls-output.gz`" = entspricht "`gunzip -c`" aber ggf. intuitiver
+  - `zcat` - z.B. "`zcat ls-output.gz`" = entspricht "`gunzip -c ls-output.gz`" aber ggf. intuitiver
   - `zless` - z.B. "`zless ls-output.gz`"
-  - `zgrep`
+  - `zgrep` - direktes suchen in komprimierten Dateien
 
 ## bzip2
 

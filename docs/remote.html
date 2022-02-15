@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Martin Raden" />
+
+
+<title>Remotezugriff auf externe Rechner/Dateien</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="dez-style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div id="logo-section">
+
+    <a  class="logo-link"
+        title="Universität Tübingen"
+        href="https://www.uni-tuebingen.de"><img
+            alt="Logo der Universität Tübingen"
+            src="https://uni-tuebingen.de/typo3conf/ext/project/Resources/Public/Images/Logo_Universitaet_Tuebingen.svg"
+            width="269px"
+            height="70px"
+    ></a><a  class="logo-link"
+        id="logo-dez"
+        title="Dr. Eberle Zentrum für digitale Kompetenzen"
+        href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen</a>
+
+  </div>
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Data BASHing</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Intro</a></li>
+        <li><a href="install.html">Install</a></li>
+        <li><a href="basics.html">Basics</a></li>
+        <li><a href="data.html">Processing</a></li>
+        <li><a href="regex.html">RegEx</a></li>
+        <li><a href="edit.html">Edit</a></li>
+        <li><a href="files.html">Files</a></li>
+        <li><a href="remote.html">Remote</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://uni-tuebingen.de/de/151602">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Remotezugriff auf externe Rechner/Dateien</h1>
+<h4 class="author">Martin Raden</h4>
+
+</div>
+
+
+<hr />
+<p>Einführung von</p>
+<ul>
+<li><code>wget, curl</code> in <a href="#zugriff-auf-webressourcen">Zugriff auf Webressourcen</a></li>
+<li><code>ssh</code> in <a href="#ssh-zugriff">SSH Zugriff</a></li>
+<li><code>scp, rsync</code> in <a href="#dateitransfer-im-netz">Dateitransfer im Netz</a></li>
+</ul>
+<p><a href="http://www.youtube.com/watch?v=qE77MbDnljA">Video: Corey Schafer - How To Use The rsync Command - Sync Files Locally and Remotely [18 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=qE77MbDnljA" title="Corey Schafer - How To Use The rsync Command - Sync Files Locally and Remotely [18 min]"><img src="http://img.youtube.com/vi/qE77MbDnljA/0.jpg" /></a></p>
+<hr />
+<div id="zugriff-auf-webressourcen" class="section level1">
+<h1>Zugriff auf Webressourcen</h1>
+<div id="dateidownload" class="section level2">
+<h2>Dateidownload</h2>
+<p><code>wget</code> - expliziter Dateidownload ohne Logindaten</p>
+<ul>
+<li>“<code>-O</code>” (capital O!) = output = Name des Ausgabedatei (ansonsten Dateiname aus Link oder komplette URL als Dateiname)</li>
+<li>“<code>-i</code>” = input = alternative: Name einer Datei, die mehreren URLs von Zieldateien zum Download listet (dann keine URL in Aufruf angegeben)</li>
+<li>“<code>-c</code>” = continue = Download weiterführen (wenn zB. unterbrochen durch Netzwerkfehler, reboot, etc.)</li>
+<li>z.B. <code>wget https://avatars.githubusercontent.com/u/72390537 -O uni-palme.jpg</code></li>
+</ul>
+</div>
+<div id="formulare-abfragen" class="section level2">
+<h2>Formulare abfragen</h2>
+<p><code>curl</code> - Abfrage von Formularergebnissen (Eingabemasken)</p>
+<hr />
+</div>
+</div>
+<div id="ssh-zugriff" class="section level1">
+<h1>SSH Zugriff</h1>
+<hr />
+<div id="verbindungsaufbau" class="section level2">
+<h2>Verbindungsaufbau</h2>
+<ul>
+<li>basiert auf <strong>public-key Verschlüsselung</strong>
+<ul>
+<li>dazu <strong>zwei Schlüssel</strong> nötig:
+<ul>
+<li>mit <strong>public key</strong> werden Daten <strong>verschlüsselt</strong></li>
+<li>mit <strong>private key</strong> werden verschlüsselte Daten <strong>entschlüsselt</strong></li>
+</ul></li>
+</ul></li>
+<li>Verbindungsaufbau immer <strong>zweischrittig</strong>:
+<ul>
+<li><strong>(Schritt 1) Verschlüsselung herstellen</strong> (analog zu HTTPS Verbindungsaufbau, s.o.)
+<ul>
+<li>Server schickt dazu seinen public key an Client</li>
+</ul></li>
+<li><strong>(Schritt 2) Nutzer-Authentifizierung</strong>
+<ul>
+<li>Client schickt dazu seinen public key an Server</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Einstiegsartikel: Wie funktioniert SSH?</strong></p>
+<ul>
+<li>(www) <a href="https://web-development.github.io/git/public-private-key/">Was sind <strong>SSH Schlüssel</strong> und wozu brauche ich sie?</a></li>
+<li>(www-en) <a href="https://www.manageengine.com/key-manager/information-center/what-is-ssh-key-management.html">Was passiert beim Einloggen mittels <strong>SSH Authentifizierung</strong>?</a></li>
+<li>(www) <a href="https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/">HTTPS <strong>Verschlüsselungsaufbau</strong></a> = Schritt 1</li>
+<li>(www) <a href="https://www.ip-insider.de/was-ist-secure-shell-ssh-ssh-1-ssh-2-openssh-a-691217/"><strong>Wozu</strong> braucht man SSH Verbindungen?</a></li>
+</ul>
+<p>Nachdem sie obige Artikel studiert haben, sollten sie den folgenden beiden zusammenfassenden Infografiken folgen können.</p>
+<div id="verschlüsselung" class="section level3">
+<h3>1 - Verschlüsselung</h3>
+<p>Schritt 1 - Herstellung einer verschlüsselten Verbindung (analog zu HTTPS Verbindungsaufbau)</p>
+<p><a href="remote/How-HTTPS-Works.png"><img src="remote/How-HTTPS-Works.png" style="width:50.0%" /></a></p>
+<p>(Grafik von <a href="https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/">tiptopsecurity.com</a>)</p>
+</div>
+<div id="authentifizierung" class="section level3">
+<h3>2 - Authentifizierung</h3>
+<p>Schritte einer Public Key Authentifizierung</p>
+<ol style="list-style-type: decimal">
+<li>[einmalig] public key wird in “authorized_keys” im User account auf Server hinterlegt</li>
+<li>Verbindung wird initialisiert, dazu Nutzernamen und public key übermittelt. Server prüft, ob public key im “authorized_keys” file des Nutzers vorhanden.</li>
+<li>Wenn ja, Server verschlüsselt zufällige Nachricht mit dem public key und schickt diese an den User.</li>
+<li>User entschlüsselt Nachricht mit private key (nur damit möglich) und schickt diese (bzw. dessen MD5 sum) wieder an den Server.</li>
+<li>Wenn die originale Nachricht und die zurückgeschickte übereinstimmen, ist die Authentifizierung abgeschlossen und der Nutzer erhält Zugriff.</li>
+</ol>
+<p><a href="remote/ssh-key-based-authentication_500_0.png"><img src="remote/ssh-key-based-authentication_500_0.png" style="width:70.0%" /></a></p>
+<p>(Grafik von <a href="https://www.manageengine.com/key-manager/information-center/what-is-ssh-key-management.html">manageengine.com</a>)</p>
+<hr />
+</div>
+</div>
+<div id="ssh-keys" class="section level2">
+<h2>SSH Keys</h2>
+<ul>
+<li><code>ssh-keygen</code> = <strong>generiert Schlüsselpaar</strong> (private + public) und legt sie im <code>$HOME/.ssh</code> Verzeichnis ab
+<ul>
+<li>Fragen nach Schlüsselname und PassPhrase ggf. einfach mit Eingabetaste (keine Eingabe) bestätigen und (erstmal) Standardwert verwenden</li>
+</ul></li>
+<li><strong>Public key</strong> (z.B. in <code>$HOME/.ssh/id_rsa.pub</code>) in der Datei <code>$HOME/.ssh/authorized_keys</code> <strong>als neue Zeile</strong> eintragen
+<ul>
+<li>z.B. via “<code>cat $HOME/.ssh/id_rsa.pub &gt;&gt; $HOME/.ssh/authorized_keys</code>” (damit wird Zieldatei auch angelegt, wenn diese noch nicht vorhanden ist)</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="lokaler-ssh-server" class="section level2">
+<h2>Lokaler SSH Server</h2>
+<ul>
+<li>in Ubuntu:
+<ul>
+<li>prüfen ob am Laufen = <code>sudo service ssh status</code>
+<ul>
+<li>erstmal installieren, wenn nicht da = <code>sudo apt-get install openssh-server</code></li>
+</ul></li>
+<li>Server (neu) starten = <code>sudo service ssh restart</code>
+<ul>
+<li>falls die Fehlermeldung “<code>no hostkeys available</code>” erscheint, diese ggf. neu erzeugen via “<code>sudo ssh-keygen -A</code>”</li>
+</ul></li>
+<li>Server stoppen = <code>sudo service ssh stop</code></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="verbindung-herstellen" class="section level2">
+<h2>Verbindung herstellen</h2>
+<ul>
+<li><code>ssh</code> = SSH Client um Verbindung mit einem SSH Server aufzubauen
+<ul>
+<li><code>ssh USERNAME@SERVERNAME</code>
+<ul>
+<li><code>USERNAME</code> ist optional; wenn fehlend wird der eigene Benutzername der aktuellen shell genommen, von der der Aufruf kommt</li>
+<li><code>SERVERNAME</code> = IP (zB 192.168.1.32) oder Rechnername (herzblatt.gesucht.de)</li>
+</ul></li>
+</ul></li>
+<li>wenn:
+<ul>
+<li>lokaler SSH Server gestartet wurde (siehe oben)</li>
+<li>SSH key pair generiert und unter Standardnamen im <code>.ssh</code> Verzeichnis abgelegt wurden</li>
+<li>lokale <code>$HOME/.ssh/authorized_keys</code> Datei mit public key erweitert wurde</li>
+</ul></li>
+<li>dann funktioniert:
+<ul>
+<li><code>ssh localhost</code> = <strong>Verbindung zum eigenen Computer</strong> (via SSH) :D</li>
+<li>mit “<code>exit</code>” schliessen sie die Verbindung und kehren zur “ssh-aufrufenden Shell” zurück</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="dateitransfer-im-netz" class="section level1">
+<h1>Dateitransfer im Netz</h1>
+<hr />
+<div id="kopieren" class="section level2">
+<h2>Kopieren</h2>
+<p><code>scp</code> - SSH-basierter cp-Befehl für Dateitransfer von und zu Servern</p>
+<ul>
+<li><code>scp SOURCE TARGET</code>
+<ul>
+<li><code>SOURCE</code> und <code>TARGET</code> können Serverangaben enthalten im Format: <code>USER@SERVER:FILEorFOLDER</code>
+<ul>
+<li>“<code>USER@</code>” - optionaler Nutzername, ansonsten eigener Nutzername verwendet</li>
+<li>“<code>SERVER</code>:” - optionaler Servername (IP oder Adresse) im internen Netzwerk oder Internet; wenn nicht angegeben wird hier der eigene Rechner angenommen (<code>localhost</code>)</li>
+<li>“<code>FILEorFOLDER</code>” - Name der Quell-/Zieldatei bzw. Verzeichnis</li>
+<li>BEACHTEN: <strong>absolute und relative Pfade</strong> (bzgl. <code>$HOME</code> im remote server) möglich</li>
+</ul></li>
+<li><code>SOURCE</code> oder <code>TARGET</code> müssen auf anderem Server liegen, <strong>nicht für lokales Kopieren</strong> vorgesehen!</li>
+</ul></li>
+<li>ggf. Passwortabfrage (wenn SSH Server dies erlaubt)</li>
+<li>Wenn <strong>pub-key Authentifizierung</strong> eingerichtet ist (und der pub-key auf dem Server schon liegt), wird diese automatisch verwendet (keine Abfrage von login oder Passwort)</li>
+<li>“<code>-r</code>” - recursively - alle Unterverzeichnisse und -dateien werden entsprechend der wildcard-Angabe (mit <code>*</code> oder <code>?</code>) kopiert</li>
+<li>z.B. “<code>scp elrond@rivendell:missingRings.txt .</code>” holt die fehlende Liste zum Nachschauen ins aktuelle Verzeichnis (wenn die Authentifizierung klappt und der Server erreichbar ist)</li>
+</ul>
+<hr />
+</div>
+<div id="synchronisierenbackup" class="section level2">
+<h2>Synchronisieren/Backup</h2>
+<p><code>rsync</code> - Kopieren/Synchronisierung von Verzeichnissen für Archivierung und Spiegelung</p>
+<ul>
+<li><code>rsync -a SOURCE TARGET</code>
+<ul>
+<li><code>SOURCE</code> und <code>TARGET</code> <strong>wie bei scp</strong> definierbar</li>
+<li>“<code>/</code>” <strong>am Ende</strong> von <code>SOURCE</code> = nur INHALT des Verzeichnisses synchronisieren (sonst auch Verzeichnisname im <code>TARGET</code> angelegt)</li>
+<li>beide <strong>können auf dem gleichen Rechner sein</strong> (lokale Archivierung)</li>
+</ul></li>
+<li><strong>Standardverhalten</strong> = alles was in <code>SOURCE</code> genannt ist (bzw. via wildcards gemappt wird) wird nach <code>TARGET</code> kopiert (und dortige Varianten ggf. ersetzt)
+<ul>
+<li>kann eingeschränkt werden auf
+<ul>
+<li>nur geänderte Dateien (neuer/grösser/kleiner)</li>
+<li>fehlende Dateien/verzeichnisse</li>
+<li>… (siehe man page)</li>
+</ul></li>
+</ul></li>
+<li>“<code>-a</code>” = archiving = Dateirechte etc. bleiben erhalten, im Detail eine <strong>Kombination von</strong>
+<ul>
+<li>“<code>-t</code>” = timestamp = erhalte Zeitstempel</li>
+<li>“<code>-r</code>” = recursive</li>
+<li>“<code>-l</code>” = Links werden als solche kopiert (nicht deren Zieldatei)</li>
+<li>“<code>-p</code>” = permissions erhalten</li>
+<li>“<code>-g</code>” = group Rechte erhalten</li>
+<li>“<code>-o</code>” = ownership erhalten</li>
+<li>“<code>-D</code>” = special files erhalten</li>
+</ul></li>
+<li>“<code>-z</code>” = zip compressed = komprimierte Übertragung für schnelleren Synch von Text-basierten Dateien</li>
+<li>(“<code>-e ssh</code>”) = execute … = führt <strong>SSH</strong> für die Erstellung der remote Verbindung aus = <strong>Standard bei neueren</strong> rsync Versionen</li>
+<li>“<code>-nv</code>” = no execution + verbose = Testlauf um zu prüfen was wohin synchronisiert werden wird</li>
+<li>“<code>-u</code>” = update = nur neuere Dateien ersetzt</li>
+<li>“<code>-b</code>” = backup = ältere Dateien im Ziel werden umbenannt</li>
+</ul>
+<div id="achtung-macos" class="section level3">
+<h3>Achtung MacOs …</h3>
+<p>MacOs User sollten ihre <a href="https://www.geekbitzone.com/posts/rsync/upgrade-rsync-macos/">rsync Version aktualisieren</a>, da die normal installierte Version aus lizenzrechtlichen Gründen veraltet ist!</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="tutorials" class="section level1">
+<h1>&gt; Tutorials &lt;</h1>
+<p>Für einen besseren Überblick studieren sie doch bitte dieses</p>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-de">Online Tutorial zu rsync</a></li>
+</ul>
+</div>
+
+
+
+<div id="foot-section">
+  <div style="display:inline-block">
+    This work is licensed under a
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+      Creative Commons Attribution-ShareAlike 4.0 International License.</a>
+      <br>
+    by
+    <a title="Dr. Eberle Zentrum für digitale Kompetenzen"
+      href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen, Universität Tübingen</a>
+  </div>
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+    <img
+          alt="Creative Commons License"
+          style="border-width:0; margin-left:10px"
+          src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
