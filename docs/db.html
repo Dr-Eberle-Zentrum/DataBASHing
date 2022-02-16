@@ -475,8 +475,8 @@ sqlite&gt; .tables
 company review</code></pre>
 <hr />
 </div>
-<div id="daten-aus-csv-importieren" class="section level2 tabset egal">
-<h2 class="tabset">Daten aus CSV importieren</h2>
+<div id="daten-aus-csv-importieren" class="section level2">
+<h2>Daten aus CSV importieren</h2>
 <p>Die Tabellen sind nun angelegt aber leer. Man kann nun die Tabellen zeilenweise füllen mit dem SQL Kommando “<code>insert into</code>”, wir wollen aber lieber die Tabellen aus den CSV-Dateien füttern. Dafür gibt es das Kommando “<code>.import</code>”. Lassen wir uns mal die Hilfe zum Import anzeigen:</p>
 <pre class="sqlite"><code>sqlite&gt; .help import
 .import FILE TABLE       Import data from FILE into TABLE
@@ -500,20 +500,26 @@ sqlite&gt; select count(*) from company;
 <pre class="sqlite"><code>sqlite&gt; .import --csv --skip 1 review.csv review
 sqlite&gt; select count(*) from review;
 1795</code></pre>
-<div id="quiz" class="section level3">
-<h3>Quiz</h3>
+<div id="section" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="quiz" class="section level5">
+<h5>Quiz</h5>
 <div class="question">
 <p>Warum haben wir erst “<code>company</code>” und dann erst “<code>review</code>” gefüllt?</p>
 </div>
 </div>
-<div id="antwort" class="section level3">
-<h3>Antwort</h3>
+<div id="antwort" class="section level5">
+<h5>Antwort</h5>
 <div class="answer">
-<p>Da sich die Einträge in Tabelle “<code>review</code>” auf die Daten in “<code>company</code>” verweisen.</p>
+<p>Da die Einträge in Spalte “<code>company_id</code>” in Tabelle “<code>review</code>” auf die <code>id</code> Daten in “<code>company</code>” verweisen.</p>
 </div>
 </div>
 </div>
+<div id="section-1" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
 <hr />
+</div>
+</div>
 <div id="abfragen" class="section level2">
 <h2>Abfragen</h2>
 <p>Man kann nun Abfragen in SQL formulieren, die Ergebnisse werden entsprechend ausgegeben, z.B. Jahreszahl und Bewertung aller Reviews für Schokoladen aus Vietnam:</p>

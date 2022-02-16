@@ -151,9 +151,8 @@ company review
 
 -------------------------------------------
 
-:::{.egal data-latex=""}
 
-## Daten aus CSV importieren {.tabset}
+## Daten aus CSV importieren 
 
 Die Tabellen sind nun angelegt aber leer. Man kann nun die Tabellen zeilenweise füllen mit dem SQL
 Kommando "`insert into`", wir wollen aber lieber die Tabellen aus den CSV-Dateien füttern. Dafür
@@ -194,7 +193,11 @@ sqlite> select count(*) from review;
 1795
 ```
 
-### Quiz
+
+
+#### {.tabset}
+
+##### Quiz
 
 ::: {.question data-latex=""}
 
@@ -202,16 +205,15 @@ Warum haben wir erst "`company`" und dann erst "`review`" gefüllt?
 
 ::: 
 
-### Antwort
+##### Antwort
 
 ::: {.answer data-latex=""}
 
-Da sich die Einträge in Tabelle "`review`" auf die Daten in "`company`" verweisen.
+Da die Einträge in Spalte "`company_id`" in Tabelle "`review`" auf die `id` Daten in "`company`" verweisen.
 
 ::: 
 
-
-:::
+#### {-}
 
 -------------------------------------------
 
