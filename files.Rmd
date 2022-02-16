@@ -14,19 +14,34 @@ Einführung von
 
 [Video: Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]](http://www.youtube.com/watch?v=C-89jT0pUso?t=7)
 
-[![](http://img.youtube.com/vi/C-89jT0pUso/0.jpg)](http://www.youtube.com/watch?v=C-89jT0pUso?t=7 "Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=C-89jT0pUso?t=7"
+                   title="Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]"
+                   ><img src="http://img.youtube.com/vi/C-89jT0pUso/0.jpg"></a>')
+```
+
 
 
 
 [Video: (en) Pedagogy - archive files using tar command in linux | create tar & extract from tar file | tar command in linux [8 min]](http://www.youtube.com/watch?v=pItowVnHDD0)
 
-[![](http://img.youtube.com/vi/pItowVnHDD0/0.jpg)](http://www.youtube.com/watch?v=pItowVnHDD0 "(en) Pedagogy - archive files using tar command in linux | create tar & extract from tar file | tar command in linux [8 min]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=pItowVnHDD0"
+                   title="(en) Pedagogy - archive files using tar command in linux | create tar & extract from tar file | tar command in linux [8 min]"
+                   ><img src="http://img.youtube.com/vi/pItowVnHDD0/0.jpg"></a>')
+```
+
 
 
 
 [Video: (en) Pedagogy - compress - decompress files using gzip & bzip2 in linux | tar command to manage compressed files [12 min]](http://www.youtube.com/watch?v=n8OqvSW7GFc)
 
-[![](http://img.youtube.com/vi/n8OqvSW7GFc/0.jpg)](http://www.youtube.com/watch?v=n8OqvSW7GFc "(en) Pedagogy - compress - decompress files using gzip & bzip2 in linux | tar command to manage compressed files [12 min]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=n8OqvSW7GFc"
+                   title="Pedagogy - compress - decompress files using gzip & bzip2 in linux | tar command to manage compressed files [12 min]"
+                   ><img src="http://img.youtube.com/vi/n8OqvSW7GFc/0.jpg"></a>')
+```
+
 
 -------------------------------------------
 
@@ -153,3 +168,13 @@ Mehr oder minder analog zu `gzip` (inklusive "`bz...`" tools) aber verwendet and
 - Passwortschutz möglich
 - für weitere Details bitte **man page** mit vielen Beispielen konsultieren!
   
+
+
+-------------------------------------------
+
+
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('Download: <a href="files.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+```
+

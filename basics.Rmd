@@ -4,6 +4,10 @@ author: "Martin Raden"
 ---
 
 
+```{r echo=F}
+knitr::opts_chunk$set(fig.pos = "!H", out.extra = "")
+```
+
 -------------------------------------------
 
 Einführung von `cd, cp, history, ln, ls, man, mkdir, mv, pwd, rm`
@@ -12,8 +16,11 @@ Die folgenden Videos von Bashino liefern einen ersten Eindruck, wie man sich auf
 
 [Video: Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]](http://www.youtube.com/watch?v=-47iZzZssCg?t=7) (ggf. Wiedergabegeschwindigkeit via "Einstellungen" ==> "Wiedergabegeschwindigkeit" ==> "1,25" erhöhen)
 
-[![](http://img.youtube.com/vi/-47iZzZssCg/0.jpg)](http://www.youtube.com/watch?v=-47iZzZssCg?t=7 "Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]")
-
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=-47iZzZssCg?t=7"
+                   title="Bashinho - #01 Befehle für Verzeichnisse (ls, cd, mkdir, tree etc.) [9 min]"
+                   ><img src="http://img.youtube.com/vi/-47iZzZssCg/0.jpg"></a>')
+```
 
 Das Folgevideo [#2 Befehle für Dateien (touch, cp, mv, rm etc) [7 min]](https://youtu.be/ISPW4CXAEj4?t=7) in der Playlist von Bashinho ist in der zweiten Hälfte etwas zu tief für diesen Kurs. Wenn man allerdings unseren "Grundlagen der Informatik" Kurs besucht hat, sollte man einige Sachen wiedererkennen und folgen können. :-D
 
@@ -117,10 +124,6 @@ kann man den Befehl mit "**STRG+C**" abbrechen (cancel).
 # > Tutorials <
 
 
-
-## Befehle für Verzeichnisse
-
-
 ## Online Tutorials
 
 -    [Shell Intro](https://swcarpentry.github.io/shell-novice/01-intro/index.html) von swcarpentry
@@ -136,5 +139,20 @@ Und wer noch herausfinden will, was der Unterschied zwischen "hard" und "soft" l
 
 [Video: (en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]](http://www.youtube.com/watch?v=p_g_--ztI6Y)
 
-[![](http://img.youtube.com/vi/p_g_--ztI6Y/0.jpg)](http://www.youtube.com/watch?v=p_g_--ztI6Y "(en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]")
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=p_g_--ztI6Y"
+                   title="(en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]"
+                   ><img src="http://img.youtube.com/vi/p_g_--ztI6Y/0.jpg"></a>')
+```
+
+
+
+-------------------------------------------
+
+
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('Download: <a href="basics.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+```
 

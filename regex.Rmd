@@ -1,5 +1,5 @@
 ---
-title: "regex"
+title: "Reguläre Ausdrücke"
 author: "Martin Raden"
 ---
 
@@ -18,19 +18,30 @@ Zum Warmwerden gibts die folgenden Videos.
 
 [Video: Bashino - #02: was soll das Ganze & mehr von egrep [5 min]](http://www.youtube.com/watch?v=uDh2RGg0ybo?t=7)
 
-[![](http://img.youtube.com/vi/uDh2RGg0ybo/0.jpg)](http://www.youtube.com/watch?v=uDh2RGg0ybo?t=7 "Bashino - #02: was soll das Ganze & mehr von egrep [5 min]")
-
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=uDh2RGg0ybo?t=7"
+                   title="Bashino - #02: was soll das Ganze & mehr von egrep [5 min]"
+                   ><img src="http://img.youtube.com/vi/uDh2RGg0ybo/0.jpg"></a>')
+```
 
 
 [Video: Bashino - #01 cat und egrep [11 min]](http://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7)
 
-[![](http://img.youtube.com/vi/nfdVQmS3e_Q/0.jpg)](http://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7 "Bashino - #01 cat und egrep [11 min]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7"
+                   title="Bashino - #01 cat und egrep [11 min]"
+                   ><img src="http://img.youtube.com/vi/nfdVQmS3e_Q/0.jpg"></a>')
+```
 
 
 
 [Video: Bashino - #10 mit sed suchen und ersetzen [7 min]](http://www.youtube.com/watch?v=wm35zPJOknI?t=7)
 
-[![](http://img.youtube.com/vi/wm35zPJOknI/0.jpg)](http://www.youtube.com/watch?v=wm35zPJOknI?t=7 "Bashino - #10 mit sed suchen und ersetzen [7 min]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=wm35zPJOknI?t=7"
+                   title="Bashino - #10 mit sed suchen und ersetzen [7 min]"
+                   ><img src="http://img.youtube.com/vi/wm35zPJOknI/0.jpg"></a>')
+```
 
 
 
@@ -192,4 +203,14 @@ Dieses [Online-grep-regex-Tutorial](https://www.digitalocean.com/community/tutor
 
 **Kodierung von Zeilenumbrüchen sorgt immer wieder für Probleme bei Textersetzungen/-formatierung! Daher immer (wieder) dran denken!**
 
+
+
+
+-------------------------------------------
+
+
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('Download: <a href="regex.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+```
 

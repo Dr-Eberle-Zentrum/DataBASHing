@@ -13,13 +13,23 @@ Einführung von
 
 [Video: Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]](http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7)
 
-[![](http://img.youtube.com/vi/Swtrh7z6FnE/0.jpg)](http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7 "Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7"
+                   title="Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]"
+                   ><img src="http://img.youtube.com/vi/Swtrh7z6FnE/0.jpg"></a>')
+```
+
 
 
 
 [Video: Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]](http://www.youtube.com/watch?v=M28zU56xWHY?t=7)
 
-[![](http://img.youtube.com/vi/M28zU56xWHY/0.jpg)](http://www.youtube.com/watch?v=M28zU56xWHY?t=7 "Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=M28zU56xWHY?t=7"
+                   title="Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]"
+                   ><img src="http://img.youtube.com/vi/M28zU56xWHY/0.jpg"></a>')
+```
+
 
 
 -------------------------------------------
@@ -105,3 +115,13 @@ Um mit `nano` vertraut zu werden, sollte man einen ersten Blick auf dessen **ein
 -    mit "STRG+G" die Hilfe aufrufen
 -    mit "STRG+X" kann man diese und anschliessen das Programm verlassen
     
+
+
+-------------------------------------------
+
+
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('Download: <a href="edit.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+```
+

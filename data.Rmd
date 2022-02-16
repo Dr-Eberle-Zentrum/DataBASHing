@@ -16,12 +16,21 @@ Um zu sehen, wo es hingehen soll, gibts die folgenden beiden Videos.
 
 [Video: Bashino - #05 Daten sortieren (sort uniq sort) [5 min]](http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7)
 
-[![](http://img.youtube.com/vi/EhuHvJwUMKY/0.jpg)](http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7 "Bashino - #05 Daten sortieren (sort uniq sort) [5 min]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7"
+                   title="Bashino - #05 Daten sortieren (sort uniq sort) [5 min]"
+                   ><img src="http://img.youtube.com/vi/EhuHvJwUMKY/0.jpg"></a>')
+```
+
 
 
 [Video: (en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]](http://www.youtube.com/watch?v=2_lgnCzwUEM)
 
-[![](http://img.youtube.com/vi/2_lgnCzwUEM/0.jpg)](http://www.youtube.com/watch?v=2_lgnCzwUEM "(en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]")
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('<a href="http://www.youtube.com/watch?v=2_lgnCzwUEM"
+                   title="(en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]"
+                   ><img src="http://img.youtube.com/vi/2_lgnCzwUEM/0.jpg"></a>')
+```
 
 
 -------------------------------------------
@@ -122,6 +131,16 @@ Im Anschluss empfehlen wir das folgende
   - "`-t`" = Spaltentrennzeichen (Standard = Leerzeichen)
   - eine Eingabe kann auch von stdin (z.B. via piping kommen); dann muss als entsprechender "Dateiname" ein - angegeben werden
 
+
+
+
+-------------------------------------------
+
+
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('Download: <a href="data.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+```
 
 
 

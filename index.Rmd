@@ -48,3 +48,13 @@ ggf.
 
 -    Einblick in die skriptbasierte Datenverarbeitung und deren Konsolenaufrufe
     
+
+
+-------------------------------------------
+
+
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('Download: <a href="index.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+```
+

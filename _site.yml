@@ -14,3 +14,11 @@ output:
     includes:
       after_body: "footer.html"
     css: "dez-style.css"
+  pdf_document:
+    includes:
+      in_header: "latex_commands.tex"
+    extra_dependencies:
+      breakurl: null
+urlcolor: blue
+linkcolor: blue
+exclude: ["*.tex", "*.log"]

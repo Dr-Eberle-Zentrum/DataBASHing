@@ -60,14 +60,6 @@ Der folgende Link zeigt, wie sie [in Win10 den WSL Standardnutzer ändern](https
 
 
 
-\newpage
-
--------------------------------------------
-
-
-# > Videos & Tutorials < 
-
-
 -------------------------------------------
 
 
@@ -112,5 +104,15 @@ diese Ausgabe erhalten.
 echo 6
 ```
 
+
+
+
+-------------------------------------------
+
+
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('Download: <a href="install.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+```
 
 
