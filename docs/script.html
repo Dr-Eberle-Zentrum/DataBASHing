@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Martin Raden" />
+
+
+<title>Scripting in der BASH</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="dez-style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div id="logo-section">
+
+    <a  class="logo-link"
+        title="Universität Tübingen"
+        href="https://www.uni-tuebingen.de"><img
+            alt="Logo der Universität Tübingen"
+            src="https://uni-tuebingen.de/typo3conf/ext/project/Resources/Public/Images/Logo_Universitaet_Tuebingen.svg"
+            width="269px"
+            height="70px"
+    ></a><a  class="logo-link"
+        id="logo-dez"
+        title="Dr. Eberle Zentrum für digitale Kompetenzen"
+        href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen</a>
+
+  </div>
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Data BASHing</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Intro</a></li>
+        <li><a href="install.html">Install</a></li>
+        <li><a href="basics.html">Basics</a></li>
+        <li><a href="data.html">Processing</a></li>
+        <li><a href="regex.html">RegEx</a></li>
+        <li><a href="edit.html">Edit</a></li>
+        <li><a href="files.html">Files</a></li>
+        <li><a href="remote.html">Remote</a></li>
+        <li><a href="script.html">Script</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://uni-tuebingen.de/de/151602">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Scripting in der BASH</h1>
+<h4 class="author">Martin Raden</h4>
+
+</div>
+
+
+<hr />
+<p>Einführung von</p>
+<ul>
+<li>Variablen, <code>echo</code> und `..` in <a href="#generelles">Generelles</a></li>
+<li>Parameter Expansion <code>${}, $(), $(())</code> <a href="#in-der-bash">In der BASH</a></li>
+<li>Loops, if-else, Skriptdateien, … in <a href="#bash-scripting">BASH-Scripting</a></li>
+</ul>
+<p><a href="http://www.youtube.com/watch?v=S4D9KaW3ERw">Video: (en) Protesilaos Stavrou - BASH Parameter Expansion [12 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=S4D9KaW3ERw" title="(en) Protesilaos Stavrou - BASH Parameter Expansion [12 min]"><img src="http://img.youtube.com/vi/S4D9KaW3ERw/0.jpg" /></a></p>
+<p><a href="http://www.youtube.com/watch?v=3JYhBUK2of0">Video: (en) Pedagogy - Variables In Shell Scripting | store output of a command to a variable | $ [16 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=3JYhBUK2of0" title="(en) Pedagogy - Variables In Shell Scripting | store output of a command to a variable | $ [16 min]"><img src="http://img.youtube.com/vi/3JYhBUK2of0/0.jpg" /></a></p>
+<hr />
+<div id="generelles" class="section level1">
+<h1>Generelles</h1>
+<p>Im Allgemeinen gilt in (fast) jeder shell:</p>
+<ul>
+<li><strong>Variablen</strong> sind
+<ul>
+<li>Platzhalter für sich ändernde Information</li>
+<li><strong>ohne Leer- und Sonderzeichen</strong> benannt, d.h. matchen die RegEx “<code>^[a-zA-Z][\w_]*$</code>”</li>
+<li>werden mittels “<code>$</code>”<strong>-Präfix</strong> angesprochen, z.b. <code>echo $SHELL</code></li>
+<li>sind i.d.R. uppercase</li>
+</ul></li>
+<li>wichtige Standard-/<strong>Umgebungsvariablen</strong> (environment variables) die immer da sind:
+<ul>
+<li><code>$HOSTNAME</code> - Name des Computers</li>
+<li><code>$HOME</code> - eigenes Nutzerverzeichnis</li>
+<li><code>$PATH</code> - Liste von Verzeichnissen (“<code>:</code>”-separated), in denen nach ausführbaren Programmen gesucht wird</li>
+<li><code>$PWD</code> - aktuelles Verzeichnis</li>
+</ul></li>
+<li><strong>Eigene Variablen</strong> (local variables) können über “<code>=</code>”-Zuweisung (ohne “<code>$</code>”-Präfix) erzeugt und anschliessend via “$”-Präfix verwendet werden, z.B. <code>Heute=Freitag; echo $Heute</code>
+<ul>
+<li>Wichtig: <strong>keine Leerzeichen</strong> zwischen Variablenname, “<code>=</code>”, und Wert bzw. im Wert; <strong>Ansonsten</strong> müssen führende oder zwischenliegende Leerzeichen im Wert via <strong>quoting</strong> eingeschlossen werden, z.B. <code>Text=" mit Leerzeichen "; echo "&gt; $Text &lt;"</code></li>
+<li>Über “<code>=</code>”-Zuweisung können Variablen auch <strong>überschrieben/geändert</strong> werden; sogar erweitert via Selbstreferenz, z.B. <code>Heute=Freitag; Heute="ist $Heute"; echo $Heute</code></li>
+</ul></li>
+<li><code>echo</code> = Ausgabe von Text und Variablen
+<ul>
+<li>single <code>'..'</code> double <code>".."</code> quotes
+<ul>
+<li>in <strong>double quotes</strong> werden Variablenreferenzen ersetzt, z.B. <code>echo "Meine shell ist $SHELL"</code></li>
+<li>alles in <strong>single quotes</strong> wird einfach nur ausgegeben, z.B. <code>echo 'shell Variable = $SHELL'</code></li>
+</ul></li>
+<li>“<code>-e</code>” = Interpretation von Spezialzeichen mit führendem “<code>\</code>”, wie z.B. Zeilenumbruch “<code>\n</code>” oder Tabulator “<code>\t</code>”, z.B. <code>echo "Erste\nZeile"; echo -e "Nächste\nZeile"</code></li>
+<li>“<code>-n</code>” = kein Zeilenumbruch am Ende der Ausgabe</li>
+</ul></li>
+<li>backticks “`..`” = liefern die Ausgabe des eingeschlossenen Kommandos, z.B. um dieses in einer Variable abzuspeichern, z.B. <code>meineShell=</code>`<code>echo $SHELL</code>`<code>; echo "Meine Shell ist $meineShell"</code></li>
+</ul>
+<div id="achtung-macos-bash" class="section level2">
+<h2>Achtung MacOs BASH</h2>
+<p>Apple liefert aus lizenzrechtlichen Gründen nur eine veraltete Version der Bash aus, die teilweise für einige der folgenden Bash-Skripting Teile dieses Kurses nicht ausreicht (Version &gt;= 4 nötig; check via “<code>bash --version</code>”). Daher müssen sie ggf. jetzt ihre <a href="https://www.shell-tips.com/mac/upgrade-bash/"><strong>bash auf Mac OS aktualisieren</strong></a> (<a href="https://itnext.io/upgrading-bash-on-macos-7138bd1066ba">Alternative Anleitung</a>).</p>
+<hr />
+</div>
+</div>
+<div id="in-der-bash" class="section level1">
+<h1>In der BASH</h1>
+<p>In BASH (sollte man aber Folgendes tun)</p>
+<ul>
+<li>“<code>${xyz}</code>” - <strong>Zugriff</strong> auf <strong>Variable</strong> “<code>xyz</code>” und weitere Manipulation (geschweifte Klammern)
+<ul>
+<li>ermöglicht genauere Verwendung von Variablen in und an Strings z.B. <code>echo "_${USER}_"</code> vs. <code>echo "_"$USER"_"</code></li>
+</ul></li>
+<li><strong>Bash Parameter Expansion</strong> ermöglicht die <strong>Manipulation von Variablenwerten</strong>! (<a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html">komplette Online-Dokumentation mit Beispielen</a>)</li>
+<li><code>${x:-"schnurps"}</code> - liefert den Wert von Variable “<code>x</code>” oder, wenn Variable nicht verfügbar, den Wert “schnurps”</li>
+<li><code>${#x}</code> - Anzahl Zeichen des in Variable “<code>x</code>” gespeicherten Wertes</li>
+<li><code>${x//y/z}</code> - <strong>ersetzt alle</strong> matches von “<code>y</code>” durch “<code>z</code>” in Variable “<code>x</code>”, z.B. <code>stand=1:1; echo ${stand//1/2}</code>
+<ul>
+<li>wenn “<code>/</code>” statt “<code>//</code>”, dann nur erster match ersetzt, z.B. <code>stand=1:1; echo ${stand/1/2}</code></li>
+<li>“BASH-regex” bzw. wildcards:
+<ul>
+<li>“<code>*</code>” - ein oder mehrere Zeichen egal was, z.B. <code>stand=12:3; echo ${stand//*:/x-zu-}</code></li>
+<li>“<code>?</code>” - exakt ein Zeichen. z.B. <code>x="nein neun"; echo ${x//e?/o}</code></li>
+</ul></li>
+</ul></li>
+<li><code>${x:i:l}</code> - <strong>substring</strong> der Länge “<code>l</code>” von Variable “<code>x</code>” ab Position “<code>i</code>” (<strong>0=Anfang</strong>) z.B. <code>x=H2O; echo ${x:1:1}</code>
+<ul>
+<li>Längenangabe ist optional ==&gt; Suffix ab i, z.B. <code>x="A=BC"; echo ${x:2}</code></li>
+</ul></li>
+<li><code>${x^^}</code> oder <code>${x,,}</code> - alles <strong>upper</strong> oder <strong>lower case</strong>
+<ul>
+<li>nur Anfang wenn nur ein “<code>^</code>” oder “<code>,</code>”</li>
+</ul></li>
+<li><code>${!x}</code> - indirekter Zugriff, d.h. der WERT von Variable “<code>x</code>” wird ausgewertet und nach einer Variable gesucht, die so heisst, z.b. <code>a=b; b=1; echo ${!a}</code></li>
+</ul>
+<p>Zudem</p>
+<ul>
+<li><code>$(xyz)</code> - <strong>Befehl</strong> “<code>xyz</code>” <strong>ausführen</strong> (runde Klammern)
+<ul>
+<li>z.B. echo “Anzahl lokaler Verzeichnisse = $(ls -l | grep -c ‘^d’)”</li>
+<li>ersetzt backtick-Notation und ist expliziter</li>
+</ul></li>
+<li><code>$((3+4))</code> - <a href="https://www.computerhope.com/unix/ubash.htm#15A">arithmetische Berechnungen</a>
+<ul>
+<li>alternativ = “<code>expr</code>” Befehl, welcher das Ergebnis direkt ausgibt (Leerzeichen zwischen ALLEN Formelteilen!), z.B. <code>expr 3 + 4</code></li>
+<li>oder man kann auch den “<code>let</code>” Befehl verwenden, welcher das Ergebnis direkt in einer Variable speichert, z.B. <code>let "A=3+4"</code> (hier muss i.d.R. gequotet werden!)</li>
+</ul></li>
+</ul>
+<hr />
+<div id="tutorials" class="section level2">
+<h2>&gt; Tutorials &lt;</h2>
+<p>Schauen sie doch mal in dieses kompakte</p>
+<ul>
+<li><a href="https://linuxcommand.org/lc3_lts0080.php">Online-Tutorial zu Parameter Expansion</a>!</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="bash-scripting" class="section level1">
+<h1>BASH-Scripting</h1>
+<p><strong>Bash scripting direkt in der Kommandozeile:</strong></p>
+<ul>
+<li>fast alle hier vorgestellten bash-Kommandos können auch direkt in der Konsole eingegeben werden und müssen NICHT in einer Datei gespeichert und anschliessend ausgeführt werden.</li>
+<li>Bsp: <code>for f in /tmp/*; do echo "- $f is a temporary file or folder"; done</code></li>
+</ul>
+<p><strong>Bashskript/-datei - z.B. <a href="script/05-substring.sh">Bespieldatei <code>05-substring.sh</code></a> zum Anschauen!</strong></p>
+<ul>
+<li>Textdatei mit Liste von Kommentaren, bash und shell Befehlen</li>
+<li><strong>1.Zeile = <a href="https://linuxize.com/post/bash-shebang/">Shebang</a></strong> mit Ausführungsinfos = <code>#!/usr/bin/env bash</code></li>
+<li><strong># - Kommentar</strong>anfang - alles danach wird ignoriert (es sei denn, es ist in einem String, d.h. gequotet!)</li>
+<li><strong>Argumente</strong> für Aufruf möglich, welche über folgende Variablen zugreifbar sind
+<ul>
+<li><code>$1</code>, <code>$2</code>, .. = 1., 2., … Aufrufargument</li>
+<li><code>$0</code> = Skriptname (im Aufruf, d.h. ggf. mit Pfad etc.)</li>
+<li><code>$#</code> = Anzahl der Aufrufargumente</li>
+<li><code>$@</code> liefert Array/Liste aller gegebenen Aufrufargumente (z.B. für for-loop Iteration)</li>
+</ul></li>
+</ul>
+<p><strong>Aufruf:</strong></p>
+<ul>
+<li>via <strong>bash call</strong>, z.B. “<code>bash 05-substring.sh</code>” (für heute erstmal der Standardfall!)</li>
+<li>direkt (falls als “<em>executable</em>” markiert, dazu später mehr). z.B. “<code>./05-substring.sh</code>”
+<ul>
+<li>hierbei wird der Shebang ausgelesen (s.o.) und das entsprechend Programm mit der Skriptdatei als Argument aufgerufen</li>
+</ul></li>
+<li>via “<code>source</code>”, z.B. “<code>source 05-substring.sh</code>”
+<ul>
+<li><em>ACHTUNG</em>: <code>source</code> kopiert den INHALT des Skriptes und führt die Befehle direkt in der AKTUELLEN bash Konsole aus. Damit kann es zu Nebeneffekten kommen (z.B. ein “<code>exit</code>” Kommando im Skript <em>schliesst die aktuelle shell</em>!)</li>
+<li>kann auch einfach nur “<code>.</code>” verwendet werden, z.B. “<code>. 05-substring.sh</code>”</li>
+</ul></li>
+</ul>
+<hr />
+<div id="prozessstrukturen" class="section level2">
+<h2>Prozessstrukturen</h2>
+<ul>
+<li><code>if</code> - <strong>Verzweigung</strong> über Ja/Nein Test ala “<code>if [ TEST ]; then A; else B; fi</code>”, wobei <code>A</code> und <code>B</code> einzelne Anweisungen oder Anweisungssequenzen (“<code>;</code>”-getrennt) sein können
+<ul>
+<li><em>ACHTUNG</em>: <strong>Leerzeichen</strong> rund <strong>um die eckigen Klammern</strong> sind wichtig!
+<ul>
+<li>die eckigen Klammern sind eigentlich nur Kurznotation für das <a href="https://www.computerhope.com/unix/bash/test.htm">Programm “<code>test</code>”</a> und seinen Rückgabewert</li>
+</ul></li>
+<li>“<code>else</code>”-Zweig ist optional</li>
+<li><strong>Mehrere Tests</strong> können in <strong>eigene</strong>n <code>[]</code>-<strong>Blöcke</strong>n mit “<code>&amp;&amp;</code>” (und) bzw. “<code>||</code>” (oder) zusammengeführt werden, z.B. “<code>if [ TEST1 ] &amp;&amp; [ TEST2 ]; then ...</code>”</li>
+<li>Standardtests (Möglichkeiten für <code>TEST</code> in obigem Aufruf)
+<ul>
+<li><strong>Stringvergleiche</strong> - <code>"$HOME" = "${PWD}"</code> oder <code>"${X}" != "lala"</code>
+<ul>
+<li>Beachten: Variablenzugriffe i.d.R. quoten, da Leerzeichen, Pfade, etc. schnell zum Problem werden!</li>
+<li><code>=</code>, <code>!=</code>, <code>&lt;</code> (lexikographisch), <code>&gt;</code>, <code>-n X</code> (string <code>X</code> ist leer), <code>-z X</code> (string <code>X</code> ist nicht leer, z.B. <code>-z "$HOME"</code>)</li>
+</ul></li>
+<li><strong>Zahlenvergleiche</strong> via
+<ul>
+<li><code>-eq</code> (==), <code>-ne</code> (!=), <code>-lt</code> (&lt;), <code>-gt</code> (&gt;), <code>-le</code> (&lt;=), <code>-ge</code> (&gt;=), z.B. “<code>${#x} -gt 2</code>”</li>
+</ul></li>
+<li>“<code>!</code>” - <strong>Negierung</strong> des nachfolgenden Tests z.B. “<code>! ${#x} -gt 2</code>” ist das gleiche wie “<code>${#x} -le 2</code>”</li>
+<li><strong>Datei-/Verzeichnistests</strong>
+<ul>
+<li><code>-e</code> / <code>-d</code> = Datei / Verzeichnis existiert, z.B. <code>if [ ! -e /tmp/jo.txt ] || [ -s /tmp/jo.txt ]; then echo "man" &gt; /tmp/jo.txt; fi</code></li>
+<li><code>-r</code> / <code>-w</code> = Datei ist lesbar / beschreibbar</li>
+<li><code>-x</code> = Datei ist ausführbar</li>
+<li><code>-s</code> = Datei ist leer (zero size)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><code>for</code> - <strong>Wiederholung</strong> ala “<code>for x in LISTE; do A; done</code>”
+<ul>
+<li>“<code>LISTE</code>” ist hierbei eine Liste von Strings (white-space separated, also auch Zeilenumbrüche möglich!), die jeweils als Werte für die Laufvariable (hier “<code>x</code>”) gesetzt werden, bevor Aufruf(sequenz) “<code>A</code>” jeweils ausgeführt wird</li>
+<li>“<code>A</code>” kann wieder Sequenzblock sein</li>
+<li><strong>explizit</strong>e Liste: <code>for i in 1 5 26; do echo "${HOME:0:${i}}"; done</code></li>
+<li>Liste <strong>via call</strong>: <code>for f in $(ls /tmp); do echo "in tmp liegt ${f}"; done</code></li>
+<li>(Datei)Liste <strong>via wildcards</strong>: <code>for f in /tmp/*; do echo "$f is a temporary file or folder"; done</code></li>
+<li>Liste <strong>via Array-Variable</strong>: <code>for ARG in $@; do ...</code></li>
+</ul></li>
+<li><code>exit</code> - <strong>bricht</strong> das Script an dieser Stelle <strong>ab</strong> (implizit am Ende des Skripts aufgerufen)
+<ul>
+<li>liefert einen <strong>“return” oder “error code”</strong> an das aufrufende Programm, um den <strong>Programmstatus</strong> wiederzugeben</li>
+<li><strong>0</strong> = default = “<strong>alles gut</strong>”</li>
+<li><strong>!= 0 = error code</strong> = programmspezifische Codierung von Fehlern (im einfachsten Fall einfach immer exit 1 im Fehlerfall)</li>
+</ul></li>
+<li>Was es sonst noch gibt
+<ul>
+<li><code>while</code> - loop</li>
+<li><code>until</code> - loop</li>
+<li><code>read</code> - liest einen Text von der Kommandozeile in eine Variable (alles bis “ENTER” gedrückt), z.B. <code>read UserInput</code></li>
+<li><code>case</code> - multiple Verzweigung</li>
+<li>array-Variablen</li>
+</ul></li>
+<li><code>function</code> - Funktionsdefinition zur Automatisierung und Programmverkürzung
+<ul>
+<li>z.B. <code>function MYNAME { A }</code></li>
+<li>“<code>A</code>” steht für eine beliebige Aufrufsequenz</li>
+<li>die Funktion kann (genau wie ein Skript) eigene Argumente via <code>$1-$9</code> etc. aufrufen</li>
+<li>Aufruf der Funktion (innerhalb des Skripts NACH der Funktionsdefinition) als wäre es ein Programm, z.B. “<code>MYNAME 'lala' 1</code>” (hier mit zwei Argumenten aufgerufen)</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="input-streams" class="section level2">
+<h2>Input Streams</h2>
+<ul>
+<li>Zugriff auf <code>STDIN</code> via dummy file “<code>/dev/stdin</code>”
+<ul>
+<li>z.B. NL=$(cat /dev/stdin | wc -l); echo “you piped $NL lines…”</li>
+<li>speichern sie obigen call in einer Datei ‘<code>05-countLines.sh</code>’ ab (vielleicht direkt <code>vi</code> bzw. <code>nano</code>! ;) )</li>
+<li>dann kann dieses Skript in einer pipe verwendet werden
+<ul>
+<li>z.B. <code>ls -l | bash ./05-countLines.sh | tr " " "\n"</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="tutorials-1" class="section level2">
+<h2>&gt; Tutorials &lt;</h2>
+<p>Dieses umfangreiche</p>
+<ul>
+<li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Online Tutorial zu Bash Scripting</a> von Ryan Chedwick</li>
+</ul>
+<p>liefert viele Anwendungsbeispiele, kleine Aufgaben (Activities) und Hintergrundinformationen.</p>
+</div>
+</div>
+
+
+
+<div id="foot-section">
+  <div style="display:inline-block">
+    This work is licensed under a
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+      Creative Commons Attribution-ShareAlike 4.0 International License.</a>
+      <br>
+    by
+    <a title="Dr. Eberle Zentrum für digitale Kompetenzen"
+      href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen, Universität Tübingen</a>
+  </div>
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+    <img
+          alt="Creative Commons License"
+          style="border-width:0; margin-left:10px"
+          src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
