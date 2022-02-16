@@ -77,11 +77,14 @@ In BASH (sollte man aber Folgendes tun)
 
 - "`${xyz}`" - **Zugriff** auf **Variable** "`xyz`" und weitere Manipulation (geschweifte Klammern)
   - ermöglicht genauere Verwendung von Variablen in und an Strings z.B. `echo "_${USER}_"` vs. `echo "_"$USER"_"`
-- **Bash Parameter Expansion** ermöglicht die **Manipulation von Variablenwerten**! ([komplette Online-Dokumentation mit Beispielen](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html))
+- **Bash Parameter Expansion** ermöglicht die **Manipulation von Variablenwerten**!   
+  ([komplette Online-Dokumentation mit Beispielen](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html))
 - `${x:-"schnurps"}` - liefert den Wert von Variable "`x`" oder, wenn Variable nicht verfügbar, den Wert "schnurps"
 - `${#x}` - Anzahl Zeichen des in Variable "`x`" gespeicherten Wertes
-- `${x//y/z}` - **ersetzt alle** matches von "`y`" durch "`z`" in Variable "`x`", z.B. `stand=1:1; echo ${stand//1/2}`
-  - wenn "`/`" statt "`//`", dann nur erster match ersetzt, z.B. `stand=1:1; echo ${stand/1/2}`
+- `${x//y/z}` - **ersetzt alle** matches von "`y`" durch "`z`" in Variable "`x`
+  - z.B. `stand=1:1; echo ${stand//1/2}`
+  - wenn "`/`" statt "`//`", dann nur erster match ersetzt
+    - z.B. `stand=1:1; echo ${stand/1/2}`
   - "BASH-regex" bzw. wildcards:
     - "`*`" - ein oder mehrere Zeichen egal was, z.B. `stand=12:3; echo ${stand//*:/x-zu-}`
     - "`?`" - exakt ein Zeichen. z.B. `x="nein neun"; echo ${x//e?/o}`
@@ -160,7 +163,8 @@ Schauen sie doch mal in dieses kompakte
       - `-eq` (==), `-ne` (!=), `-lt` (<), `-gt` (>), `-le` (<=), `-ge` (>=), z.B. "`${#x} -gt 2`"
     - "`!`" - **Negierung** des nachfolgenden Tests z.B. "`! ${#x} -gt 2`" ist das gleiche wie "`${#x} -le 2`"
     - **Datei-/Verzeichnistests**
-      - `-e` / `-d` = Datei / Verzeichnis existiert, z.B. `if [ ! -e /tmp/jo.txt ] || [ -s /tmp/jo.txt ]; then echo "man" > /tmp/jo.txt; fi`
+      - `-e` / `-d` = Datei / Verzeichnis existiert,   
+        z.B. `if [ ! -e /tmp/jo.txt ] || [ -s /tmp/jo.txt ]; then echo "man" > /tmp/jo.txt; fi`
       - `-r` / `-w` = Datei ist lesbar / beschreibbar
       - `-x` = Datei ist ausführbar
       - `-s` = Datei ist leer (zero size)

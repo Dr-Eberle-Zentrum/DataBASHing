@@ -52,10 +52,10 @@ knitr::asis_output('<a href="http://www.youtube.com/watch?v=M28zU56xWHY?t=7"
       - oder Anzahl Spalten ausgeben (`echo A B | awk '{print NF}'`)
     - `NR` = aktuelle Zeilennummer (number of rows), z.B. zeilennumerierte Ausgabe (`ls -l | awk '{print "Zeile "NR" : "$0}'`)
     - `FS` = verwendetes Spaltentrennzeichen (field separator)
-      - entweder via "`-F`" setzen (setzt auch OFS)
-      - z.B. `echo "A;B" | awk -F ";" '{print $1}'`
-      - oder explizit für alle Zeilen vorm Einlesen
-      - z.B. `echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'`
+      - entweder via "`-F`" setzen (setzt auch OFS)   
+        z.B. `echo "A;B" | awk -F ";" '{print $1}'`
+      - oder explizit für alle Zeilen vorm Einlesen   
+        z.B. `echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'`
     - `OFS` = aktuelles Spaltentrennzeichen der Ausgabe (output field separator); muss (für alle Zeilen) im "`BEGIN`"-block (siehe unten) gesetzt werden 
       - `echo "A B" | awk 'BEGIN{OFS=":"}{print $1,"lala"}'`
     - "`;`" = Befehlstrennzeichen (Beispiel weiter unten)

@@ -414,10 +414,10 @@ div.tocify {
 <li><code>NR</code> = aktuelle Zeilennummer (number of rows), z.B. zeilennumerierte Ausgabe (<code>ls -l | awk '{print "Zeile "NR" : "$0}'</code>)</li>
 <li><code>FS</code> = verwendetes Spaltentrennzeichen (field separator)
 <ul>
-<li>entweder via “<code>-F</code>” setzen (setzt auch OFS)</li>
-<li>z.B. <code>echo "A;B" | awk -F ";" '{print $1}'</code></li>
-<li>oder explizit für alle Zeilen vorm Einlesen</li>
-<li>z.B. <code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code></li>
+<li>entweder via “<code>-F</code>” setzen (setzt auch OFS)<br />
+z.B. <code>echo "A;B" | awk -F ";" '{print $1}'</code></li>
+<li>oder explizit für alle Zeilen vorm Einlesen<br />
+z.B. <code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code></li>
 </ul></li>
 <li><code>OFS</code> = aktuelles Spaltentrennzeichen der Ausgabe (output field separator); muss (für alle Zeilen) im “<code>BEGIN</code>”-block (siehe unten) gesetzt werden
 <ul>

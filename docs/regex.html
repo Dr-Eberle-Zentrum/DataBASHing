@@ -533,13 +533,17 @@ div.tocify {
 <ul>
 <li><strong>Zeilennummer</strong>, z.B. <code>echo -e "Zeile 1\nZeile 2" | sed "2 s/i/l/"</code></li>
 <li><strong>Zeilenbereich</strong>, z.B. <code>echo "1,2,33,4" | tr "," "\n" | sed "2,3 s/./X/"</code></li>
-<li><strong>ab Zeile X</strong> via “<code>$</code>” (“<code>$</code>” = Platzhalter für “letzte Zeile”), z.B. <code>echo "1,2,3,4" | tr "," "\n" | sed "2,$ s/./X/"</code></li>
-<li><strong>RegEx</strong>-Match (in Zeile), z.B. <code>echo -e "#1\n2" | sed -r "/^#/ s/[:digit:]/X/"</code> (dieser Aufruf geht zwar auch ohne “<code>-r</code>”, aber sicher ist sicher! ;) )</li>
+<li><strong>ab Zeile X</strong> via “<code>$</code>” (“<code>$</code>” = Platzhalter für “letzte Zeile”)<br />
+z.B. <code>echo "1,2,3,4" | tr "," "\n" | sed "2,$ s/./X/"</code></li>
+<li><strong>RegEx</strong>-Match (in Zeile), z.B. <code>echo -e "#1\n2" | sed -r "/^#/ s/[:digit:]/X/"</code><br />
+(dieser Aufruf geht zwar auch ohne “<code>-r</code>”, aber sicher ist sicher! ;) )</li>
 <li>alle gematchten Zeilen werden verarbeitet und am Ende ausgeben</li>
 </ul></li>
 <li>“<code>-n</code>” verhindert den automatischen output
 <ul>
-<li>sinnvoll in Kombination mit “<code>p</code>” Befehl (print), z.B. <code>echo "1,2,3,4" | tr "," "\n" | sed -n "2 p"</code> liefert die zweite Zeile (ohne “<code>-n</code>” würde jeder Zeile standardmässig ausgegeben und die Zweite noch ein zweites mal aufgrund des print Befehls!)</li>
+<li>sinnvoll in Kombination mit “<code>p</code>” Befehl (print)<br />
+z.B. <code>echo "1,2,3,4" | tr "," "\n" | sed -n "2 p"</code><br />
+liefert die zweite Zeile (ohne “<code>-n</code>” würde jeder Zeile standardmässig ausgegeben und die Zweite noch ein zweites mal aufgrund des print Befehls!)</li>
 </ul></li>
 </ul></li>
 </ul>

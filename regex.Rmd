@@ -181,11 +181,15 @@ Dieses [Online-grep-regex-Tutorial](https://www.digitalocean.com/community/tutor
   - **Filter**n der verarbeiteten Zeilen mittels **vorangestellt**er Bedingungen
     - **Zeilennummer**, z.B. `echo -e "Zeile 1\nZeile 2" | sed "2 s/i/l/"`
     - **Zeilenbereich**, z.B. `echo "1,2,33,4" | tr "," "\n" | sed "2,3 s/./X/"`
-    - **ab Zeile X** via "`$`" ("`$`" = Platzhalter für "letzte Zeile"), z.B. `echo "1,2,3,4" | tr "," "\n" | sed "2,$ s/./X/"`
-    - **RegEx**-Match (in Zeile), z.B. `echo -e "#1\n2" | sed -r "/^#/ s/[:digit:]/X/"` (dieser Aufruf geht zwar auch ohne "`-r`", aber sicher ist sicher! ;) )
+    - **ab Zeile X** via "`$`" ("`$`" = Platzhalter für "letzte Zeile")   
+      z.B. `echo "1,2,3,4" | tr "," "\n" | sed "2,$ s/./X/"`
+    - **RegEx**-Match (in Zeile), z.B. `echo -e "#1\n2" | sed -r "/^#/ s/[:digit:]/X/"`   
+      (dieser Aufruf geht zwar auch ohne "`-r`", aber sicher ist sicher! ;) )
     - alle gematchten Zeilen werden verarbeitet und am Ende ausgeben
   - "`-n`" verhindert den automatischen output
-    - sinnvoll in Kombination mit "`p`" Befehl (print), z.B. `echo "1,2,3,4" | tr "," "\n" | sed -n "2 p"` liefert die zweite Zeile (ohne "`-n`" würde jeder Zeile standardmässig ausgegeben und die Zweite noch ein zweites mal aufgrund des print Befehls!)
+    - sinnvoll in Kombination mit "`p`" Befehl (print)   
+      z.B. `echo "1,2,3,4" | tr "," "\n" | sed -n "2 p"`   
+      liefert die zweite Zeile (ohne "`-n`" würde jeder Zeile standardmässig ausgegeben und die Zweite noch ein zweites mal aufgrund des print Befehls!)
 
 
 -------------------------------------------

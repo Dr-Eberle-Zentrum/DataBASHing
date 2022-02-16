@@ -47,7 +47,8 @@ knitr::asis_output('<a href="http://www.youtube.com/watch?v=n8OqvSW7GFc"
 
 # Dateirechte
 
-- z.B. via "`ls -l`" **am Anfang der Zeile** angezeigt, z.B. `-rwxr-x--- 42 hans family 42 [DATUM] MeinSkript.sh`
+- u.a. via "`ls -l`" **am Anfang der Zeile** angezeigt:   
+  z.B. `-rwxr-x--- 42 hans family 42 [DATUM] MeinSkript.sh`
   - führendes "`-`" : weder link "`l`" noch verzeichnis "`d`", daher Zeichen für normale Dateien
   - erster Dreierblock "`rwx`" : Rechte des Besitzers (`u` = user) (hier hans) = (`r`)ead + (`w`)rite + e(`x`)ecute
   - zweiter Dreierblock "`r-x`" : Gruppenrechte (`g` = group) (hier family = Gruppe von accounts), welche keine Schreibrechte "`w`" haben (daher an dessen Stelle ein "`-`")
@@ -118,7 +119,8 @@ knitr::asis_output('<a href="http://www.youtube.com/watch?v=n8OqvSW7GFc"
 
 - fasst mehrere Datein oder ganze Verzeichnisstrukturen zusammen
 - Aufruf = `tar -[OPTIONS] -f ARCHIVDATEI [FILESorFOLDERS]`
-- `ARCHIVDATEI` i.d.R. mit **.tar Endung** (wenn ohne Kompression verwendet), z.B. "`tar -cf bash-config-files.tar $HOME/.bash*`"
+- `ARCHIVDATEI` i.d.R. mit **.tar Endung** (wenn ohne Kompression verwendet)   
+  z.B. "`tar -cf bash-config-files.tar $HOME/.bash*`"
 - Optionen steuern eigentliche **Handlungen** (können zusammengefasst werden):
   - "`-c`" = compress = `ARCHIVDATEI` wird angelegt und gefüllt
   - "`-x`" = eXtract = `ARCHIVDATEI` wird "ausgepackt" und Dateien wiederhergestellt
@@ -128,8 +130,10 @@ knitr::asis_output('<a href="http://www.youtube.com/watch?v=n8OqvSW7GFc"
   - "`-z`" = gzip (siehe unten)
   - "`-j`" = bzip2
   - "`-J`" = xz
-  - falls gesetzt, sollte Archivname mit **entsprechender Endung verwendet** werden (nicht automatisch angehängt!), z.B. "`tar -czf bash-config-files.tar.gz $HOME/.bash*`"
-  - muss **auch beim Entpacken, Auflisten, etc.** entsprechend **angegeben** werden, z.B. "`tar -lzf bash-config-files.tar.gz`"
+  - falls gesetzt, sollte Archivname mit **entsprechender Endung verwendet** werden (nicht automatisch angehängt!),   
+    z.B. "`tar -czf bash-config-files.tar.gz $HOME/.bash*`"
+  - muss **auch beim Entpacken, Auflisten, etc.** entsprechend **angegeben** werden,   
+    z.B. "`tar -lzf bash-config-files.tar.gz`"
 
 
 ## gzip

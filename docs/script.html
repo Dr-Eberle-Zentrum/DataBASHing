@@ -435,12 +435,17 @@ div.tocify {
 <ul>
 <li>ermöglicht genauere Verwendung von Variablen in und an Strings z.B. <code>echo "_${USER}_"</code> vs. <code>echo "_"$USER"_"</code></li>
 </ul></li>
-<li><strong>Bash Parameter Expansion</strong> ermöglicht die <strong>Manipulation von Variablenwerten</strong>! (<a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html">komplette Online-Dokumentation mit Beispielen</a>)</li>
+<li><strong>Bash Parameter Expansion</strong> ermöglicht die <strong>Manipulation von Variablenwerten</strong>!<br />
+(<a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html">komplette Online-Dokumentation mit Beispielen</a>)</li>
 <li><code>${x:-"schnurps"}</code> - liefert den Wert von Variable “<code>x</code>” oder, wenn Variable nicht verfügbar, den Wert “schnurps”</li>
 <li><code>${#x}</code> - Anzahl Zeichen des in Variable “<code>x</code>” gespeicherten Wertes</li>
-<li><code>${x//y/z}</code> - <strong>ersetzt alle</strong> matches von “<code>y</code>” durch “<code>z</code>” in Variable “<code>x</code>”, z.B. <code>stand=1:1; echo ${stand//1/2}</code>
+<li><code>${x//y/z}</code> - <strong>ersetzt alle</strong> matches von “<code>y</code>” durch “<code>z</code>” in Variable "<code>x</code>
 <ul>
-<li>wenn “<code>/</code>” statt “<code>//</code>”, dann nur erster match ersetzt, z.B. <code>stand=1:1; echo ${stand/1/2}</code></li>
+<li>z.B. <code>stand=1:1; echo ${stand//1/2}</code></li>
+<li>wenn “<code>/</code>” statt “<code>//</code>”, dann nur erster match ersetzt
+<ul>
+<li>z.B. <code>stand=1:1; echo ${stand/1/2}</code></li>
+</ul></li>
 <li>“BASH-regex” bzw. wildcards:
 <ul>
 <li>“<code>*</code>” - ein oder mehrere Zeichen egal was, z.B. <code>stand=12:3; echo ${stand//*:/x-zu-}</code></li>
@@ -539,7 +544,8 @@ div.tocify {
 <li>“<code>!</code>” - <strong>Negierung</strong> des nachfolgenden Tests z.B. “<code>! ${#x} -gt 2</code>” ist das gleiche wie “<code>${#x} -le 2</code>”</li>
 <li><strong>Datei-/Verzeichnistests</strong>
 <ul>
-<li><code>-e</code> / <code>-d</code> = Datei / Verzeichnis existiert, z.B. <code>if [ ! -e /tmp/jo.txt ] || [ -s /tmp/jo.txt ]; then echo "man" &gt; /tmp/jo.txt; fi</code></li>
+<li><code>-e</code> / <code>-d</code> = Datei / Verzeichnis existiert,<br />
+z.B. <code>if [ ! -e /tmp/jo.txt ] || [ -s /tmp/jo.txt ]; then echo "man" &gt; /tmp/jo.txt; fi</code></li>
 <li><code>-r</code> / <code>-w</code> = Datei ist lesbar / beschreibbar</li>
 <li><code>-x</code> = Datei ist ausführbar</li>
 <li><code>-s</code> = Datei ist leer (zero size)</li>

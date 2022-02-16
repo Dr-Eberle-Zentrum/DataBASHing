@@ -392,7 +392,8 @@ div.tocify {
 <div id="dateirechte" class="section level1">
 <h1>Dateirechte</h1>
 <ul>
-<li>z.B. via “<code>ls -l</code>” <strong>am Anfang der Zeile</strong> angezeigt, z.B. <code>-rwxr-x--- 42 hans family 42 [DATUM] MeinSkript.sh</code>
+<li>u.a. via “<code>ls -l</code>” <strong>am Anfang der Zeile</strong> angezeigt:<br />
+z.B. <code>-rwxr-x--- 42 hans family 42 [DATUM] MeinSkript.sh</code>
 <ul>
 <li>führendes “<code>-</code>” : weder link “<code>l</code>” noch verzeichnis “<code>d</code>”, daher Zeichen für normale Dateien</li>
 <li>erster Dreierblock “<code>rwx</code>” : Rechte des Besitzers (<code>u</code> = user) (hier hans) = (<code>r</code>)ead + (<code>w</code>)rite + e(<code>x</code>)ecute</li>
@@ -478,7 +479,8 @@ div.tocify {
 <ul>
 <li>fasst mehrere Datein oder ganze Verzeichnisstrukturen zusammen</li>
 <li>Aufruf = <code>tar -[OPTIONS] -f ARCHIVDATEI [FILESorFOLDERS]</code></li>
-<li><code>ARCHIVDATEI</code> i.d.R. mit <strong>.tar Endung</strong> (wenn ohne Kompression verwendet), z.B. “<code>tar -cf bash-config-files.tar $HOME/.bash*</code>”</li>
+<li><code>ARCHIVDATEI</code> i.d.R. mit <strong>.tar Endung</strong> (wenn ohne Kompression verwendet)<br />
+z.B. “<code>tar -cf bash-config-files.tar $HOME/.bash*</code>”</li>
 <li>Optionen steuern eigentliche <strong>Handlungen</strong> (können zusammengefasst werden):
 <ul>
 <li>“<code>-c</code>” = compress = <code>ARCHIVDATEI</code> wird angelegt und gefüllt</li>
@@ -491,8 +493,10 @@ div.tocify {
 <li>“<code>-z</code>” = gzip (siehe unten)</li>
 <li>“<code>-j</code>” = bzip2</li>
 <li>“<code>-J</code>” = xz</li>
-<li>falls gesetzt, sollte Archivname mit <strong>entsprechender Endung verwendet</strong> werden (nicht automatisch angehängt!), z.B. “<code>tar -czf bash-config-files.tar.gz $HOME/.bash*</code>”</li>
-<li>muss <strong>auch beim Entpacken, Auflisten, etc.</strong> entsprechend <strong>angegeben</strong> werden, z.B. “<code>tar -lzf bash-config-files.tar.gz</code>”</li>
+<li>falls gesetzt, sollte Archivname mit <strong>entsprechender Endung verwendet</strong> werden (nicht automatisch angehängt!),<br />
+z.B. “<code>tar -czf bash-config-files.tar.gz $HOME/.bash*</code>”</li>
+<li>muss <strong>auch beim Entpacken, Auflisten, etc.</strong> entsprechend <strong>angegeben</strong> werden,<br />
+z.B. “<code>tar -lzf bash-config-files.tar.gz</code>”</li>
 </ul></li>
 </ul>
 </div>
