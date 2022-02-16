@@ -397,36 +397,53 @@ div.tocify {
 <li>Variablen
 <ul>
 <li>Spaltenelemente mittel <code>$SPALTENNUMMER</code> ansprechbar; <code>$0</code> = ganze Zeile</li>
-<li>lokale Variablen via Zuweisung mit “<code>=</code>” angelegt (<code>echo 4 | awk '{i=$1+2; print i}'</code>)</li>
+<li>lokale Variablen via Zuweisung mit “<code>=</code>” angelegt
+<ul>
+<li><code>echo 4 | awk '{i=$1+2; print i}'</code></li>
+</ul></li>
 <li>Spaltenelemente/-variablen können auch überschrieben werden!!
 <ul>
 <li><code>echo A B | awk '{$2="D"; print $0}'</code></li>
 <li><code>$0</code> = Zusammensetzung der aktuellen Spaltenelemente/Felder mit aktuellem (output) field separator (<code>OFS</code>) (kann auch geändert werden)</li>
 </ul></li>
-<li><code>NF</code> = Anzahl Spalten (<code>$NF</code> = letzte Spalte) (number of fields), z.B. letzte Spalte ausgeben (<code>echo A B | awk '{print $NF}'</code>) oder Anzahl Spalten ausgeben (<code>echo A B | awk '{print NF}'</code>)</li>
+<li><code>NF</code> = Anzahl Spalten (<code>$NF</code> = letzte Spalte) (number of fields)
+<ul>
+<li>z.B. letzte Spalte ausgeben (<code>echo A B | awk '{print $NF}'</code>)</li>
+<li>oder Anzahl Spalten ausgeben (<code>echo A B | awk '{print NF}'</code>)</li>
+</ul></li>
 <li><code>NR</code> = aktuelle Zeilennummer (number of rows), z.B. zeilennumerierte Ausgabe (<code>ls -l | awk '{print "Zeile "NR" : "$0}'</code>)</li>
 <li><code>FS</code> = verwendetes Spaltentrennzeichen (field separator)
 <ul>
-<li>entweder via “<code>-F</code>” setzen (<code>echo "A;B" | awk -F ";" '{print $1}'</code>) (setzt auch OFS)</li>
-<li>oder explizit für alle Zeilen vorm Einlesen (<code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code>)</li>
+<li>entweder via “<code>-F</code>” setzen (setzt auch OFS)</li>
+<li>z.B. <code>echo "A;B" | awk -F ";" '{print $1}'</code></li>
+<li>oder explizit für alle Zeilen vorm Einlesen</li>
+<li>z.B. <code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code></li>
 </ul></li>
-<li><code>OFS</code> = aktuelles Spaltentrennzeichen der Ausgabe (output field separator); muss (für alle Zeilen) im “<code>BEGIN</code>”-block (siehe unten) gesetzt werden (<code>echo "A B" | awk 'BEGIN{OFS=":"}{print $1,"lala"}'</code>)
+<li><code>OFS</code> = aktuelles Spaltentrennzeichen der Ausgabe (output field separator); muss (für alle Zeilen) im “<code>BEGIN</code>”-block (siehe unten) gesetzt werden
 <ul>
+<li><code>echo "A B" | awk 'BEGIN{OFS=":"}{print $1,"lala"}'</code></li>
+</ul></li>
 <li>“<code>;</code>” = Befehlstrennzeichen (Beispiel weiter unten)</li>
 </ul></li>
-</ul></li>
-<li><code>print</code> = Ausgabe mit Zeilenumbruch (<code>echo "Hans Peter" | awk '{print "Name="$2"\nVorname="$1}'</code>)
+<li><code>print</code> = Ausgabe mit Zeilenumbruch
 <ul>
+<li><code>echo "Hans Peter" | awk '{print "Name="$2"\nVorname="$1}'</code></li>
 <li>Ausgaben mit <strong>double tick</strong> <code>"</code> quoten</li>
 <li><strong>Variablen nicht in quotes</strong> einschliessen (stehen vor/zwischen/hinter den gequoteten Strings, siehe obiges Beispiel oder hier nachfolgend)</li>
 </ul></li>
-<li><code>printf</code> = Ausgabe OHNE Zeilenumbruch (<code>echo "17" | awk '{printf "input="$0; printf "next"; print "linebreak"}'</code>)</li>
+<li><code>printf</code> = Ausgabe OHNE Zeilenumbruch
+<ul>
+<li><code>echo "17" | awk '{printf "input="$0; printf "next"; print "linebreak"}'</code></li>
+</ul></li>
 <li>Kontrollstrukturen
 <ul>
 <li><code>if( NR%2 == 0 ) {print "gerade"} else {print $0}</code> = <strong>if</strong> conditional</li>
 <li><code>for( i=0; i&lt;5; i++ ) { printf " i="i; }</code> = <strong>for</strong> looping</li>
 </ul></li>
-<li>Vor- und Nachbereitung der Ausgabe (z.B. für Kopf-/Fusszeilen oder zum initialisieren von Variablen) mittels “<code>BEGIN{}</code>” und “<code>END{}</code>”-Block (jeweils optional), z.B. <code>echo "Doe,John" | awk -F "," 'BEGIN{print "Vorname Nachname"}{print $2" "$1}END{print "#Ende"}'</code></li>
+<li>Vor- und Nachbereitung der Ausgabe (z.B. für Kopf-/Fusszeilen oder zum initialisieren von Variablen) mittels “<code>BEGIN{}</code>” und “<code>END{}</code>”-Block (jeweils optional),
+<ul>
+<li><code>echo "Doe,John" | awk -F "," 'BEGIN{print "Vor Nach"}{print $2" "$1}END{print "#Ende"}'</code></li>
+</ul></li>
 </ul></li>
 </ul>
 <hr />

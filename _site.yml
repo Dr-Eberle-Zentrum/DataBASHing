@@ -12,13 +12,12 @@ output:
       collapsed: false
     theme: "sandstone"
     includes:
-      after_body: "footer.html"
+      after_body: "_html/footer.html"
     css: "dez-style.css"
   pdf_document:
     includes:
-      in_header: "latex_commands.tex"
-    extra_dependencies:
-      breakurl: null
+      in_header: "_tex/latex_commands.tex"
+      after_body: "_tex/footer.tex"
 urlcolor: blue
 linkcolor: blue
 exclude: ["*.tex", "*.log"]

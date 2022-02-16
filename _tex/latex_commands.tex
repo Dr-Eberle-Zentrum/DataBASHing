@@ -1,0 +1,29 @@
+
+% arial-like font
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% underlined blue hrefs
+\let\oldhref\href
+\renewcommand{\href}[2]{\textcolor{blue}{\underline{\oldhref{#1}{#2}}}}
+
+% line breaking / word wrap in \texttt
+\usepackage[htt]{hyphenat}
+
+% gray background in inline verbatim elements
+\definecolor{lightgrey}{rgb}{0.925, 0.925, 0.925}
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{\oldtexttt{\colorbox{lightgrey}{#1}}}
+
+
+% environment for questions and answers
+\newenvironment{question}{}{}
+\newenvironment{answer}{}{}
+
+% logo in header
+\usepackage{titling}
+\pretitle{\begin{center}
+\raisebox{-.5\height}{\includegraphics[width=134px,height=34px]{_tex/Logo_Universitaet_Tuebingen.pdf}}
+Dr. Eberle Zentrum f\"ur digitale Kompetenzen\\\vspace{1em}
+\LARGE DataBASHing - }
+\posttitle{\end{center}}
