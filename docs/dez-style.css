@@ -36,6 +36,14 @@ hr {
   margin-top: 20px;
 }
 
+.question, .answer {
+  border: 1px dotted #cccccc;
+  border-radius: 4px;
+  padding: 10px 10px 0;
+  margin-top: -12px;
+  margin-bottom: 20px;
+}
+
 /* print-specific changes */
 @media print {
 

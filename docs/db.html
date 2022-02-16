@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Michael Derntl" />
+
+
+<title>Konsolenbasiertes Arbeiten mit SQLite</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="dez-style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div style="background:white">
+   <div id="logo-section" class="container">
+    <a  class="logo-link"
+        title="Universität Tübingen"
+        href="https://www.uni-tuebingen.de"><img
+            alt="Logo der Universität Tübingen"
+            src="https://uni-tuebingen.de/typo3conf/ext/project/Resources/Public/Images/Logo_Universitaet_Tuebingen.svg"
+            width="134px"
+            height="35px"
+    ></a><a  class="logo-link"
+        id="logo-dez"
+        title="Dr. Eberle Zentrum für digitale Kompetenzen"
+        href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen</a>
+   </div>
+  </div>
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Data BASHing</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Intro</a></li>
+        <li><a href="install.html">Install</a></li>
+        <li><a href="basics.html">Basics</a></li>
+        <li><a href="data.html">Processing</a></li>
+        <li><a href="regex.html">RegEx</a></li>
+        <li><a href="edit.html">Edit</a></li>
+        <li><a href="files.html">Files</a></li>
+        <li><a href="remote.html">Remote</a></li>
+        <li><a href="script.html">Script</a></li>
+        <li><a href="db.html">DB</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://uni-tuebingen.de/de/151602">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Konsolenbasiertes Arbeiten mit SQLite</h1>
+<h4 class="author">Michael Derntl</h4>
+
+</div>
+
+
+<hr />
+<p>Dieses Tutorial führt sie Schritt für Schritt in die Konsolen-basierte Verwendung und Abfrage einer SQLite Datenbank ein. Grundlegende Kenntnisse über relationale Datenbanken und SQL Abfragen werden vorausgesetzt.</p>
+<hr />
+<div id="beispieldaten" class="section level2">
+<h2>Beispieldaten</h2>
+<p>Zum Nachvollziehen der folgenden Schritte benötigen sie einige Dateien:</p>
+<ul>
+<li>Komplettdatenbank: <a href="db/schokolade.db">schokolade.db</a></li>
+<li>Rohdaten im CSV-Format (basierend auf <a href="https://www.kaggle.com/rtatman/chocolate-bar-ratings">Chocolate Bar Ratings</a> Datensatz)
+<ul>
+<li><a href="db/company.csv">company.csv</a> : Alle Firmen, die Schokoladen herstellen mit den Spalten:
+<ul>
+<li><code>id</code>: eindeutige Identifikationsnummer der Firma</li>
+<li><code>name</code>: Name der Firma</li>
+<li><code>country</code>: Land der Firma</li>
+</ul></li>
+<li><a href="db/review.csv">review.csv</a> : Alle Schokoladen-Reviews mit folgenden Spalten:
+<ul>
+<li><code>id</code>: eindeutige Identifikationsnummer des Reviews</li>
+<li><code>company_id</code>: Identifikationsnummer der Firma (Verweis auf die id in der Tabelle company), die diese Schokolade hergestellt hat</li>
+<li><code>bar_name</code>: Name des Schokoriegels</li>
+<li><code>year</code>: Jahr des Reviews</li>
+<li><code>coca_pct</code>: Kakaoanteil zwischen 0 und 1</li>
+<li><code>rating</code>: Bewertung zwischen 1 und 5</li>
+<li><code>bean_type</code>: Kakaobohnen-Sorte (fehlt bei vielen Einträgen)</li>
+<li><code>bean_origin</code>: Kakaobohnen-Herkunft (fehlt bei vielen Einträgen)</li>
+</ul></li>
+</ul></li>
+<li>Datenbankdefinition: <a href="db/create_tables.sql">create_tables.sql</a></li>
+</ul>
+<hr />
+</div>
+<div id="sqlite-installation" class="section level2">
+<h2>SQLite Installation</h2>
+<pre class="bash"><code>sudo apt install sqlite3</code></pre>
+<hr />
+</div>
+<div id="sqlite-unter-windows" class="section level2">
+<h2>SQLite unter Windows</h2>
+<p><a href="https://sqlite.org/download.html">https://sqlite.org/download.html</a></p>
+<p>Für Windows am besten <code>sqlite-tools-win32-x86-xxx.zip</code>. Entpacken in ein beliebiges Verzeichnis. Dieses Verzeichnis dann zur Windows-Umgebungsvariable „<code>Path</code>“ hinzufügen (<a href="https://ekiwi-blog.de/Windows/System/PATH-Variable_setzen/index.html">Wie geht das?</a>)</p>
+<hr />
+</div>
+<div id="ausprobieren" class="section level2">
+<h2>Ausprobieren</h2>
+<pre class="bash"><code>sqlite3 --version</code></pre>
+<p>Sollte mindestens <code>3.30</code> sein.</p>
+<hr />
+</div>
+<div id="sqlite-konsole" class="section level2">
+<h2>SQLite Konsole</h2>
+<p>Nun starten wir SQLite Konsole mit einer Datenbank. Dafür einfach als Argument den Dateinamen (z.B. <a href="db/schokolade.db">schokolade.db</a>) der Datenbank übergeben:</p>
+<pre class="bash"><code>sqlite3 schokolade.db</code></pre>
+<p>Wenn die Datenbankdatei bereits existiert, wird sie geöffnet. Ansonsten wird eine neue Datenbank in dieser Datei angelegt.</p>
+<p>Nun sind wir in der SQLite Konsole, die Ausgabe sollte wie folgt aussehen:</p>
+<pre class="sqlite"><code>SQLite version 3.37.2 2022-01-06 13:25:41
+Enter &quot;.help&quot; for usage hints.
+sqlite&gt;</code></pre>
+<p>Bei diesem Prompt kann man nun zwei Arten von Kommandos absetzen:</p>
+<ul>
+<li>SQL-Befehle zum Erzeugen der Tabellen, Erstellen von Abfragen, etc.</li>
+<li>„Dot-Kommandos“, das sind spezielle Steuerbefehle, die mit einem Punkt (dot) beginnen und mit denen man Einstellungen ändern kann oder Daten importieren kann</li>
+</ul>
+<hr />
+</div>
+<div id="dot-kommandos" class="section level2">
+<h2>Dot-Kommandos</h2>
+<p>Eine komplette Liste der Dot-Kommandos erhält man mit dem Kommando “<code>.help</code>” (hier nur eine Auswahl dargestellt):</p>
+<pre class="sqlite"><code>sqlite&gt; .help
+.backup ?DB? FILE       Backup DB (default &quot;main&quot;) to FILE
+.cd DIRECTORY           Change the working directory to DIRECTORY
+.changes on|off         Show number of rows changed by SQL
+.clone NEWDB            Clone data into NEWDB from the existing database
+.dump ?OBJECTS?         Render database content as SQL
+.echo on|off            Turn command echo on or off
+.excel                  Display the output of next command in spreadsheet
+.exit ?CODE?            Exit this program with return-code CODE
+.headers on|off         Turn display of headers on or off
+.help ?-all? ?PATTERN?  Show help text for PATTERN
+.import FILE TABLE      Import data from FILE into TABLE
+.limit ?LIMIT? ?VAL?    Display or change the value of an SQLITE_LIMIT
+.mode MODE ?TABLE?      Set output mode
+.nullvalue STRING       Use STRING in place of NULL values
+.once ?OPTIONS? ?FILE?  Output for the next SQL command only to FILE
+.open ?OPTIONS? ?FILE?  Close existing database and reopen FILE
+.quit                   Exit this program
+.read FILE              Read input from FILE
+.schema ?PATTERN?       Show the CREATE statements matching PATTERN
+.separator COL ?ROW?    Change the column and row separators
+.shell CMD ARGS...      Run CMD ARGS... in a system shell
+.show                   Show the current values for various settings
+.tables ?TABLE?         List names of tables matching LIKE pattern TABLE
+.width NUM1 NUM2 ...    Set minimum column widths for columnar output</code></pre>
+<p>Detaillierte Erklärungen aller Kommandos gibt es unter <a href="https://sqlite.org/cli.html">https://sqlite.org/cli.html</a></p>
+<hr />
+</div>
+<div id="datenbanktabellen-erzeugen" class="section level2">
+<h2>Datenbanktabellen erzeugen</h2>
+<p>Das Kommando “<code>.tables</code>” zeigt uns, dass die Datenbank noch leer ist. Daher erzeugen wir mal die Tabellen “<code>company</code>” und “<code>reviews</code>”.</p>
+<p>Dafür gibt es zwei Möglichkeiten: entweder die Kommandos in die Konsole schreiben, oder die Kommandos in eine Datei (z.B. <a href="db/create_tables.sql">create_tables.sql</a>) speichern und diese mit “<code>.read</code>” ausführen:</p>
+<pre class="sqlite"><code>sqlite&gt; .read create_tables.sql
+sqlite&gt; .tables
+company review</code></pre>
+<hr />
+</div>
+<div id="daten-aus-csv-importieren" class="section level2 tabset egal">
+<h2 class="tabset">Daten aus CSV importieren</h2>
+<p>Die Tabellen sind nun angelegt aber leer. Man kann nun die Tabellen zeilenweise füllen mit dem SQL Kommando “<code>insert into</code>”, wir wollen aber lieber die Tabellen aus den CSV-Dateien füttern. Dafür gibt es das Kommando “<code>.import</code>”. Lassen wir uns mal die Hilfe zum Import anzeigen:</p>
+<pre class="sqlite"><code>sqlite&gt; .help import
+.import FILE TABLE       Import data from FILE into TABLE
+  Options:
+    --ascii              Use \037 and \036 as column and row separators
+    --csv                Use , and \n as column and row separators
+    --skip N             Skip the first N rows of input
+    -v                   &quot;Verbose&quot; - increase auxiliary output
+  Notes:
+    * If TABLE does not exist, it is created. The first row of input
+      determines the column names.
+    * If neither --csv or --ascii are used, the input mode is derived
+      from the &quot;.mode&quot; output mode
+    * If FILE begins with &quot;|&quot; then it is a command that generates the
+      input text.</code></pre>
+<p>Wir werden also die Option “<code>--csv</code>” verwenden, und die erste Zeile (Spaltennamen) mittels “<code>--skip 1</code>” übergehen. Wenn keine Fehlermeldung kommt, kann man davon ausgehen, dass alles funktioniert hat. Wir gucken trotzdem wie viele Zeilen in company eingetragen wurden:</p>
+<pre class="sqlite"><code>sqlite&gt; .import --csv --skip 1 company.csv company
+sqlite&gt; select count(*) from company;
+418</code></pre>
+<p>Das gleiche noch mit den Reviews, und voila die Datenbank ist gefüllt und bereit für unsere Abfragen:</p>
+<pre class="sqlite"><code>sqlite&gt; .import --csv --skip 1 review.csv review
+sqlite&gt; select count(*) from review;
+1795</code></pre>
+<div id="quiz" class="section level3">
+<h3>Quiz</h3>
+<div class="question">
+<p>Warum haben wir erst “<code>company</code>” und dann erst “<code>review</code>” gefüllt?</p>
+</div>
+</div>
+<div id="antwort" class="section level3">
+<h3>Antwort</h3>
+<div class="answer">
+<p>Da sich die Einträge in Tabelle “<code>review</code>” auf die Daten in “<code>company</code>” verweisen.</p>
+</div>
+</div>
+</div>
+<hr />
+<div id="abfragen" class="section level2">
+<h2>Abfragen</h2>
+<p>Man kann nun Abfragen in SQL formulieren, die Ergebnisse werden entsprechend ausgegeben, z.B. Jahreszahl und Bewertung aller Reviews für Schokoladen aus Vietnam:</p>
+<pre class="sqlite"><code>sqlite&gt; select year, rating from review where bean_origin = &quot;Vietnam&quot;;
+2014|2.75
+2017|3.5
+2016|3.5
+2016|3.25
+2010|3.25
+[... einige ausgeblendete Zeilen...]
+2016|3.0
+2016|4.0
+2015|3.25
+2015|3.25
+2012|3.5</code></pre>
+<p>Wir sehen die Ausgabe ist ohne Spaltenüberschrift und das verwendete Trennzeichen ist die Pipe. Das kann man mit den Kommandos .headers und .separator ändern, z.B. mit Tabulator als Trennzeichen:</p>
+<pre class="sqlite"><code>sqlite&gt; .headers on
+sqlite&gt; .separator &quot;\t&quot;
+sqlite&gt; select year, rating from review where bean_origin = &#39;Vietnam&#39;;
+year rating
+2014 2.75
+2017 3.5
+2016 3.5
+2016 3.25
+2010 3.25
+[... einige ausgeblendete Zeilen...]
+2016 3.0
+2016 4.0
+2015 3.25
+2015 3.25
+2012 3.5</code></pre>
+<hr />
+</div>
+<div id="modus" class="section level2">
+<h2>Modus</h2>
+<p>Das Format der Ausgabe von Abfrageergebnissen kann man unter anderem über das Kommando “<code>.mode</code>” voreinstellen. Der Standardmodus ist “<code>list</code>”, man kann aber z.B. auch CSV oder als Tabelle ausgeben lassen:</p>
+<pre class="sqlite"><code>sqlite&gt; .help mode
+.mode MODE ?TABLE? Set output mode
+  MODE is one of:
+    ascii       Columns/rows delimited by 0x1F and 0x1E
+    box         Tables using unicode box-drawing characters
+    csv         Comma-separated values
+    column      Output in columns. (See .width)
+    html        HTML &lt;table&gt; code
+    insert      SQL insert statements for TABLE
+    json        Results in a JSON array
+    line        One value per line
+    list        Values delimited by &quot;|&quot;
+    markdown    Markdown table format
+    quote       Escape answers as for SQL
+    table       ASCII-art table
+    tabs        Tab-separated values
+    tcl         TCL list elements</code></pre>
+<p>Wollen wir beispielsweise ein Abfrageergebnis als CSV-Datei speichern, so stellen wir den Ausgabemodus auf “<code>csv</code>” und verwenden das Kommando “<code>.once</code>” um die Ausgabe in eine Datei zu leiten:</p>
+<pre class="sqlite"><code>sqlite&gt; .once ergebnis.csv
+sqlite&gt; select year, rating from review where bean_origin = &#39;Vietnam&#39;;</code></pre>
+<hr />
+</div>
+<div id="über-kommandozeile-steuern" class="section level2">
+<h2>Über Kommandozeile steuern</h2>
+<p>Um SQLite in einen Verarbeitungspipeline zu verwenden, kann man SQLite auch ohne interaktive Konsole verwenden:</p>
+<pre class="sqlite"><code>&gt; sqlite3 -help
+Usage: sqlite3 [OPTIONS] FILENAME [SQL]
+FILENAME is the name of an SQLite database. A new database is created
+if the file does not previously exist.
+OPTIONS include:
+  -A ARGS...           run &quot;.archive ARGS&quot; and exit
+  -append              append the database to the end of the file
+  -ascii               set output mode to &#39;ascii&#39;
+  -bail                stop after hitting an error
+  -batch               force batch I/O
+  -box                 set output mode to &#39;box&#39;
+  -column              set output mode to &#39;column&#39;
+  -cmd COMMAND         run &quot;COMMAND&quot; before reading stdin
+  -csv                 set output mode to &#39;csv&#39;
+  -deserialize         open the database using sqlite3_deserialize()
+  -echo                print commands before execution
+  -init FILENAME       read/process named file
+  -[no]header          turn headers on or off
+  -help                show this message
+  -html                set output mode to HTML
+  -interactive         force interactive I/O
+  -json                set output mode to &#39;json&#39;
+  -line                set output mode to &#39;line&#39;
+  -list                set output mode to &#39;list&#39;
+  -lookaside SIZE N    use N entries of SZ bytes for lookaside memory
+  -markdown            set output mode to &#39;markdown&#39;
+  -maxsize N           maximum size for a --deserialize database
+  -memtrace            trace all memory allocations and deallocations
+  -mmap N              default mmap size set to N
+  -newline SEP         set output row separator. Default: &#39;\n&#39;
+  -nofollow            refuse to open symbolic links to database files
+  -nonce STRING        set the safe-mode escape nonce
+  -nullvalue TEXT      set text string for NULL values. Default &#39;&#39;
+  -pagecache SIZE N    use N slots of SZ bytes each for page cache memory
+  -quote               set output mode to &#39;quote&#39;
+  -readonly            open the database read-only
+  -safe                enable safe-mode
+  -separator SEP       set output column separator. Default: &#39;|&#39;
+  -stats print         memory stats before each finalize
+  -table               set output mode to &#39;table&#39;
+  -tabs                set output mode to &#39;tabs&#39;
+  -version             show SQLite version
+  -vfs NAME            use NAME as the default VFS
+  -zip                 open the file as a ZIP Archive</code></pre>
+<p>(Je nach verwendeter SQLite-Version können bei Ihnen weniger oder mehr als die hier gelisteten Optionen möglich sein.)</p>
+<p>Nun wollen wir das Ergebnis unserer Vietnam-Abfrage direkt in der BASH ausgeben lassen (ohne interaktive SQLite-Konsole):</p>
+<pre class="bash"><code>$ sqlite3 -csv -readonly schokolade.db \
+ &quot;select year, rating from review where bean_origin = &#39;Vietnam&#39;&quot;</code></pre>
+<p><em>Beachten</em>: das “<code>\</code>” am Zeilenende führt zum Ignorieren des Zeilenumbruchs, sodass der Befehl in der nächsten Zeile fortgeführt werden kann. (Aber nur, wenn nach dem “<code>\</code>” kein weiteres Leerzeichen etc. sondern direkt der Zeilenumbruch folgt!)</p>
+<hr />
+</div>
+<div id="csv-datenbank-csv" class="section level2">
+<h2>CSV | Datenbank | CSV</h2>
+<p>Nun wollen wir ein CSV-File in eine temporäre SQLite-Datenbank füttern und anschließend eine Abfrage machen, deren Ergebnis als CSV ausgegeben wird.</p>
+<p>Gucken wir zunächst in die CSV-Datei review.csv, die ersten paar Zeilen sehen wie folgt aus:</p>
+<pre class="bash"><code>$ head -n 10 review.csv</code></pre>
+<pre><code>id,company_id,bar_name,year,cocoa_pct,rating,bean_type,bean_origin
+436,1,&quot;Agua Grande&quot;,2016,0.63,3.75,,&quot;Sao Tome&quot;
+437,1,Kpime,2015,0.7,2.75,,Togo
+438,1,Atsane,2015,0.7,3.0,,Togo
+439,1,Akata,2015,0.7,3.5,,Togo
+440,1,Quilla,2015,0.7,3.5,,Peru
+441,1,Carenero,2014,0.7,2.75,Criollo,Venezuela
+442,1,Cuba,2014,0.7,3.5,,Cuba
+443,1,&quot;Sur del Lago&quot;,2014,0.7,3.5,Criollo,Venezuela
+444,1,&quot;Puerto Cabello&quot;,2014,0.7,3.75,Criollo,Venezuela</code></pre>
+<p>Jetzt pipen wir die komplette CSV-Datei in eine temporäre SQLite-Datenbank, führen die SQL Abfrage aus und gucken uns die ersten 10 Zeilen des Ergebnisses an:</p>
+<pre class="bash"><code>$ cat review.csv | sqlite3 :memory: &quot;.mode csv&quot; &quot;.import /dev/stdin review&quot; \
+&quot;select year, rating from review where bean_origin = &#39;Vietnam&#39;&quot; | head -n 10</code></pre>
+<pre><code>2014,2.75
+2017,3.5
+2016,3.5
+2016,3.25
+2010,3.25
+2015,3.5
+2015,2.75
+2016,2.75
+2016,3.0
+2016,3.5</code></pre>
+<p>Um zu erklären, was bei obigen Aufruf von sqlite3 passiert, wird dieser im Folgenden nochmal in seine Teile zerlegt und diskutiert:</p>
+<pre class="bash"><code>sqlite3 \
+:memory: \
+&quot;.mode csv&quot; \
+&quot;.import /dev/stdin review&quot; \
+&quot;select year, rating from review where bean_origin = &#39;Vietnam&#39;&quot;</code></pre>
+<ul>
+<li><code>:memory:</code> ist ein spezieller “Dateiname” in SQLite, der andeutet, dass wir die Datenbank nicht in eine Datei auf den Datenträger speichern wollen, sondern mit einer temporären In-Memory-Datenbank arbeiten wollen, die so lange im Arbeitsspeicher existiert, wie das sqlite3 Kommando läuft.</li>
+<li><code>".mode csv"</code> müssen wir vor dem Import-Kommando verwenden, um CSV importieren zu können, und auch um CSV ausgeben zu lassen. Diese Notwendigkeit ergibt sich aus der Dokumentation: <em>„Note that it is important to set the “mode” to “csv” before running the “.import” command. This is necessary to prevent the command-line shell from trying to interpret the input file text as some other format.“</em></li>
+<li><code>".import /dev/stdin review"</code> veranlasst SQLite, von /dev/stdin zu lesen; das ist die Standardeingabe, also das was via cat review.csv an sqlite3 geliefert wird. Das CSV soll in die Tabelle review importiert werden.</li>
+<li><code>"select ..."</code> ist die SQL-Abfrage, die wir ausführen wollen.</li>
+</ul>
+<p>Um beispielsweise die Anzahl der Zeilen im Abfrageergebnis zu ermitteln, können wir den Output von sqlite3 zum Zeilenzählen an <code>wc</code> pipen, und sehen es gibt 38 Reviews von vietnamesischen Schokoladen:</p>
+<pre class="bash"><code>$ cat review.csv | sqlite3 :memory: &quot;.mode csv&quot; &quot;.import /dev/stdin review&quot; \
+&quot;select * from review where bean_origin = &#39;Vietnam&#39;&quot; | wc -l</code></pre>
+<pre><code>38</code></pre>
+</div>
+
+
+
+<div id="foot-section">
+  <div style="display:inline-block">
+    This work is licensed under a
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+      Creative Commons Attribution-ShareAlike 4.0 International License.</a>
+      <br>
+    by
+    <a title="Dr. Eberle Zentrum für digitale Kompetenzen"
+      href="https://uni-tuebingen.de/de/151602">Dr. Eberle Zentrum für digitale Kompetenzen, Universität Tübingen</a>
+  </div>
+    <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        style="text-decoration:none;">
+    <img
+          alt="Creative Commons License"
+          style="border-width:0; margin-left:10px"
+          src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

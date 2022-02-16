@@ -1,0 +1,1796 @@
+id,company_id,bar_name,year,cocoa_pct,rating,bean_type,bean_origin
+436,1,"Agua Grande",2016,0.63,3.75,,"Sao Tome"
+437,1,Kpime,2015,0.7,2.75,,Togo
+438,1,Atsane,2015,0.7,3.0,,Togo
+439,1,Akata,2015,0.7,3.5,,Togo
+440,1,Quilla,2015,0.7,3.5,,Peru
+441,1,Carenero,2014,0.7,2.75,Criollo,Venezuela
+442,1,Cuba,2014,0.7,3.5,,Cuba
+443,1,"Sur del Lago",2014,0.7,3.5,Criollo,Venezuela
+444,1,"Puerto Cabello",2014,0.7,3.75,Criollo,Venezuela
+445,1,Pablino,2014,0.7,4.0,,Peru
+446,1,Panama,2013,0.7,2.75,,Panama
+447,1,Madagascar,2013,0.7,3.0,Criollo,Madagascar
+448,1,Brazil,2013,0.7,3.25,,Brazil
+449,1,Equateur,2013,0.7,3.75,,Ecuador
+450,1,Colombie,2013,0.7,2.75,,Colombia
+451,1,Birmanie,2013,0.7,3.0,,Burma
+452,1,"Papua New Guinea",2013,0.7,3.25,,"Papua New Guinea"
+453,1,Chuao,2013,0.7,4.0,Trinitario,Venezuela
+454,1,Piura,2013,0.7,3.25,,Peru
+455,1,"Chanchamayo Province",2013,0.7,3.5,,Peru
+456,1,"Chanchamayo Province",2013,0.63,4.0,,Peru
+457,1,Bolivia,2012,0.7,3.5,,Bolivia
+458,1,Peru,2012,0.63,3.75,,Peru
+459,3,"Chulucanas, El Platanal",2015,0.7,3.75,,Peru
+460,3,"Tumbes, Norandino",2015,0.7,3.75,Criollo,Peru
+461,4,"Vanua Levu",2011,0.6,2.75,Trinitario,Fiji
+462,4,"Vanua Levu, Toto-A",2011,0.8,3.25,Trinitario,Fiji
+463,4,"Vanua Levu",2011,0.88,3.5,Trinitario,Fiji
+464,4,"Vanua Levu, Ami-Ami-CA",2011,0.72,3.5,Trinitario,Fiji
+465,5,"Los Rios, Quevedo, Arriba",2009,0.55,2.75,"Forastero (Arriba)",Ecuador
+466,5,"Los Rios, Quevedo, Arriba",2009,0.7,3.0,"Forastero (Arriba)",Ecuador
+467,6,Tabasco,2009,0.7,3.0,Criollo,Mexico
+468,7,"Bali (west), Sukrama Family, Melaya area",2011,0.75,3.75,Trinitario,Indonesia
+469,7,"Madagascar, Ambolikapiky P.",2010,0.75,2.75,Criollo,Madagascar
+470,7,"Monte Alegre, D. Badero",2010,0.75,2.75,Forastero,Brazil
+471,8,Trinite,2014,0.65,2.75,Trinitario,Trinidad
+472,8,Vietnam,2014,0.75,2.75,Trinitario,Vietnam
+473,8,Madagascar,2014,0.75,3.0,Trinitario,Madagascar
+474,8,Chuao,2013,0.75,2.5,Trinitario,Venezuela
+475,8,"Piura, Perou",2013,0.75,2.5,,Peru
+476,9,"Winak Coop, Napo",2017,0.7,3.5,"Forastero (Nacional)",Ecuador
+477,9,"La Dalia, Matagalpa",2017,0.7,3.5,"Criollo, Trinitario",Nicaragua
+478,9,"Tien Giang",2017,0.7,3.5,Trinitario,Vietnam
+479,9,"Makwale Village, Kyela",2017,0.7,3.5,Forastero,Tanzania
+480,10,Momotombo,2016,0.6,2.75,,Nicaragua
+481,10,Acopagro,2016,0.6,3.0,,Peru
+482,10,"CIAAB Coop",2016,0.6,2.5,,Bolivia
+483,10,"Villa Andina",2016,0.6,2.5,,Peru
+484,10,"Gruppo Salinas",2016,0.6,2.75,,Ecuador
+485,10,"Sur del Lago",2013,0.6,2.5,,Venezuela
+486,10,Conacado,2013,0.6,3.0,Trinitario,"Dominican Republic"
+487,10,Bolivia,2013,0.8,3.25,,Bolivia
+488,10,Bolivia,2013,0.6,3.0,,Bolivia
+489,10,Peru,2013,0.6,3.25,,Peru
+490,11,Morobe,2011,0.7,4.0,,"Papua New Guinea"
+491,11,"Dos Rios",2010,0.7,3.75,,"Dominican Republic"
+492,11,Guayas,2010,0.7,4.0,,Ecuador
+493,11,Chuao,2010,0.7,3.0,Trinitario,Venezuela
+494,11,Montanya,2009,0.7,3.0,,Venezuela
+495,11,"Bali, Jembrana",2008,0.7,2.75,,Indonesia
+496,11,Madagascar,2007,0.7,3.5,Trinitario,Madagascar
+497,11,Cuyagua,2007,0.7,3.0,,Venezuela
+498,11,Ocumare,2007,0.7,3.75,Criollo,Venezuela
+499,12,Ghana,2009,0.7,3.0,Forastero,Ghana
+500,12,Ecuador,2009,0.7,2.75,,Ecuador
+501,12,Ecuador,2009,0.85,2.75,,Ecuador
+502,12,Ghana,2009,0.85,3.0,Forastero,Ghana
+503,13,"LamasdelChanka, San Martin, Oro Verde coop",2013,0.72,3.25,,Peru
+504,13,"Bellavista Gran Pajeten, San Martin",2013,0.73,3.5,Trinitario,Peru
+505,14,Belize,2015,0.64,3.0,Trinitario,Belize
+506,14,Madagascar,2015,0.66,3.25,Trinitario,Madagascar
+507,14,"Dominican Republic",2015,0.75,3.25,,"Dominican Republic"
+508,14,"Papua New Guinea",2015,0.63,3.25,,"Papua New Guinea"
+509,14,Venezuela,2015,0.7,3.25,,Venezuela
+510,14,Peru,2015,0.68,3.5,,Peru
+511,15,"Piura, Blanco de Criollo",2012,0.7,3.75,,Peru
+512,15,Porcelana,2007,0.7,4.0,"Criollo (Porcelana)",Venezuela
+513,15,Nine,2007,0.75,4.0,Blend,
+514,15,Chuao,2007,0.7,5.0,Trinitario,Venezuela
+515,15,Ecuador,2007,0.7,3.0,Trinitario,Ecuador
+516,15,Jamaica,2007,0.7,3.0,Trinitario,Jamaica
+517,15,Grenada,2007,0.7,3.5,Trinitario,Grenada
+518,15,Venezuela,2007,0.7,3.75,"Trinitario (85% Criollo)",Venezuela
+519,15,Madagascar,2007,0.7,4.0,"Trinitario (85% Criollo)",Madagascar
+520,15,Trinidad,2007,0.7,3.5,Trinitario,Trinidad
+521,15,"Toscano Black",2007,0.63,3.5,Blend,
+522,15,"Toscano Black",2006,0.7,5.0,Blend,
+523,15,"Toscano Black",2006,0.66,4.0,Blend,
+524,2,Catongo,2013,0.75,3.25,"Forastero (Catongo)",Brazil
+525,2,"Monte Alegre, 3 diff. plantations",2010,0.85,2.75,"Forastero (Parazinho)",Brazil
+526,2,"Monte Alegre, 3 diff. plantations",2010,0.5,3.75,"Forastero (Parazinho)",Brazil
+527,2,"Monte Alegre, 3 diff. plantations",2010,0.75,3.75,"Forastero (Parazinho)",Brazil
+528,2,"Monte Alegre, 3 diff. plantations",2010,0.6,4.0,"Forastero (Parazinho)",Brazil
+529,16,Elvesia,2014,0.75,3.0,,"Dominican Republic"
+530,17,"Alto Beni",2016,0.75,3.5,,Bolivia
+531,18,Madagascar,2014,0.75,3.0,Trinitario,Madagascar
+532,18,Chiapas,2014,0.72,2.5,,Mexico
+533,18,Equateur,2014,0.75,2.75,,Ecuador
+534,18,Trincheras,2014,0.75,3.0,,Venezuela
+535,19,"San Juan",2016,0.7,3.5,Trinitario,Trinidad
+536,19,"Kokoa Kamili",2016,0.7,3.75,,Tanzania
+537,19,"Tien Giang",2016,0.73,3.5,Trinitario,Vietnam
+538,19,"Hacienda Victoria",2016,0.7,3.25,,Ecuador
+539,19,"Costa Esmeraldas",2016,0.7,3.25,,Ecuador
+540,19,Lachua,2016,0.7,3.5,,Guatemala
+541,19,Rugoso,2016,0.7,3.75,,Nicaragua
+542,19,"La Masica, FHIA",2016,0.7,3.5,,Honduras
+543,19,"Coto Brus, Terciopelo",2016,0.7,4.0,,"Costa Rica"
+544,19,Phantom,2016,0.7,4.0,"Forastero (Nacional)",Peru
+545,19,Elvesia,2016,0.7,3.75,,"Dominican Republic"
+546,19,Matasawalevu,2016,0.7,3.25,,Fiji
+547,19,"Lam Dong",2016,0.73,3.25,,Vietnam
+548,19,"Fazenda Camboa",2015,0.7,3.5,,Brazil
+549,19,Nacional,2015,0.68,3.5,"Forastero (Nacional)",Peru
+550,19,"Puerto Quito, heirloom",2015,0.7,3.75,"Forastero (Nacional)",Ecuador
+551,19,"Oko Caribe",2015,0.7,3.5,,"Domincan Republic"
+552,19,"Maya Mountain",2015,0.7,3.75,Trinitario,Belize
+553,19,Chuno,2015,0.7,4.0,"Criollo, Trinitario",Nicaragua
+554,19,"Fazenda Camboa",2015,0.75,2.75,,Brazil
+555,19,Guatemala,2015,0.7,3.25,,Guatemala
+556,19,"Camino Verde",2015,0.75,3.5,,Ecuador
+557,20,"Trinidad, Heritage, Limited ed.",2013,0.72,3.25,Trinitario,Trinidad
+558,20,"Colombia, Casa Luker",2012,0.72,3.75,,Colombia
+559,20,Haiti,2011,0.72,4.0,,Haiti
+560,20,Panama,2011,0.72,2.75,,Panama
+561,20,Venezuela,2010,1.0,1.75,,Venezuela
+562,20,Jamaica,2010,0.72,3.75,Trinitario,Jamaica
+563,20,"Costa Rica",2010,0.72,3.25,,"Costa Rica"
+564,20,"Ba Ria Vung Tau Province",2010,0.72,3.25,Trinitario,Vietnam
+565,20,Bali,2010,0.72,3.5,,Indonesia
+566,20,"Ocumare, Venezuela",2009,0.75,2.5,"Criollo, Trinitario",Venezuela
+567,20,Java,2009,0.72,2.75,Trinitario,Indonesia
+568,20,"Brazil Rio Doce",2009,0.72,1.75,,Brazil
+569,20,Madagascar,2009,0.8,3.0,"Criollo, Trinitario",Madagascar
+570,20,Peru,2009,0.75,3.0,Criollo,Peru
+571,20,"Dominican Republic",2009,0.72,3.25,Trinitario,"Dominican Republic"
+572,20,Congo,2008,0.72,3.75,Forastero,Congo
+573,21,"Orinoqua Region, Arauca",2013,0.72,2.75,Trinitario,Colombia
+574,22,Mababa,2016,0.68,3.75,Trinitario,Tanzania
+575,22,"Tenende, Uwate",2011,0.72,3.75,Trinitario,Tanzania
+576,22,Cortes,2011,0.7,3.75,Trinitario,Honduras
+577,22,Davao,2009,0.77,3.75,Trinitario,Philippines
+578,22,Xoconusco,2007,0.75,2.5,Trinitario,Mexico
+579,22,"San Jose del Tambo",2007,0.7,3.0,"Forastero (Arriba)",Ecuador
+580,23,Houseblend,2015,0.8,3.25,,
+581,23,"Papua New Guinea",2015,0.7,3.5,,"Papua New Guinea"
+582,23,Sambirano,2012,0.7,3.0,Trinitario,Madagascar
+583,23,Bahia,2012,0.7,2.5,,Brazil
+584,23,Houseblend,2012,0.7,2.5,Blend,
+585,24,"Bambamarca, 2015",2015,0.7,2.75,,Peru
+586,24,"Huallabamba, 2015",2015,0.7,3.5,,Peru
+587,25,Bahia,2015,0.7,3.5,,Brazil
+588,25,"Maranon Canyon",2014,0.7,4.0,"Forastero (Nacional)",Peru
+589,25,"Duarte Province",2012,0.7,3.25,,"Dominican Republic"
+590,25,Chiapas,2012,0.7,3.5,,Mexico
+591,25,Sambirano,2012,0.7,3.75,Trinitario,Madagascar
+592,26,"single estate",2012,0.8,2.75,,"Costa Rica"
+593,27,"Dominican Republic, Batch 3",2016,0.65,3.5,,"Domincan Republic"
+594,27,Brazil,2016,0.7,3.75,,Brazil
+595,27,Ecuador,2016,0.65,3.25,,Ecuador
+596,28,"Asajaya E, NW Borneo, b. #132/4500",2017,0.73,3.0,,Malaysia
+597,28,"Serian E., NW Borneo, b. #134/3800",2017,0.72,3.25,,Malaysia
+598,29,"Brazil, Batch 20316",2016,0.8,2.75,,Brazil
+599,29,"Dominican Republic, Batch 31616",2016,0.7,2.75,,"Domincan Republic"
+600,29,"Ecuador, Batch 31516",2016,0.7,2.75,,Ecuador
+601,29,Ecuador,2016,0.9,2.75,,Ecuador
+602,30,"Costa Rica",2010,0.64,2.75,,"Costa Rica"
+603,30,"Papua New Guinea",2010,0.64,2.75,,"Papua New Guinea"
+604,30,Peru,2010,0.64,2.75,,Peru
+605,30,Ecuador,2010,0.71,3.5,,Ecuador
+606,31,"Kakao Kamili, Kilombero Valley",2016,0.7,3.5,"Criollo, Trinitario",Tanzania
+607,31,"Alto Beni, Palos Blanco",2016,0.7,3.25,,Bolivia
+608,31,"Oko Caribe, Duarte P.",2016,0.7,3.5,,"Domincan Republic"
+609,32,"Belize south, low fermentation",2016,0.83,2.75,Trinitario,Belize
+610,32,"Belize south",2016,0.78,3.0,Trinitario,Belize
+611,32,"Belize south",2016,0.83,3.5,Trinitario,Belize
+612,33,Baracoa,2013,0.74,3.5,Trinitario,Cuba
+613,33,Chuao,2013,0.74,3.5,Criollo,Venezuela
+614,33,"Cuyagua Village",2013,0.74,3.5,Criollo,Venezuela
+615,33,"Rio Peripa H.",2013,0.73,4.0,Trinitario,Ecuador
+616,33,"Bali, Sukrama Bros. Farm, Melaya, 62hr C",2011,0.72,4.0,Trinitario,Indonesia
+617,33,"Somia Plantation, Sambirano, 70hr C",2011,0.72,3.75,Trinitario,Madagascar
+618,34,Nature,2012,0.55,2.75,,
+619,35,Madagascar,2011,0.64,3.0,Trinitario,Madagascar
+620,35,Maracaibo,2011,0.88,3.0,Criollo,Venezuela
+621,35,"Indigena Amazonia, Grand Cru, Quizas",2011,0.72,3.5,,Venezuela
+622,35,Ecuador,2011,0.72,4.0,,Ecuador
+623,35,"Carenero S., Barlovento, Grand Cru",2010,0.7,3.25,Trinitario,Venezuela
+624,35,"Porcelana, Premier Cru, Quizas No. 1",2010,0.74,3.25,"Criollo (Porcelana)",Venezuela
+625,35,"Java, Grand Cru",2010,0.64,3.5,,Indonesia
+626,35,"Ocumare, Premier Cru, Quizas No. 2",2010,0.72,3.5,,Venezuela
+627,36,"Nicaragua, American style",2015,0.76,2.5,,Nicaragua
+628,36,"San Andres, American style",2015,0.76,2.5,,"Costa Rica"
+629,36,"San Andres, silk",2015,0.78,2.5,,"Costa Rica"
+630,36,Belize,2015,0.86,3.25,Trinitario,Belize
+631,37,Ghana,2012,0.72,3.5,Forastero,Ghana
+632,37,"Bali, Singaraja",2010,0.75,3.25,,Indonesia
+633,37,"2009 Hapa Nibby",2010,0.7,3.75,Blend,"Dominican Rep., Bali"
+634,37,"Bali, Singaraja",2010,0.65,2.75,,Indonesia
+635,37,"Sambirano, 2009",2010,0.7,3.0,Trinitario,Madagascar
+636,37,"Ocumare, prototype",2010,0.78,3.0,Criollo,Venezuela
+637,37,"Puerto Plata",2009,0.75,3.0,,"Dominican Republic"
+638,37,"Puerto Plata",2009,0.65,3.5,,"Dominican Republic"
+639,37,Sambirano,2009,0.75,3.25,Trinitario,Madagascar
+640,37,Sambirano,2009,0.65,3.5,Trinitario,Madagascar
+641,37,Sambirano,2008,0.71,3.0,Trinitario,Madagascar
+642,37,"Bocas del Toro",2008,0.75,3.5,,Panama
+643,37,"Puerto Plata",2008,0.68,3.75,,"Dominican Republic"
+644,37,Ankasa,2008,0.7,3.0,Forastero,Ghana
+645,38,"La Red",2008,0.7,2.75,,"Dominican Republic"
+646,38,"Carenero Superior",2008,0.7,2.75,Trinitario,Venezuela
+647,38,Matiguas,2008,0.7,3.0,,Nicaragua
+648,39,"Blue Mountain Region",2014,0.7,2.75,Trinitario,Jamaica
+649,40,"Congo, Grand Cru",2013,0.82,3.5,Forastero,Congo
+650,40,"Organic Dark",2009,0.72,2.75,,
+651,41,"Akesson's E., Sambirano V.",2016,0.82,3.5,Trinitario,Madagascar
+652,41,Lachua,2016,0.75,2.75,,Guatemala
+653,41,"Kokoa Kamili",2016,0.75,3.5,,Tanzania
+654,41,"Zorzal Reserva",2016,0.75,3.0,,"Dominican Republic"
+655,41,Guatemala,2012,0.7,3.5,,Guatemala
+656,41,Madagascar,2012,0.7,3.75,Trinitario,Madagascar
+657,42,"Selva Maya",2016,0.75,3.5,,Mexico
+658,42,Kaori,2014,0.75,4.0,,Brazil
+659,42,"Los Colorados, Santo Domingo, Equateur",2014,0.75,3.25,,"Dominican Republic"
+660,42,Surfin,2014,0.65,3.75,,"Venez,Africa,Brasil,Peru,Mex"
+661,42,Maragnam,2013,0.75,3.5,,Brazil
+662,42,Gabon,2013,0.75,3.25,,Gabon
+663,42,Cuba,2011,0.75,3.5,Trinitario,Cuba
+664,42,"Cusco, Cacao Cusco",2011,0.75,3.5,,Peru
+665,42,"Piura Blanco",2011,0.75,3.5,"Forastero (Nacional)",Peru
+666,42,Libanio,2011,0.75,3.75,,Brazil
+667,42,Haiti,2011,0.75,4.0,,Haiti
+668,42,"Madagascar, 100% criollo",2011,0.75,4.0,Criollo,Madagascar
+669,42,Juliana,2011,0.75,3.5,,Brazil
+670,42,Jamaique,2011,0.75,3.25,Trinitario,Jamaica
+671,42,"Ivory Coast",2009,0.75,3.0,,"Ivory Coast"
+672,42,"Porcelana, Apotequil",2009,0.75,2.75,Criollo,Peru
+673,42,"Porcelana, Tabasco, Marfil de Blanco",2009,0.75,3.0,Criollo,Mexico
+674,42,"Xoconusco, cacao Real",2009,0.75,3.0,Criollo,Mexico
+675,42,"Porcelana, Venezuela",2008,0.75,4.0,"Criollo (Porcelana)",Venezuela
+676,42,Equateur,2007,0.75,2.5,"Forastero (Arriba)",Ecuador
+677,42,Trinite,2006,0.75,3.75,Trinitario,Carribean
+678,42,"Ocumare, Puerto Cabello",2006,0.75,4.0,,Venezuela
+679,42,"Maracaibo, El Rosario",2006,0.75,4.0,Criollo,Venezuela
+680,42,Madagascar,2006,0.75,4.0,Trinitario,Madagascar
+681,42,"One Hundred",2006,1.0,1.5,,
+682,42,Ceylan,2006,0.75,3.0,,"Sri Lanka"
+683,42,Chuao,2006,0.75,4.0,Trinitario,Venezuela
+684,43,"El Oro, Hacienda de Oro",2009,0.77,3.25,"Forastero (Arriba)",Ecuador
+685,43,"El Oro, Hacienda de Oro",2009,1.0,1.5,"Forastero (Arriba)",Ecuador
+686,44,"Maya Mountain",2014,0.7,2.75,Trinitario,Belize
+687,44,Conacado,2014,0.7,2.75,,"Dominican Republic"
+688,45,"Guasare, Zulia Prov.",2016,0.7,3.5,Criollo,Venezuela
+689,45,"O'payo, Waslala",2016,0.7,3.75,,Nicaragua
+690,45,Conacado,2015,0.68,3.75,,"Dominican Republic"
+691,45,"Maya Mountain",2014,0.7,3.75,Trinitario,Belize
+692,45,Chuao,2014,0.7,4.0,Trinitario,Venezuela
+693,45,Cooproagro,2013,0.72,3.0,Trinitario,"Dominican Republic"
+694,45,"Camino Verde, Guayas",2013,0.7,3.25,,Ecuador
+695,45,Ghana,2013,0.75,3.5,Forastero,Ghana
+696,45,"Chuao, Mantuano blend",2013,0.85,3.5,Trinitario,Venezuela
+697,46,"Elvesia P.",2015,0.6,3.0,,"Dominican Republic"
+698,46,"Elvesia P.",2015,0.8,3.25,,"Dominican Republic"
+699,46,"Alta Verapaz, 2014",2015,0.7,3.5,,Guatemala
+700,46,"Ambolikapiky P.",2015,0.8,2.75,,Madagascar
+701,46,"Maya Mountain",2015,0.8,3.25,Trinitario,Belize
+702,46,"Ambolikapkly P.",2015,0.6,3.25,,Madagascar
+703,47,Jamaica,2013,0.7,3.0,Trinitario,Jamaica
+704,48,"Somia Plantation",2014,0.72,3.0,Trinitario,Madagascar
+705,48,"Marabel Farms",2014,0.7,3.5,,"Dominican Republic"
+706,48,"Camino Verde, Balao, Guayas",2014,0.72,3.5,,Ecuador
+707,48,"Gran Couva",2014,0.68,2.75,Trinitario,Trinidad
+708,49,Ecuador,2015,0.7,3.25,,Ecuador
+709,50,"Dominican Republic",2013,0.68,2.75,,"Dominican Republic"
+710,51,Trinidad,2014,0.72,3.25,Trinitario,Trinidad
+711,51,Mindo,2014,0.72,3.5,,Ecuador
+712,51,Belize,2014,0.72,3.25,Trinitario,Belize
+713,51,Blend,2014,0.72,3.25,Blend,
+714,51,"Ecuador, Bob Bar",2014,0.6,2.5,,Ecuador
+715,53,"Puerto Rico",2015,0.7,2.5,,"Puerto Rico"
+716,54,Tumbes,2014,0.75,2.5,Criollo,Peru
+717,54,"Dominican Republic, Love Bar",2010,0.75,2.5,,"Dominican Republic"
+718,54,"Dominican Republic w/ nibs",2010,0.75,2.75,,"Dominican Republic"
+719,54,Patanemo,2010,0.75,2.25,,Venezuela
+720,55,"Grand 'Anse",2016,0.65,3.5,"Trinitario, Criollo",Haiti
+721,55,"Santo Domingo",2010,0.7,3.0,,"Dominican Republic"
+722,55,Tanzania,2008,0.75,2.0,,Tanzania
+723,55,Venezuela,2007,0.72,2.0,,Venezuela
+724,55,Mexico,2007,0.66,3.0,,Mexico
+725,61,Chuao,2015,0.77,3.5,Trinitario,Venezuela
+726,61,"Rio Caribe",2015,0.75,3.25,Trinitario,Venezuela
+727,61,"Agua Fria - Sucre region",2014,0.75,2.5,,Venezuela
+728,61,"Macuare - Miranda - Chloe formula",2014,0.74,3.25,,Venezuela
+729,61,"Chuao, Aragua region",2014,0.75,3.5,Trinitario,Venezuela
+922,114,Buto,2014,0.7,2.75,,Liberia
+730,61,"Chuao, Aragua region",2014,0.7,3.75,Trinitario,Venezuela
+731,62,"Hacienda la Trinidad",2015,0.74,3.25,,Venezuela
+732,56,Macondo,2016,0.71,3.75,,Colombia
+733,56,"Perla Negra",2016,0.74,3.75,,Colombia
+734,56,Arhuacos,2015,0.72,3.75,,Colombia
+735,56,"Sierra Nevada",2014,0.64,3.5,,Colombia
+736,56,Tumaco,2014,0.7,3.5,,Colombia
+737,56,"Boyaca, Aprocampa Coop, Pauna",2014,0.69,2.75,,Colombia
+738,56,Arauca,2014,0.7,3.25,,Colombia
+739,57,"Jutiapa, lot 050916D",2016,0.7,3.5,Trinitario,Honduras
+740,58,"Criollo, Dominican Republic",2012,0.72,3.75,Criollo,"Dominican Republic"
+741,58,"Dominican Republicm, rustic",2011,0.72,3.0,,"Dominican Republic"
+742,58,"Dominican Republic",2011,0.66,3.75,,"Dominican Republic"
+743,58,"Dominican Republic, rustic",2011,0.65,3.25,,"Dominican Republic"
+744,59,"Mahali, Kasai",2016,0.7,3.5,Criollo,Congo
+745,59,Madagascar,2010,0.71,3.5,Trinitario,Madagascar
+746,59,Ecuador,2010,0.71,3.75,,Ecuador
+747,59,Papua,2010,0.71,4.0,,"Papua New Guinea"
+748,59,Grenada,2010,0.71,3.25,Trinitario,Grenada
+749,59,Venezuela,2010,0.71,3.5,,Venezuela
+750,59,Venezuela,2010,0.77,3.5,,Venezuela
+751,59,"Porcelana, Tabasco, La Joya",2009,0.7,4.0,Criollo,Mexico
+752,59,"Xoconusco, Chiapas",2009,0.7,4.0,Criollo,Mexico
+753,60,Madagascar,2015,0.7,3.0,Trinitario,Madagascar
+754,60,Peru,2015,0.7,3.25,,Peru
+755,60,Vietnam,2015,0.7,3.5,Trinitario,Vietnam
+756,63,Piura,2013,0.7,3.25,,Peru
+757,64,Amazonia,2008,0.63,3.5,"Forastero (Arriba)",Ecuador
+758,64,Esmeraldas,2008,0.71,3.5,"Forastero (Arriba)",Ecuador
+759,64,Bolivar,2008,0.82,2.5,"Forastero (Arriba)",Ecuador
+760,64,Pichincha,2008,0.91,1.5,"Forastero (Arriba)",Ecuador
+761,65,Grenade,2008,0.6,2.75,Trinitario,Grenada
+762,65,Baking,2007,0.7,1.0,,Ecuador
+763,52,Cuba,2014,0.75,2.5,,Cuba
+764,52,"Dominican Republic",2014,0.72,3.0,,"Dominican Republic"
+765,52,"Lago di Como, Blu",2014,0.7,3.5,Blend,
+766,52,Ecuador,2013,1.0,3.5,,Ecuador
+767,52,Venezuela,2012,0.8,3.0,,Venezuela
+768,52,"Sao Tome",2011,0.78,2.25,Forastero,"Sao Tome"
+769,52,Trinidad,2011,0.7,2.5,Trinitario,Trinidad
+770,66,Porcelana,2016,0.75,2.5,Criollo,Venezuela
+771,66,Tanzania,2016,0.73,2.75,,Tanzania
+772,66,"Porcelana, Batch 5163",2016,0.7,3.0,Criollo,Venezuela
+773,66,Bolivia,2016,0.75,3.0,,Bolivia
+774,66,Brazil,2016,0.7,3.25,Trinitario,Brazil
+775,67,Esmeraldas,2008,0.77,2.0,"Forastero (Arriba)",Ecuador
+776,67,Manabi,2008,0.77,2.5,"Forastero (Arriba)",Ecuador
+777,67,"Los Rios",2008,0.77,2.75,"Forastero (Arriba)",Ecuador
+778,67,Manabi,2008,0.55,3.0,"Forastero (Arriba)",Ecuador
+779,67,"Los Rios",2008,0.55,3.25,"Forastero (Arriba)",Ecuador
+780,67,Esmeraldas,2008,0.55,3.5,"Forastero (Arriba)",Ecuador
+781,68,"Saidor Estate, Madang P.",2014,0.7,3.5,Trinitario,"Papua New Guinea"
+782,68,"Kulili Estate",2014,0.7,3.75,,"Papua New Guinea"
+783,69,"Antigua, Special Reserve",2015,0.72,3.5,,Guatemala
+784,69,"Talamanca, Raul-Kekoldo community",2015,0.72,3.25,,"Costa Rica"
+785,69,"Anselmo Paraiso Estate",2015,0.72,3.5,,"Costa Rica"
+786,69,"Costa Rica",2012,0.72,3.0,Forastero,"Costa Rica"
+787,69,"Costa Rica",2012,0.8,2.75,Forastero,"Costa Rica"
+788,70,Arauca,2016,0.65,3.0,Trinitario,Colombia
+789,70,Tumaco,2016,0.65,3.25,Trinitario,Colombia
+790,70,Cordoba,2016,0.65,3.25,Trinitario,Colombia
+791,70,Huila,2016,0.65,3.5,Trinitario,Colombia
+792,70,Cesar,2016,0.65,3.5,CCN51,Colombia
+793,71,"Maya Mtn, Batch 454, Heirloom",2016,0.72,4.0,Trinitario,Belize
+794,71,"the lost city, gracias a dias, batch 362",2015,0.72,3.5,Trinitario,Honduras
+795,71,"Duarte, Batch 360",2015,0.7,3.75,"Criollo, Trinitario","Domincan Republic"
+796,71,"Piaroa, Amazonas, Batch 350",2015,0.72,3.5,,Venezuela
+797,71,"Sierra Nevada",2014,0.72,3.5,"Criollo, Trinitario",Colombia
+798,71,Arauca,2014,0.76,3.5,"Criollo, Trinitario",Colombia
+799,71,"Elvesia P.",2014,0.7,2.75,Trinitario,"Dominican Republic"
+800,71,Bolivia,2013,0.7,3.0,Trinitario,Bolivia
+801,71,Conacado,2013,0.73,3.5,Trinitario,"Dominican Republic"
+802,71,"San Martin",2013,0.7,2.5,Criollo,Peru
+803,71,"Guaniamo, Amazonas",2013,0.7,3.25,,Venezuela
+804,71,Nicaragua,2013,0.72,3.25,Trinitario,Nicaragua
+805,71,Tumbes,2013,0.7,2.75,Criollo,Peru
+806,71,Guaniamo,2013,0.72,3.0,,Venezuela
+807,72,Ecuador,2014,0.7,2.5,,Ecuador
+808,72,Peru,2014,0.7,2.75,,Peru
+809,72,Venezuela,2014,0.7,2.75,,Venezuela
+810,72,Bolivia,2014,0.7,3.0,,Bolivia
+811,73,Equateur,2009,0.72,2.75,,Ecuador
+812,74,Uganda,2014,0.7,2.75,Forastero,Uganda
+813,75,"Maya Mtn",2016,0.7,3.25,,Belize
+814,76,Arriba,2010,0.55,2.75,"Forastero (Arriba)",Ecuador
+815,76,"Los Rios",2008,0.75,3.0,"Forastero (Arriba)",Ecuador
+816,77,"la Amistad",2014,0.7,3.5,,"Costa Rica"
+817,78,"Blend No. 1",2011,0.7,3.5,,
+818,79,Ecuador,2015,0.7,3.25,,Ecuador
+819,80,"Maya Mountain w/ nibs",2014,0.75,3.0,Trinitario,Belize
+820,80,"Maya Mountain",2014,0.82,3.25,Trinitario,Belize
+821,81,"Mekong Delta, early 2014 Harvest",2015,0.7,2.75,Trinitario,Vietnam
+822,81,"Tawau, Oct. 2015 Harvest",2015,0.7,3.5,Trinitario,Malaysia
+823,84,Peru,2015,0.65,2.5,Criollo,Peru
+824,84,"Peru + nibs",2015,0.65,2.75,Criollo,Peru
+825,84,"Dominican Republic",2015,0.8,2.5,,"Dominican Republic"
+826,83,Madagascar,2011,0.7,3.75,Trinitario,Madagascar
+827,83,Venezuela,2011,0.68,3.75,,Venezuela
+828,85,"Tumbes, Zarumilla",2016,0.9,2.5,,Peru
+829,85,"Philly Blend, 5 plantations",2016,0.8,2.5,,
+830,86,"Wild Bolivian",2016,0.7,2.5,,Bolivia
+831,86,Uganda,2016,0.7,2.75,,Uganda
+832,86,"Dominican Republic",2016,0.6,3.0,,"Dominican Republic"
+833,86,"Dominican Republic",2016,0.75,3.0,,"Dominican Republic"
+834,86,Ocumare,2016,0.8,3.0,"Criollo (Ocumare)",Venezuela
+835,86,Ecuador,2016,0.7,3.25,,Ecuador
+836,86,Nicaragua,2016,0.8,2.75,,Nicaragua
+837,87,Peru,2014,0.74,2.75,,Peru
+838,88,"Tres Hombres",2015,0.75,3.25,Trinitario,"Dominican Republic"
+839,88,"Congo, Gorilla bar",2015,0.68,3.5,Forastero,Congo
+840,88,"Peru, Awagum bar",2015,0.8,3.75,Criollo,Peru
+841,89,Maranon,2015,0.69,3.75,"Forastero (Nacional)",Peru
+842,89,"Carenero Superior",2015,0.8,3.75,Trinitario,Venezuela
+843,89,Peru,2013,0.7,3.75,"Forastero (Nacional)",Peru
+844,89,Ecuador,2012,0.82,2.5,"Forastero (Arriba)",Ecuador
+845,89,Peru,2012,0.68,2.75,Criollo,Peru
+846,89,Madagascar,2012,0.72,3.25,Criollo,Madagascar
+847,90,Xoconusco,2014,0.7,2.5,Criollo,Mexico
+848,82,Patanemo,2015,0.77,3.0,Criollo,Venezuela
+849,91,"Chiapas, Lacandon Jungle, Oaxacom Mtn",2011,0.65,3.25,,Mexico
+850,92,Xoconusco,2010,0.71,3.25,Criollo,Mexico
+851,92,Sambirano,2010,0.71,3.5,Trinitario,Madagascar
+852,92,Kendari,2009,0.6,3.25,,
+853,92,Tarakan,2009,0.75,3.25,,
+854,92,Ocumare,2008,0.71,3.5,Criollo,Venezuela
+855,92,"Bolivar, Guaranda",2007,0.71,2.5,"Forastero (Arriba)",Ecuador
+856,92,Guyave,2007,0.71,2.5,Trinitario,Grenada
+857,92,Maragda,2007,0.7,3.0,Blend,
+858,93,Tabasco,2015,0.65,2.5,Trinitario,Mexico
+859,93,Tabasco,2015,0.75,2.5,Trinitario,Mexico
+860,94,Ocumare,2009,0.8,2.5,Criollo,Venezuela
+861,94,"Porcelana, Tabasco",2009,0.7,2.75,Criollo,Mexico
+862,94,Brazilian,2009,0.7,3.0,,Brazil
+863,94,Brazilian,2009,0.8,3.0,,Brazil
+864,94,Ocumare,2009,0.7,3.0,Criollo,Venezuela
+865,95,Guadeloupe,2013,0.42,2.75,,Martinique
+866,96,"Chiapas, Lacandon Jungle, Oaxacom Mtn",2016,0.75,3.25,,Mexico
+867,97,"Maranon Canyon, Fortunato No. 4",2011,0.68,3.75,"Forastero (Nacional)",Peru
+868,98,Choroni,2009,0.61,3.0,Criollo,Venezuela
+869,99,Chuao,2010,0.77,2.75,Trinitario,Venezuela
+870,100,"Terreiro Velho P.",2010,0.735,3.75,Forastero,"Sao Tome & Principe"
+871,100,"Terreiro Velho P. w/ sugar crystals",2008,0.8,3.0,Forastero,"Sao Tome & Principe"
+872,100,"Terreiro Velho P.",2008,0.75,4.0,Forastero,"Sao Tome & Principe"
+873,100,Principe,2008,1.0,1.0,Forastero,"Sao Tome & Principe"
+874,101,"Camino Verde P., Balao, Guayas, 2014",2015,0.73,3.5,,Ecuador
+875,102,Sambirano,2015,0.75,3.0,Trinitario,Madagascar
+876,103,"Sur del Lago",2010,0.7,3.25,,Venezuela
+877,103,"Carenero Superior",2008,0.8,2.75,Trinitario,Venezuela
+878,103,Moxos,2008,0.72,3.25,,Bolivia
+879,103,Ocumare,2008,0.7,3.75,Criollo,Venezuela
+880,103,Esmeraldas,2008,0.88,2.75,"Forastero (Nacional)",Ecuador
+881,104,"Camino Verde",2015,0.76,3.5,,Ecuador
+882,105,"Tien Giang, 2015, batch 10-2-16",2016,0.78,2.75,Trinitario,Vietnam
+883,106,"Ecuador, Puristique",2013,0.65,3.25,"Forastero (Nacional)",Ecuador
+884,106,"Ghana Puristique",2012,0.85,3.5,Forastero,Ghana
+885,106,"Ecuador Puristique",2012,1.0,1.5,,Ecuador
+886,106,"Uba Budo",2012,0.72,3.75,Forastero,"Sao Tome & Principe"
+887,106,Madagascar,2012,0.7,3.5,Trinitario,Madagascar
+888,106,Grenada,2010,0.72,3.25,Trinitario,Grenada
+889,106,Chuao,2010,0.7,3.0,Trinitario,Venezuela
+890,106,"Los Rios, H. Iara",2010,0.72,2.5,Nacional,Ecuador
+891,106,Trinidad,2010,0.72,3.0,Trinitario,Trinidad
+892,106,Jamaica,2010,0.72,3.25,Trinitario,Jamaica
+893,106,"Ocumare 61",2010,0.72,3.25,"Criollo (Ocumare 61)",Venezuela
+894,106,"Porcelana, Apotequil",2009,0.72,3.0,Criollo,Peru
+895,106,"Porcelana, Apotequil",2009,0.62,3.25,Criollo,Peru
+896,106,"Chuao 100hr",2009,0.7,3.5,"Criollo, Trinitario",Venezuela
+897,106,"Chuao 70hr",2009,0.7,3.75,"Criollo, Trinitario",Venezuela
+898,106,"Porcelana, Tabasco, Mexico",2008,0.72,3.0,Criollo,Mexico
+899,106,"Porcelana, Venezuela",2008,0.72,3.0,"Criollo (Porcelana)",Venezuela
+900,106,"Sambirano, Menava P.",2007,0.72,3.0,Trinitario,Madagascar
+901,107,"Sensations Intense",2006,0.7,1.0,,
+902,108,"New Ireland",2014,0.7,2.5,Forastero,"Papua New Guinea"
+903,108,"Vanuatu, batch 2410",2014,0.83,2.75,Trinitario,Vanuatu
+904,108,"Tanzania, batch a1",2012,0.75,3.25,Forastero,Tanzania
+905,108,"Bahia, batch a1213",2012,0.65,3.25,Trinitario,Brazil
+906,108,"Namau Village, N. Taileva P., batch a2812",2012,0.67,3.25,Trinitario,Fiji
+907,108,Vanuatu,2012,0.64,3.25,Trinitario,Vanuatu
+908,108,"Djual Island",2012,0.75,3.5,Forastero,"Papua New Guinea"
+909,109,"heirloom, Arriba Nacional",2016,0.85,3.25,"Forastero (Nacional)",Ecuador
+910,109,"heirloom, Arriba Nacional",2016,0.73,3.75,"Forastero (Nacional)",Ecuador
+911,111,"Goodman Estate",2015,0.7,2.75,,Australia
+912,111,"Daintree Estates, N. Queensland",2011,0.7,3.25,,Australia
+913,112,"Dominican Republic, batch 7",2017,0.72,2.75,,"Dominican Republic"
+914,113,"Robson Estate",2015,0.7,3.0,Trinitario,Trinidad
+915,113,"Los Rios",2015,0.7,3.5,,Ecuador
+916,113,"Crayfish Bay aka Non Pariel Estate",2015,0.7,2.25,,Grenada
+917,113,"O'Payo",2015,0.7,2.75,,Nicaragua
+918,114,"Zorzal Reserva, 2015 H., Kerchner",2016,0.7,3.75,,
+919,114,"Maya Mtn., Break Bar- Snark",2015,0.7,3.0,Trinitario,Belize
+920,114,"Maya Mountain",2014,0.7,3.5,Trinitario,Belize
+921,114,"Camino Verde P., Balao, Guayas, 2013",2014,0.7,3.5,,Ecuador
+923,114,"San Francisco de Macoris, Cibao region",2014,0.7,3.75,,"Dominican Republic"
+924,114,"Cumboto, farmer Jose Lugo",2013,0.7,2.75,,Venezuela
+925,114,Patanemo,2013,0.7,3.25,,Venezuela
+926,114,"Mantuano, 2012",2013,0.7,3.5,,Venezuela
+927,114,"Papua New Guinea",2013,0.7,3.5,,"Papua New Guinea"
+928,114,Upala,2012,0.7,3.0,,"Costa Rica"
+929,114,Colombian,2012,0.7,3.25,,Colombia
+930,114,"Elvesia, 2011",2012,0.7,3.75,,"Dominican Republic"
+931,114,"Dominican Republic",2011,0.7,3.25,,"Dominican Republic"
+932,114,Madagascar,2011,0.7,3.25,Trinitario,Madagascar
+933,114,Tanzania,2011,0.7,3.25,,Tanzania
+934,115,"Los Ujuxtes",2014,0.82,3.25,,Guatemala
+935,115,Chuao,2012,0.75,3.0,Trinitario,Venezuela
+936,115,"Los Ujuxtes",2012,0.7,3.75,,Guatemala
+937,115,Sambirano,2012,0.7,3.75,Trinitario,Madagascar
+938,115,"Las Acacias E.",2012,0.7,4.0,Criollo,Guatemala
+939,115,"Oscuro, Finca Chimelb",2012,0.7,3.25,,Guatemala
+940,115,"Los Ujuxtes",2011,0.6,3.5,,Guatemala
+941,115,"Las Acacias E.",2009,0.75,3.0,Criollo,Guatemala
+942,115,"Las Acacias E.",2009,0.6,3.25,Criollo,Guatemala
+943,110,"Venezuela, batch 122",2016,0.72,2.75,,Venezuela
+944,110,Vietnam,2016,0.72,3.0,Trinitario,Vietnam
+945,110,"DUO, batch 002",2016,0.7,3.25,,"Ecuador, Costa Rica"
+946,116,Bolivia,2016,0.75,3.25,,Bolivia
+947,116,Madagascar,2015,0.7,3.0,Trinitario,Madagascar
+948,116,Ocumare,2015,0.7,3.25,,Venezuela
+949,116,Tanzania,2015,0.7,3.0,,Tanzania
+950,116,Ecuador,2015,0.7,3.25,,Ecuador
+951,117,Ghana,2013,0.7,2.5,Forastero,Ghana
+952,117,Rainforest,2013,0.7,2.75,,"Dominican Republic"
+953,117,Venezuela,2013,0.7,2.75,,Venezuela
+954,117,"West Africa",2012,0.58,3.25,Forastero,"West Africa"
+955,118,"Nativo, Varzea",2015,0.72,3.5,,Brazil
+956,118,"Selvagem, Jari",2015,0.65,3.5,,Brazil
+957,119,"Bundibugyo District",2016,0.7,2.5,Forastero,Uganda
+958,119,"Sambirano Valley, batch 2477",2016,0.7,3.0,,Madagascar
+959,121,Madagascar,2007,0.66,2.5,Trinitario,Madagascar
+960,121,"Costa Rica",2007,0.64,3.0,,"Costa Rica"
+961,121,Ecuador,2007,0.71,3.0,,Ecuador
+962,121,Ghana,2007,0.6,3.0,Forastero,Ghana
+963,121,"Papua New Guinea",2007,0.64,3.0,,"Papua New Guinea"
+964,121,Peru,2007,0.64,3.0,,Peru
+965,122,"Papua New Guinea",2009,0.64,3.0,,"Papua New Guinea"
+966,122,Venezuela,2008,0.66,3.75,,Venezuela
+967,123,"Kilombero, batch 41",2016,0.72,2.5,,Tanzania
+968,120,Bolivian,2008,0.8,2.75,,Bolivia
+969,120,"Costa Rica",2007,0.77,3.5,Trinitario,"Costa Rica"
+970,120,"Dominican Republic",2007,0.77,3.5,,"Dominican Republic"
+971,124,"Lanquin Estate",2017,0.7,3.75,,Guatemala
+972,124,"Tien Giang",2016,0.78,3.5,Trinitario,Vietnam
+973,124,"Alto Beni, Wild Harvest, Limited Ed.",2015,0.7,3.75,,Bolivia
+974,124,Elvesia,2014,0.74,3.5,,"Dominican Republic"
+975,124,"Ecuador, Choc. Garage Exclusive",2013,0.7,3.25,,Ecuador
+976,124,"Camino Verde",2013,0.76,3.5,,Ecuador
+977,124,Bolivia,2012,0.75,2.75,,Bolivia
+978,124,Belize,2012,0.72,2.75,Trinitario,Belize
+979,124,Sambirano,2011,0.8,2.75,Trinitario,Madagascar
+980,124,Sambirano,2011,0.72,3.0,Trinitario,Madagascar
+981,124,Mantuano,2011,0.75,2.75,Criollo,Venezuela
+982,124,"La Red",2011,0.74,3.0,,"Dominican Republic"
+983,124,Ecuador,2011,0.7,3.25,,Ecuador
+984,125,"Puerto Cabello",2015,0.85,3.0,,Venezuela
+985,125,"Panama, Raven",2014,0.72,3.25,,Panama
+986,125,"Puerto Cabello, Mantuano",2014,0.72,3.25,Trinitario,Venezuela
+987,125,Johe,2014,0.72,3.5,"Criollo, Trinitario",Nicaragua
+988,126,"O'ahu, N. Shore, Waialua Estate",2009,0.7,3.75,,Hawaii
+989,127,Africa,2008,0.88,3.0,Forastero,"West Africa"
+990,127,Noir,2006,0.7,1.5,,
+991,128,"Hacienda Victoria",2015,0.7,3.75,,Ecuador
+992,128,"Ocumare 77",2015,0.7,3.75,"Criollo (Ocumare 77)",Venezuela
+993,128,"IL100, H. San Jose",2013,1.0,3.0,Criollo,Venezuela
+994,128,Morogoro,2012,0.7,3.5,,Tanzania
+995,128,Guasare,2012,0.7,3.75,Criollo,Venezuela
+996,128,"Canoabo, Hacienda San Jose",2011,0.7,3.5,Criollo,Venezuela
+997,128,"Chuao, Hacienda San Jose",2010,0.7,3.0,Trinitario,Venezuela
+998,128,"Carupano, H. San Jose",2008,0.7,3.0,Trinitario,Venezuela
+999,128,Teyuna,2008,0.7,3.0,,Colombia
+1000,128,"Blend No. 1",2008,0.78,3.5,Blend,
+1001,128,Ilblend,2008,0.7,3.75,Blend,
+1002,128,Porcelana,2007,0.7,4.0,"Criollo (Porcelana)",Venezuela
+1003,128,"Ocumare 61, Puertomar",2007,0.75,3.25,"Criollo (Ocumare 61)",Venezuela
+1004,128,Granella,2007,0.6,3.25,Trinitario,Venezuela
+1005,128,Madagascar,2007,0.7,3.5,Trinitario,Madagascar
+1006,128,Madagared,2007,0.7,3.5,Criollo,Madagascar
+1007,128,"Java, Javablond",2007,0.7,3.75,Criollo,Indonesia
+1008,128,Ecuador,2007,0.7,4.0,"Forastero (Arriba)",Ecuador
+1009,128,"Ocumare 67, Puertofino",2007,0.7,4.0,"Criollo (Ocumare 67)",Venezuela
+1010,128,"Sur del Lago Classificado",2006,0.7,3.0,Trinitario,Venezuela
+1011,128,Apurimac,2006,0.7,3.25,Trinitario,Peru
+1012,128,"Carenero Superior",2006,0.7,3.5,Trinitario,Venezuela
+1013,129,"Non Pariel Estate",2016,0.75,2.75,Trinitario,Grenada
+1014,129,"Rio Caribe, Batch 7",2015,0.7,2.5,Trinitario,Venezuela
+1015,129,"Colombia, Batch 9",2015,0.8,2.75,"Criollo, Trinitario",Colombia
+1016,129,"Madagascar, Batch 8",2015,0.77,2.75,"Criollo, Trinitario",Madagascar
+1017,130,"Rio Dulce, Xoco",2015,0.7,4.0,Criollo,Guatemala
+1018,130,"Chuno, Xoco",2014,0.7,3.5,Criollo,Nicaragua
+1019,130,"Rico Rugoso, Xoco",2014,0.76,3.75,Criollo,Nicaragua
+1020,130,Ocumare,2012,0.72,3.75,,Venezuela
+1021,130,"Indio Rojo, Xoco",2011,0.72,3.75,Criollo,Honduras
+1022,130,"Dominican Republic",2011,0.65,3.5,,"Dominican Republic"
+1023,130,"Bocas del Toro, Tierra Oscura",2011,0.72,3.0,,Panama
+1024,130,"Nicaliso, Xoco",2011,0.71,3.25,Criollo,Nicaragua
+1025,130,Ocumare,2011,0.71,3.5,,Venezuela
+1026,130,Panama,2010,0.7,3.5,,Panama
+1027,130,"Corazon del Ecuador, Calceta beans",2010,0.72,3.75,,Ecuador
+1028,130,"Star of Ecuador",2010,0.7,2.5,,Ecuador
+1029,130,"Star of Peru",2010,0.7,3.75,,Peru
+1030,131,"Dominican Republic",2015,0.7,3.25,,"Dominican Republic"
+1031,132,Madagascar,2012,0.82,2.75,Trinitario,Madagascar
+1032,133,"Maranon, Joya Rara",2015,0.7,3.5,"Forastero (Nacional)",Peru
+1033,133,"Rio Caribe, Tepui Treasure",2015,0.7,3.5,Trinitario,Venezuela
+1034,133,"Taino Secret",2015,0.7,3.25,,"Domincan Republic"
+1035,133,"Carenero, Empyrean Sabor",2015,0.7,3.25,Trinitario,Venezuela
+1036,133,"Corona Arriba",2015,0.7,4.0,,Ecuador
+1037,135,Peru,2014,0.7,3.25,,Peru
+1038,135,Madagascar,2014,0.7,3.5,Trinitario,Madagascar
+1039,135,"Dominican Republic",2014,0.7,3.75,,"Dominican Republic"
+1040,136,Tumaco,2016,0.7,3.25,,Colombia
+1041,136,Arauca,2016,0.7,3.25,,Colombia
+1042,137,"Maranon, Good & Evil, w/ nibs",2012,0.72,2.75,"Forastero (Nacional)",Peru
+1043,138,Porcelana,2016,0.68,3.0,Criollo,Venezuela
+1044,139,"Alto Beni, Covendo Region",2011,0.75,3.75,,Bolivia
+1045,139,"Alto Beni",2008,0.71,2.75,,Bolivia
+1046,140,"San Joaquin",2015,0.7,3.75,,Venezuela
+1047,140,"Rio Caribe, Cariaco",2009,0.605,2.75,Trinitario,Venezuela
+1048,140,"Rio Caribe, Macuro",2009,0.7,3.0,Trinitario,Venezuela
+1049,140,"Carenero Superior, Apamate",2008,0.74,2.5,Criollo,Venezuela
+1050,140,"Carenero Superior, Bucare",2008,0.58,2.5,Criollo,Venezuela
+1051,140,"Carenero Superior, Mijao",2008,0.61,3.0,Criollo,Venezuela
+1052,140,"Carenero Superior, Gran Saman",2006,0.7,2.75,Criollo,Venezuela
+1053,141,"Emerald Estate",2013,0.6,2.75,,"St. Lucia"
+1054,141,"Emerald Estate",2013,0.7,3.25,,"St. Lucia"
+1055,142,Patanemo,2015,0.79,3.0,,Venezuela
+1056,142,Peru,2015,0.78,3.5,Criollo,Peru
+1057,134,"Wampusirpi, batch 007",2016,0.75,3.25,,Honduras
+1058,143,"Terreiro Velho P.",2010,0.8,3.25,Forastero,"Sao Tome & Principe"
+1059,144,"Ben Tre",2014,0.7,3.25,Trinitario,Vietnam
+1060,144,"Ham Luong",2014,0.8,3.0,Trinitario,Vietnam
+1061,144,"Ba Lai",2014,0.74,3.25,Trinitario,Vietnam
+1062,145,"Rio Caribe",2012,0.7,2.75,Trinitario,Venezuela
+1063,145,Guapiles,2009,0.65,2.0,,"Costa Rica"
+1064,145,"Carenero Superior",2009,0.81,3.5,Criollo,Venezuela
+1065,145,"Carenero, Guapiles, Ocumare blend",2009,0.74,2.75,,"Cost Rica, Ven"
+1066,145,Ocumare,2008,0.72,3.0,Criollo,Venezuela
+1067,146,"Peru, Madagascar",2011,0.55,2.5,,"Peru, Madagascar"
+1068,146,Trinidad,2011,0.55,2.5,Trinitario,Trinidad
+1069,146,Porcelana,2011,0.7,2.5,"Criollo (Porcelana)",Venezuela
+1070,146,"Red Vanilla",2011,0.62,2.75,,
+1071,146,"Venezuela, Trinidad",2011,0.62,2.5,,"Venezuela, Trinidad"
+1072,147,Belize,2014,0.8,3.0,Trinitario,Belize
+1073,147,Ecuador,2014,0.8,3.5,,Ecuador
+1074,147,"Dominican Republic",2014,0.8,3.75,,"Dominican Republic"
+1075,148,"Monte Alegre, D. Badaro, Raw, Organic",2010,0.75,2.75,,Brazil
+1076,149,"Blue Mountain",2016,0.76,3.0,,Jamaica
+1077,149,Cuyagua,2016,0.76,2.5,,Venezuela
+1078,149,"Maya Mountain",2016,0.76,2.75,Trinitario,Belize
+1079,150,Grenada,2010,0.58,3.5,Trinitario,Grenada
+1080,150,"Supremo- SF",2006,0.62,2.0,,
+1081,150,"Elvesia P.",2006,0.74,3.0,"Trinitario, Criollo","Dominican Republic"
+1082,150,"Madagascar, Grand Cru",2006,0.64,3.0,Criollo,Madagascar
+1083,150,"Maracaibo Clasificado",2006,0.65,3.0,Criollo,Venezuela
+1084,150,Arriba,2006,0.72,3.5,"Forastero (Arriba)",Ecuador
+1085,150,"Alto Beni, Cru Savage",2006,0.68,4.0,"Criollo (Wild)",Bolivia
+1086,151,"Puerto Rico",2014,0.65,2.25,,"Puerto Rico"
+1087,151,"Dominican Republic",2014,0.8,3.0,,"Dominican Republic"
+1088,151,"Dominican Republic",2014,0.7,3.25,,"Dominican Republic"
+1089,151,"Dominican Republic",2014,0.85,2.5,,"Dominican Republic"
+1090,152,"Rio Eni",2014,0.72,2.75,Criollo,Peru
+1091,153,"Dominican Republic",2016,0.7,2.75,,"Domincan Republic"
+1092,153,"Puerto Rico",2016,0.8,2.75,,"Domincan Republic"
+1093,154,"Akesson's E., Sambirano V.",2016,0.7,2.75,,Madagascar
+1094,154,"Camino Verde P., Balao, Guayas",2016,0.75,3.5,,Ecuador
+1095,154,"Kokoa Kamili Coop, Kilombero",2016,0.67,3.75,Trinitario,Tanzania
+1096,155,Choroni,2014,0.7,3.5,,Venezuela
+1097,155,Ocumare,2014,0.7,3.75,,Venezuela
+1098,155,Canoabo,2012,0.7,3.75,,Venezuela
+1099,155,"Sur del Lago",2012,0.6,3.5,,Venezuela
+1100,156,"Costa Rica",2015,0.7,3.5,,"Costa Rica"
+1101,156,"Peru Brutus",2015,0.75,3.5,,Peru
+1102,156,Vietnam,2015,0.8,3.0,Trinitario,Vietnam
+1103,156,Ghana,2014,0.6,3.5,Forastero,Ghana
+1104,156,Madagascar,2014,0.65,3.5,Trinitario,Madagascar
+1105,157,"Norandino, batch 161208",2017,0.7,3.5,,Peru
+1106,157,Guatemala,2015,0.73,3.5,,Guatemala
+1107,157,"San Andres",2014,0.8,3.0,,"Costa Rica"
+1108,157,Matagalpa,2014,0.68,3.25,,Nicaragua
+1109,157,"Palo Blanco, Chulucanas",2013,0.66,3.5,,Peru
+1110,157,"Tumbes Coop",2012,0.7,2.5,Criollo,Peru
+1111,157,"Palo Blanco, Chulucanas",2012,0.61,3.5,,Peru
+1112,157,"Palo Blanco w/ panela, Chulucanas",2012,0.81,2.0,,Peru
+1113,157,"Maranon Canyon, Fortunato No. 4",2011,0.7,3.5,"Forastero (Nacional)",Peru
+1114,157,"La Red",2011,0.65,3.5,,"Dominican Republic"
+1115,158,"Maranon, #228, MR, SC",2014,0.7,3.0,"Forastero (Nacional)",Peru
+1116,158,"Maranon, #227, LR, MC",2014,0.7,3.5,"Forastero (Nacional)",Peru
+1117,158,"Maranon, #229, MR, LC",2014,0.7,3.5,"Forastero (Nacional)",Peru
+1118,158,"Maranon, #230, DR, LC",2014,0.7,3.5,"Forastero (Nacional)",Peru
+1119,158,"Conacado, #223, MR, SC",2013,0.72,3.25,,"Dominican Republic"
+1120,158,"Conacado, #224, MR, MC",2013,0.72,3.75,,"Dominican Republic"
+1121,158,"San Martin, Bellavista Coop, #226, DR, MC",2013,0.7,3.75,,Peru
+1122,158,"Bellavista Coop, #225, LR, MC, CG Exclusive",2013,0.7,4.0,Trinitario,Peru
+1123,158,"Markham Valley, #219, LR, MC",2012,0.69,3.5,,"Papua New Guinea"
+1124,158,"Markham Valley, #221, DR, MC",2012,0.69,3.5,,"Papua New Guinea"
+1125,158,"Sambirano Valley, #216, MR, LC",2012,0.74,4.0,Trinitario,Madagascar
+1126,158,"Markham Valley, #220, MR, MC",2012,0.69,4.0,Trinitario,"Papua New Guinea"
+1127,158,"Markham Valley, #222, LR, 0C",2012,0.69,3.0,Trinitario,"Papua New Guinea"
+1128,158,"Ghana, #211, MR, MC",2011,0.74,2.75,Forastero,Ghana
+1129,158,"Jamaica, #209, DR, SC",2011,0.7,3.25,Trinitario,Jamaica
+1130,158,"Conacado, #212, LR, SC",2011,0.72,3.5,,"Dominican Republic"
+1131,158,"Jamaica, #210, DR, MC",2011,0.7,3.5,Trinitario,Jamaica
+1132,158,"Sambirano Valley, #214, LR, MC",2011,0.74,2.75,Trinitario,Madagascar
+1133,158,"Conacado, #213, DR, -C",2011,0.72,3.25,,"Dominican Republic"
+1134,158,"Sambirano Valley, #215, MR, MC",2011,0.74,3.0,Trinitario,Madagascar
+1135,158,"Chuao, #218, MR, MC",2011,0.76,3.25,Trinitario,Venezuela
+1136,158,"Chuao, #217, DR, MC",2011,0.7,4.0,Trinitario,Venezuela
+1137,158,"Jamaica, #204, DR, SC",2009,0.8,2.75,Trinitario,Jamaica
+1138,158,"Jamaica, #206, DR, LC",2009,0.7,3.0,Trinitario,Jamaica
+1139,158,"Jamaica, #205, DR, MC",2009,0.7,3.25,Trinitario,Jamaica
+1140,158,"Carenero Superior, #203, MR, SC",2009,0.65,3.5,Criollo,Venezuela
+1141,159,"Rugoso, Bad Fermentation",2016,0.7,3.5,,Nicaragua
+1142,160,"La Dalia",2015,0.6,3.0,,Nicaragua
+1143,160,"La Dalia",2015,0.85,3.25,,Nicaragua
+1144,160,"La Dalia",2014,0.7,3.5,,Nicaragua
+1145,160,"Barba, Xoco",2013,0.7,3.25,,Nicaragua
+1146,160,"Medagla, Xoco",2013,0.7,3.5,,Nicaragua
+1147,160,"Chuno, triple turned, Xoco",2012,0.7,3.25,"Criollo, Trinitario",Nicaragua
+1148,160,"Red Mayan, Xoco",2012,0.7,3.25,"Criollo, Trinitario",Honduras
+1149,160,"Chuno, double turned, Xoco",2012,0.7,3.25,"Criollo, Trinitario",Nicaragua
+1150,160,"Rugoso, Xoco",2012,0.7,3.75,,Nicaragua
+1151,160,"Johe, Xoco",2011,0.7,3.25,"Criollo, Trinitario",Nicaragua
+1152,160,"Chuno, Xoco",2011,0.7,3.5,"Criollo, Trinitario",Nicaragua
+1153,160,"Nicaliso, Xoco",2011,0.7,3.5,"Criollo, Trinitario",Nicaragua
+1154,161,"Wild Bolivian, Batch 2",2016,0.74,3.75,Beniano,Bolivia
+1155,161,"Coto Brus, Heirloom, Batch 1",2016,0.74,4.0,"Amazon mix","Costa Rica"
+1156,161,"Gran Couva",2014,0.7,3.75,Trinitario,Trinidad
+1157,161,Maranon,2014,0.76,3.0,"Forastero (Nacional)",Peru
+1158,161,"La Red",2013,0.7,3.75,,"Dominican Republic"
+1159,161,"Camino Verde",2013,0.75,3.0,,Ecuador
+1160,161,Peru,2012,0.7,2.5,,Peru
+1161,161,"Signature Blend",2011,0.66,3.25,Trinitario,"Costa Rica"
+1162,161,"Costa Rica",2011,0.7,3.0,,"Costa Rica"
+1163,162,"Kaua'I, Alea Estate +world",2014,0.85,2.5,Blend,Hawaii
+1164,163,"Akesson P.",2015,0.65,3.25,Trinitario,Madagascar
+1165,163,"ABOCFA Coop",2015,0.7,4.0,Forastero,Ghana
+1166,163,"Conacado Coop",2015,0.7,3.5,Trinitario,"Domincan Republic"
+1167,163,"Conacado Coop",2015,0.8,3.5,Trinitario,"Domincan Republic"
+1168,163,"Akesson P.",2015,0.75,3.5,Trinitario,Madagascar
+1169,164,"Toledo District, 2015 Harvest",2016,0.7,3.5,,Belize
+1170,164,Bahia,2015,0.66,3.0,"Trinitario, Forastero",Brazil
+1171,165,"Almendra Blanca, batch 1004",2016,0.77,2.75,,Mexico
+1172,165,"El Carmen, batch 1003",2016,0.77,3.25,,Nicaragua
+1173,165,"Asochivite, batch 1005",2016,0.77,3.25,,Guatemala
+1174,166,"Ben Tre, Dong Nai",2011,0.72,3.0,Trinitario,Vietnam
+1175,167,Dark,2006,0.7,2.5,,
+1176,168,Madagascar,2016,0.7,3.5,,Madagascar
+1177,169,Grenada,2010,0.82,3.25,Trinitario,Grenada
+1178,169,Grenada,2009,0.6,2.75,Trinitario,Grenada
+1179,169,Grenada,2008,0.71,2.5,Trinitario,Grenada
+1180,170,Arriba,2009,0.64,3.0,"Forastero (Arriba) ASS",Ecuador
+1181,170,Ghana,2009,0.64,3.0,Forastero,Ghana
+1182,170,"Trinidad & Tobago",2009,0.64,3.0,,"Trinidad, Tobago"
+1183,170,"Lacri Blend",2009,0.76,3.0,,Venezuela
+1184,170,Blend,2009,0.64,3.25,,"Ven, Trinidad, Ecuador"
+1185,171,"Epique, Blend No. 49",2015,0.7,3.75,,
+1186,171,Haiti,2013,0.65,2.75,,Haiti
+1187,171,Nicaragua,2013,0.65,2.75,,Nicaragua
+1188,171,Jamaica,2013,0.65,3.25,Trinitario,Jamaica
+1189,171,Ecuador,2013,0.65,3.5,,Ecuador
+1190,171,"Coucher du Soleil",2011,0.72,2.75,,
+1191,171,"Lever du Soleil",2011,0.61,3.25,,
+1192,171,Onyx,2011,0.72,3.25,,
+1193,171,Trinidad,2010,0.65,3.0,Trinitario,Trinidad
+1194,171,"O'ahu, N. Shore, Waialua E., Kakoleka",2009,0.55,3.0,,Hawaii
+1195,171,Nocturne,2009,0.91,3.0,,
+1196,171,Complexite,2009,0.7,3.5,Blend,
+1197,171,"Machu Pichu",2008,0.65,3.0,,Peru
+1198,171,"Special Maker Reserve",2008,0.64,3.0,,
+1199,171,Ocumare,2008,0.65,3.5,,Venezuela
+1200,171,Quetzalcoatl,2007,0.72,3.5,Blend,
+1201,171,Chucuri,2006,0.65,3.0,Trinitario,Colombia
+1202,171,"Sur del Lago",2006,0.65,2.5,"Trinitario, Criollo",Venezuela
+1203,171,"Sambirano, Ambanja",2006,0.65,3.5,"Criollo, +",Madagascar
+1204,171,"Los Rios, Quevedo",2006,0.65,3.5,"Forastero (Arriba)",Ecuador
+1205,171,Tsaranta,2006,0.61,3.5,Blend,
+1206,171,Semisweet,2006,0.61,3.0,Blend,
+1207,172,"Papua New Guinea",2014,0.8,2.75,,"Papua New Guinea"
+1208,172,"Campesino w/ nibs",2014,0.74,2.75,,
+1209,172,"Dominican Republic",2014,0.75,3.25,,"Dominican Republic"
+1210,172,Trinitario,2014,0.7,3.5,Trinitario,
+1211,172,"Downtown London",2014,0.65,2.75,,
+1212,172,"Africa meets Latina",2014,0.7,3.0,,
+1213,172,Amazonas,2014,0.8,3.0,,
+1214,172,Sharkey,2014,0.66,3.25,,Hawaii
+1215,172,"one hundred",2014,1.0,2.0,,
+1216,173,Arriba,2007,0.77,2.5,"Forastero (Arriba)",Ecuador
+1217,174,"Don Homero- Cerecita Valley",2014,0.55,2.75,Trinitario,Ecuador
+1218,174,"Don Homero- Cerecita Valley",2014,0.7,3.0,Trinitario,Ecuador
+1219,175,"South America and Africa",2011,0.7,3.0,,"South America, Africa"
+1220,176,"Vale do Juliana, w/ nibs",2016,0.85,3.25,,Brazil
+1221,176,"Brazil Blend",2015,0.67,3.0,,Brazil
+1222,176,"Tome Acu E., Amazon Rainforest",2015,0.77,3.5,,Brazil
+1223,176,"Vale do Juliana E., Atlantic Forest",2015,0.74,3.5,,Brazil
+1224,177,Peru,2016,0.64,2.75,,Peru
+1225,178,"Maya Mtn, Moho R., Toledo D., 2015",2016,0.7,3.25,Amazon,Belize
+1226,179,"Cota Brus, Terciopelo, 2015",2016,0.74,3.5,"Amazon mix","Costa Rica"
+1227,180,"Alto Beni, Upper Rio Beni, 2014",2014,0.67,3.5,"Amazon, ICS",Bolivia
+1228,180,"Wild Beni, Lower Rio Beni, Tranquilidad, 2014",2014,0.67,3.0,Beniano,Bolivia
+1229,180,"Los Rios, Hacienda Limon, Orecao, 2014",2014,0.67,3.75,EET,Ecuador
+1230,180,"Maunawili, O'ahu, Agri Research C., 2014",2014,0.67,3.75,,Hawaii
+1231,181,"Maunawili, O'ahu, Agri Research C., 2015",2016,0.72,3.5,,Hawaii
+1232,182,"Los Rios, Hacienda Limon, Orecao, 2015",2016,0.7,3.5,EET,Ecuador
+1233,183,"Pinchincha, Mindo, Coop Nueva Esper., 2015",2016,0.77,3.5,EET,Ecuador
+1234,184,"Alto Beni, Upper Rio Beni, 2015",2016,0.68,3.75,"Amazon, ICS",Bolivia
+1235,184,"Wild Beni, Lower Rio Beni, Tranquilidad, 2015",2016,0.72,4.0,Beniano,Bolivia
+1236,414,Uganda,2015,0.57,2.75,Forastero,Uganda
+1237,414,Venezuela,2015,0.74,3.5,Criollo,Venezuela
+1238,415,Tanzania,2015,0.7,2.75,,Tanzania
+1239,415,Madagascar,2015,0.74,3.0,Trinitario,Madagascar
+1240,415,Venezuela,2015,0.7,3.0,,Venezuela
+1241,415,Ecuador,2015,0.73,3.25,,Ecuador
+1242,415,Peru,2015,0.7,3.25,,Peru
+1243,185,"Akesson's Estate",2016,0.7,2.75,Trinitario,Madagascar
+1244,185,"Carenero Superior",2016,0.72,2.75,Trinitario,Venezuela
+1245,185,Conacado,2016,0.75,3.25,Trinitario,"Domincan Republic"
+1246,185,"Gran Blanco",2016,0.66,3.5,Criollo,Peru
+1247,186,Arriba,2009,0.8,2.0,"Forastero (Arriba) ASS",Ecuador
+1248,186,Manabi,2009,0.8,2.5,"Forastero (Arriba) ASS",Ecuador
+1249,186,Arriba,2009,0.72,3.0,"Forastero (Arriba) ASS",Ecuador
+1250,186,Arriba,2009,0.58,3.25,"Forastero (Arriba) ASS",Ecuador
+1251,186,Manabi,2009,0.58,3.5,"Forastero (Arriba) ASS",Ecuador
+1252,187,Maranon,2016,0.7,2.75,,Peru
+1253,187,"Camino Verde P., Balao, Guayas",2015,0.7,3.5,,Ecuador
+1254,187,Sambirano,2015,0.7,3.5,Trinitario,Madagascar
+1255,187,"Gran Couva",2015,0.7,3.5,Trinitario,Trinidad
+1256,187,Mara,2015,0.7,3.5,,Venezuela
+1257,187,"Ivory Coast",2009,0.7,2.5,,"Ivory Coast"
+1258,187,Hispaniola,2009,0.7,2.75,,"Dominican Republic"
+1259,187,"San Martin",2009,0.7,3.5,,Peru
+1260,187,"Hispaniola w/ nibs",2009,0.75,3.75,,"Dominican Republic"
+1261,188,"Ecuador, w/ nibs",2014,0.72,2.5,,Ecuador
+1262,189,"Pepiniere, single Cote",2015,0.7,2.75,,"St. Lucia"
+1263,189,"Marcial, single Cote, 2012",2013,0.7,4.0,Trinitario,"St. Lucia"
+1264,189,"Island Growers, 2012, 120hr c.",2013,1.0,1.75,Trinitario,"St. Lucia"
+1265,190,Trinidad,2013,0.75,3.0,Trinitario,Trinidad
+1266,190,"Mekong Delta & Dong Nai",2013,0.8,3.5,Trinitario,Vietnam
+1267,190,"Los Rios, H. Iara",2013,0.9,3.0,"Forastero (Nacional)",Ecuador
+1268,190,"Somia Plantation, Akesson, 2012",2013,0.72,3.0,Trinitario,Madagascar
+1269,190,"Los Rios, H. Iara, 2012",2013,0.82,3.5,"Forastero (Nacional)",Ecuador
+1270,190,"Chanchamayo, Pichanadi, 2012, 60hr c.",2013,1.0,2.75,,Peru
+1271,190,"Los Rios, H. Iara, 2012, 120hr c.",2013,1.0,2.5,"Forastero (Nacional)",Ecuador
+1272,190,"Conacado, 2012, 120hr c.",2013,1.0,2.75,,"Dominican Republic"
+1273,190,Sambirano,2012,0.66,3.5,"Trinitario, Criollo",Madagascar
+1274,190,"Los Rios, H. Iara, 96hr c.",2011,0.8,3.0,"Forastero (Nacional)",Ecuador
+1275,190,"Island Growers, 120hr c.",2011,0.65,3.0,Trinitario,"St. Lucia"
+1276,190,"Island Growers, 96hr c.",2011,0.65,3.25,Trinitario,"St. Lucia"
+1277,190,Ecuador,2010,0.7,2.75,,Ecuador
+1278,190,"Santo Domingo",2010,0.7,3.0,,"Dominican Republic"
+1279,190,Chuao,2010,0.7,2.75,Trinitario,Venezuela
+1280,190,"St. Lucia",2008,0.72,3.0,,"St. Lucia"
+1281,190,Uganda,2008,0.8,2.5,Forastero,Uganda
+1282,190,Tanzania,2008,0.75,2.75,,Tanzania
+1283,190,"Uba Budo",2008,0.72,3.0,Forastero,"Sao Tome"
+1284,191,"Lam Dong",2015,0.7,3.5,Trinitario,Vietnam
+1285,191,Bolivia,2014,0.7,3.0,"Criollo, Trinitario",Bolivia
+1286,191,"Bolivia, Bo-nib-ia, w/ nibs",2014,0.7,3.0,"Criollo, Trinitario",Bolivia
+1287,191,Momotombo,2014,0.7,3.0,Trinitario,Nicaragua
+1288,191,Hispaniola,2014,0.7,3.75,Trinitario,"Dominican Republic"
+1289,191,"Zorzal Reserva w/ Charles Kerchner",2014,0.7,3.5,,"Dominican Republic"
+1290,191,"Ocumare, Cumboto",2013,0.7,3.25,"Trinitario, Criollo",Venezuela
+1291,191,Amazonas,2013,0.7,3.75,Forastero,Venezuela
+1292,192,"Chuao, Venezuela",2013,0.72,3.75,Trinitario,Venezuela
+1293,192,"Coopertiva Amazona",2011,0.72,3.75,Criollo,Venezuela
+1294,192,"Sur del Lago, Amiari Meridena, Zulia, 48hr c.",2011,0.72,3.75,,Venezuela
+1295,192,"Choroni, Finca Torres, 48hr c.",2011,0.72,3.25,Criollo,Venezuela
+1296,192,"Ocumare, H. Cata, 48hr c.",2011,0.72,3.75,Criollo,Venezuela
+1297,192,"Porcelana, Zulia",2011,0.74,4.0,Criollo,Venezuela
+1298,192,"Ocumare, H. Cata, w/ nibs",2011,0.72,3.5,Criollo,Venezuela
+1299,192,"Carenero Superior, Urrutia, Barlovento",2011,0.7,4.0,Trinitario,Venezuela
+1300,192,"Coopertiva Amazona w/ nibs",2011,0.72,4.0,Criollo,Venezuela
+1301,192,"Sur del Lago, Amiari Meridena, Zulia, w/ nibs",2011,0.72,4.0,,Venezuela
+1302,193,"India (south)",2016,0.61,2.5,,India
+1303,194,"La Red",2012,0.7,3.25,,"Dominican Republic"
+1304,194,"Conacado, Manifesto",2012,0.7,2.75,,"Dominican Republic"
+1305,195,Honduras,2014,0.77,3.0,,Honduras
+1306,416,"Satipo region, white label",2012,0.72,2.75,Criollo,Peru
+1307,416,"black label",2012,0.72,3.0,,Peru
+1308,196,Madagascar,2014,0.72,3.5,Trinitario,Madagascar
+1309,196,Peru,2014,0.72,2.25,,Peru
+1310,196,Belize,2014,0.72,3.25,Trinitario,Belize
+1311,196,"Dominican Republic",2014,0.72,3.25,,"Dominican Republic"
+1312,197,"Maya Mountain, Toledo, Batch 29",2015,0.7,3.5,Trinitario,Belize
+1313,197,"Elvesia P., Batch 32",2015,0.7,2.75,,"Dominican Republic"
+1314,198,"Trinatario Treasure",2006,0.71,2.0,Trinitario,Ghana
+1315,199,Madagascar,2015,0.63,2.75,Trinitario,Madagascar
+1316,200,Belize,2014,0.7,3.5,Trinitario,Belize
+1317,200,Madagascar,2014,0.7,3.5,Trinitario,Madagascar
+1318,200,Peru,2014,0.7,4.0,,Peru
+1319,202,"Rizek Cacao, Cibao Valley, Domin. Rep.",2013,0.7,3.5,,"Dominican Republic"
+1320,202,"Rizek Cacao, Domin. Rep.",2013,0.82,3.0,,"Dominican Republic"
+1321,202,"Rizek Cacao, Domin. Rep.",2013,0.55,3.25,,"Dominican Republic"
+1322,202,"Rizek Cacao, Domin. Rep.",2013,0.62,3.25,,"Dominican Republic"
+1323,203,Peru,2012,0.64,2.5,,Peru
+1324,203,Vanuatu,2009,0.65,3.75,Trinitario,Vanuatu
+1325,204,"Sisa 36hr/ W. F. blend prototype",2008,0.7,3.0,,Ecuador
+1326,204,"Sisa's Secret/ original micro",2008,0.7,3.5,,Ecuador
+1327,204,Roberto,2008,0.75,2.75,,Ecuador
+1328,204,"Diego/ original micro",2008,0.85,2.5,,Ecuador
+1329,204,"Diego 48hr/ W.F. blend prototype",2008,0.85,2.75,,Ecuador
+1330,204,"Diego 60hr/ W.F. blend prototype",2008,0.85,3.0,,Ecuador
+1331,204,"Cacao Nacional W.F.",2008,0.75,2.5,,Ecuador
+1332,204,"Cacao Nacional W.F.",2008,0.85,3.0,,Ecuador
+1333,205,Noir,2009,0.7,2.75,,
+1334,205,Ecuador,2009,0.8,2.75,,Ecuador
+1335,206,"La Red, Project Reserva, Guaconejo",2013,0.7,3.75,,"Dominican Republic"
+1336,207,Dark,2009,0.72,2.0,,Mexico
+1337,208,"La Red, Guanconjeco",2014,0.6,3.0,Trinitario,"Dominican Republic"
+1338,209,"San Martin",2014,0.72,2.5,,Peru
+1339,209,Ocumare,2014,0.72,2.75,,Venezuela
+1340,209,Belize,2014,0.72,3.0,Trinitario,Belize
+1341,209,"Sambirano Valley",2014,0.72,3.25,Trinitario,Madagascar
+1342,209,Belize,2014,0.9,3.25,Trinitario,Belize
+1343,209,Elvesia,2014,0.72,3.25,,"Dominican Republic"
+1344,209,ROIG,2014,0.72,3.25,,"Dominican Republic"
+1345,201,"Kafupbo, Petit Bourg, De Borgnes",2016,0.7,3.25,,Haiti
+1346,201,"Maranon, Fortunato No. 4",2016,0.7,2.75,"Forastero (Nacional)",Peru
+1347,201,"Los Rios, Hacienda Limon, Heirloom",2016,0.7,3.75,,Ecuador
+1348,201,"Bahia, Fazenda Camboa",2016,0.7,3.75,Forastero,Brazil
+1349,210,Uganda,2014,0.725,2.5,Forastero,Uganda
+1350,210,Hispaniola,2014,0.725,3.0,,"Dominican Republic"
+1351,210,Ecuador,2014,0.725,2.5,,Ecuador
+1352,210,Madagascar,2014,0.725,3.0,Trinitario,Madagascar
+1353,212,Peru,2012,0.74,3.25,,Peru
+1354,212,Brazil,2012,0.7,4.0,,Brazil
+1355,212,Chuao,2012,0.68,3.75,Trinitario,Venezuela
+1356,212,Quito,2011,0.74,3.75,,Ecuador
+1357,212,Grenada,2010,0.75,3.25,Trinitario,Grenada
+1358,212,"Dominican Republic",2010,0.74,3.75,,"Dominican Republic"
+1359,212,Venzuela,2010,0.71,3.0,,Venezuela
+1360,212,Madagascar,2009,0.64,3.5,Trinitario,Madagascar
+1361,212,Bolivian,2009,0.68,3.0,,Bolivia
+1362,213,"Lumas, 2015 Harvest, Batch 6, brown sugar",2016,0.7,2.25,"Trinitario, Criollo",Peru
+1363,213,"Lumas, 2015 Harvest, Batch 7",2016,0.7,2.5,"Trinitario, Criollo",Peru
+1364,213,"Tumbes, 2013 Harvest, Batch 8",2016,0.7,3.0,Criollo,Peru
+1365,213,"Belize, 2014 Harvest, Batch 9",2016,0.7,3.0,"Trinitario, Criollo",Belize
+1366,214,"Cuana, 2013",2013,0.74,2.75,,"Africa, Carribean, C. Am."
+1367,214,Tobago,2013,0.6,3.25,,Tobago
+1368,214,"Acarigua, w/ nibs",2013,0.56,3.25,,Ecuador
+1369,214,"Loma Sotavento",2012,0.66,3.5,,"Dominican Republic"
+1370,214,Grenada,2011,0.68,3.5,Trinitario,Grenada
+1371,214,Akosombo,2009,0.68,3.25,Forastero,Ghana
+1372,214,"Porcelana, Pariguan",2009,0.69,3.5,"Criollo (Porcelana)",Venezuela
+1373,214,Kuruba,2009,0.6,3.0,,
+1374,214,Orinoco,2009,0.6,3.75,,
+1375,214,"Cuana, 2008",2008,0.74,3.5,Blend,"Ven., Indonesia, Ecuad."
+1376,215,"Peruvian Amazon",2011,0.72,2.5,,Peru
+1377,216,Vinces,2011,0.6,3.25,,Ecuador
+1378,217,"Madagascar, Batch 59/100",2015,0.75,2.75,Trinitario,Madagascar
+1379,217,"Vietnam, Batch 50/100",2015,0.75,2.75,Trinitario,Vietnam
+1380,217,"Cuba, Batch 59/100",2015,0.75,3.0,,Cuba
+1381,217,"Peru, Batch 51/100",2015,0.75,3.25,,Peru
+1382,217,"Ivory Coast, Batch 56/100",2015,0.75,3.0,,"Ivory Coast"
+1383,217,"Sao Tome, Batch 151",2015,0.75,3.5,Forastero,"Sao Tome"
+1384,217,"Bahia, Batch 148",2015,0.75,3.25,,Brazil
+1385,217,"Lam Dong, Batch 153",2015,0.75,3.75,Trinitario,Vietnam
+1386,217,Cuba,2014,0.7,2.75,,Cuba
+1387,217,Trinidad-Tobago,2014,0.68,2.75,,Trinidad-Tobago
+1388,218,Catongo,2012,0.7,3.5,"Forastero (Catongo)",Brazil
+1389,219,Tanzania,2009,0.75,2.5,,Tanzania
+1390,211,Rugoso,2016,0.8,3.5,Trinitario,Nicaragua
+1391,211,"Carenero Superior",2012,0.75,3.0,Trinitario,Venezuela
+1392,211,"Rio Caribe",2012,0.75,3.0,Trinitario,Venezuela
+1393,211,Blend,2012,0.72,3.0,Criollo,"Peru, Ecuador, Venezuela"
+1394,220,"La Masica, Batch 7, FHIA",2017,0.7,3.5,,Honduras
+1395,220,"Maya Mtn, Batch 18, Heirloom",2017,0.7,3.25,,Belize
+1396,220,Liberia,2016,0.7,3.25,,Liberia
+1397,220,Beniamo,2015,0.7,3.25,,Bolivia
+1398,220,"San Juan Estate, Gran Couva",2015,0.7,3.5,Trinitario,Trinidad
+1399,220,"San Andres",2015,0.7,3.0,,"Costa Rica"
+1400,220,"La Red, Guaconejo",2015,0.7,3.25,,"Domincan Republic"
+1401,220,"Kokoa Kamili",2015,0.7,3.5,,Tanzania
+1402,220,Maranura,2014,0.7,3.5,"Forastero (Nacional)",Peru
+1403,221,Sambirano,2014,0.71,3.5,Criollo,Madagascar
+1404,222,Madagascar,2016,0.7,3.0,Trinitario,Madagascar
+1405,223,"Perfect Illusion",2012,0.65,3.5,Criollo,Peru
+1406,223,"Bolivia, Wild Thing",2012,0.68,3.5,Criollo,Bolivia
+1407,223,"La Selva",2012,0.68,3.75,,Peru
+1408,223,"Purple Haze",2012,0.75,2.75,,"Venezuela, Dom. Rep."
+1409,223,"The Other One, Grand Cru",2012,0.74,3.0,,"Dominican Republic"
+1410,223,"Wild Thing",2012,0.68,3.5,Criollo,Bolivia
+1411,224,"Excellence (US Version)",2007,0.85,3.0,,
+1412,225,"Puerto Rico",2013,0.65,2.5,,"Puerto Rico"
+1413,226,"Haleiwa, O'ahu - Lonohana E., Kanahiku",2014,0.7,3.75,,Hawaii
+1414,226,"Haleiwa E, O'ahu, 2014",2014,0.65,3.25,,Hawaii
+1415,226,"Haleiwa E, O'ahu, 2014",2014,0.75,3.75,,Hawaii
+1416,226,"Opaeula Estate, O'ahu, Nene, CG Exclusive",2013,0.71,3.0,,Hawaii
+1417,226,"Opaeula Estate, O'ahu, Ele'ele",2013,0.72,3.0,,Hawaii
+1418,226,"Hawaiian Crown, Kona Vanilla",2013,0.7,3.5,,Hawaii
+1419,227,Nicaragua,2015,0.75,2.0,,Nicaragua
+1420,228,Selva,2010,0.46,2.75,,"Colombia, Ecuador"
+1421,228,Macondo,2010,0.6,3.0,,"Colombia, Ecuador"
+1422,228,Misterio,2010,0.58,3.0,,"Colombia, Ecuador"
+1423,228,Santander,2010,0.65,3.5,,Colombia
+1424,229,Peru,2011,0.7,1.5,,Peru
+1425,229,Peru,2010,0.55,2.25,,Peru
+1426,230,Madagascar,2008,0.67,3.5,Trinitario,Madagascar
+1427,230,Madagascar,2008,0.7,3.75,Trinitario,Madagascar
+1428,230,Madagascar,2008,0.63,4.0,Trinitario,Madagascar
+1429,230,Madagascar,2008,0.75,3.5,Trinitario,Madagascar
+1430,231,Guadalcanal,2017,0.73,3.5,,"Solomon Islands"
+1431,231,"Puerto Rico",2013,0.7,2.75,,"Puerto Rico"
+1432,231,Brazil,2013,0.7,3.5,,Brazil
+1433,231,"Choobua, Kona",2013,0.7,2.75,,Hawaii
+1434,231,"Xocunusco, Chiapas, Pichucalco",2013,0.7,2.75,,Mexico
+1435,231,"Hamakua Coast, Kokoleka",2012,0.7,3.25,,Hawaii
+1436,231,"Criollo, Hawaii",2012,0.7,3.25,Criollo,Hawaii
+1437,231,"Kaua'i",2012,0.7,3.5,,Hawaii
+1438,231,Dominican,2011,0.7,2.5,,"Dominican Republic"
+1439,231,Upala,2011,0.7,2.75,,"Costa Rica"
+1440,231,"Chiapas, Triple Cacao",2010,0.72,2.75,,Mexico
+1441,232,Africa,2008,0.75,2.0,,Tanzania
+1442,232,Ecuador,2008,0.7,3.0,"Forastero (Nacional)",Ecuador
+1443,232,Cuba,2008,0.7,3.25,Criollo,Cuba
+1444,232,"Santo Domingo",2008,0.7,3.75,"Blend-Forastero,Criollo","Dominican Republic"
+1445,233,Ecuador,2010,0.7,2.0,,Ecuador
+1446,234,"Sambirano 2006",2007,0.75,2.75,Trinitario,Madagascar
+1447,234,"Mora Mora 2006",2007,0.73,3.5,Trinitario,Madagascar
+1448,235,"Davao, Mt. Talamo foothills",2013,0.65,3.5,Trinitario,Philippines
+1449,236,"O'ahu, N. Shore, Waialua Estate w/ nibs",2010,0.55,3.5,,Hawaii
+1450,236,"O'ahu, N. Shore, Waialua Estate",2009,0.55,2.75,Blend,Hawaii
+1451,237,Chuao,2016,0.7,3.0,,Venezuela
+1452,238,Ecuador,2015,0.74,2.5,,Ecuador
+1453,238,Peru,2014,0.74,2.5,,Peru
+1454,238,Venezuela,2014,0.74,2.75,,Venezuela
+1455,238,Conacado,2012,0.74,3.75,,"Dominican Republic"
+1456,239,Colombia,2014,0.7,2.75,,Colombia
+1457,240,"Markham Valley",2015,0.72,3.5,,"Papua New Guinea"
+1458,240,"Coto Brus",2015,0.72,3.75,,"Costa Rica"
+1459,240,"Waiahole, O'ahu",2013,0.72,3.75,,Hawaii
+1460,240,"Liberia, #174",2012,0.72,3.25,,Liberia
+1461,240,"Hamakua, Hawaiian Crown, #176",2012,0.72,2.75,,Hawaii
+1462,240,Piura,2012,0.72,3.0,,Peru
+1463,240,"Oahu, Winward, #151, Maunawili district",2012,0.72,3.25,,Hawaii
+1464,241,Johe,2016,0.7,3.75,,Nicaragua
+1465,241,Peru,2016,0.7,3.5,,Peru
+1466,241,Porcelana,2014,0.7,3.75,Criollo,Venezuela
+1467,241,Kolumbia,2014,0.85,3.5,,Colombia
+1468,241,"Grand Cru Dominican Republic",2012,0.7,3.25,,"Dominican Republic"
+1469,241,"Grand Cru Ghana",2012,0.7,3.5,Forastero,Ghana
+1470,241,"Grand Cru Ecuador",2012,0.7,3.25,,Ecuador
+1471,242,"Ben Tre, Surprise Valley",2016,0.75,3.25,Trinitario,Vietnam
+1472,242,"ROIG, 2014",2015,0.7,3.5,"Criollo, Trinitario","Dominican Republic"
+1473,242,"Maranon, 2014",2015,0.62,3.5,"Forastero (Nacional)",Peru
+1474,242,Ecuador,2015,0.7,3.5,Trinitario,Ecuador
+1475,242,"San Juan Estate, Cherry Blossoms at Night",2015,0.7,2.75,Trinitario,Trinidad
+1476,242,"A case of the Xerces Blues, triple roast",2015,0.7,3.5,,Nicaragua
+1477,242,"Tumbes, Dear Mr. Finley, 2014",2015,0.68,3.5,Criollo,Peru
+1478,242,Colombia,2015,0.75,2.75,,Colombia
+1479,242,"Kakoa Kamili, Both Man & Bird & Beast",2015,0.72,3.0,,Tanzania
+1480,242,"Le Chocolat Chaud",2015,0.78,3.5,,Honduras
+1481,243,Piura,2016,0.7,3.0,,Peru
+1482,243,Cusco,2016,0.7,2.75,,Peru
+1483,243,"San Martin",2016,0.7,3.0,,Peru
+1484,244,"Cacao Nib Crunch",2016,0.75,3.25,,
+1485,245,"Tan Phu Dong Island, Heart of Darkness",2015,0.85,3.25,Trinitario,Vietnam
+1486,245,"Ben Tre",2015,0.68,3.5,Trinitario,Vietnam
+1487,245,"Dak Lak, Batch 2451",2015,0.7,3.75,Trinitario,Vietnam
+1488,245,"Tan Phu Dong, Treasure Island",2013,0.75,3.5,Trinitario,Vietnam
+1489,245,"Ba Ria",2012,0.76,3.5,Trinitario,Vietnam
+1490,245,"Dong Nai",2012,0.72,3.5,Trinitario,Vietnam
+1491,245,"Tien Giang, Gao Co-op",2012,0.7,3.5,Trinitario,Vietnam
+1492,245,"Ben Tre",2012,0.78,3.5,Trinitario,Vietnam
+1493,245,"Tien Giang",2012,0.8,3.0,Trinitario,Vietnam
+1494,245,"Lam Dong",2012,0.74,3.5,Trinitario,Vietnam
+1495,246,"Matina 1-6, prototype",2010,0.65,3.0,,"Costa Rica"
+1496,246,"Ivory Coast",2010,0.65,3.0,,"Ivory Coast"
+1497,246,Nigeria,2010,0.65,3.25,,Nigeria
+1498,246,"Ghana, prototype",2010,0.65,3.5,Forastero,Ghana
+1499,247,"Dominican Republic",2013,0.74,2.25,,"Dominican Republic"
+1500,247,"Dominican Republic",2013,0.89,2.5,,"Dominican Republic"
+1501,248,"Alto Beni",2016,0.76,2.75,,Bolivia
+1502,248,Pisa,2016,0.82,3.0,,Haiti
+1503,248,Tumaco,2016,0.74,3.25,,Colombia
+1504,249,Guatemala,2015,0.76,3.0,,Guatemala
+1505,249,Tanzania,2015,0.74,3.25,,Tanzania
+1506,249,"French Laundry 20th Anniversary",2014,0.75,3.75,Blend,"Peru, Belize"
+1507,249,"Shake Shack",2012,0.73,3.5,Blend,"Peru, Mad., Dom. Rep."
+1508,249,Madagascar,2012,0.72,2.5,Trinitario,
+1509,249,Chuao,2012,0.73,2.75,Trinitario,Venezuela
+1510,249,"Brooklyn Blend",2011,0.72,3.5,,
+1511,249,"Chuao, Med. Roast",2011,0.76,3.0,Trinitario,Venezuela
+1512,249,"Chuao, Dark Roast",2011,0.7,3.0,Trinitario,Venezuela
+1513,249,"Chuao, Light Roast",2011,0.81,2.75,Trinitario,Venezuela
+1514,249,"Moho River",2011,0.7,3.5,Trinitario,Belize
+1515,249,"Papua New Guinea",2011,0.71,2.75,,"Papua New Guinea"
+1516,249,"San Martin",2011,0.75,3.0,,Peru
+1517,249,Conacado,2011,0.73,3.25,,"Dominican Republic"
+1518,249,"La Red de Guanconejo, N. Highlands coop",2011,0.74,3.75,,"Dominican Republic"
+1519,249,Patanemo,2010,0.81,2.75,Criollo,Venezuela
+1520,249,"Ocumare de la Costa",2010,0.75,3.0,,Venezuela
+1521,249,"Dominican Republic, Coop",2010,0.7,3.25,,"Dominican Republic"
+1522,250,"Malekula P., 2013",2013,0.72,3.5,Trinitario,Vanuatu
+1523,250,"Somia, 2013",2013,0.68,4.0,Trinitario,Madagascar
+1524,250,"Kulili P., 2013",2013,0.74,4.0,Trinitario,"Papua New Guinea"
+1525,250,Blend,2013,0.7,3.75,Trinitario,"PNG, Vanuatu, Mad"
+1526,251,"Maya Mountain",2014,0.7,3.25,Trinitario,Belize
+1527,251,Elvesia,2014,0.7,3.25,,"Dominican Republic"
+1528,251,Tumbes,2014,0.82,3.25,Criollo,Peru
+1529,251,"Morropon, Norandiono Coop, Piura",2014,0.63,3.5,Criollo,Peru
+1530,252,Hispaniola,2016,0.72,3.0,,"Domincan Republic"
+1531,253,Bolivia,2014,0.7,2.5,,Bolivia
+1532,253,Venezuela,2014,0.7,2.75,,Venezuela
+1533,253,Belize,2014,0.7,3.0,Trinitario,Belize
+1534,253,"Nicaragua, w/ inbs",2014,0.7,3.0,,Nicaragua
+1535,253,"Dominican Republic",2014,0.7,3.5,,"Dominican Republic"
+1536,254,Madagascar,2012,0.8,2.5,Trinitario,Madagascar
+1537,254,Madagascar,2012,0.72,2.5,Trinitario,Madagascar
+1538,255,"El Salvador",2015,0.8,2.75,,"El Salvador"
+1539,255,"El Salvador",2015,0.7,3.0,,"El Salvador"
+1540,255,Honduras,2014,0.8,3.25,,Honduras
+1541,255,Honduras,2014,0.7,3.5,,Honduras
+1542,255,"La Tronca, Matagalpa",2014,0.7,3.25,,Nicaragua
+1543,255,"La Tronca, Matagalpa",2014,0.8,3.5,,Nicaragua
+1544,256,"Fazenda Sempre Firme P., Bahia",2014,0.7,3.0,,Brazil
+1545,256,"Akesson Estate",2014,0.72,3.5,Trinitario,Madagascar
+1546,257,"South America",2015,0.7,3.5,Trinitario,"South America"
+1547,258,"Chiapas, Mokaya P.",2012,0.66,3.75,,Mexico
+1548,258,"Carenero Superior, Concepcion",2007,0.66,3.5,Trinitario,Venezuela
+1549,258,"Vila Gracinda",2007,0.67,3.5,Forastero,"Sao Tome"
+1550,258,"Carre Amer",2006,0.6,2.0,,
+1551,258,"Carre Grand Noir",2006,0.85,2.0,,
+1552,258,Tamarina,2006,0.7,3.0,Forastero,"Sao Tome"
+1553,258,"Los Ancones P.",2006,0.67,4.0,,"Dominican Republic"
+1554,258,"Mangaro P.",2006,0.65,4.0,Trinitario,Madagascar
+1555,258,"Maralumi P.",2006,0.64,4.0,,"Papua New Guinea"
+1556,258,"Noir Infini",2006,0.99,2.0,,
+1557,259,"Maya Mountain",2015,0.8,3.5,Trinitario,Belize
+1558,259,"San Juan Estate",2015,0.7,3.5,Trinitario,Trinidad
+1559,259,"Oko Caribe",2015,0.75,3.75,,"Dominican Republic"
+1560,259,"Patanemo, Epoch, Donaldo",2015,0.75,3.75,,Venezuela
+1561,259,"Kokoa Kamili",2015,0.75,3.25,,Tanzania
+1562,259,"Matagalpa, Cacao Bisiesto",2015,0.7,3.5,,Nicaragua
+1563,259,"La Red",2013,0.75,2.5,,"Dominican Republic"
+1564,259,Belize,2013,0.8,3.25,Trinitario,Belize
+1565,259,Houseblend,2012,0.65,1.5,,
+1566,259,"Alto Beni",2012,0.75,2.0,Criollo,Bolivia
+1567,259,"Balinese, Java",2012,0.7,2.5,Criollo,Indonesia
+1568,260,Ecuador,2013,0.7,2.5,"Forastero (Nacional)",Ecuador
+1569,260,Ecuador,2012,0.7,3.5,,Ecuador
+1570,261,Ecuador,2010,0.67,2.75,,Ecuador
+1571,261,Ecuador,2010,0.77,2.75,,Ecuador
+1572,262,"Acul-du-Nord, 2015",2016,0.7,3.5,"Criollo, Trinitario",Haiti
+1573,263,"Fazenda Camboa, Bahia",2016,0.75,3.75,,Brazil
+1574,263,"Bahia, Fazenda Venturosa",2015,0.7,3.5,"Forastero (Parazinho)",Brazil
+1575,264,Tumaco,2012,0.65,2.5,,Colombia
+1576,265,"Toledo District, w/ nibs",2013,0.73,3.25,Trinitario,Belize
+1577,265,"Toledo District",2013,0.72,3.0,Trinitario,Belize
+1578,265,"Umoho R., Toledo District, San Felipe",2010,0.67,2.75,Trinitario,Belize
+1579,266,"La Red",2015,0.7,3.0,,"Domincan Republic"
+1580,266,Indonesia,2015,0.7,2.75,,Indonesia
+1581,266,Peru,2015,0.7,3.25,,Peru
+1582,267,Matagalpa,2011,0.7,2.75,,Nicaragua
+1583,267,Mombacho,2011,0.7,2.75,,Nicaragua
+1584,267,Oscuro,2011,0.7,3.25,,Nicaragua
+1585,268,"Oko Caribe",2016,0.72,3.5,,"Dominican Republic"
+1586,269,"Papaua New Guinea",2014,0.7,3.25,,"Papua New Guinea"
+1587,270,Manabi,2015,0.7,3.25,,Ecuador
+1588,270,Manabi,2015,0.63,3.5,,Ecuador
+1589,270,Manabi,2015,0.85,3.5,,Ecuador
+1590,271,Nicaragua,2015,0.7,3.5,,Nicaragua
+1591,271,Nicaragua,2015,0.8,3.5,,Nicaragua
+1592,272,"Kokoa Kamili, batch 1 SRB",2016,0.68,2.75,,Tanzania
+1593,272,"Oko Caribe, batch 1 SRB",2016,0.71,2.75,,"Domincan Republic"
+1594,272,"Ambanja, batch 1 SRB",2016,0.68,2.75,,Madagascar
+1595,272,"Tien Giang, batch 1 SRB",2016,0.8,3.0,Trinitario,Vietnam
+1596,273,"Costa Rica, Oscuro",2013,0.58,2.5,,"Costa Rica"
+1597,273,"Costa Rica, Oscuro",2013,0.7,3.0,,"Costa Rica"
+1598,274,"Trinidad & Tobago",2013,0.7,3.75,,"Trinidad, Tobago"
+1599,274,"Maranon Canyon, Fortunato No. 4",2013,0.78,3.75,"Forastero (Nacional)",Peru
+1600,274,Grenada,2012,0.71,2.5,Trinitario,Grenada
+1601,277,Nicaragua,2014,0.7,3.25,Criollo,Nicaragua
+1602,277,Chuao,2014,0.75,2.75,Trinitario,Venezuela
+1603,277,Barinas,2014,0.7,3.0,,Venezuela
+1604,275,"Criollo Blend",2013,0.85,3.5,,Hawaii
+1605,276,Peru,2014,0.72,2.25,,Peru
+1606,276,Hispaniola,2014,0.7,2.5,,"Dominican Republic"
+1607,276,Madagascar,2014,0.735,2.5,Trinitario,Madagascar
+1608,276,Ghana,2014,0.7,3.5,Forastero,Ghana
+1609,278,"Papua New Guinea",2010,0.7,2.5,Criollo,"Papua New Guinea"
+1610,278,"Manickchand Estate",2008,0.67,3.75,Trinitario,Trinidad
+1611,278,Dark,2007,0.73,1.0,,
+1612,278,"West Africa",2006,0.73,2.0,Forastero,"West Africa"
+1613,278,"Sao Tome",2006,0.75,2.75,Forastero,"Sao Tome"
+1614,278,Ocumare,2006,0.71,3.0,Criollo,Venezuela
+1615,279,Patanemo,2015,0.72,2.25,Criollo,Venezuela
+1616,279,"Elvesia P.",2015,0.72,2.75,Trinitario,"Dominican Republic"
+1617,279,"Ambanja, Sambirano Valley",2015,0.72,3.0,Trinitario,Madagascar
+1618,279,Tumbes,2015,0.72,3.0,Criollo,Peru
+1619,280,Peru,2013,0.75,2.75,,Peru
+1620,280,Ecuador,2013,0.75,3.5,,Ecuador
+1621,281,Ghana,2014,0.75,3.0,Forastero,Ghana
+1622,281,"Moho Valley",2014,0.75,3.0,Trinitario,Belize
+1623,281,"Maranon Canyon",2014,0.75,3.25,"Forastero (Nacional)",Peru
+1624,282,Venezuela,2012,0.7,3.0,,Venezuela
+1625,282,Ecuador,2012,0.7,3.0,,Ecuador
+1626,284,"La Patriota, cacao Indio, purple label",2012,0.7,3.0,,Nicaragua
+1627,283,"La Dalia, Matagalpa,cacao Bisesto,green label",2012,0.75,2.75,,Nicaragua
+1628,284,"Punta Galera, cacao Nacional, gold label",2012,0.8,3.25,"Forastero (Nacional)",Ecuador
+1629,285,"Ghana, 2013",2015,0.7,3.75,Forastero,Ghana
+1630,285,"Ecuador, 2013",2015,0.7,2.75,Trinitario,Ecuador
+1631,285,"Canoabo, 2013",2015,0.7,3.0,Criollo,Venezuela
+1632,285,"Sambirano Valley, 2012",2015,0.7,3.5,Trinitario,Madagascar
+1633,285,"La Red",2015,0.7,3.75,,"Dominican Republic"
+1634,286,"Fazenda Leolinda",2016,0.7,3.5,"Trinitario (Scavina)",Brazil
+1635,287,Jamaica,2010,0.7,2.5,Trinitario,Jamaica
+1636,288,Pangoa,2015,0.7,3.75,Criollo,Peru
+1637,288,"Pangoa, w/ nibs",2015,0.7,3.75,Criollo,Peru
+1638,289,Virunga,2015,0.7,3.75,Forastero,Congo
+1639,289,Piura,2015,0.75,4.0,Criollo,Peru
+1640,290,"Sang Yum Coop",2016,1.0,2.75,,Samoa
+1641,290,"Sang Yum Coop",2016,0.7,3.5,,Samoa
+1642,290,"PNG, Devotion",2014,0.66,2.75,,"Papua New Guinea"
+1643,290,"PNG, Revolution",2014,0.7,3.0,,"Papua New Guinea"
+1644,290,"PNG, Voodoo",2014,0.88,3.25,,"Papua New Guinea"
+1645,290,"PNG, Nib Bar",2014,0.74,3.5,,"Papua New Guinea"
+1646,291,"San Juan Estate, Gran Couva",2015,0.7,2.75,Trinitario,Trinidad
+1647,291,Tanzania,2015,0.7,3.0,,Tanzania
+1648,292,"Sylvestre, Oialla",2011,0.7,3.5,Criollo,Bolivia
+1649,293,"Dominican Republic prototype",2010,0.72,3.0,,"Dominican Republic"
+1650,293,"Ghana prototype",2010,0.72,3.0,Forastero,Ghana
+1651,293,"Dark 67",2009,0.67,2.75,,"Ghana, Domin. Rep"
+1652,293,"Dark 75",2009,0.75,3.0,,"Ghana, Domin. Rep"
+1653,294,Carribean-Raw,2011,0.76,2.0,,Carribean
+1654,294,Carribean,2011,0.76,2.75,,Carribean
+1655,294,Carribean,2011,0.85,2.75,,Carribean
+1656,294,Carribean-Raw,2011,0.85,3.0,,Carribean
+1657,295,Ghana,2011,0.8,2.75,Forastero,Ghana
+1658,296,"Kakao Kamili, Kilombero Valley",2016,0.7,3.75,Trinitario,Tanzania
+1659,296,"Papua New Guinea",2014,0.7,3.0,,"Papua New Guinea"
+1660,296,Madagascar,2014,0.66,3.5,Trinitario,Madagascar
+1661,417,"Maya Mountain",2013,0.74,2.75,Trinitario,Belize
+1662,417,"La Red",2013,0.72,2.75,,"Dominican Republic"
+1663,417,Nicaraqua,2013,0.72,2.75,Trinitario,Nicaragua
+1664,417,Caribe,2013,0.72,3.0,,"Dominican Republic"
+1665,417,Mindo,2013,0.72,3.0,Trinitario,Ecuador
+1666,297,"Papua Kerafat",2014,0.68,2.75,,"Papua New Guinea"
+1667,297,"Grand Cru Blend No.1, 5 yr. Anniversary Ed",2014,0.8,3.25,Blend,
+1668,297,"Alto Beni, Wild Harvest, Itenez R. 24hr c.",2011,0.66,3.75,,Bolivia
+1669,297,"D.R. Congo, Cru Virunga",2009,0.7,3.0,Forastero,Congo
+1670,297,"Piura, Apotequil, Porcelana 72hr c.",2009,0.75,3.0,Criollo,Peru
+1671,297,"Alto Beni, Wild Harvest, Itenez R., 60hr c.",2009,0.68,3.25,,Bolivia
+1672,298,"Hawai'i, Kona Grand Cru E.",2009,0.6,3.0,Criollo,Hawaii
+1673,298,"Hawai'i, Kona Estate Grown",2006,0.6,3.0,,Hawaii
+1674,299,Peru,2012,0.65,3.0,,Peru
+1675,299,Peru,2012,0.72,3.0,,Peru
+1676,300,"Sierra Nevada, Tutu Iku",2016,0.7,4.0,,Colombia
+1677,300,Garaua,2014,0.7,3.25,,Ecuador
+1678,300,Cumbia,2014,0.7,3.5,,Ecuador
+1679,300,Montubia,2014,0.7,3.75,,Ecuador
+1680,300,Tangara,2014,0.7,4.0,,Ecuador
+1681,300,"Ecuador, raw",2012,0.85,2.75,,Ecuador
+1682,300,Piura,2012,0.7,4.0,,Peru
+1683,300,"Nube- prototype",2011,0.7,3.5,,Ecuador
+1684,300,Esmeraldas,2008,0.6,2.5,"Forastero (Arriba)",Ecuador
+1685,300,Manabi,2008,0.65,2.75,"Forastero (Arriba)",Ecuador
+1686,300,"Los Rios",2008,0.72,3.0,"Forastero (Arriba)",Ecuador
+1687,300,Raw,2008,1.0,2.0,"Forastero (Arriba)",Ecuador
+1688,300,Raw,2008,0.7,3.5,"Forastero (Arriba)",Ecuador
+1689,301,Lachua,2016,0.7,2.75,,Guatemala
+1690,301,"Maya Mtn",2016,0.72,3.0,Trinitario,Belize
+1691,301,"Silvestre, La Paz, Beni",2015,0.7,3.25,,Bolivia
+1692,301,"San Juan Estate, Gran Couva",2015,0.7,3.25,Trinitario,Trinidad
+1693,301,"Kokoa Kamili",2015,0.72,3.5,,Tanzania
+1694,301,"Lam Dong",2015,0.72,3.75,Trinitario,Vietnam
+1695,301,"Alto Beni, Palos Blancos",2014,0.72,2.75,,Bolivia
+1696,301,Sambirano,2014,0.78,3.75,Trinitario,Madagascar
+1697,301,"Camino Verde P., Balao, Guayas",2014,0.75,2.75,,Ecuador
+1698,301,"Duo- Gran Couva & Camino Verde",2014,0.75,3.5,Blend,"Trinidad, Ecuador"
+1699,301,"Gran Couva",2014,0.7,3.75,Trinitario,Trinidad
+1700,302,Matasawalevu,2016,0.76,3.0,,Fiji
+1701,303,"South America",2014,0.65,3.5,,"South America"
+1702,304,"Kilombero Valley",2016,0.7,3.25,,Tanzania
+1703,304,"Lachua, Q'egchi families",2015,0.7,3.5,,Guatemala
+1704,304,"Alto Beni",2014,0.7,3.0,,Bolivia
+1705,304,"Oko Caribe",2014,0.7,3.5,,"Dominican Republic"
+1706,305,Peru,2013,0.55,2.5,,Peru
+1707,305,Peru,2013,0.7,2.75,,Peru
+1708,306,"Signature Blend",2011,0.7,3.75,Blend,
+1709,306,Madagascar,2009,0.75,4.0,Trinitario,Madagascar
+1710,306,Madagascar,2009,0.67,3.5,Trinitario,Madagascar
+1711,306,"Rio Caribe, Paria Penninsula",2009,0.7,3.5,Trinitario,Venezuela
+1712,306,Madagascar,2007,0.7,4.0,Trinitario,Madagascar
+1713,306,"Piura, Choc. Garage Exclusive",2013,0.67,4.0,,Peru
+1714,307,"Madagascar, w/ shell",2014,0.73,2.25,Trinitario,Madagascar
+1715,307,"Madagascar, w/ shell",2014,0.64,2.75,Trinitario,Madagascar
+1716,308,"Dominican Republic",2015,0.82,3.0,,"Dominican Republic"
+1717,309,"Haut Penja, w/ nibs",2015,0.7,3.25,Forastero,Cameroon
+1718,309,Chuao,2010,0.75,3.0,Criollo,Venezuela
+1719,309,Trinite,2010,0.75,3.25,Trinitario,Trinidad
+1720,309,"Baracoa, Cuba",2010,0.78,3.75,"Criollo, Forastero",Cuba
+1721,309,"Peru, Las Pampas P.",2010,0.85,3.0,Criollo,Peru
+1722,309,"Bahia Brazil, Fazenda Sao Pedro",2009,0.72,3.0,Forastero,Brazil
+1723,309,"Porcelana, Tabasco, Finca La Joya",2009,0.72,3.0,Criollo,Mexico
+1724,309,Cabosse,2007,0.7,4.0,Blend,"Venezuela, Java"
+1725,309,"Los Rios, Puerto Romero, Equateur",2007,0.72,3.75,"Forastero (Nacional)",Ecuador
+1726,309,"Sambirano, Ambanja, Madagascar",2007,0.72,4.0,Trinitario,Madagascar
+1727,309,"Fleur de Cacao",2007,0.85,3.5,Blend,"Venezuela/ Ghana"
+1728,309,"Porcelana, Tabasco, Limited Ed.",2006,0.72,4.0,Criollo,Mexico
+1729,309,"Kendem Lembu, Java",2006,0.72,3.0,Criollo,Indonesia
+1730,309,"Ocumare, Puerto Cabello, Venezuela",2006,0.72,4.0,Criollo,Venezuela
+1731,310,"Wampusirpi Region",2016,0.8,2.5,,Honduras
+1732,311,Tenor,2015,0.62,2.5,,Nicaragua
+1733,311,Johe,2015,0.8,2.75,,Nicaragua
+1734,311,Chuno,2015,0.8,2.75,"Criollo, Trinitario",Nicaragua
+1735,311,Nicalizo,2015,0.8,2.75,Trinitario,Nicaragua
+1736,311,Rugoso,2015,0.8,3.25,,Nicaragua
+1737,311,"Akesson Estate",2014,0.73,3.25,Trinitario,Madagascar
+1738,311,"Namau Village",2014,0.73,2.5,Trinitario,Fiji
+1739,311,"Camino Verde P., Balao, Guayas, Fruity",2014,0.73,3.25,,Ecuador
+1740,311,"Camino Verde P., Balao, Guayas, Floral",2014,0.73,3.5,,Ecuador
+1741,312,"La Red, 2011",2012,0.76,2.5,,"Dominican Republic"
+1742,312,Peru,2012,0.82,2.75,Criollo,Peru
+1743,313,"Oko Caribe, Duarte Province, 2016 H.",2016,0.7,3.75,,"Domincan Republic"
+1744,313,"Cuyagua, 2013",2014,0.7,3.75,,Venezuela
+1745,313,"Upala w/ nibs",2011,0.7,3.5,Matina,"Costa Rica"
+1746,313,"Upala, Batch 18",2011,0.7,3.0,Matina,"Costa Rica"
+1747,313,"San Martin, Amazonian Highlands",2011,0.7,2.75,,Peru
+1748,313,Bahia,2011,0.7,3.5,,Brazil
+1749,313,"Upala, Batch 12",2010,0.82,3.75,Matina,"Costa Rica"
+1750,314,Peru,2015,0.75,3.25,,Peru
+1751,314,"Porcelana, S. of Lake Maracaibo",2011,0.75,3.25,"Criollo (Porcelana)",Venezuela
+1752,314,Chuao,2010,0.75,3.5,Trinitario,Venezuela
+1753,314,Cuyagua,2009,0.75,2.0,,Venezuela
+1754,314,Papouasie,2008,0.75,3.0,Trinitario,"Papua New Guinea"
+1755,314,"Sambirano Valley, Le 100%",2008,1.0,3.0,Criollo,Madagascar
+1756,314,"Dominican Republic-Organic",2008,0.75,2.0,,"Dominican Republic"
+1757,314,"Monte Alegre, Diego Badero",2008,0.75,3.5,,Brazil
+1758,314,"Claudio Corallo w/ nibs",2007,0.75,4.0,Forastero,"Sao Tome"
+1759,314,"Monte Alegre (Itacare), Brazil",2006,0.75,3.0,Forastero,Brazil
+1760,314,Tanzania,2006,0.75,3.5,Criollo,Tanzania
+1761,314,"Sao Tome & Principe",2006,0.75,3.5,Forastero,"Sao Tome & Principe"
+1762,314,Trinidad,2006,0.75,3.5,Trinitario,Trinidad
+1763,314,"Madagascar, Nosy Be Isle.",2006,0.75,3.75,Criollo,Madagascar
+1764,314,"Java, Indonesie",2006,0.75,3.5,Criollo,Indonesia
+1765,314,"Barlovento, Venezuela",2006,0.75,3.5,Trinitario,Venezuela
+1766,314,Jamaique,2006,0.75,4.0,Trinitario,Jamaica
+1767,314,Equateur,2006,0.75,3.0,Trinitario,Ecuador
+1768,314,Vanuatu,2006,0.75,3.0,Trinitario,Vanuatu
+1769,314,Ghana,2006,0.75,3.25,Forastero,Ghana
+1770,314,Colombie,2006,0.75,3.5,Trinitario,Colombia
+1771,314,Fortissima,2006,0.8,4.0,"Criollo, Trinitario",Ecuador
+1772,314,Cuba,2006,0.75,3.0,Trinitario,Cuba
+1773,314,"Caracas, Venezuela and Ghana",2006,0.75,3.0,"Trinitario, Forastero","Venezuela, Ghana"
+1774,314,"Djakarta, Java and Ghana",2006,0.75,3.5,"Criollo, Forastero","Indonesia, Ghana"
+1775,315,"Chocoan Rainforest, Teroro Escondido, ESM",2016,0.77,3.5,,Ecuador
+1776,315,"Crayfish Bay Estate, 2014",2015,0.7,3.5,Trinitario,Grenada
+1777,315,"Akesson's, batch 4411",2015,0.74,3.5,Criollo,Madagascar
+1778,315,Honduras,2015,0.8,2.75,,Honduras
+1779,315,"Patanemo Vil., Carabobo State, Tisano family",2014,0.75,2.75,Trinitario,Venezuela
+1780,315,"Guantupi River",2014,0.75,3.0,"Forastero (Nacional)",Ecuador
+1781,315,"Akessons Estate, Sambirano, Ambanja",2014,0.72,3.25,Trinitario,Madagascar
+1782,315,"Guantupi River",2014,0.85,2.75,"Forastero (Nacional)",Ecuador
+1783,316,Venezuela,2012,0.73,2.75,,Venezuela
+1784,317,Brazil,2013,0.75,3.25,,Brazil
+1785,317,Brazil,2013,0.85,3.5,,Brazil
+1786,317,Brazil,2013,0.55,2.75,,Brazil
+1787,317,Brazil,2013,0.8,3.25,,Brazil
+1788,317,Brazil,2012,0.6,3.0,,Brazil
+1789,317,Brazil,2012,0.65,3.25,,Brazil
+1790,318,"Mexico, Lot 28022016",2016,0.7,2.75,Criollo,Mexico
+1791,318,"Uranga, Lot 22032016",2016,0.74,3.0,Trinitario,Mexico
+1792,319,"Amazon Basin Blend",2016,0.7,3.0,,"Peru(SMartin,Pangoa,nacional)"
+1793,319,Virunga,2015,0.75,2.75,Forastero,Congo
+1794,319,Madagascar,2012,0.75,3.25,Trinitario,Madagascar
+1795,319,"La Red",2011,0.85,3.5,,"Dominican Republic"
+1796,320,"Suchitepequez E.",2010,0.7,2.75,,Guatemala
+1797,321,Ecuador,2010,0.75,3.0,"Forastero(Arriba, CCN)",Ecuador
+1798,322,"San Martin, Batch 2",2015,0.7,2.5,,Peru
+1799,322,"Chulucanas, Batch 1",2015,0.8,3.25,,Peru
+1800,322,"Tumbes, Batch 2",2015,0.73,3.5,Criollo,Peru
+1801,323,Piura,2016,0.75,3.25,Criollo,Peru
+1802,324,Raw,2012,0.7,2.5,Criollo,
+1803,325,Esmeraldas,2010,0.75,3.25,,Ecuador
+1804,325,"Los Rios, Vinces",2009,0.75,2.5,"Forastero (Arriba)",Ecuador
+1805,325,Manabi,2007,0.75,3.0,"Forastero (Arriba)",Ecuador
+1806,325,"El Oro",2007,0.67,3.5,"Forastero (Arriba)",Ecuador
+1807,325,"Los Rios",2007,0.75,3.75,"Forastero (Arriba)",Ecuador
+1808,326,"Camino Verde P., Balao, 2015 harvest, batch8",2016,0.75,3.75,,Ecuador
+1809,326,"Camino Verde P., Balao, Guayas, 2014",2015,0.85,3.5,,Ecuador
+1810,326,"Mid Mountain, 2014",2015,0.7,3.5,Blend,
+1811,326,"Toledo District, Maya",2013,0.75,3.75,Trinitario,Belize
+1812,326,"Maranon, Cajamarca",2013,0.75,3.0,"Forastero (Nacional)",Peru
+1813,326,Sambirano,2012,0.75,4.0,Trinitario,Madagascar
+1814,326,"Camino Verde P., 2012, Balao, Guayas",2012,0.75,3.25,"Nacional (Arriba)",Ecuador
+1815,326,"Gran Couva",2012,0.75,3.5,Trinitario,Trinidad
+1816,326,"Costa Rica",2011,0.75,3.5,,"Costa Rica"
+1817,327,"La Dorado, light roast",2016,0.7,3.25,,"Costa Rica"
+1818,327,"Tapanti, light roast",2016,0.7,3.25,,"Costa Rica"
+1819,327,Maleku,2016,0.7,3.25,,"Costa Rica"
+1820,328,Madagascar,2013,0.75,3.25,Trinitario,Madagascar
+1821,328,"Madagascar w/ nibs",2013,0.68,3.25,Trinitario,Madagascar
+1822,329,"Gru Grococo, St. Andrews",2012,0.66,3.5,Trinitario,Grenada
+1823,330,"La Masica, Batch 1, FHIA Research Center",2016,0.75,3.75,,Honduras
+1824,330,"Caranero, Choc. Garage Exclusive",2015,0.7,3.75,,Venezuela
+1825,330,"Tranquilidad, Batch 1",2015,0.75,3.25,,Bolivia
+1826,330,Porcelana,2014,0.8,3.75,Criollo,Venezuela
+1827,330,"Akessons Estate, Sambirano, 2013",2013,0.7,3.5,Trinitario,Madagascar
+1828,330,"Hispaniola, 2013",2013,0.7,3.5,,"Dominican Republic"
+1829,330,"Silvestre, Batch 7, 2013",2013,0.75,4.0,,Bolivia
+1830,330,"Bachelor's Hall E., St. Thomas Parish",2013,0.75,3.75,Trinitario,Jamaica
+1831,330,"Camino Verde P., Balao, Guayas",2012,0.75,3.75,"Nacional (Arriba)",Ecuador
+1832,330,"Silvestre, Batch 1, 2011",2011,0.75,3.0,Criollo,Bolivia
+1833,330,Piura,2010,0.75,3.75,,Peru
+1834,330,"Rio Caribe",2009,0.7,3.5,Trinitario,Venezuela
+1835,330,"Hispaniola, 2008",2008,0.7,2.75,,"Dominican Republic"
+1836,330,Jamaica,2008,0.7,2.75,Trinitario,Jamaica
+1837,330,"Sambirano, 2008",2008,0.7,2.75,Trinitario,Madagascar
+1838,330,Trinidad,2008,0.7,3.0,Trinitario,Trinidad
+1839,331,"Sur del Lago",2012,0.84,2.5,,Venezuela
+1840,331,"Rio Caribe Superior, Paria Penninsula",2012,0.76,2.25,Trinitario,Venezuela
+1841,331,"Sambirano, Akesson Estate",2012,0.72,2.5,Trinitario,Madagascar
+1842,331,"Carenero Superior",2011,0.73,3.5,Criollo,Venezuela
+1843,331,Porcelana,2011,0.71,2.5,,Venezuela
+1844,331,"Aragua, Trincheras",2011,0.7,3.5,,Venezuela
+1845,331,Principe,2011,0.77,2.75,Forastero,Principe
+1846,332,Malgascio,2010,0.64,3.5,Trinitario,Madagascar
+1847,332,"100 percent",2010,1.0,1.5,,
+1848,332,Samana,2010,0.7,3.0,,"Dominican Republic"
+1849,332,Arawak,2010,0.72,3.5,,Carribean
+1850,332,Latino,2010,0.72,3.5,,
+1851,334,Midnight,2012,0.83,2.75,,"Central and S. America"
+1852,334,Twilight,2012,0.69,3.25,,"Central and S. America"
+1853,335,"Bahia Superior",2008,0.7,3.5,Forastero,Brazil
+1854,335,Esmeraldas,2008,0.7,3.5,"Forastero (Nacional)",Ecuador
+1855,335,"Carenero Superior",2008,0.7,3.5,Trinitario,Venezuela
+1856,335,"Rio Arriba",2008,0.7,3.5,"Forastero (Arriba) ASSS",Ecuador
+1857,336,"Colombian 2008",2009,0.75,2.75,"Forastero (Nacional)",Colombia
+1858,336,"Colombian w/ nibs",2009,0.7,3.0,"Forastero (Nacional)",Colombia
+1859,336,"Colombian Semi Dark",2006,0.53,2.0,"Forastero (Nacional)",Colombia
+1860,336,Colombian,2006,0.65,3.0,"Forastero (Nacional)",Colombia
+1861,336,"Colombian Dark",2006,0.7,4.0,"Forastero (Nacional)",Colombia
+1862,337,"Sao Tome",2011,0.7,2.75,Forastero,"Sao Tome"
+1863,338,"San Juan de Cheni",2012,0.78,4.0,,Peru
+1864,338,"Markham Valley",2011,0.68,3.75,,"Papua New Guinea"
+1865,338,Camahogne,2010,0.68,3.5,Trinitario,Grenada
+1866,338,Amina,2010,0.65,3.75,"Trinitario, Criollo",Madagascar
+1867,338,"Tome Acu",2009,0.68,3.75,,Brazil
+1868,338,Asante,2009,0.65,4.0,Forastero,Ghana
+1869,338,"Ben Tre",2009,0.72,3.75,Trinitario,Vietnam
+1870,338,Finisterra,2008,0.72,3.0,Blend,"Ven., Trinidad, Mad."
+1871,338,"Las Islas",2007,0.72,3.0,Blend,Carribean(DR/Jam/Tri)
+1872,338,Nibby,2007,0.62,3.0,,
+1873,338,Cuyagua,2007,0.75,3.75,,Venezuela
+1874,338,"Antilles (Trin/Gren/DR/Ven)",2007,0.75,3.0,Blend,Carribean
+1875,338,"Extra Dark",2006,0.82,2.0,,
+1876,338,Bittersweet,2006,0.7,3.5,Blend,
+1877,338,"Kumasi Sambirano",2006,0.68,2.0,Blend,"Ghana & Madagascar"
+1878,338,"Jamaica a l'ancienne",2006,0.7,2.0,Trinitario,Jamaica
+1879,338,Semisweet,2006,0.62,3.0,Blend,
+1880,339,"Dominican Republic",2015,0.7,2.75,,"Domincan Republic"
+1881,339,Grenada,2015,0.7,2.75,,Grenada
+1882,340,Jamaica,2015,0.72,3.25,Trinitario,Jamaica
+1883,340,"Papua New Guinea",2015,0.73,3.5,Forastero,"Papua New Guinea"
+1884,340,Cuyagua,2015,0.77,2.75,Criollo,Venezuela
+1885,340,ROIG,2015,0.74,3.5,"Criollo, Trinitario","Dominican Republic"
+1886,340,Ecuador,2014,0.75,3.0,Trinitario,Ecuador
+1887,340,"Belize, 2013",2014,0.72,3.25,"Criollo, Trinitario",Belize
+1888,341,Hilo,2011,0.73,2.0,,Hawaii
+1889,341,"Hilo, w/ added cocoa butter",2011,0.73,2.5,,Hawaii
+1890,342,"Tingo Maria",2016,0.7,3.25,,Peru
+1891,343,Porcelana,2011,0.75,3.5,Criollo,Peru
+1892,344,Oro,2015,0.82,3.25,,"Costa Rica"
+1893,344,Oscuro,2015,0.7,3.5,,"Costa Rica"
+1894,345,Peru,2012,0.7,2.5,,Peru
+1895,346,"Maya Belize",2011,0.67,3.0,Criollo,Belize
+1896,346,"Trintade, Sao Tome",2011,0.65,3.25,Forastero,"Sao Tome"
+1897,346,"Bahia, Scavina",2011,0.6,3.25,Trinitario,Brazil
+1898,346,"Porcelana, Colombia, Amazonas",2011,0.68,3.0,"Criollo, Trinitario",Colombia
+1899,347,"Wild Bolivia",2016,0.73,3.5,,Bolivia
+1900,347,"Kokoa Kamili Coop",2016,0.73,3.5,,Tanzania
+1901,347,"Esmeraldas, Salazar Farm",2016,0.73,3.75,,Ecuador
+1902,347,"Somia Plantation, 2012",2015,1.0,3.0,Trinitario,Madagascar
+1903,347,"Camino Verde P., Balao, Guayas, 2012",2015,1.0,3.0,,Ecuador
+1904,347,"Lachua w/ cane sugar",2015,0.73,3.0,,Guatemala
+1905,347,"Lachua w/ maple sugar, batch 5",2015,0.73,3.25,,Guatemala
+1906,347,Pisa,2015,0.73,3.25,,Haiti
+1907,347,"Somia Plantation, 2012",2014,0.67,3.75,Trinitario,Madagascar
+1908,347,"Somia Plantation, 2012",2014,0.73,3.75,Trinitario,Madagascar
+1909,347,"Camino Verde P., Balao, Guayas",2014,0.73,3.75,,Ecuador
+1910,348,Ghana,2015,0.7,2.75,Forastero,Ghana
+1911,348,Nicaragua,2015,0.72,3.0,,Nicaragua
+1912,349,"Oko Caribe, DOR005",2017,0.7,3.5,,"Dominican Republic"
+1913,349,"Guasare, La Sierra de Perija, batch gua001",2016,0.7,3.75,Criollo,Venezuela
+1914,349,"Porcelana, Sorotaima,Machiques,batch pcl001",2016,0.7,4.0,Criollo,Ecuador
+1915,349,"Maya Mtn, Moho R., Toledo D.",2016,0.7,3.75,,Belize
+1916,349,"Tien Giang",2016,0.7,3.0,Trinitario,Vietnam
+1917,349,Australia,2016,0.67,3.75,,Australia
+1918,349,"Chimelb, Lanquin, Alta Verapaz, b-GUA001",2016,0.7,3.25,,Guatemala
+1919,349,"Akesson's Estate",2015,0.65,3.25,Trinitario,Madagascar
+1920,349,"Akesson's Estate",2015,0.7,3.5,Trinitario,Madagascar
+1921,349,"Kokoa Kamili",2015,0.67,3.75,,Tanzania
+1922,349,"San Juan Estate",2015,0.7,3.75,Trinitario,Trinidad
+1923,349,"Camino Verde",2015,0.72,4.0,,Ecuador
+1924,349,Bolivia,2015,0.72,2.75,,Bolivia
+1925,349,"Papua New Guinea, triple roast, batch 1",2015,0.65,3.5,,"Papua New Guinea"
+1926,349,"Maranon, batch 2",2015,0.67,3.0,"Forastero (Nacional)",Peru
+1927,349,"Chuao, batch 3",2015,0.7,3.75,Trinitario,Venezuela
+1928,350,Ghana,2011,0.67,1.5,Forastero,Ghana
+1929,350,Madagascar,2010,0.68,3.0,Trinitario,Madagascar
+1930,350,Ecuador,2010,0.68,3.25,,Ecuador
+1931,351,"Ecuador, Batch 1",2016,0.7,3.5,,Ecuador
+1932,351,Madagascar,2015,0.72,3.0,Trinitario,Madagascar
+1933,352,"Maranon, Fortunato No. 4",2016,0.68,2.75,"Forastero (Nacional)",Peru
+1934,352,"Castillo, Hispaniola, unroasted",2016,0.85,2.75,,"Domincan Republic"
+1935,353,"Solomon Island",2016,0.7,3.25,,"Solomon Islands"
+1936,353,"Solomon Island w/ nibs",2016,0.75,3.25,,"Solomon Islands"
+1937,354,Bundibugyo,2014,0.7,3.0,"Forastero, Trinitario",Uganda
+1938,354,Sambirano,2013,0.7,3.0,Trinitario,Madagascar
+1939,354,Amazonas,2013,0.7,3.0,,Venezuela
+1940,354,Bolivia,2013,0.7,3.25,,Bolivia
+1941,354,"San Martin",2013,0.7,3.25,,Peru
+1942,354,Wasatch,2013,0.7,3.5,Blend,
+1943,355,"Oko Caribe, Duarte P., Collab w Chocosol",2016,0.62,3.5,,"Domincan Republic"
+1944,355,"Sambirano Valley, Black Science, B-60307.0",2016,0.7,3.5,Trinitario,Madagascar
+1945,355,"Bahia Black, batch bra50722.1",2016,0.7,3.5,"Forastero (Parazinho)",Brazil
+1946,355,"Abstract S. w/ Jamaica nibs,batch abs60323.0",2016,0.75,3.75,,"Ven.,Ecu.,Peru,Nic."
+1947,355,"Chuno, San Jose de Bocay, Pantasma R.,B.S.",2016,0.7,3.75,Trinitario,Nicaragua
+1948,355,"Tien Giang, Black S., batch VIT60420.0",2016,0.7,4.0,Trinitario,Vietnam
+1949,355,"Camino Verde, Black S., batch cvu6030.0",2016,0.7,3.25,,Ecuador
+1950,355,"CSB Chama",2015,0.7,3.5,Criollo,Venezuela
+1951,355,Porcelana,2015,0.75,4.0,,Venezuela
+1952,355,"La Tronca, Matagalpa",2014,0.7,3.5,,Nicaragua
+1953,355,"Maranon Canyon",2014,0.7,3.75,"Forastero (Nacional)",Peru
+1954,355,"La Dalia",2014,0.7,3.25,Trinitario,Nicaragua
+1955,355,"Camino Verde P., Balao, Guayas",2014,0.8,3.5,"Forastero (Nacional)",Ecuador
+1956,355,"Espiritu Santo, 'Smoke Monster'",2014,0.7,3.75,"Forastero (Amelonado)",Vanuatu
+1957,355,"Little Big Man",2014,0.7,3.25,Blend,"Madagascar & Ecuador"
+1958,355,"Rizek Cacao, Domin. Rep.",2013,0.77,3.75,Trinitario,"Dominican Republic"
+1959,355,Java,2013,0.7,3.25,Criollo,Indonesia
+1960,355,"Apurimac, El Quinacho Co-op",2013,0.7,2.75,Criollo,Peru
+1961,355,"Sangre Grande P., Trinidad",2013,0.7,3.75,Trinitario,Trinidad
+1962,355,"Chef's Blend",2013,0.7,3.25,,
+1963,355,Patanemo,2013,0.7,3.75,Criollo,Venezuela
+1964,355,"Crazy 88",2013,0.88,4.0,,"Guat., D.R., Peru, Mad., PNG"
+1965,355,"Maracaibo, El Vigia",2013,0.7,4.0,Criollo,Venezuela
+1966,355,Equator,2013,0.67,4.0,,"Peru, Dom. Rep"
+1967,355,Orinoco,2013,0.7,3.25,Forastero,Venezuela
+1968,355,"Bachelor's Hall E., St. Thomas Parish",2013,0.7,4.0,Trinitario,Jamaica
+1969,355,"Noula Coop",2012,0.7,3.25,,Haiti
+1970,355,"O'ahu",2012,0.7,3.75,,Hawaii
+1971,355,"Dual Origins, Sambirano, Elvesia",2012,0.7,4.0,Blend,"Dom. Rep., Madagascar"
+1972,355,"Dancing in Your Head, 5 bean blend",2012,0.7,4.0,Blend,"Gre., PNG, Haw., Haiti, Mad"
+1973,355,"Cahabon Region",2012,0.7,3.5,Trinitario,Guatemala
+1974,355,"Carenero Superior",2012,0.7,3.75,Trinitario,Venezuela
+1975,355,"Eastern Promises",2012,0.7,3.5,Blend,"Mad., Java, PNG"
+1976,355,"Papua New Guinea",2012,0.85,3.5,Trinitario,"Papua New Guinea"
+1977,355,"Grenada, Black Science",2011,0.7,2.75,Trinitario,Grenada
+1978,355,"Alto Beni, Wild Bolivian",2011,0.7,3.5,Nacional,Bolivia
+1979,355,Peruvian,2011,0.64,4.0,,Peru
+1980,355,"Three Amigos(Chuao, Wild Bolivia, D.R.)",2011,0.7,4.0,,"Ven, Bolivia, D.R."
+1981,355,"Elvesia P., Black Science",2011,0.7,3.75,Forastero,"Dominican Republic"
+1982,355,Chuao,2011,0.7,3.5,Criollo,Venezuela
+1983,355,"Black Science Blend 1",2010,0.7,3.75,"Trinitario, Nacional","DR, Ecuador, Peru"
+1984,355,Hispaniola,2009,0.7,3.0,Forastero,"Dominican Republic"
+1985,355,Africa,2009,0.7,3.5,Forastero,Ghana
+1986,355,Conacado,2009,0.7,3.0,Trinitario,"Dominican Republic"
+1987,355,"Papua New Guinea",2009,0.7,3.5,Trinitario,"Papua New Guinea"
+1988,355,Madagascar,2009,0.7,3.75,Criollo,Madagascar
+1989,355,Ocumare,2009,0.7,3.75,Criollo,Venezuela
+1990,356,Nicaragua,2014,0.7,3.25,,Nicaragua
+1991,356,"Hawaiian, Big Island",2014,0.7,3.5,,Hawaii
+1992,357,"Dominican Republic",2017,0.7,3.25,,"Dominican Republic"
+1993,357,Madagascar,2017,0.7,3.5,,Madagascar
+1994,357,Venezuela,2017,0.75,3.5,,Venezuela
+1995,357,Ecuador,2017,0.75,3.25,,Ecuador
+1996,357,"Papua New Guinea",2017,0.77,3.25,,"Papua New Guinea"
+1997,357,Tanzania,2017,0.8,3.5,,Tanzania
+1998,358,"AgroCriso Plantation",2012,0.7,3.0,,"Dominican Republic"
+1999,358,"AgroCriso Plantation",2012,0.8,3.0,,"Dominican Republic"
+2000,358,"AgroCriso Plantation",2012,0.75,3.25,,"Dominican Republic"
+2001,360,"Dominican Republic",2017,0.7,3.75,,"Dominican Republic"
+2002,360,Ecuador,2017,0.7,3.5,,Ecuador
+2003,360,Peru,2017,0.7,2.75,,Peru
+2004,359,"Dominican Republic, lot D82R",2016,0.7,3.5,,"Domincan Republic"
+2005,359,"Ecuador, lot E432314L",2016,0.7,3.75,,Ecuador
+2006,359,"Madagascar, lot M0403R",2016,0.7,3.75,,Madagascar
+2007,359,"Malekula Island",2014,0.72,2.75,Trinitario,Vanuatu
+2008,361,"Alto Beni",2013,0.7,3.0,Criollo,Bolivia
+2009,333,"Dominican Republic",2013,0.7,3.0,,"Dominican Republic"
+2010,333,"Dominican Republic",2013,0.84,2.25,,"Dominican Republic"
+2011,363,"Bolivar, Arriba",2015,0.7,3.0,"Forastero (Nacional)",Ecuador
+2012,363,Hispaniola,2015,0.7,3.0,,"Domincan Republic"
+2013,363,"Cacao Verapaz",2015,0.7,3.0,,Guatemala
+2014,363,"Rio Tuma",2015,0.7,3.0,"Trinitario (Amelonado)",Nicaragua
+2015,363,"Sambirano Valley",2015,0.7,3.0,Trinitario,Madagascar
+2016,364,"Bahia, Agri-Forestal Plantation, 2010",2012,0.68,2.75,Trinitario,Brazil
+2017,364,India,2011,0.72,3.25,,India
+2018,365,"Ecuador, Midnight Dark",2014,0.84,3.5,,Ecuador
+2019,365,"Ecuador, Twilght Dark",2014,0.7,3.5,,Ecuador
+2020,362,"Samar, East Visayas region",2012,0.65,2.5,,Philippines
+2021,362,"Samar, East Visayas region",2012,0.7,2.5,,Philippines
+2022,362,"Samar, East Visayas region",2012,0.75,2.75,,Philippines
+2023,366,Sambirano,2013,0.67,2.75,Trinitario,Madagascar
+2024,366,"Moho Valley",2013,0.78,3.25,Trinitario,Belize
+2025,367,Peru,2016,0.61,2.5,"Criollo, Trinitario",Peru
+2026,367,Peru,2016,0.71,3.0,"Criollo, Trinitario",Peru
+2027,368,Venezuela,2016,0.7,2.75,,Venezuela
+2028,368,Venezuela,2016,0.6,3.0,,Venezuela
+2029,369,"Sri Lanka",2015,0.7,2.75,"Criollo, Trinitario","Sri Lanka"
+2030,370,Nacional,2015,0.7,3.25,,Ecuador
+2031,370,Baracoa,2015,0.88,3.25,Trinitario,Cuba
+2032,370,Ambolikapiky,2015,0.7,3.25,Trinitario,Madagascar
+2033,370,"Winak, Sumaco",2015,0.7,3.75,"Forastero (Nacional)",Ecuador
+2034,370,"Ben Tre, Mekong Delta",2015,0.7,3.25,Trinitario,Vietnam
+2035,370,"Fazenda Sempre Firme, Bahia",2015,0.7,3.5,"Forastero (Parazinho)",Brazil
+2036,370,Porcelana,2014,0.7,3.5,Criollo,Venezuela
+2037,370,Baracoa,2014,0.7,3.75,Trinitario,Cuba
+2038,370,"Autumn, Primary Harvest, 2012",2013,0.7,3.5,Criollo,Madagascar
+2039,370,"Spring, Secondary Harvest, 2012",2013,0.7,3.5,Criollo,Madagascar
+2040,370,"Cacao Blanco",2013,0.7,3.25,,Nicaragua
+2041,370,"Santo Domingo",2012,0.7,3.25,,"Dominican Republic"
+2042,370,"Millot Plantation",2012,0.7,3.25,,Madagascar
+2043,370,"Ayacucho, El Guinacho",2012,0.7,3.75,,Peru
+2044,370,Crudo,2011,0.7,3.0,,Venezuela
+2045,372,"Costa Rica",2013,0.7,2.75,,"Costa Rica"
+2046,372,"Dominican Republic",2013,0.7,2.75,,"Dominican Republic"
+2047,372,"Chiapas, Lacandon Jungle",2013,0.7,2.5,,Mexico
+2048,372,Peru,2013,0.7,3.0,,Peru
+2049,373,Colombia,2015,0.7,3.0,,Colombia
+2050,373,Papua,2015,0.62,3.25,,"Papua New Guinea"
+2051,373,Vietnam,2015,0.6,3.25,Trinitario,Vietnam
+2052,373,Trinidad,2015,0.77,2.75,Trinitario,Trinidad
+2053,374,"Paramaribo, batch 20160043-01",2016,0.7,3.25,Trinitario,Suriname
+2054,375,Belize,2014,0.68,3.0,Trinitario,Belize
+2055,375,"Alto Beni",2011,0.87,3.25,,Bolivia
+2056,375,Chiapan,2009,0.75,2.75,,Mexico
+2057,375,"Dark, Stone Ground",2007,0.7,3.0,,"Dominican Republic"
+2058,371,"West Africa",2016,0.62,2.0,Forastero,"West Africa"
+2059,371,"Peru- Ecuador",2012,0.99,3.25,,"Peru, Ecuador"
+2060,371,"TCHOPro 60.5",2009,0.6,2.75,,
+2061,371,"TCHOPro 68",2009,0.68,3.0,,
+2062,371,Chocolatey-beta,2008,0.7,2.5,Forastero,Ghana
+2063,371,Fruity-beta,2008,0.7,2.5,,Peru
+2064,371,Citrus-beta,2008,0.7,2.75,,Madagascar
+2065,371,Nutty-beta,2008,0.7,2.5,,Peru
+2066,376,Concepcion,2012,0.7,2.75,,Madagascar
+2067,376,"Bayou Blend",2012,0.7,3.0,Blend,"Ecuador, Mad., PNG"
+2068,376,Aranama,2012,0.7,3.0,,"Papua New Guinea"
+2069,376,Presidio,2012,0.7,3.5,,"Dominican Republic"
+2070,376,"La Bahia, w/ cane juice",2012,0.7,3.25,,Ecuador
+2071,376,Capistrano,2012,0.7,2.0,,Peru
+2072,376,"La Bahia, w/ cane sugar",2012,0.7,3.25,,Ecuador
+2073,376,"San Jose",2012,0.7,2.75,,Bolivia
+2074,376,Capistrano*,2012,0.7,3.0,,Madagascar
+2075,376,Espada,2012,0.7,3.25,,Mexico
+2076,376,Espada,2012,0.7,2.75,,Brazil
+2077,376,Concepcion*,2012,0.8,3.0,,Venezuela
+2078,376,"San Jose",2012,0.67,3.25,,Bolivia
+2079,376,"Bahia, Floresta Azul,Good Friends Reserve#3",2012,0.7,3.5,"Forastero (Parazinho)",Brazil
+2080,377,Peru,2015,0.7,2.75,,Peru
+2081,377,Belize,2015,0.7,3.75,Trinitario,Belize
+2082,377,Madagascar,2015,0.7,3.75,Trinitario,Madagascar
+2083,377,Ecuador,2015,0.7,3.25,,Ecuador
+2084,377,"Oko Caribe",2015,0.7,3.5,,"Domincan Republic"
+2085,377,Guatemala,2015,0.7,3.75,Trinitario,Guatemala
+2086,377,Ecuador,2014,0.77,3.25,,Ecuador
+2087,377,Madagascar,2014,0.67,3.75,Trinitario,Madagascar
+2088,377,Uganda,2014,0.73,3.75,Forastero,Uganda
+2089,378,Peru,2015,0.7,3.0,,Peru
+2090,379,"Congo w/ nibs",2012,0.65,3.25,Forastero,Congo
+2091,379,Madagascar,2007,0.65,3.5,Trinitario,Madagascar
+2092,379,"Ivory Coast",2007,0.75,2.5,,"Ivory Coast"
+2093,379,"Ghana, Kumasi",2007,0.84,3.0,Forastero,Ghana
+2094,379,"Venezuela - Barinos, Merida, Tachron",2007,0.91,2.0,Blend,Venezuela
+2095,379,"Ghana, Panama, Ecuador",2007,0.75,3.0,Blend,"Ghana, Panama, Ecuador"
+2096,380,"Piura Select, Cacao Blanc",2015,0.7,3.25,,Peru
+2097,381,"Belize, med roast",2016,0.72,3.75,"Trinitario, TCGA",Belize
+2098,382,Manabi,2014,0.81,3.25,"Forastero (Nacional)",Ecuador
+2099,383,"Roxborough, Tobago",2012,0.7,4.0,Trinitario,Tobago
+2100,384,"Wild Bolivian, Jungle Love",2012,0.77,3.0,Criollo,Bolivia
+2101,384,Venezuela,2011,0.72,2.75,,Venezuela
+2102,384,"Dominican Republic",2011,0.74,3.0,,"Dominican Republic"
+2103,385,Conacado,2014,0.72,3.0,,"Dominican Republic"
+2104,386,"Ambanja, Tsara Valley",2011,0.72,3.5,,Madagascar
+2105,418,"Oko Caribe",2015,0.75,2.75,,"Domincan Republic"
+2106,418,"Cedeno, lot 271",2015,0.75,3.5,,Ecuador
+2107,418,Madagascar,2014,0.75,3.5,Trinitario,Madagascar
+2108,418,"Dominican Republic",2013,0.68,3.25,,"Dominican Republic"
+2109,418,"Palos Blancos",2013,0.75,2.5,,Bolivia
+2110,418,"Dominican Republic",2011,0.73,2.75,,"Dominican Republic"
+2111,387,Peru,2016,0.6,3.0,Criollo,Peru
+2112,388,"Dominican Republic",2011,0.63,3.75,,"Dominican Republic"
+2113,389,Matagalpa,2014,0.74,2.75,,Nicaragua
+2114,389,Nourish,2014,0.7,3.0,,"Dominican Republic"
+2115,390,"Madagascar, Sassy Bar",2016,0.72,3.0,Trinitario,Madagascar
+2116,390,"Tanzania, Party Bar",2016,0.72,3.25,,Tanzania
+2117,391,"Sur del Lago, Merida",2014,0.65,3.25,Trinitario,Venezuela
+2118,392,"Piura, Illanka, Quemazon",2015,0.63,4.0,,Peru
+2119,392,"Andoa, Grand Cru blend",2013,0.7,3.5,,
+2120,392,"Loma Sotavento, 2013",2013,0.64,3.5,,"Dominican Republic"
+2121,392,"Otucan, Grand Cru",2012,0.69,4.0,,Venezuela
+2122,392,Caraque,2011,0.56,3.25,,
+2123,392,"Porcelana, Pedegral",2011,0.64,4.0,Criollo,Venezuela
+2124,392,Tainori,2009,0.64,3.75,,"Dominican Republic"
+2125,392,Alpaco,2009,0.66,3.75,,Ecuador
+2126,392,Nyangbo,2009,0.68,3.5,Forastero,Ghana
+2127,392,Araguani,2007,0.72,3.0,Blend,"Venezuela, Carribean"
+2128,392,"Chuao 2002 P.",2007,0.65,3.75,Trinitario,Venezuela
+2129,392,Manjari,2007,0.64,4.0,"Criollo, Trinitario",Madagascar
+2130,392,"Le Noir Extra Amer",2007,0.85,1.5,,
+2131,392,Abinao,2007,0.85,2.5,Forastero,"West Africa"
+2132,392,"Le Noir Amer",2007,0.71,2.75,Forastero,"West Africa"
+2133,392,"Porcelana, Maracaibo, Palmira P. 2006",2007,0.64,3.25,"Criollo (Porcelana)",Venezuela
+2134,392,Caraibe,2006,0.66,3.0,Trinitario,Carribean
+2135,392,Guanaja,2006,0.7,4.0,"Criollo, Trinitario","South America"
+2136,392,"Gran Couva 2005 P.",2006,0.64,2.5,Trinitario,Trinidad
+2137,392,"Porcelana, Maracaibo, Palmira P. 2005",2006,0.64,3.0,"Criollo (Porcelana)",Venezuela
+2138,392,"Sambirano, Ampamakia 2005, Millot P.",2006,0.64,3.5,Trinitario,Madagascar
+2139,393,Manhattan,2012,0.72,2.5,Forastero,Ghana
+2140,393,Napa,2012,0.65,2.75,Forastero,Ghana
+2141,394,Madagascar,2009,0.72,2.75,Trinitario,Madagascar
+2142,394,Madagascar,2009,0.76,2.75,Trinitario,Madagascar
+2143,394,Madagascar,2009,0.8,2.75,Trinitario,Madagascar
+2144,394,Madagascar,2009,0.7,3.0,Trinitario,Madagascar
+2145,394,"Madagascar w/ nibs",2009,0.68,3.0,Trinitario,Madagascar
+2146,394,Madagascar,2009,0.64,3.25,Trinitario,Madagascar
+2147,395,"Palos Blancos",2015,0.7,3.25,,Bolivia
+2148,395,"Palos Blancos + nibs",2015,0.7,3.25,,Bolivia
+2149,396,"Dominican Republic",2014,0.9,3.25,,"Dominican Republic"
+2150,396,Trinidad,2014,0.75,3.5,Trinitario,Trinidad
+2151,396,Mindo,2014,0.75,3.5,,Ecuador
+2152,396,Dark,2013,0.9,3.75,,"Central and S. America"
+2153,396,Classic,2012,0.7,3.25,,"Central and S. America"
+2154,397,"Ben Tre, Mekong Delta, MoCay",2012,0.7,3.5,Trinitario,Vietnam
+2155,398,"San Martin",2014,0.75,3.0,,Peru
+2156,399,"Los Rios, Rancho Grande 2004/2007",2007,1.0,2.0,"Forastero (Arriba)",Ecuador
+2157,399,"Los Rios, Rancho Grande 2004/2007",2007,0.9,2.0,"Forastero (Arriba)",Ecuador
+2158,399,"Los Rios, Rancho Grande 2004/2007",2007,0.75,3.0,"Forastero (Arriba)",Ecuador
+2159,399,"Los Rios, Rancho Grande 2007",2007,0.65,3.0,"Forastero (Arriba)",Ecuador
+2160,400,"Sambirano Valley",2015,0.77,2.75,Trinitario,Madagascar
+2161,400,"Moho River Valley",2015,0.77,3.0,"Criollo, Trinitario",Belize
+2162,400,Cuyagua,2015,0.77,3.0,Criollo,Venezuela
+2163,400,Peru,2015,0.77,3.25,"Criollo, Trinitario",Peru
+2164,400,Cahabon,2015,0.77,2.75,Trinitario,Guatemala
+2165,401,Peru,2016,0.7,2.5,,Peru
+2166,401,Ocumare,2016,0.7,2.5,,Venezuela
+2167,401,"Dominican Republic",2016,0.7,3.0,,"Domincan Republic"
+2168,402,Conacado,2016,0.7,3.5,Trinitario,"Dominican Republic"
+2169,402,"Piura Blanco, Norandino",2016,0.7,3.5,,Peru
+2170,403,Ghana,2011,0.72,2.5,Forastero,Ghana
+2171,404,Amazonas,2013,0.75,2.5,Criollo,Peru
+2172,404,Amazonas,2013,0.89,2.75,Criollo,Peru
+2173,404,Tumbes,2013,0.75,3.25,Criollo,Peru
+2174,404,"Amazonas w/ nibs",2013,0.75,2.75,Criollo,Peru
+2175,405,"Los Llanos",2016,0.7,4.0,,Colombia
+2176,405,"Los Llanos",2014,0.88,3.0,Trinitario,Colombia
+2177,405,"Java, Indonesian Black",2013,1.0,2.25,,Indonesia
+2178,405,Sambirano,2010,0.71,3.0,Trinitario,Madagascar
+2179,405,"Hacienda Las Trincheras",2010,0.72,3.5,,Venezuela
+2180,405,Java,2010,0.69,3.75,,Indonesia
+2181,405,"San Martin",2009,0.7,3.0,,Peru
+2182,405,"Rio Caribe",2009,0.72,3.25,Trinitario,Venezuela
+2183,406,"Guasare, Zulia Prov., 2015, batch 124",2016,0.74,3.0,Criollo,Venezuela
+2184,406,"Wild Beniano, 2016, batch 128, Heirloom",2016,0.76,3.5,,Bolivia
+2185,406,"Ghana, 2013, batch 129",2016,0.75,3.75,,Ghana
+2186,407,"Maranon, Cajamarca",2014,0.7,3.0,"Forastero (Nacional)",Peru
+2187,407,"Camino Verde P., Balao, Guayas",2013,0.7,3.25,,Ecuador
+2188,407,"Gran Couva",2013,0.7,3.5,Trinitario,Trinidad
+2189,407,Ecuador,2012,0.7,2.5,,Ecuador
+2190,407,"Costa Rica",2012,0.7,3.0,,"Costa Rica"
+2191,407,Sambirano,2012,0.7,3.25,Trinitario,Madagascar
+2192,407,Ocumare,2011,0.7,4.0,,Venezuela
+2193,407,"La Red",2011,0.7,3.5,,"Dominican Republic"
+2194,408,Hispaniola,2013,0.66,3.0,,"Dominican Republic"
+2195,409,"Sambirano, batch 170102",2017,0.7,2.75,,Madagascar
+2196,409,"Hispaniola, batch 170104",2017,0.7,2.5,,"Dominican Republic"
+2197,410,"Papua New Guinea, Batch 2",2015,0.7,3.0,,"Papua New Guinea"
+2198,410,"Dominican Republic, Batch D2",2015,0.7,3.25,,"Domincan Republic"
+2199,410,"Madagascar, Batch 2",2015,0.7,3.25,Trinitario,Madagascar
+2200,410,"Peru, Batch 1",2015,0.7,3.25,,Peru
+2201,410,"Belize, Batch 2",2015,0.7,3.5,Trinitario,Belize
+2202,410,"House Blend, Batch 2",2015,0.6,3.0,,
+2203,411,"Millot P., Ambanja",2016,0.7,3.5,"Criollo, Trinitario",Madagascar
+2204,411,UNOCACE,2016,0.7,2.75,"Nacional (Arriba)",Ecuador
+2205,411,"San Juan Estate",2016,0.85,2.75,Trinitario,Trinidad
+2206,411,"Kakao Kamili, Kilombero Valley",2016,0.85,3.0,"Criollo, Trinitario",Tanzania
+2207,411,"Kakao Kamili, Kilombero Valley",2016,0.7,3.5,"Criollo, Trinitario",Tanzania
+2208,411,"San Juan Estate, Gran Couva",2016,0.78,3.5,Trinitario,Trinidad
+2209,412,Guadalcanal,2016,0.78,3.75,,"Solomon Islands"
+2210,412,"Goddess Blend",2016,0.65,3.25,,
+2211,412,"Alto Beni",2011,0.68,3.5,,Bolivia
+2212,412,Tokiala,2011,0.66,3.5,Trinitario,"Papua New Guinea"
+2213,412,"Tranquilidad, Baures",2011,0.72,3.75,,Bolivia
+2214,413,Raw,2014,0.8,2.75,,
+2215,413,"Bocas del Toro, Cocabo Co-op",2012,0.72,3.5,,Panama
+2216,413,"Amazonas Frucht",2012,0.65,3.5,,
+2217,413,"Satipo Pangoa region, 16hr conche",2012,0.7,3.0,"Criollo (Amarru)",Peru
+2218,413,"Satipo Pangoa region, 20hr conche",2012,0.7,3.5,"Criollo (Amarru)",Peru
+2219,413,"Loma Los Pinos, Yacao region, D.R.",2012,0.62,3.75,,"Dominican Republic"
+2220,413,"El Oro",2012,0.75,3.0,"Forastero (Nacional)",Ecuador
+2221,413,"Huiwani Coop",2012,0.75,3.0,"Criollo, Trinitario","Papua New Guinea"
+2222,413,"El Ceibo Coop",2012,0.9,3.25,,Bolivia
+2223,413,"Santo Domingo",2012,0.7,3.75,,"Dominican Republic"
+2224,413,"Kongo, Highlands",2012,0.68,3.25,Forastero,Congo
+2225,413,"Indianer, Raw",2012,0.58,3.5,,
+2226,413,Peru,2011,0.7,3.75,,Peru
+2227,413,Congo,2011,0.65,3.0,Forastero,Congo
+2228,413,"Kerala State",2011,0.65,3.5,Forastero,India
+2229,413,"Kerala State",2011,0.62,3.25,,India
+2230,413,"Brazil, Mitzi Blue",2010,0.65,3.0,,Brazil
