@@ -58,8 +58,9 @@ Im allgemeinen gilt in Linux Shells:
   - ein "`*`" in einem Datei oder Pfadnamen dient als **Platzhalter** für kein oder *mehrere Zeichen*
   - ein "`?`" ist ein Platzhalter für *genau ein Zeichen*
 - "`;`" **beendet** das vorangehende Kommando, sodass mehrere Kommandos hintereinander in einer Zeile geschrieben werden können
-- Ordner-/Dateinamen mit **Leer-/Sonderzeichen** müssen "gequotet" (`".."`) oder "escaped" (`\..`) werden , daher besser derartige Namen vermeiden
+- Ordner-/Dateinamen mit **Leer-/Sonderzeichen** müssen "gequotet" (`cs "Mein Ordner"`) oder "escaped" (`cd Mein\ Ordner`) werden , daher besser derartige Namen vermeiden
 - alles nach einer "`#`" wird ignoriert, da dieses Zeichen einen **Kommentar** einleitet
+- **case sensitivity** bzw. Befehlen und Datei-/Ordnernamen, d.h. Gross-/Kleinschreibung ist wichtig
 
 
 -------------------------------------------
@@ -103,6 +104,9 @@ Im allgemeinen gilt in Linux Shells:
   - "`!XYZ`" = sucht in der history den letzten Befehl, der mit "`XYZ`" beginnt *und führt ihn erneut aus*
   - "`!XYZ:p`" = Ausgabe des letzten Befehls, der mit "`XYZ`" beginnt
   - "`!$`" = liefert den Argumententeil des letzten Befehls ("`!$:p`" gibt ihn nur aus), um ihn z.B. im nächsten Befehl zu verwenden
+- `touch`
+  - erzeugt eine *leere* Datei (wenn noch nicht existent)
+  - aktualisiert den "Bearbeitet" Zeitstempel auf jetzt (wenn Datei schon da)
 
 
 -------------------------------------------
@@ -153,6 +157,6 @@ knitr::asis_output('<a href="http://www.youtube.com/watch?v=p_g_--ztI6Y"
 
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('Download: <a href="basics.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+knitr::asis_output(paste('Download: <a href="basics.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am ',format(Sys.time(), "%d.%m.%Y"),".",sep=""))
 ```
 

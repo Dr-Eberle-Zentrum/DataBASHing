@@ -455,6 +455,6 @@ $ cat review.csv | sqlite3 :memory: ".mode csv" ".import /dev/stdin review" \
 
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('Download: <a href="db.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+knitr::asis_output(paste('Download: <a href="db.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am ',format(Sys.time(), "%d.%m.%Y"),".",sep=""))
 ```
 

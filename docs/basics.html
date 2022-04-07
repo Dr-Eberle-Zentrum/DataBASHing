@@ -14,7 +14,7 @@
 
 <title>Konsolenbasics</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
@@ -61,6 +61,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="dez-style.css" type="text/css" />
 
 
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -412,8 +416,9 @@ div.tocify {
 <li>ein “<code>?</code>” ist ein Platzhalter für <em>genau ein Zeichen</em></li>
 </ul></li>
 <li>“<code>;</code>” <strong>beendet</strong> das vorangehende Kommando, sodass mehrere Kommandos hintereinander in einer Zeile geschrieben werden können</li>
-<li>Ordner-/Dateinamen mit <strong>Leer-/Sonderzeichen</strong> müssen “gequotet” (<code>".."</code>) oder “escaped” (<code>\..</code>) werden , daher besser derartige Namen vermeiden</li>
+<li>Ordner-/Dateinamen mit <strong>Leer-/Sonderzeichen</strong> müssen “gequotet” (<code>cs "Mein Ordner"</code>) oder “escaped” (<code>cd Mein\ Ordner</code>) werden , daher besser derartige Namen vermeiden</li>
 <li>alles nach einer “<code>#</code>” wird ignoriert, da dieses Zeichen einen <strong>Kommentar</strong> einleitet</li>
+<li><strong>case sensitivity</strong> bzw. Befehlen und Datei-/Ordnernamen, d.h. Gross-/Kleinschreibung ist wichtig</li>
 </ul>
 <hr />
 </div>
@@ -475,6 +480,11 @@ div.tocify {
 <li>“<code>!XYZ:p</code>” = Ausgabe des letzten Befehls, der mit “<code>XYZ</code>” beginnt</li>
 <li>“<code>!$</code>” = liefert den Argumententeil des letzten Befehls (“<code>!$:p</code>” gibt ihn nur aus), um ihn z.B. im nächsten Befehl zu verwenden</li>
 </ul></li>
+<li><code>touch</code>
+<ul>
+<li>erzeugt eine <em>leere</em> Datei (wenn noch nicht existent)</li>
+<li>aktualisiert den “Bearbeitet” Zeitstempel auf jetzt (wenn Datei schon da)</li>
+</ul></li>
 </ul>
 <hr />
 </div>
@@ -507,7 +517,7 @@ div.tocify {
                    title="(en) Pedagogy - soft link vs hard link in linux | inode in linux | ln command in linux | link count field in ls -l [17 min]"
                    ><img src="http://img.youtube.com/vi/p_g_--ztI6Y/0.jpg"></a></p>
 <hr />
-<p>Download: <a href="basics.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.</p>
+<p>Download: <a href="basics.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 07.04.2022.</p>
 </div>
 </div>
 

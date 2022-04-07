@@ -112,7 +112,7 @@ echo 6
 
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('Download: <a href="install.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials.')
+knitr::asis_output(paste('Download: <a href="install.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am ',format(Sys.time(), "%d.%m.%Y"),".",sep=""))
 ```
 
 
