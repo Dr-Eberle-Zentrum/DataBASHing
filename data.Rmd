@@ -46,7 +46,8 @@ knitr::asis_output('<a href="http://www.youtube.com/watch?v=2_lgnCzwUEM"
 - `head` = gibt die **ersten Zeilen** aus
   - "`-n XXX`" - Ausgabe bis zur XXX-ten Zeile (die ersten XXX)
 - `tail` = gibt die **letzten Zeilen** aus
-  - z.B. "`tail -n+2`" - alle Zeilen ab der 2-ten (ersten Zeilen werden ausgelassen)
+  - "`-n XXX`" - Ausgabe der letzten XXX Zeilen
+  - *oder* mit `+` Angabe: "`tail -n+2`" - alle Zeilen ab der 2-ten (ersten Zeilen werden ausgelassen)
 - `less` = **interaktiver Textbetrachter** der nicht in pipes (oder nur am Ende) verwendet werden kann
   - Taste `h` - Hilfe mit Kommandoübersicht (help)
   - Taste `q` - schliessen des Betrachters (quit)

@@ -143,7 +143,7 @@ Schauen sie doch mal in dieses kompakte
   - hierbei wird der Shebang ausgelesen (s.o.) und das entsprechend Programm mit der Skriptdatei als Argument aufgerufen
 - via "`source`", z.B. "`source 05-substring.sh`"
   - *ACHTUNG*: `source` kopiert den INHALT des Skriptes und führt die Befehle direkt in der AKTUELLEN bash Konsole aus. Damit kann es zu Nebeneffekten kommen (z.B. ein "`exit`" Kommando im Skript *schliesst die aktuelle shell*!)
-  - kann auch einfach nur "`.`" verwendet werden, z.B.  "`. 05-substring.sh`"
+  - kann auch nur mit "`.`" verwendet werden, z.B. "`. 05-substring.sh`"
 
 
 -------------------------------------------
@@ -210,8 +210,10 @@ Schauen sie doch mal in dieses kompakte
 
 ## > Tutorials <
 
+- [5 `for` loop tips](https://www.redhat.com/sysadmin/bash-scripting-loops) von Nathan Lager und Ricardo Gerardi
 
-Dieses umfangreiche 
+
+Dieses umfangreiche und weiterführende
 
 - [Online Tutorial zu Bash Scripting](https://ryanstutorials.net/bash-scripting-tutorial/)  von Ryan Chedwick 
 

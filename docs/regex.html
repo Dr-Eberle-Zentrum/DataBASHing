@@ -553,6 +553,38 @@ liefert die zweite Zeile (ohne “<code>-n</code>” würde jeder Zeile standard
 </ul>
 <hr />
 </div>
+<div id="regex-in-grep-vs.-sed" class="section level1">
+<h1>RegEx in <code>grep</code> vs. <code>sed</code></h1>
+<ul>
+<li>die von <code>grep</code> im <code>-P</code>erl-Modus verfügbaren character groups (z.B. <code>\d</code>) werden <a href="https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html">von <code>sed</code> nicht unterstützt</a>
+<ul>
+<li>mit <code>sed -E</code> (GNU Version) werden aber die <a href="https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions#Character_classes">POSIX character classes</a> unterstützt
+<ul>
+<li>Achtung: benötigt doppelte Klammerung (bzw. class muss selbst noch in <code>[]</code>-regex-Teil eingebettet sein)</li>
+<li>z.B. `sed -E ‘s/[[:digit:]]//g’ löscht alle Zahlen</li>
+</ul></li>
+</ul></li>
+<li><strong>Was muss ‘escaped’ werden?</strong>
+<ul>
+<li><code>grep</code>: das matchen von RegEx-spezifischen Symbolen
+<ul>
+<li>z.B. “+” um ein Plus zu matchen statt es als Quantifikator zu nutzen</li>
+</ul></li>
+<li><code>sed</code>:
+<ul>
+<li><em>standardmässig genau umgekehrt</em> (BASIC REGULAR EXPRESSIONS), d.h. für den RegEx-Einsatz muss escaped werden
+<ul>
+<li>z.B. der “0-oder-1-mal” Quantifikator muss mit “?” kodiert werden, sonst wird ein Fragezeichen gematched</li>
+</ul></li>
+<li><em>ABER</em> mit <code>-E</code> (EXTENDED REGULAR EXPRESSIONS): Escapingverhalten wie <code>grep</code>…
+<ul>
+<li>sowie POSIX character classes verfügbar</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr />
+</div>
 <div id="zeilenumbrüche" class="section level1">
 <h1>Zeilenumbrüche</h1>
 <ul>
@@ -572,7 +604,7 @@ liefert die zweite Zeile (ohne “<code>-n</code>” würde jeder Zeile standard
 </ul>
 <p><strong>Kodierung von Zeilenumbrüchen sorgt immer wieder für Probleme bei Textersetzungen/-formatierung! Daher immer (wieder) dran denken!</strong></p>
 <hr />
-<p>Download: <a href="regex.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 07.04.2022.</p>
+<p>Download: <a href="regex.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 12.04.2022.</p>
 </div>
 
 

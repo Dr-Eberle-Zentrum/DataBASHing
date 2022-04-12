@@ -194,6 +194,25 @@ Dieses [Online-grep-regex-Tutorial](https://www.digitalocean.com/community/tutor
 
 -------------------------------------------
 
+# RegEx in `grep` vs. `sed`
+
+- die von `grep` im `-P`erl-Modus verfügbaren character groups (z.B. `\d`) werden [von `sed` nicht unterstützt](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)
+  - mit `sed -E` (GNU Version) werden aber die [POSIX character classes](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions#Character_classes) unterstützt
+    - Achtung: benötigt doppelte Klammerung (bzw. class muss selbst noch in `[]`-regex-Teil eingebettet sein)
+    - z.B. `sed -E 's/[[:digit:]]//g' löscht alle Zahlen
+- **Was muss 'escaped' werden?**
+  - `grep`: das matchen von RegEx-spezifischen Symbolen
+    - z.B. "\+" um ein Plus zu matchen statt es als Quantifikator zu nutzen
+  - `sed`: 
+    - *standardmässig genau umgekehrt* (BASIC REGULAR EXPRESSIONS), d.h. für den RegEx-Einsatz muss escaped werden
+      - z.B. der "0-oder-1-mal" Quantifikator muss mit "\?" kodiert werden, sonst wird ein Fragezeichen gematched
+    - *ABER* mit `-E` (EXTENDED REGULAR EXPRESSIONS): Escapingverhalten wie `grep`...
+      - sowie POSIX character classes verfügbar
+    
+
+
+-------------------------------------------
+
 
 # Zeilenumbrüche
 
