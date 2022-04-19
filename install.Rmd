@@ -95,7 +95,7 @@ echo $SHELL
 Um sicher zu gehen, dass alles geklappt hat, prüfen sie ob sie für diesen Befehl
 
 ```{bash ex-tail-lessen-data, eval=FALSE}
-tail -n 1 /tmp/shell-lesson-data/numbers.txt
+tail -n 1 /tmp/shell-lesson-data/exercise-data/numbers.txt
 ```
 
 diese Ausgabe erhalten.
