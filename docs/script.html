@@ -14,7 +14,7 @@
 
 <title>Scripting in der BASH</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
@@ -478,6 +478,11 @@ div.tocify {
 <li>alternativ = “<code>expr</code>” Befehl, welcher das Ergebnis direkt ausgibt (Leerzeichen zwischen ALLEN Formelteilen!), z.B. <code>expr 3 + 4</code></li>
 <li>oder man kann auch den “<code>let</code>” Befehl verwenden, welcher das Ergebnis direkt in einer Variable speichert, z.B. <code>let "A=3+4"</code> (hier muss i.d.R. gequotet werden!)</li>
 </ul></li>
+<li><code>X{A,B,C}Y</code> = <a href="https://runebook.dev/de/docs/bash/brace-expansion">Klammererweiterung</a> = liefert <code>XAY XBY XCY</code>
+<ul>
+<li><code>{VON..BIS}</code> = Sequenzerweiterung, z.B. <code>{3..1}</code> liefert <code>3 2 1</code></li>
+<li><code>{VON..BIS..INK}</code> mit Inkrementangabe, z.B. <code>{1..5..2}</code> liefert <code>1 3 5</code></li>
+</ul></li>
 </ul>
 <hr />
 <div id="tutorials" class="section level2">
@@ -615,7 +620,7 @@ z.B. <code>if [ ! -e /tmp/jo.txt ] || [ -s /tmp/jo.txt ]; then echo "man" &gt; /
 </ul>
 <p>liefert viele Anwendungsbeispiele, kleine Aufgaben (Activities) und Hintergrundinformationen.</p>
 <hr />
-<p>Download: <a href="script.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 19.04.2022.</p>
+<p>Download: <a href="script.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 25.05.2022.</p>
 </div>
 </div>
 

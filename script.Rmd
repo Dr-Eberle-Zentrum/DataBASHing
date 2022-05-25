@@ -102,7 +102,9 @@ Zudem
 - `$((3+4))` - [arithmetische Berechnungen](https://www.computerhope.com/unix/ubash.htm#15A)
   - alternativ = "`expr`" Befehl, welcher das Ergebnis direkt ausgibt (Leerzeichen zwischen ALLEN Formelteilen!),  z.B. `expr 3 + 4`
   - oder man kann auch den "`let`" Befehl verwenden, welcher das Ergebnis direkt in einer Variable speichert, z.B. `let "A=3+4"` (hier muss i.d.R. gequotet werden!)
-
+- `X{A,B,C}Y` = [Klammererweiterung](https://runebook.dev/de/docs/bash/brace-expansion) = liefert `XAY XBY XCY`
+  - `{VON..BIS}` = Sequenzerweiterung, z.B. `{3..1}` liefert `3 2 1`
+  - `{VON..BIS..INK}` mit Inkrementangabe, z.B. `{1..5..2}` liefert `1 3 5`
 
 ------------------
 
