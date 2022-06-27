@@ -90,7 +90,35 @@ Das funktioniert, liefert aber ggf. zu viel Variabilität, was ein häufiger Fal
 - "`[A-Z][a-z]*a`" = mit "`[A-Z`" sichern wir, dass der erste Buchstabe grossgeschrieben ist und anschliessend können (da "`*`") nur Kleinbuchstaben in der Wortmitte sein
 - ... und so weiter
 
-Das Beispiel zeigt, dass reguläre Ausdrücke ganz allgemein ("`.*a`") oder sehr präzise ("`Frida|Erna|Lisa`") sein können. Die Kunst ist es nun, den für die anstehende Aufgabe passenden regulären Ausdruck zu erdenken. Dazu hilft einem das beiliegende CheatSheet, welches man sicher auch in Zukunft immer wieder heraus holen muss.
+Das Beispiel zeigt, dass reguläre Ausdrücke ganz allgemein ("`.*a`") oder sehr präzise ("`Frida|Erna|Lisa`") sein können. Die Kunst ist es nun, den für die anstehende Aufgabe passenden regulären Ausdruck zu erdenken. Dazu hilft einem das beiliegende Cheatsheet, welches man sicher auch in Zukunft immer wieder heraus holen muss.
+
+Grundlegend unterscheidet man bei regulären Ausdrücken
+
+- **character classes**, d.h. Platzhalter die auf mehrere Buchstaben matchen, z.B.
+  - `.` = jedweder Buchstabe
+  - `[xyz]` = explizite Buchstabenliste, hier x, y und z
+    -  auch Reihen möglich, z.B. `[3-7]` = 3,4,5,6,7
+  - `\s` = whitespaces = Leerzeichen, Tabulator, ...
+  - `\d` = digits = Zahlen = [0-9]
+  - `\w` = (english) word = [A-Za-z0-9_] (keine Umlaute etc.!)
+  - *Negation*:
+    - Grossschreibung `\S`, `\D`, .. = alles "ausser" der entsprechenden Kleinschreibung
+    - `[^xyz]` = das `^` negiert die explizite Liste (alles ausser x,y,z)
+- **Quantifikatoren**, d.h. wie häufig soll das vorangehende Zeichen gematcht werden, z.B.
+  - `?` = ein oder kein mal
+  - `+` = mindestens einmal
+  - `*` = kann mehrfach vorkommen oder gar nicht
+  - {..} = explizite Anzahl
+- **Anker**, d.h. wo soll der match verortet sein, z.B.
+  - `^` = Zeilenanfang
+  - `$` = Zeilenende
+  - `\b` = Wortgrenze, z.B. `er\b` matcht nur "er" am Wortende
+- **Gruppen**, d.h. Zusammenfassung von match-Teilen, z.B.
+  - `(..)` = Klammern werden nicht gematcht, sondern sind Markierungen
+  - z.B. für lokale Alternativdefinition ala `(Hi|Ku)nz` = Hinz oder Kunz
+  - `\1` **Rückreferenzierung** auf 1., 2., ... vorangehende Gruppe
+    - z.B. `(.).\1` matcht aha, oho, ana, d.h. erster und letzter Buchstabe gleich
+
 
 Um regulären Ausdrücken zu entwickeln oder um damit herumzuspielen um Effekte von Änderungen zu beobachten, eigenen sich online regex tester. Diese könnten ihnen u.a. auch beim Bearbeiten der Übungen oder Tests behilflich sein. Ein solcher ist zum Beispiel
 
