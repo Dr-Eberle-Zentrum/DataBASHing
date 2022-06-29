@@ -158,7 +158,7 @@ Um regulären Ausdrücken zu entwickeln oder um damit herumzuspielen um Effekte 
 
 - `grep` = Suche (und Ausgabe) von Zeilen (oder Teilen) die ein gegebenes Textmuster oder -stück enthalten
   - wichtige Suchmodi
-    - "`-P`" = Perl RegEx Modus = seeehr umfangreicher RegEx Support
+    - "`-P`" = Perl RegEx Modus = seeehr umfangreicher RegEx Support (nur im GNU grep verfügbar, siehe unten)
     - "`-F`" = (fixiertes) Stringmatching (z.B. zur Suche von RegEx-Syntax in Texten)
     - "`-E`" = egrep = extended POSIX RegEx matching = Suche mit standardisierten Ausdrücken
   - "`-i`" = Gross-Klein-Schreibung egal
@@ -175,6 +175,8 @@ Um regulären Ausdrücken zu entwickeln oder um damit herumzuspielen um Effekte 
 - am besten **immer** im "`-P`" **(Perl) Modus nutzen**, da nur so wirklich alle regex-Feature wie "`\`"-based character classes (z.B. "`\d`" etc) verfügbar sind, z.B. `grep --help | grep -P "^\s+-\w\W"`
 - Ausdrücke müssen i.d.R. ge**quote**t werden, s.o.
   - ggf. sogar mit single quotes, wenn "`$`" etc. im Ausdruck verwendet wird
+
+**Apple User aufgepasst:** Apple liefert aus lizenzrechtlichen Gründen das `grep` Programm von BSD statt GNU aus (check via `grep --version`). Dieses unterstützt keine "Perl RegEx" Kodierungen (hat keinen "`-P`" Parameter). Um letzteres zu nutzen, sollten sie [**GNU `grep` installieren**](https://stackoverflow.com/questions/16658333/grep-p-no-longer-works-how-can-i-rewrite-my-searches), welches dann als `ggrep` aufrufbar sein wird.
 
 
 -------------------------------------------

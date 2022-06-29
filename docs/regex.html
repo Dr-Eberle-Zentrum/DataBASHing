@@ -580,7 +580,7 @@ ein gegebenes Textmuster oder -stück enthalten
 <li>wichtige Suchmodi
 <ul>
 <li>“<code>-P</code>” = Perl RegEx Modus = seeehr umfangreicher RegEx
-Support</li>
+Support (nur im GNU grep verfügbar, siehe unten)</li>
 <li>“<code>-F</code>” = (fixiertes) Stringmatching (z.B. zur Suche von
 RegEx-Syntax in Texten)</li>
 <li>“<code>-E</code>” = egrep = extended POSIX RegEx matching = Suche
@@ -615,6 +615,14 @@ verfügbar sind, z.B. <code>grep --help | grep -P "^\s+-\w\W"</code></li>
 verwendet wird</li>
 </ul></li>
 </ul>
+<p><strong>Apple User aufgepasst:</strong> Apple liefert aus
+lizenzrechtlichen Gründen das <code>grep</code> Programm von BSD statt
+GNU aus (check via <code>grep --version</code>). Dieses unterstützt
+keine “Perl RegEx” Kodierungen (hat keinen “<code>-P</code>” Parameter).
+Um letzteres zu nutzen, sollten sie <a
+href="https://stackoverflow.com/questions/16658333/grep-p-no-longer-works-how-can-i-rewrite-my-searches"><strong>GNU
+<code>grep</code> installieren</strong></a>, welches dann als
+<code>ggrep</code> aufrufbar sein wird.</p>
 <hr />
 </div>
 <div id="tutorials-1" class="section level2">
@@ -770,7 +778,7 @@ bei Textersetzungen/-formatierung! Daher immer (wieder) dran
 denken!</strong></p>
 <hr />
 <p>Download: <a href="regex.pdf" title="Download PDF Version">PDF
-Version</a> dieses Tutorials. Erstellt am 27.06.2022.</p>
+Version</a> dieses Tutorials. Erstellt am 29.06.2022.</p>
 </div>
 
 
