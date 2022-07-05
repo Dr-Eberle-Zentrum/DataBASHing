@@ -11,23 +11,23 @@ Einführung von
 - `vim, nano` in [Editoren in der Shell]
 
 
-[Video: Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]](http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7)
+[Video: Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]](https://www.youtube.com/watch?v=Swtrh7z6FnE?t=7)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=Swtrh7z6FnE?t=7"
                    title="Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]"
-                   ><img src="http://img.youtube.com/vi/Swtrh7z6FnE/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/Swtrh7z6FnE/0.jpg"></a>')
 ```
 
 
 
 
-[Video: Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]](http://www.youtube.com/watch?v=M28zU56xWHY?t=7)
+[Video: Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]](https://www.youtube.com/watch?v=M28zU56xWHY?t=7)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=M28zU56xWHY?t=7"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=M28zU56xWHY?t=7"
                    title="Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]"
-                   ><img src="http://img.youtube.com/vi/M28zU56xWHY/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/M28zU56xWHY/0.jpg"></a>')
 ```
 
 

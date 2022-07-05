@@ -377,47 +377,78 @@ div.tocify {
 <hr />
 <p>Einführung von</p>
 <ul>
-<li><code>chmod, chown, chgrp, ls -l</code> in <a href="#dateirechte">Dateirechte</a></li>
-<li><code>tar, gzip, zip, zcat, zless, zgrep</code> in <a href="#kompression">Kompression</a></li>
+<li><code>chmod, chown, chgrp, ls -l</code> in <a
+href="#dateirechte">Dateirechte</a></li>
+<li><code>tar, gzip, zip, zcat, zless, zgrep</code> in <a
+href="#kompression">Kompression</a></li>
 </ul>
-<p><a href="http://www.youtube.com/watch?v=C-89jT0pUso?t=7">Video: Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]</a></p>
-<p><a href="http://www.youtube.com/watch?v=C-89jT0pUso?t=7"
+<p><a href="https://www.youtube.com/watch?v=C-89jT0pUso?t=7">Video:
+Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6
+min]</a></p>
+<p><a href="https://www.youtube.com/watch?v=C-89jT0pUso?t=7"
                    title="Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]"
-                   ><img src="http://img.youtube.com/vi/C-89jT0pUso/0.jpg"></a></p>
-<p><a href="http://www.youtube.com/watch?v=pItowVnHDD0">Video: (en) Pedagogy - archive files using tar command in linux | create tar &amp; extract from tar file | tar command in linux [8 min]</a></p>
-<p><a href="http://www.youtube.com/watch?v=pItowVnHDD0"
+                   ><img src="https://img.youtube.com/vi/C-89jT0pUso/0.jpg"></a></p>
+<p><a href="https://www.youtube.com/watch?v=pItowVnHDD0">Video: (en)
+Pedagogy - archive files using tar command in linux | create tar &amp;
+extract from tar file | tar command in linux [8 min]</a></p>
+<p><a href="https://www.youtube.com/watch?v=pItowVnHDD0"
                    title="(en) Pedagogy - archive files using tar command in linux | create tar & extract from tar file | tar command in linux [8 min]"
-                   ><img src="http://img.youtube.com/vi/pItowVnHDD0/0.jpg"></a></p>
-<p><a href="http://www.youtube.com/watch?v=n8OqvSW7GFc">Video: (en) Pedagogy - compress - decompress files using gzip &amp; bzip2 in linux | tar command to manage compressed files [12 min]</a></p>
-<p><a href="http://www.youtube.com/watch?v=n8OqvSW7GFc"
+                   ><img src="https://img.youtube.com/vi/pItowVnHDD0/0.jpg"></a></p>
+<p><a href="https://www.youtube.com/watch?v=n8OqvSW7GFc">Video: (en)
+Pedagogy - compress - decompress files using gzip &amp; bzip2 in linux |
+tar command to manage compressed files [12 min]</a></p>
+<p><a href="https://www.youtube.com/watch?v=n8OqvSW7GFc"
                    title="Pedagogy - compress - decompress files using gzip & bzip2 in linux | tar command to manage compressed files [12 min]"
-                   ><img src="http://img.youtube.com/vi/n8OqvSW7GFc/0.jpg"></a></p>
+                   ><img src="https://img.youtube.com/vi/n8OqvSW7GFc/0.jpg"></a></p>
 <hr />
 <div id="dateirechte" class="section level1">
 <h1>Dateirechte</h1>
 <ul>
-<li>u.a. via “<code>ls -l</code>” <strong>am Anfang der Zeile</strong> angezeigt:<br />
+<li>u.a. via “<code>ls -l</code>” <strong>am Anfang der Zeile</strong>
+angezeigt:<br />
 z.B. <code>-rwxr-x--- 42 hans family 42 [DATUM] MeinSkript.sh</code>
 <ul>
-<li>führendes “<code>-</code>” : weder link “<code>l</code>” noch verzeichnis “<code>d</code>”, daher Zeichen für normale Dateien</li>
-<li>erster Dreierblock “<code>rwx</code>” : Rechte des Besitzers (<code>u</code> = user) (hier hans) = (<code>r</code>)ead + (<code>w</code>)rite + e(<code>x</code>)ecute</li>
-<li>zweiter Dreierblock “<code>r-x</code>” : Gruppenrechte (<code>g</code> = group) (hier family = Gruppe von accounts), welche keine Schreibrechte “<code>w</code>” haben (daher an dessen Stelle ein “<code>-</code>”)</li>
-<li>dritter Dreierblock “<code>---</code>” : Rechte für den “Rest der Welt” (<code>o</code> = others), hier keinerlei Rechte eingeräumt (alles “<code>-</code>”)</li>
-<li>“<code>1</code>” (Zahl) = Anzahl Links für diese Datei (erstmal egal)</li>
-<li>“<code>hans</code>” = Eigentümername = es gibt <strong>nur EINEN Eigentümer</strong></li>
-<li>“<code>family</code>” = Gruppenname, zu welcher die Datei zugeordnet ist = nur <strong>EINE GRUPPE pro Datei</strong> zuweisbar!</li>
-<li>“<code>42</code>” = Dateigrösse in Bytes (oder zB <code>4K</code> wenn <code>ls -lh</code> verwendet)</li>
+<li>führendes “<code>-</code>” : weder link “<code>l</code>” noch
+verzeichnis “<code>d</code>”, daher Zeichen für normale Dateien</li>
+<li>erster Dreierblock “<code>rwx</code>” : Rechte des Besitzers
+(<code>u</code> = user) (hier hans) = (<code>r</code>)ead +
+(<code>w</code>)rite + e(<code>x</code>)ecute</li>
+<li>zweiter Dreierblock “<code>r-x</code>” : Gruppenrechte
+(<code>g</code> = group) (hier family = Gruppe von accounts), welche
+keine Schreibrechte “<code>w</code>” haben (daher an dessen Stelle ein
+“<code>-</code>”)</li>
+<li>dritter Dreierblock “<code>---</code>” : Rechte für den “Rest der
+Welt” (<code>o</code> = others), hier keinerlei Rechte eingeräumt (alles
+“<code>-</code>”)</li>
+<li>“<code>1</code>” (Zahl) = Anzahl Links für diese Datei (erstmal
+egal)</li>
+<li>“<code>hans</code>” = Eigentümername = es gibt <strong>nur EINEN
+Eigentümer</strong></li>
+<li>“<code>family</code>” = Gruppenname, zu welcher die Datei zugeordnet
+ist = nur <strong>EINE GRUPPE pro Datei</strong> zuweisbar!</li>
+<li>“<code>42</code>” = Dateigrösse in Bytes (oder zB <code>4K</code>
+wenn <code>ls -lh</code> verwendet)</li>
 </ul></li>
-<li><strong>ausführbare Dateien</strong> (mit <code>x</code> für jeweilige Gruppe = hier z.B. für “<code>hans</code>” und andere der “<code>family</code>” Gruppe)
+<li><strong>ausführbare Dateien</strong> (mit <code>x</code> für
+jeweilige Gruppe = hier z.B. für “<code>hans</code>” und andere der
+“<code>family</code>” Gruppe)
 <ul>
-<li>können direkt mit Pfadangabe ausgeführt werden, z.B. via <code>./MeinSkript.sh</code> anstatt <code>bash MeinSkript.sh</code></li>
-<li>werden direkt ausgeführt, wenn sie in einem Verzeichnis liegen, welches in <strong><code>PATH</code>-Variable</strong> gelistet ist (“<code>:</code>”-getrennte Liste), dh. direkt via <code>MeinSkript.sh</code> <strong>ohne Pfadangabe</strong> aufrufbar</li>
+<li>können direkt mit Pfadangabe ausgeführt werden, z.B. via
+<code>./MeinSkript.sh</code> anstatt
+<code>bash MeinSkript.sh</code></li>
+<li>werden direkt ausgeführt, wenn sie in einem Verzeichnis liegen,
+welches in <strong><code>PATH</code>-Variable</strong> gelistet ist
+(“<code>:</code>”-getrennte Liste), dh. direkt via
+<code>MeinSkript.sh</code> <strong>ohne Pfadangabe</strong>
+aufrufbar</li>
 </ul></li>
 <li><strong>Versteckte Dateien</strong> = “<code>.</code>”-prefixed
 <ul>
-<li>Dateien, die mit “<code>.</code>” beginnen, werden standardmässig bei <code>ls</code> Aufruf ausgeblendet und nicht angezeigt</li>
+<li>Dateien, die mit “<code>.</code>” beginnen, werden standardmässig
+bei <code>ls</code> Aufruf ausgeblendet und nicht angezeigt</li>
 <li>mit “<code>ls -a</code>” werden diese gelistet</li>
-<li>i.d.R. Konfigurationsdateien, wie z.B. <code>$HOME/.bashrc</code> welche u.a. folgendes definiert:
+<li>i.d.R. Konfigurationsdateien, wie z.B. <code>$HOME/.bashrc</code>
+welche u.a. folgendes definiert:
 <ul>
 <li>das Aussehen der bash (Farbe, prompt, …)</li>
 <li>wie manche Kommandos reagieren (Länge der History, …)</li>
@@ -430,41 +461,63 @@ z.B. <code>-rwxr-x--- 42 hans family 42 [DATUM] MeinSkript.sh</code>
 <ul>
 <li><code>chmod</code> - <strong>Dateirechte ändern</strong>
 <ul>
-<li>kompakte <a href="https://www.shellbefehle.de/befehle/chmod/">Zusammenfassung mit Beispielen</a></li>
-<li>z.B. Datei <strong>für alle ausführbar</strong> machen via “<code>chmod a+rx MeinSkript.sh</code>” (“<code>r</code>” idR nicht nötig, da meist schon vorhanden)</li>
-<li>wenn nur “<strong>Änderung</strong>” von Interesse (d.h. hinzufügen oder wegnehmen), dann bietet sich die folgende (regex-codierte) Notation an:
+<li>kompakte <a
+href="https://www.shellbefehle.de/befehle/chmod/">Zusammenfassung mit
+Beispielen</a></li>
+<li>z.B. Datei <strong>für alle ausführbar</strong> machen via
+“<code>chmod a+rx MeinSkript.sh</code>” (“<code>r</code>” idR nicht
+nötig, da meist schon vorhanden)</li>
+<li>wenn nur “<strong>Änderung</strong>” von Interesse (d.h. hinzufügen
+oder wegnehmen), dann bietet sich die folgende (regex-codierte) Notation
+an:
 <ul>
 <li>[ugoa][+-]r?w?x? im Detail</li>
 <li>WER = (u)ser, (g)roup, (o)thers, (a)ll, d.h. alle drei</li>
-<li>WIE = “+” hinzufügen (wenn noch nicht vorhanden) oder “-” wegnehmen</li>
+<li>WIE = “+” hinzufügen (wenn noch nicht vorhanden) oder “-”
+wegnehmen</li>
 <li>WAS = (r)ead, (w)rite, e(x)ecute rights</li>
-<li>z.B. chmod o+r MeinSkript.sh würde allen Nutzern Leserechte einräumen (unabhängig davon, ob sie diese schon besitzen oder nicht)</li>
+<li>z.B. chmod o+r MeinSkript.sh würde allen Nutzern Leserechte
+einräumen (unabhängig davon, ob sie diese schon besitzen oder
+nicht)</li>
 </ul></li>
-<li>für ein <strong>explizites Setzen</strong> aller Rechte auf einmal, ist ggf. die Zahlennotation (siehe obigen Link) besser</li>
+<li>für ein <strong>explizites Setzen</strong> aller Rechte auf einmal,
+ist ggf. die Zahlennotation (siehe obigen Link) besser</li>
 </ul></li>
 </ul>
 </div>
 <div id="eigentumgruppe-ändern" class="section level2">
 <h2>Eigentum/Gruppe ändern</h2>
 <ul>
-<li><code>chown</code> - <strong>Eigentumsrechte/-zuordnung ändern</strong>
+<li><code>chown</code> - <strong>Eigentumsrechte/-zuordnung
+ändern</strong>
 <ul>
-<li>der Eigentümer (oder z.T. ein Admin) kann die Eigentumsrechte übergeben/ändern</li>
-<li>z.B. ein “<code>chown liesbeth MeinSkript.sh</code>” von <code>hans</code> würde die Datei von oben an <code>liesbeth</code> übertragen</li>
+<li>der Eigentümer (oder z.T. ein Admin) kann die Eigentumsrechte
+übergeben/ändern</li>
+<li>z.B. ein “<code>chown liesbeth MeinSkript.sh</code>” von
+<code>hans</code> würde die Datei von oben an <code>liesbeth</code>
+übertragen</li>
 <li>alles andere bleibt ungeändert, d.h. Ort, Dateirechte, …</li>
 <li>kann auch zur Gruppenänderung eingesetzt werden</li>
-<li><a href="https://www.howtoforge.de/anleitung/linux-chown-command-tutorial-fr-anfnger-12-beispiele/">Details und Beispiele</a> von howtoforge.de</li>
+<li><a
+href="https://www.howtoforge.de/anleitung/linux-chown-command-tutorial-fr-anfnger-12-beispiele/">Details
+und Beispiele</a> von howtoforge.de</li>
 </ul></li>
 <li><code>chgrp</code> - <strong>Gruppenzuordnung ändern</strong>
 <ul>
 <li>Gruppenzugehörigkeit von Dateien ändern</li>
-<li>z.B. “<code>chgrp parents MeinSkript.sh</code>” würde den Zugriff (bzw. die gesetzten Gruppen-Dateirechte) auf Nutzer der Gruppe <code>parents</code> einschränken. Alle anderen Nutzer (ausser dem Eigentümer) fallen dann unter die Dateirechtgruppe “<code>others</code>”.</li>
+<li>z.B. “<code>chgrp parents MeinSkript.sh</code>” würde den Zugriff
+(bzw. die gesetzten Gruppen-Dateirechte) auf Nutzer der Gruppe
+<code>parents</code> einschränken. Alle anderen Nutzer (ausser dem
+Eigentümer) fallen dann unter die Dateirechtgruppe
+“<code>others</code>”.</li>
 </ul></li>
-<li><code>groups</code> - <strong>Gruppen (eines Nutzers) anzeigen</strong>
+<li><code>groups</code> - <strong>Gruppen (eines Nutzers)
+anzeigen</strong>
 <ul>
 <li>ein Nutzer kann mehreren Gruppen angehören</li>
 <li>“<code>groups</code>” - liefert die eigenen Gruppen</li>
-<li>“<code>groups hans</code>” - liefert die Gruppen des Nutzers hans</li>
+<li>“<code>groups hans</code>” - liefert die Gruppen des Nutzers
+hans</li>
 </ul></li>
 </ul>
 <hr />
@@ -474,54 +527,76 @@ z.B. <code>-rwxr-x--- 42 hans family 42 [DATUM] MeinSkript.sh</code>
 <h1>Kompression</h1>
 <p><strong>Datenarchivierung</strong> = meist 2 Schritte in einem:</p>
 <ul>
-<li><strong>Datenaggregation</strong> = mehrere Dateien/Ordner/… <strong>in einer Datei zusammenfassen</strong></li>
-<li><strong>Datenkompression</strong> = eine Datei (oder Datenstrom) verlustfrei <strong>kleiner speichern</strong></li>
+<li><strong>Datenaggregation</strong> = mehrere Dateien/Ordner/…
+<strong>in einer Datei zusammenfassen</strong></li>
+<li><strong>Datenkompression</strong> = eine Datei (oder Datenstrom)
+verlustfrei <strong>kleiner speichern</strong></li>
 </ul>
 <div id="tar" class="section level2">
 <h2>tar</h2>
 <p><code>tar</code> = Datenaggregation = Archiverstellung</p>
 <ul>
 <li>fasst mehrere Datein oder ganze Verzeichnisstrukturen zusammen</li>
-<li>Aufruf = <code>tar -[OPTIONS] -f ARCHIVDATEI [FILESorFOLDERS]</code></li>
-<li><code>ARCHIVDATEI</code> i.d.R. mit <strong>.tar Endung</strong> (wenn ohne Kompression verwendet)<br />
+<li>Aufruf =
+<code>tar -[OPTIONS] -f ARCHIVDATEI [FILESorFOLDERS]</code></li>
+<li><code>ARCHIVDATEI</code> i.d.R. mit <strong>.tar Endung</strong>
+(wenn ohne Kompression verwendet)<br />
 z.B. “<code>tar -cf bash-config-files.tar $HOME/.bash*</code>”</li>
-<li>Optionen steuern eigentliche <strong>Handlungen</strong> (können zusammengefasst werden):
+<li>Optionen steuern eigentliche <strong>Handlungen</strong> (können
+zusammengefasst werden):
 <ul>
-<li>“<code>-c</code>” = compress = <code>ARCHIVDATEI</code> wird angelegt und gefüllt</li>
-<li>“<code>-x</code>” = eXtract = <code>ARCHIVDATEI</code> wird “ausgepackt” und Dateien wiederhergestellt</li>
-<li>“<code>-r</code>” = add = weitere Dateien zu existierendem Archiv hinzufügen</li>
+<li>“<code>-c</code>” = compress = <code>ARCHIVDATEI</code> wird
+angelegt und gefüllt</li>
+<li>“<code>-x</code>” = eXtract = <code>ARCHIVDATEI</code> wird
+“ausgepackt” und Dateien wiederhergestellt</li>
+<li>“<code>-r</code>” = add = weitere Dateien zu existierendem Archiv
+hinzufügen</li>
 <li>“<code>-t</code>” = list = alle enthaltenen Dateien anzeigen</li>
 </ul></li>
-<li>Zusätzlich kann <strong>Kompressionsverfahren</strong> gewählt werden (wählt entsprechendes Konsolenprogramm)
+<li>Zusätzlich kann <strong>Kompressionsverfahren</strong> gewählt
+werden (wählt entsprechendes Konsolenprogramm)
 <ul>
 <li>“<code>-z</code>” = gzip (siehe unten)</li>
 <li>“<code>-j</code>” = bzip2</li>
 <li>“<code>-J</code>” = xz</li>
-<li>falls gesetzt, sollte Archivname mit <strong>entsprechender Endung verwendet</strong> werden (nicht automatisch angehängt!),<br />
+<li>falls gesetzt, sollte Archivname mit <strong>entsprechender Endung
+verwendet</strong> werden (nicht automatisch angehängt!),<br />
 z.B. “<code>tar -czf bash-config-files.tar.gz $HOME/.bash*</code>”</li>
-<li>muss <strong>auch beim Entpacken, Auflisten, etc.</strong> entsprechend <strong>angegeben</strong> werden,<br />
+<li>muss <strong>auch beim Entpacken, Auflisten, etc.</strong>
+entsprechend <strong>angegeben</strong> werden,<br />
 z.B. “<code>tar -lzf bash-config-files.tar.gz</code>”</li>
 </ul></li>
 </ul>
 </div>
 <div id="gzip" class="section level2">
 <h2>gzip</h2>
-<p><code>gzip</code> = Datenkompression = GNU Implementierung eines ZIP Kompressionsverfahrens</p>
+<p><code>gzip</code> = Datenkompression = GNU Implementierung eines ZIP
+Kompressionsverfahrens</p>
 <ul>
-<li>ermöglicht das (de)komprimieren einzelner <strong>Dateien</strong>, z.B.
+<li>ermöglicht das (de)komprimieren einzelner <strong>Dateien</strong>,
+z.B.
 <ul>
-<li>“<code>gzip test.txt</code>” erzeugt die Datei <code>test.txt.gz</code> mit <strong>Endung .gz</strong> und löscht <code>test.txt</code></li>
-<li>“<code>gunzip test.txt.gz</code>” dekomprimiert die Datei und benennt sie wieder um</li>
+<li>“<code>gzip test.txt</code>” erzeugt die Datei
+<code>test.txt.gz</code> mit <strong>Endung .gz</strong> und löscht
+<code>test.txt</code></li>
+<li>“<code>gunzip test.txt.gz</code>” dekomprimiert die Datei und
+benennt sie wieder um</li>
 </ul></li>
 <li>direkt in <strong>pipes</strong> verwendbar, z.B.
 <ul>
-<li>“<code>-c</code>” Ausgabe in STDOUT und Archiv erhalten, z.B. “<code>gunzip -c test.txt.gz | wc</code>”</li>
-<li>“<code>-</code>” als “Dateiname” liest STDIN und gibt komprimierte Daten in STDOUT aus, z.B. “<code>ls | gzip - &gt; ls-output.gz</code>”</li>
+<li>“<code>-c</code>” Ausgabe in STDOUT und Archiv erhalten, z.B.
+“<code>gunzip -c test.txt.gz | wc</code>”</li>
+<li>“<code>-</code>” als “Dateiname” liest STDIN und gibt komprimierte
+Daten in STDOUT aus, z.B.
+“<code>ls | gzip - &gt; ls-output.gz</code>”</li>
 </ul></li>
 <li>“<code>-k</code>” = keep = Originaldatei wird erhalten</li>
-<li>Varianten von bekannten Programmen, die direkt mit <strong>gzip-ten Text-Dateien</strong> umgehen können
+<li>Varianten von bekannten Programmen, die direkt mit <strong>gzip-ten
+Text-Dateien</strong> umgehen können
 <ul>
-<li><code>zcat</code> - z.B. “<code>zcat ls-output.gz</code>” = entspricht “<code>gunzip -c ls-output.gz</code>” aber ggf. intuitiver</li>
+<li><code>zcat</code> - z.B. “<code>zcat ls-output.gz</code>” =
+entspricht “<code>gunzip -c ls-output.gz</code>” aber ggf.
+intuitiver</li>
 <li><code>zless</code> - z.B. “<code>zless ls-output.gz</code>”</li>
 <li><code>zgrep</code> - direktes suchen in komprimierten Dateien</li>
 </ul></li>
@@ -529,27 +604,37 @@ z.B. “<code>tar -lzf bash-config-files.tar.gz</code>”</li>
 </div>
 <div id="bzip2" class="section level2">
 <h2>bzip2</h2>
-<p>Mehr oder minder analog zu <code>gzip</code> (inklusive “<code>bz...</code>” tools) aber verwendet anderem Kompressionsalgorithmus.</p>
+<p>Mehr oder minder analog zu <code>gzip</code> (inklusive
+“<code>bz...</code>” tools) aber verwendet anderem
+Kompressionsalgorithmus.</p>
 </div>
 <div id="zip" class="section level2">
 <h2>zip</h2>
-<p><code>zip</code> = sowohl Datenaggregation als auch IMMER -kompression</p>
+<p><code>zip</code> = sowohl Datenaggregation als auch IMMER
+-kompression</p>
 <ul>
-<li>intern quasi eine Kombination von tar und einem anderen ZIP Verfahren (als gzip)</li>
-<li>Aufruf = <code>zip [OPTIONS] ARCHIVDATEI [FILESorFOLDERS]</code></li>
+<li>intern quasi eine Kombination von tar und einem anderen ZIP
+Verfahren (als gzip)</li>
+<li>Aufruf =
+<code>zip [OPTIONS] ARCHIVDATEI [FILESorFOLDERS]</code></li>
 <li>Entpacken mit “<code>unzip ARCHIVDATEI</code>”</li>
 <li><code>ARCHIVDATEI</code>
 <ul>
 <li>i.d.R. mit <strong>Endung .zip</strong></li>
-<li>wenn “-” dann lesen von STDIN und schreiben nach STDOUT zur Verwendung in pipes analog zu gzip</li>
-<li>wenn schon vorhanden, werden die neuen Dateien direkt hinzugefügt</li>
+<li>wenn “-” dann lesen von STDIN und schreiben nach STDOUT zur
+Verwendung in pipes analog zu gzip</li>
+<li>wenn schon vorhanden, werden die neuen Dateien direkt
+hinzugefügt</li>
 </ul></li>
-<li>“<code>-r</code>” = recursive = alle Dateien/Unterverzeichnisse der angegeben Verzeichnisse</li>
+<li>“<code>-r</code>” = recursive = alle Dateien/Unterverzeichnisse der
+angegeben Verzeichnisse</li>
 <li>Passwortschutz möglich</li>
-<li>für weitere Details bitte <strong>man page</strong> mit vielen Beispielen konsultieren!</li>
+<li>für weitere Details bitte <strong>man page</strong> mit vielen
+Beispielen konsultieren!</li>
 </ul>
 <hr />
-<p>Download: <a href="files.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 25.05.2022.</p>
+<p>Download: <a href="files.pdf" title="Download PDF Version">PDF
+Version</a> dieses Tutorials. Erstellt am 05.07.2022.</p>
 </div>
 </div>
 

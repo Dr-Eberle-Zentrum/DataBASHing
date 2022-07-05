@@ -12,34 +12,34 @@ Einführung von
 - `tar, gzip, zip, zcat, zless, zgrep` in [Kompression]
 
 
-[Video: Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]](http://www.youtube.com/watch?v=C-89jT0pUso?t=7)
+[Video: Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]](https://www.youtube.com/watch?v=C-89jT0pUso?t=7)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=C-89jT0pUso?t=7"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=C-89jT0pUso?t=7"
                    title="Bashinho - #03 Befehle für das Rechtemanagement (chmod, chown, chgrp) [6 min]"
-                   ><img src="http://img.youtube.com/vi/C-89jT0pUso/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/C-89jT0pUso/0.jpg"></a>')
 ```
 
 
 
 
-[Video: (en) Pedagogy - archive files using tar command in linux | create tar & extract from tar file | tar command in linux [8 min]](http://www.youtube.com/watch?v=pItowVnHDD0)
+[Video: (en) Pedagogy - archive files using tar command in linux | create tar & extract from tar file | tar command in linux [8 min]](https://www.youtube.com/watch?v=pItowVnHDD0)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=pItowVnHDD0"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=pItowVnHDD0"
                    title="(en) Pedagogy - archive files using tar command in linux | create tar & extract from tar file | tar command in linux [8 min]"
-                   ><img src="http://img.youtube.com/vi/pItowVnHDD0/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/pItowVnHDD0/0.jpg"></a>')
 ```
 
 
 
 
-[Video: (en) Pedagogy - compress - decompress files using gzip & bzip2 in linux | tar command to manage compressed files [12 min]](http://www.youtube.com/watch?v=n8OqvSW7GFc)
+[Video: (en) Pedagogy - compress - decompress files using gzip & bzip2 in linux | tar command to manage compressed files [12 min]](https://www.youtube.com/watch?v=n8OqvSW7GFc)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=n8OqvSW7GFc"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=n8OqvSW7GFc"
                    title="Pedagogy - compress - decompress files using gzip & bzip2 in linux | tar command to manage compressed files [12 min]"
-                   ><img src="http://img.youtube.com/vi/n8OqvSW7GFc/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/n8OqvSW7GFc/0.jpg"></a>')
 ```
 
 

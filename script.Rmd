@@ -15,23 +15,23 @@ Einführung von
 
 
 
-[Video: (en) Protesilaos Stavrou - BASH Parameter Expansion [12 min]](http://www.youtube.com/watch?v=S4D9KaW3ERw)
+[Video: (en) Protesilaos Stavrou - BASH Parameter Expansion [12 min]](https://www.youtube.com/watch?v=S4D9KaW3ERw)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=S4D9KaW3ERw"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=S4D9KaW3ERw"
                    title="(en) Protesilaos Stavrou - BASH Parameter Expansion [12 min]"
-                   ><img src="http://img.youtube.com/vi/S4D9KaW3ERw/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/S4D9KaW3ERw/0.jpg"></a>')
 ```
 
 
 
 
-[Video: (en) Pedagogy - Variables In Shell Scripting | store output of a command to a variable | $ [16 min]](http://www.youtube.com/watch?v=3JYhBUK2of0)
+[Video: (en) Pedagogy - Variables In Shell Scripting | store output of a command to a variable | $ [16 min]](https://www.youtube.com/watch?v=3JYhBUK2of0)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=3JYhBUK2of0"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=3JYhBUK2of0"
                    title="(en) Pedagogy - Variables In Shell Scripting | store output of a command to a variable | $ [16 min]"
-                   ><img src="http://img.youtube.com/vi/3JYhBUK2of0/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/3JYhBUK2of0/0.jpg"></a>')
 ```
 
 

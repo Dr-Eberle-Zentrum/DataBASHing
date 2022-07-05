@@ -14,22 +14,22 @@ Einführung von
 
 Um zu sehen, wo es hingehen soll, gibts die folgenden beiden Videos.
 
-[Video: Bashino - #05 Daten sortieren (sort uniq sort) [5 min]](http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7)
+[Video: Bashino - #05 Daten sortieren (sort uniq sort) [5 min]](https://www.youtube.com/watch?v=EhuHvJwUMKY?t=7)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=EhuHvJwUMKY?t=7"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=EhuHvJwUMKY?t=7"
                    title="Bashino - #05 Daten sortieren (sort uniq sort) [5 min]"
-                   ><img src="http://img.youtube.com/vi/EhuHvJwUMKY/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/EhuHvJwUMKY/0.jpg"></a>')
 ```
 
 
 
-[Video: (en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]](http://www.youtube.com/watch?v=2_lgnCzwUEM)
+[Video: (en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]](https://www.youtube.com/watch?v=2_lgnCzwUEM)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=2_lgnCzwUEM"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=2_lgnCzwUEM"
                    title="(en) Pedagogy - working with data files | cut command | paste command | join command | colrm command in linux [10 min]"
-                   ><img src="http://img.youtube.com/vi/2_lgnCzwUEM/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/2_lgnCzwUEM/0.jpg"></a>')
 ```
 
 

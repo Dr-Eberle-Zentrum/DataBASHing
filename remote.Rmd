@@ -13,12 +13,12 @@ Einführung von
 - `scp, rsync` in [Dateitransfer im Netz]
 
 
-[Video: (en) Corey Schafer - How To Use The rsync Command - Sync Files Locally and Remotely [18 min]](http://www.youtube.com/watch?v=qE77MbDnljA) 
+[Video: (en) Corey Schafer - How To Use The rsync Command - Sync Files Locally and Remotely [18 min]](https://www.youtube.com/watch?v=qE77MbDnljA) 
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=qE77MbDnljA"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=qE77MbDnljA"
                    title="(en) Corey Schafer - How To Use The rsync Command - Sync Files Locally and Remotely [18 min]"
-                   ><img src="http://img.youtube.com/vi/qE77MbDnljA/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/qE77MbDnljA/0.jpg"></a>')
 ```
 
 

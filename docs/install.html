@@ -375,24 +375,46 @@ div.tocify {
 
 
 <hr />
-<p>Es gibt verschiedene Linux Distributionen (d.h. Zusammenstellungen von Softwarepaketen). In diesem Kurs nutzen wir als Standard <strong>Ubuntu</strong>, aber jedwede andere Distribution ist auch ok, aber wir können keine und nur begrenzte Unterstützung bei distibutionsspezifischen Fragen liefern..</p>
+<p>Es gibt verschiedene Linux Distributionen (d.h. Zusammenstellungen
+von Softwarepaketen). In diesem Kurs nutzen wir als Standard
+<strong>Ubuntu</strong>, aber jedwede andere Distribution ist auch ok,
+aber wir können keine und nur begrenzte Unterstützung bei
+distibutionsspezifischen Fragen liefern..</p>
 <hr />
 <div id="ubuntu-in-windows-10" class="section level1">
 <h1>Ubuntu in Windows 10</h1>
-<p>Wer derzeit Windows 10 nutzt, kann ganz bequem “Linux als App” installieren, denn Windows 10 unterstützt direkt die Installation eines Linux Subsystems, quasi als zweites eingeschlossenes Betriebssystem. Die Basissoftware dazu heisst “Windows Subsystem Linux” (WSL) und ist mittlerweile in zwei Versionen verfügbar. WSL1 ist in der Regel direkt verfügbar. WSL2 ist neuer und schneller, braucht aber leistungsfähige Hardware und muss zusätzlich installiert/aktualisiert werden (siehe <a href="https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/">hier</a>).</p>
-<p>Für diesen Kurs ist WSL1 völlig ausreichend, sodass in den meisten Win10 Rechnern direkt Folgendes gemacht werden kann (Stand Sept. 2021):</p>
+<p>Wer derzeit Windows 10 nutzt, kann ganz bequem “Linux als App”
+installieren, denn Windows 10 unterstützt direkt die Installation eines
+Linux Subsystems, quasi als zweites eingeschlossenes Betriebssystem. Die
+Basissoftware dazu heisst “Windows Subsystem Linux” (WSL) und ist
+mittlerweile in zwei Versionen verfügbar. WSL1 ist in der Regel direkt
+verfügbar. WSL2 ist neuer und schneller, braucht aber leistungsfähige
+Hardware und muss zusätzlich installiert/aktualisiert werden (siehe <a
+href="https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/">hier</a>).</p>
+<p>Für diesen Kurs ist WSL1 völlig ausreichend, sodass in den meisten
+Win10 Rechnern direkt Folgendes gemacht werden kann (Stand
+Sept. 2021):</p>
 <ol style="list-style-type: decimal">
-<li>Microsoft Store App öffnen und die folgenden zwei Programme installieren:</li>
+<li>Microsoft Store App öffnen und die folgenden zwei Programme
+installieren:</li>
 <li>“Ubuntu 20.04 LTS” suchen und installieren
 <ul>
-<li>falls nicht verfügbar oder nicht möglich, ggf. noch <a href="https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/">WSL1 aktivieren</a><br />
+<li>falls nicht verfügbar oder nicht möglich, ggf. noch <a
+href="https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/">WSL1
+aktivieren</a><br />
 </li>
-<li>Diese “App” ist das Linux Subsystem, welches dann eine Eingabeaufforderung/Konsole bereitstellt, von der aus losgelegt werden kann.</li>
+<li>Diese “App” ist das Linux Subsystem, welches dann eine
+Eingabeaufforderung/Konsole bereitstellt, von der aus losgelegt werden
+kann.</li>
 </ul></li>
 <li>“Windows Terminal” suchen und installieren
 <ul>
-<li>Diese (optionale) App liefert eine leistungsfähigere Konsolenumgebung mit mehreren Tabs etc., was die Arbeit erleichtert</li>
-<li>Beachten sie: nach Installation können sie im Explorer in beliebigen Verzeichnissen mit “Rechtsklick” im Kontextmenü “Öffnen mit Windows Terminal” auswählen, und schon sind sie in der Konsole und an der richtigen Stelle!</li>
+<li>Diese (optionale) App liefert eine leistungsfähigere
+Konsolenumgebung mit mehreren Tabs etc., was die Arbeit erleichtert</li>
+<li>Beachten sie: nach Installation können sie im Explorer in beliebigen
+Verzeichnissen mit “Rechtsklick” im Kontextmenü “Öffnen mit Windows
+Terminal” auswählen, und schon sind sie in der Konsole und an der
+richtigen Stelle!</li>
 </ul></li>
 </ol>
 <hr />
@@ -410,26 +432,44 @@ div.tocify {
 </div>
 <div id="apple-user-aufgepasst" class="section level1">
 <h1>Apple User aufgepasst</h1>
-<p>Apple liefert aus lizenzrechtlichen Gründen nur eine <strong>veraltete Version der Bash</strong> aus, die teilweise für einige spätere Bash-Skripting Teile dieses Kurses nicht ausreicht (Version &gt;= 4 nötig; check via <code>bash --version</code>). Daher müssen sie (jetzt oder später, ich weise noch einmal darauf hin), ihre <em><a href="https://www.shell-tips.com/mac/upgrade-bash/">bash auf Mac OS aktualisieren</a></em> (<a href="https://itnext.io/upgrading-bash-on-macos-7138bd1066ba">Alternative Anleitung</a>).</p>
+<p>Apple liefert aus lizenzrechtlichen Gründen nur eine
+<strong>veraltete Version der Bash</strong> aus, die teilweise für
+einige spätere Bash-Skripting Teile dieses Kurses nicht ausreicht
+(Version &gt;= 4 nötig; check via <code>bash --version</code>). Daher
+müssen sie (jetzt oder später, ich weise noch einmal darauf hin), ihre
+<em><a href="https://www.shell-tips.com/mac/upgrade-bash/">bash auf Mac
+OS aktualisieren</a></em> (<a
+href="https://itnext.io/upgrading-bash-on-macos-7138bd1066ba">Alternative
+Anleitung</a>).</p>
 <hr />
 </div>
 <div id="nicht-als-root-arbeiten" class="section level1">
 <h1>Nicht als root arbeiten!</h1>
-<p>Falls sie in der Konsole als <strong>Benutzernamen root</strong> sehen (oder <code>echo $USER</code> dies ausgibt), dann sind sie als <strong>Adminstrator</strong> eingeloggt. Es ist anzuraten in einem <strong>eingeschränkten Benutzerkonto</strong> zu <strong>arbeiten</strong>!</p>
+<p>Falls sie in der Konsole als <strong>Benutzernamen root</strong>
+sehen (oder <code>echo $USER</code> dies ausgibt), dann sind sie als
+<strong>Adminstrator</strong> eingeloggt. Es ist anzuraten in einem
+<strong>eingeschränkten Benutzerkonto</strong> zu
+<strong>arbeiten</strong>!</p>
 <p>Hierzu empfehle ich zwei Schritte:</p>
 <ol style="list-style-type: decimal">
-<li>das neue Standardbenutzerkonto <strong>zuerst</strong> in ein “sudoer” Konto umwandeln, mit dem später z.B. auch noch Software nachinstalliert werden kann. Dazu
+<li>das neue Standardbenutzerkonto <strong>zuerst</strong> in ein
+“sudoer” Konto umwandeln, mit dem später z.B. auch noch Software
+nachinstalliert werden kann. Dazu
 <ul>
 <li>“root” Bash Konsole öffnen</li>
 <li><code>usermod -a -G sudo [IhrBenutzerName]</code> ausführen</li>
 </ul></li>
-<li>das Benutzerkonto zum Standardbenutzer machen (für WSL siehe unten).</li>
+<li>das Benutzerkonto zum Standardbenutzer machen (für WSL siehe
+unten).</li>
 </ol>
-<p>Der folgende Link zeigt, wie sie <a href="https://winaero.com/set-default-user-wsl-windows-10/">in Win10 den WSL Standardnutzer ändern</a>.</p>
+<p>Der folgende Link zeigt, wie sie <a
+href="https://winaero.com/set-default-user-wsl-windows-10/">in Win10 den
+WSL Standardnutzer ändern</a>.</p>
 <hr />
 <div id="welche-shell" class="section level2">
 <h2>Welche Shell?</h2>
-<p>Nachdem Linux installiert ist, sollen sie ihr erstes Abfrageergebnis (<code>echo $SHELL</code>) testen.</p>
+<p>Nachdem Linux installiert ist, sollen sie ihr erstes Abfrageergebnis
+(<code>echo $SHELL</code>) testen.</p>
 <p>Das ganze sollte ungefähr so aussehen:</p>
 <pre class="bash"><code>echo $SHELL</code></pre>
 <pre><code>## /bin/bash</code></pre>
@@ -437,18 +477,23 @@ div.tocify {
 </div>
 <div id="datendownload" class="section level2">
 <h2>Datendownload</h2>
-<p><strong>In der Konsole:</strong> <a href="https://swcarpentry.github.io/shell-novice/setup.html">Daten für Online Tutorials</a> herunterladen und auspacken</p>
+<p><strong>In der Konsole:</strong> <a
+href="https://swcarpentry.github.io/shell-novice/setup.html">Daten für
+Online Tutorials</a> herunterladen und auspacken</p>
 <ol style="list-style-type: decimal">
 <li>Konsole öffnen</li>
 <li>Ins Verzeichnis für temporäre Daten wechseln
 <ul>
 <li><code>cd /tmp</code></li>
 </ul></li>
-<li><a href="https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip">Tutorialdaten</a> herunterladen
+<li><a
+href="https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip">Tutorialdaten</a>
+herunterladen
 <ul>
 <li><code>wget https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip</code></li>
 </ul></li>
-<li>Falls ZIP noch nicht installiert ist (zB falls dies ein neues Ubuntu ist), dann noch schnell nachholen, in Ubuntu mit
+<li>Falls ZIP noch nicht installiert ist (zB falls dies ein neues Ubuntu
+ist), dann noch schnell nachholen, in Ubuntu mit
 <ul>
 <li><code>sudo apt install zip unzip</code></li>
 </ul></li>
@@ -457,12 +502,14 @@ div.tocify {
 <li><code>unzip shell-lesson-data.zip</code></li>
 </ul></li>
 </ol>
-<p>Um sicher zu gehen, dass alles geklappt hat, prüfen sie ob sie für diesen Befehl</p>
+<p>Um sicher zu gehen, dass alles geklappt hat, prüfen sie ob sie für
+diesen Befehl</p>
 <pre class="bash"><code>tail -n 1 /tmp/shell-lesson-data/exercise-data/numbers.txt</code></pre>
 <p>diese Ausgabe erhalten.</p>
 <pre><code>## 6</code></pre>
 <hr />
-<p>Download: <a href="install.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 25.05.2022.</p>
+<p>Download: <a href="install.pdf" title="Download PDF Version">PDF
+Version</a> dieses Tutorials. Erstellt am 05.07.2022.</p>
 </div>
 </div>
 

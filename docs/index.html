@@ -377,8 +377,12 @@ div.tocify {
 <hr />
 <div id="warum-die-konsole" class="section level1">
 <h1>Warum die Konsole</h1>
-<p>Bei der Verarbeitung von grossen Datenmengen oder einer Vielzahl von Dateien stößt man manuell oder ohne geeignete Hilfsmittel schnell an Grenzen der Machbarkeit. Daher hat sich gerade für Prozessierung von Text-Daten die Konsole mit einer Vielzahl von Programmen etabliert.</p>
-<p>In der konsolenbasierten Datenverarbeitung versucht man selbige in kleine Einzelschritte zu zergliedern, wie zum Beispiel</p>
+<p>Bei der Verarbeitung von grossen Datenmengen oder einer Vielzahl von
+Dateien stößt man manuell oder ohne geeignete Hilfsmittel schnell an
+Grenzen der Machbarkeit. Daher hat sich gerade für Prozessierung von
+Text-Daten die Konsole mit einer Vielzahl von Programmen etabliert.</p>
+<p>In der konsolenbasierten Datenverarbeitung versucht man selbige in
+kleine Einzelschritte zu zergliedern, wie zum Beispiel</p>
 <ul>
 <li>Teildaten extrahieren</li>
 <li>Filtern, Sortieren, Arrangieren</li>
@@ -386,32 +390,57 @@ div.tocify {
 <li>(De)Komprimieren</li>
 <li>…</li>
 </ul>
-<p>für die bereits zugeschnittene “kleine” Programme zur Verfügung stehen. Diese können dann in einer Pipe oder einem Skript “in Reihe” geschaltet werden, um den komplexen, individuellen Verarbeitungsprozess mit allgemeinen Bausteinen zusammenzusetzen. Die Konsole bietet darüber hinaus Möglichkeiten diese Workflows zu Verallgemeinern und iterativ auf beliebig viele Daten und Datenmengen anzuwenden.</p>
+<p>für die bereits zugeschnittene “kleine” Programme zur Verfügung
+stehen. Diese können dann in einer Pipe oder einem Skript “in Reihe”
+geschaltet werden, um den komplexen, individuellen Verarbeitungsprozess
+mit allgemeinen Bausteinen zusammenzusetzen. Die Konsole bietet darüber
+hinaus Möglichkeiten diese Workflows zu Verallgemeinern und iterativ auf
+beliebig viele Daten und Datenmengen anzuwenden.</p>
 <hr />
 </div>
 <div id="inhalte-des-kurses" class="section level1">
 <h1>Inhalte des Kurses</h1>
-<p>Dieser Kurs führt sie in die konsolenbasierte Datenverarbeitung ein. Konkreter werden wir Daten mit der BASH Konsole verarbeiten, diese anschliessend in eine SQLite Datenbank eingepflegen und am Ende diese mit einer Skriptsprache (R oder Python) abgefragen und visualiseren.</p>
-<p>Im Folgenden wird der Kursinhalt grafisch zusammengefasst. Die BASH-basierte Datenverarbeitung als auch der Datenbank-Teil definieren den Hauptteil des Kurses. Der Scripting-Teil dient eher als weiterführender Ausblick, was sie im Anschluss mit den Daten in R oder Python tun können.</p>
+<p>Dieser Kurs führt sie in die konsolenbasierte Datenverarbeitung ein.
+Konkreter werden wir Daten mit der BASH Konsole verarbeiten, diese
+anschliessend in eine SQLite Datenbank eingepflegen und am Ende diese
+mit einer Skriptsprache (R oder Python) abgefragen und visualiseren.</p>
+<p>Im Folgenden wird der Kursinhalt grafisch zusammengefasst. Die
+BASH-basierte Datenverarbeitung als auch der Datenbank-Teil definieren
+den Hauptteil des Kurses. Der Scripting-Teil dient eher als
+weiterführender Ausblick, was sie im Anschluss mit den Daten in R oder
+Python tun können.</p>
 <p><img src="index/BASH-Fahrplan_800_290.png" /></p>
-<p>Im Kurs implementieren wir dabei Schritt für Schritt einen beispielhaften Anwendungsfall. Ausgehend von einer Webseite, welche Daten in Form einer Tabelle beinhaltet, werden wir aus dieser mittels Kommandozeilenaufrufen die relevanten Informationen extrahieren, manipulieren und formatieren, sodass wir am Ende eine wohlformatierte CSV-Datei der eigentlichen Daten haben. Mit dieser werden wir eine SQLite Datenbank aufsetzen und in der Konsole mit entsprechenden SQL Befehlen abfragen. Zudem schnuppern wir am Ende des Kurses in die Datenbankabfrage mit Python/R und ihrer Visualisierung. Der Ablauf ist im Folgenden grafisch zusammengefasst.</p>
+<p>Im Kurs implementieren wir dabei Schritt für Schritt einen
+beispielhaften Anwendungsfall. Ausgehend von einer Webseite, welche
+Daten in Form einer Tabelle beinhaltet, werden wir aus dieser mittels
+Kommandozeilenaufrufen die relevanten Informationen extrahieren,
+manipulieren und formatieren, sodass wir am Ende eine wohlformatierte
+CSV-Datei der eigentlichen Daten haben. Mit dieser werden wir eine
+SQLite Datenbank aufsetzen und in der Konsole mit entsprechenden SQL
+Befehlen abfragen. Zudem schnuppern wir am Ende des Kurses in die
+Datenbankabfrage mit Python/R und ihrer Visualisierung. Der Ablauf ist
+im Folgenden grafisch zusammengefasst.</p>
 <p><img src="index/BASH-Fahrplan.Bsp_800_0.png" /></p>
 <hr />
 </div>
 <div id="was-können-sie-hinterher" class="section level1">
 <h1>Was können sie hinterher?</h1>
 <ul>
-<li>Sicheres bewegen in und verwalten von Datei- und Ordnerstrukturen</li>
-<li>Schnelle Datentransformation und -aufarbeitung mittels Konsolentools und -pipelines</li>
+<li>Sicheres bewegen in und verwalten von Datei- und
+Ordnerstrukturen</li>
+<li>Schnelle Datentransformation und -aufarbeitung mittels Konsolentools
+und -pipelines</li>
 <li>Automatisierung von Arbeitsabläufen und Datenanalysen</li>
 <li>Überblick über Datenbank-gestützte Datenverwaltung</li>
 </ul>
 <p>ggf.</p>
 <ul>
-<li>Einblick in die skriptbasierte Datenverarbeitung und deren Konsolenaufrufe</li>
+<li>Einblick in die skriptbasierte Datenverarbeitung und deren
+Konsolenaufrufe</li>
 </ul>
 <hr />
-<p>Download: <a href="index.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 25.05.2022.</p>
+<p>Download: <a href="index.pdf" title="Download PDF Version">PDF
+Version</a> dieses Tutorials. Erstellt am 05.07.2022.</p>
 </div>
 
 

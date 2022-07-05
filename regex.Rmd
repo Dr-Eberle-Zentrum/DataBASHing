@@ -16,31 +16,31 @@ Einführung von
 
 Zum Warmwerden gibts die folgenden Videos.
 
-[Video: Bashino - #02: was soll das Ganze & mehr von egrep [5 min]](http://www.youtube.com/watch?v=uDh2RGg0ybo?t=7)
+[Video: Bashino - #02: was soll das Ganze & mehr von egrep [5 min]](https://www.youtube.com/watch?v=uDh2RGg0ybo?t=7)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=uDh2RGg0ybo?t=7"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=uDh2RGg0ybo?t=7"
                    title="Bashino - #02: was soll das Ganze & mehr von egrep [5 min]"
-                   ><img src="http://img.youtube.com/vi/uDh2RGg0ybo/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/uDh2RGg0ybo/0.jpg"></a>')
 ```
 
 
-[Video: Bashino - #01 cat und egrep [11 min]](http://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7)
+[Video: Bashino - #01 cat und egrep [11 min]](https://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=nfdVQmS3e_Q?t=7"
                    title="Bashino - #01 cat und egrep [11 min]"
-                   ><img src="http://img.youtube.com/vi/nfdVQmS3e_Q/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/nfdVQmS3e_Q/0.jpg"></a>')
 ```
 
 
 
-[Video: Bashino - #10 mit sed suchen und ersetzen [7 min]](http://www.youtube.com/watch?v=wm35zPJOknI?t=7)
+[Video: Bashino - #10 mit sed suchen und ersetzen [7 min]](https://www.youtube.com/watch?v=wm35zPJOknI?t=7)
 
 ```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('<a href="http://www.youtube.com/watch?v=wm35zPJOknI?t=7"
+knitr::asis_output('<a href="https://www.youtube.com/watch?v=wm35zPJOknI?t=7"
                    title="Bashino - #10 mit sed suchen und ersetzen [7 min]"
-                   ><img src="http://img.youtube.com/vi/wm35zPJOknI/0.jpg"></a>')
+                   ><img src="https://img.youtube.com/vi/wm35zPJOknI/0.jpg"></a>')
 ```
 
 

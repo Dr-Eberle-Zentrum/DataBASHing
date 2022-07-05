@@ -375,34 +375,47 @@ div.tocify {
 
 
 <hr />
-<p>Dieses Tutorial führt sie Schritt für Schritt in die Konsolen-basierte Verwendung und Abfrage einer SQLite Datenbank ein. Grundlegende Kenntnisse über relationale Datenbanken und SQL Abfragen werden vorausgesetzt.</p>
+<p>Dieses Tutorial führt sie Schritt für Schritt in die
+Konsolen-basierte Verwendung und Abfrage einer SQLite Datenbank ein.
+Grundlegende Kenntnisse über relationale Datenbanken und SQL Abfragen
+werden vorausgesetzt.</p>
 <hr />
 <div id="beispieldaten" class="section level2">
 <h2>Beispieldaten</h2>
-<p>Zum Nachvollziehen der folgenden Schritte benötigen sie einige Dateien:</p>
+<p>Zum Nachvollziehen der folgenden Schritte benötigen sie einige
+Dateien:</p>
 <ul>
 <li>Komplettdatenbank: <a href="db/schokolade.db">schokolade.db</a></li>
-<li>Rohdaten im CSV-Format (basierend auf <a href="https://www.kaggle.com/rtatman/chocolate-bar-ratings">Chocolate Bar Ratings</a> Datensatz)
+<li>Rohdaten im CSV-Format (basierend auf <a
+href="https://www.kaggle.com/rtatman/chocolate-bar-ratings">Chocolate
+Bar Ratings</a> Datensatz)
 <ul>
-<li><a href="db/company.csv">company.csv</a> : Alle Firmen, die Schokoladen herstellen mit den Spalten:
+<li><a href="db/company.csv">company.csv</a> : Alle Firmen, die
+Schokoladen herstellen mit den Spalten:
 <ul>
 <li><code>id</code>: eindeutige Identifikationsnummer der Firma</li>
 <li><code>name</code>: Name der Firma</li>
 <li><code>country</code>: Land der Firma</li>
 </ul></li>
-<li><a href="db/review.csv">review.csv</a> : Alle Schokoladen-Reviews mit folgenden Spalten:
+<li><a href="db/review.csv">review.csv</a> : Alle Schokoladen-Reviews
+mit folgenden Spalten:
 <ul>
 <li><code>id</code>: eindeutige Identifikationsnummer des Reviews</li>
-<li><code>company_id</code>: Identifikationsnummer der Firma (Verweis auf die id in der Tabelle company), die diese Schokolade hergestellt hat</li>
+<li><code>company_id</code>: Identifikationsnummer der Firma (Verweis
+auf die id in der Tabelle company), die diese Schokolade hergestellt
+hat</li>
 <li><code>bar_name</code>: Name des Schokoriegels</li>
 <li><code>year</code>: Jahr des Reviews</li>
 <li><code>coca_pct</code>: Kakaoanteil zwischen 0 und 1</li>
 <li><code>rating</code>: Bewertung zwischen 1 und 5</li>
-<li><code>bean_type</code>: Kakaobohnen-Sorte (fehlt bei vielen Einträgen)</li>
-<li><code>bean_origin</code>: Kakaobohnen-Herkunft (fehlt bei vielen Einträgen)</li>
+<li><code>bean_type</code>: Kakaobohnen-Sorte (fehlt bei vielen
+Einträgen)</li>
+<li><code>bean_origin</code>: Kakaobohnen-Herkunft (fehlt bei vielen
+Einträgen)</li>
 </ul></li>
 </ul></li>
-<li>Datenbankdefinition: <a href="db/create_tables.sql">create_tables.sql</a></li>
+<li>Datenbankdefinition: <a
+href="db/create_tables.sql">create_tables.sql</a></li>
 </ul>
 <hr />
 </div>
@@ -413,8 +426,13 @@ div.tocify {
 </div>
 <div id="sqlite-unter-windows" class="section level2">
 <h2>SQLite unter Windows</h2>
-<p><a href="https://sqlite.org/download.html">https://sqlite.org/download.html</a></p>
-<p>Für Windows am besten <code>sqlite-tools-win32-x86-xxx.zip</code>. Entpacken in ein beliebiges Verzeichnis. Dieses Verzeichnis dann zur Windows-Umgebungsvariable „<code>Path</code>“ hinzufügen (<a href="https://ekiwi-blog.de/Windows/System/PATH-Variable_setzen/index.html">Wie geht das?</a>)</p>
+<p><a
+href="https://sqlite.org/download.html">https://sqlite.org/download.html</a></p>
+<p>Für Windows am besten <code>sqlite-tools-win32-x86-xxx.zip</code>.
+Entpacken in ein beliebiges Verzeichnis. Dieses Verzeichnis dann zur
+Windows-Umgebungsvariable „<code>Path</code>“ hinzufügen (<a
+href="https://ekiwi-blog.de/Windows/System/PATH-Variable_setzen/index.html">Wie
+geht das?</a>)</p>
 <hr />
 </div>
 <div id="ausprobieren" class="section level2">
@@ -425,23 +443,31 @@ div.tocify {
 </div>
 <div id="sqlite-konsole" class="section level2">
 <h2>SQLite Konsole</h2>
-<p>Nun starten wir SQLite Konsole mit einer Datenbank. Dafür einfach als Argument den Dateinamen (z.B. <a href="db/schokolade.db">schokolade.db</a>) der Datenbank übergeben:</p>
+<p>Nun starten wir SQLite Konsole mit einer Datenbank. Dafür einfach als
+Argument den Dateinamen (z.B. <a
+href="db/schokolade.db">schokolade.db</a>) der Datenbank übergeben:</p>
 <pre class="bash"><code>sqlite3 schokolade.db</code></pre>
-<p>Wenn die Datenbankdatei bereits existiert, wird sie geöffnet. Ansonsten wird eine neue Datenbank in dieser Datei angelegt.</p>
-<p>Nun sind wir in der SQLite Konsole, die Ausgabe sollte wie folgt aussehen:</p>
+<p>Wenn die Datenbankdatei bereits existiert, wird sie geöffnet.
+Ansonsten wird eine neue Datenbank in dieser Datei angelegt.</p>
+<p>Nun sind wir in der SQLite Konsole, die Ausgabe sollte wie folgt
+aussehen:</p>
 <pre class="sqlite"><code>SQLite version 3.37.2 2022-01-06 13:25:41
 Enter &quot;.help&quot; for usage hints.
 sqlite&gt;</code></pre>
 <p>Bei diesem Prompt kann man nun zwei Arten von Kommandos absetzen:</p>
 <ul>
-<li>SQL-Befehle zum Erzeugen der Tabellen, Erstellen von Abfragen, etc.</li>
-<li>„Dot-Kommandos“, das sind spezielle Steuerbefehle, die mit einem Punkt (dot) beginnen und mit denen man Einstellungen ändern kann oder Daten importieren kann</li>
+<li>SQL-Befehle zum Erzeugen der Tabellen, Erstellen von Abfragen,
+etc.</li>
+<li>„Dot-Kommandos“, das sind spezielle Steuerbefehle, die mit einem
+Punkt (dot) beginnen und mit denen man Einstellungen ändern kann oder
+Daten importieren kann</li>
 </ul>
 <hr />
 </div>
 <div id="dot-kommandos" class="section level2">
 <h2>Dot-Kommandos</h2>
-<p>Eine komplette Liste der Dot-Kommandos erhält man mit dem Kommando “<code>.help</code>” (hier nur eine Auswahl dargestellt):</p>
+<p>Eine komplette Liste der Dot-Kommandos erhält man mit dem Kommando
+“<code>.help</code>” (hier nur eine Auswahl dargestellt):</p>
 <pre class="sqlite"><code>sqlite&gt; .help
 .backup ?DB? FILE       Backup DB (default &quot;main&quot;) to FILE
 .cd DIRECTORY           Change the working directory to DIRECTORY
@@ -467,13 +493,19 @@ sqlite&gt;</code></pre>
 .show                   Show the current values for various settings
 .tables ?TABLE?         List names of tables matching LIKE pattern TABLE
 .width NUM1 NUM2 ...    Set minimum column widths for columnar output</code></pre>
-<p>Detaillierte Erklärungen aller Kommandos gibt es unter <a href="https://sqlite.org/cli.html">https://sqlite.org/cli.html</a></p>
+<p>Detaillierte Erklärungen aller Kommandos gibt es unter <a
+href="https://sqlite.org/cli.html">https://sqlite.org/cli.html</a></p>
 <hr />
 </div>
 <div id="datenbanktabellen-erzeugen" class="section level2">
 <h2>Datenbanktabellen erzeugen</h2>
-<p>Das Kommando “<code>.tables</code>” zeigt uns, dass die Datenbank noch leer ist. Daher erzeugen wir mal die Tabellen “<code>company</code>” und “<code>reviews</code>”.</p>
-<p>Dafür gibt es zwei Möglichkeiten: entweder die Kommandos in die Konsole schreiben, oder die Kommandos in eine Datei (z.B. <a href="db/create_tables.sql">create_tables.sql</a>) speichern und diese mit “<code>.read</code>” ausführen:</p>
+<p>Das Kommando “<code>.tables</code>” zeigt uns, dass die Datenbank
+noch leer ist. Daher erzeugen wir mal die Tabellen
+“<code>company</code>” und “<code>reviews</code>”.</p>
+<p>Dafür gibt es zwei Möglichkeiten: entweder die Kommandos in die
+Konsole schreiben, oder die Kommandos in eine Datei (z.B. <a
+href="db/create_tables.sql">create_tables.sql</a>) speichern und diese
+mit “<code>.read</code>” ausführen:</p>
 <pre class="sqlite"><code>sqlite&gt; .read create_tables.sql
 sqlite&gt; .tables
 company review</code></pre>
@@ -481,7 +513,11 @@ company review</code></pre>
 </div>
 <div id="daten-aus-csv-importieren" class="section level2">
 <h2>Daten aus CSV importieren</h2>
-<p>Die Tabellen sind nun angelegt aber leer. Man kann nun die Tabellen zeilenweise füllen mit dem SQL Kommando “<code>insert into</code>”, wir wollen aber lieber die Tabellen aus den CSV-Dateien füttern. Dafür gibt es das Kommando “<code>.import</code>”. Lassen wir uns mal die Hilfe zum Import anzeigen:</p>
+<p>Die Tabellen sind nun angelegt aber leer. Man kann nun die Tabellen
+zeilenweise füllen mit dem SQL Kommando “<code>insert into</code>”, wir
+wollen aber lieber die Tabellen aus den CSV-Dateien füttern. Dafür gibt
+es das Kommando “<code>.import</code>”. Lassen wir uns mal die Hilfe zum
+Import anzeigen:</p>
 <pre class="sqlite"><code>sqlite&gt; .help import
 .import FILE TABLE       Import data from FILE into TABLE
   Options:
@@ -496,11 +532,16 @@ company review</code></pre>
       from the &quot;.mode&quot; output mode
     * If FILE begins with &quot;|&quot; then it is a command that generates the
       input text.</code></pre>
-<p>Wir werden also die Option “<code>--csv</code>” verwenden, und die erste Zeile (Spaltennamen) mittels “<code>--skip 1</code>” übergehen. Wenn keine Fehlermeldung kommt, kann man davon ausgehen, dass alles funktioniert hat. Wir gucken trotzdem wie viele Zeilen in company eingetragen wurden:</p>
+<p>Wir werden also die Option “<code>--csv</code>” verwenden, und die
+erste Zeile (Spaltennamen) mittels “<code>--skip 1</code>” übergehen.
+Wenn keine Fehlermeldung kommt, kann man davon ausgehen, dass alles
+funktioniert hat. Wir gucken trotzdem wie viele Zeilen in company
+eingetragen wurden:</p>
 <pre class="sqlite"><code>sqlite&gt; .import --csv --skip 1 company.csv company
 sqlite&gt; select count(*) from company;
 418</code></pre>
-<p>Das gleiche noch mit den Reviews, und voila die Datenbank ist gefüllt und bereit für unsere Abfragen:</p>
+<p>Das gleiche noch mit den Reviews, und voila die Datenbank ist gefüllt
+und bereit für unsere Abfragen:</p>
 <pre class="sqlite"><code>sqlite&gt; .import --csv --skip 1 review.csv review
 sqlite&gt; select count(*) from review;
 1795</code></pre>
@@ -509,13 +550,16 @@ sqlite&gt; select count(*) from review;
 <div id="quiz" class="section level5">
 <h5>Quiz</h5>
 <div class="question">
-<p>Warum haben wir erst “<code>company</code>” und dann erst “<code>review</code>” gefüllt?</p>
+<p>Warum haben wir erst “<code>company</code>” und dann erst
+“<code>review</code>” gefüllt?</p>
 </div>
 </div>
 <div id="antwort" class="section level5">
 <h5>Antwort</h5>
 <div class="answer">
-<p>Da die Einträge in Spalte “<code>company_id</code>” in Tabelle “<code>review</code>” auf die <code>id</code> Daten in “<code>company</code>” verweisen.</p>
+<p>Da die Einträge in Spalte “<code>company_id</code>” in Tabelle
+“<code>review</code>” auf die <code>id</code> Daten in
+“<code>company</code>” verweisen.</p>
 </div>
 </div>
 </div>
@@ -526,7 +570,9 @@ sqlite&gt; select count(*) from review;
 </div>
 <div id="abfragen" class="section level2">
 <h2>Abfragen</h2>
-<p>Man kann nun Abfragen in SQL formulieren, die Ergebnisse werden entsprechend ausgegeben, z.B. Jahreszahl und Bewertung aller Reviews für Schokoladen aus Vietnam:</p>
+<p>Man kann nun Abfragen in SQL formulieren, die Ergebnisse werden
+entsprechend ausgegeben, z.B. Jahreszahl und Bewertung aller Reviews für
+Schokoladen aus Vietnam:</p>
 <pre class="sqlite"><code>sqlite&gt; select year, rating from review where bean_origin = &quot;Vietnam&quot;;
 2014|2.75
 2017|3.5
@@ -539,7 +585,9 @@ sqlite&gt; select count(*) from review;
 2015|3.25
 2015|3.25
 2012|3.5</code></pre>
-<p>Wir sehen die Ausgabe ist ohne Spaltenüberschrift und das verwendete Trennzeichen ist die Pipe. Das kann man mit den Kommandos .headers und .separator ändern, z.B. mit Tabulator als Trennzeichen:</p>
+<p>Wir sehen die Ausgabe ist ohne Spaltenüberschrift und das verwendete
+Trennzeichen ist die Pipe. Das kann man mit den Kommandos .headers und
+.separator ändern, z.B. mit Tabulator als Trennzeichen:</p>
 <pre class="sqlite"><code>sqlite&gt; .headers on
 sqlite&gt; .separator &quot;\t&quot;
 sqlite&gt; select year, rating from review where bean_origin = &#39;Vietnam&#39;;
@@ -559,7 +607,10 @@ year rating
 </div>
 <div id="modus" class="section level2">
 <h2>Modus</h2>
-<p>Das Format der Ausgabe von Abfrageergebnissen kann man unter anderem über das Kommando “<code>.mode</code>” voreinstellen. Der Standardmodus ist “<code>list</code>”, man kann aber z.B. auch CSV oder als Tabelle ausgeben lassen:</p>
+<p>Das Format der Ausgabe von Abfrageergebnissen kann man unter anderem
+über das Kommando “<code>.mode</code>” voreinstellen. Der Standardmodus
+ist “<code>list</code>”, man kann aber z.B. auch CSV oder als Tabelle
+ausgeben lassen:</p>
 <pre class="sqlite"><code>sqlite&gt; .help mode
 .mode MODE ?TABLE? Set output mode
   MODE is one of:
@@ -577,14 +628,18 @@ year rating
     table       ASCII-art table
     tabs        Tab-separated values
     tcl         TCL list elements</code></pre>
-<p>Wollen wir beispielsweise ein Abfrageergebnis als CSV-Datei speichern, so stellen wir den Ausgabemodus auf “<code>csv</code>” und verwenden das Kommando “<code>.once</code>” um die Ausgabe in eine Datei zu leiten:</p>
+<p>Wollen wir beispielsweise ein Abfrageergebnis als CSV-Datei
+speichern, so stellen wir den Ausgabemodus auf “<code>csv</code>” und
+verwenden das Kommando “<code>.once</code>” um die Ausgabe in eine Datei
+zu leiten:</p>
 <pre class="sqlite"><code>sqlite&gt; .once ergebnis.csv
 sqlite&gt; select year, rating from review where bean_origin = &#39;Vietnam&#39;;</code></pre>
 <hr />
 </div>
 <div id="über-kommandozeile-steuern" class="section level2">
 <h2>Über Kommandozeile steuern</h2>
-<p>Um SQLite in einen Verarbeitungspipeline zu verwenden, kann man SQLite auch ohne interaktive Konsole verwenden:</p>
+<p>Um SQLite in einen Verarbeitungspipeline zu verwenden, kann man
+SQLite auch ohne interaktive Konsole verwenden:</p>
 <pre class="sqlite"><code>&gt; sqlite3 -help
 Usage: sqlite3 [OPTIONS] FILENAME [SQL]
 FILENAME is the name of an SQLite database. A new database is created
@@ -629,17 +684,25 @@ OPTIONS include:
   -version             show SQLite version
   -vfs NAME            use NAME as the default VFS
   -zip                 open the file as a ZIP Archive</code></pre>
-<p>(Je nach verwendeter SQLite-Version können bei Ihnen weniger oder mehr als die hier gelisteten Optionen möglich sein.)</p>
-<p>Nun wollen wir das Ergebnis unserer Vietnam-Abfrage direkt in der BASH ausgeben lassen (ohne interaktive SQLite-Konsole):</p>
+<p>(Je nach verwendeter SQLite-Version können bei Ihnen weniger oder
+mehr als die hier gelisteten Optionen möglich sein.)</p>
+<p>Nun wollen wir das Ergebnis unserer Vietnam-Abfrage direkt in der
+BASH ausgeben lassen (ohne interaktive SQLite-Konsole):</p>
 <pre class="bash"><code>$ sqlite3 -csv -readonly schokolade.db \
  &quot;select year, rating from review where bean_origin = &#39;Vietnam&#39;&quot;</code></pre>
-<p><em>Beachten</em>: das “<code>\</code>” am Zeilenende führt zum Ignorieren des Zeilenumbruchs, sodass der Befehl in der nächsten Zeile fortgeführt werden kann. (Aber nur, wenn nach dem “<code>\</code>” kein weiteres Leerzeichen etc. sondern direkt der Zeilenumbruch folgt!)</p>
+<p><em>Beachten</em>: das “<code>\</code>” am Zeilenende führt zum
+Ignorieren des Zeilenumbruchs, sodass der Befehl in der nächsten Zeile
+fortgeführt werden kann. (Aber nur, wenn nach dem “<code>\</code>” kein
+weiteres Leerzeichen etc. sondern direkt der Zeilenumbruch folgt!)</p>
 <hr />
 </div>
 <div id="csv-datenbank-csv" class="section level2">
 <h2>CSV | Datenbank | CSV</h2>
-<p>Nun wollen wir ein CSV-File in eine temporäre SQLite-Datenbank füttern und anschließend eine Abfrage machen, deren Ergebnis als CSV ausgegeben wird.</p>
-<p>Gucken wir zunächst in die CSV-Datei review.csv, die ersten paar Zeilen sehen wie folgt aus:</p>
+<p>Nun wollen wir ein CSV-File in eine temporäre SQLite-Datenbank
+füttern und anschließend eine Abfrage machen, deren Ergebnis als CSV
+ausgegeben wird.</p>
+<p>Gucken wir zunächst in die CSV-Datei review.csv, die ersten paar
+Zeilen sehen wie folgt aus:</p>
 <pre class="bash"><code>$ head -n 10 review.csv</code></pre>
 <pre><code>id,company_id,bar_name,year,cocoa_pct,rating,bean_type,bean_origin
 436,1,&quot;Agua Grande&quot;,2016,0.63,3.75,,&quot;Sao Tome&quot;
@@ -651,7 +714,9 @@ OPTIONS include:
 442,1,Cuba,2014,0.7,3.5,,Cuba
 443,1,&quot;Sur del Lago&quot;,2014,0.7,3.5,Criollo,Venezuela
 444,1,&quot;Puerto Cabello&quot;,2014,0.7,3.75,Criollo,Venezuela</code></pre>
-<p>Jetzt pipen wir die komplette CSV-Datei in eine temporäre SQLite-Datenbank, führen die SQL Abfrage aus und gucken uns die ersten 10 Zeilen des Ergebnisses an:</p>
+<p>Jetzt pipen wir die komplette CSV-Datei in eine temporäre
+SQLite-Datenbank, führen die SQL Abfrage aus und gucken uns die ersten
+10 Zeilen des Ergebnisses an:</p>
 <pre class="bash"><code>$ cat review.csv | sqlite3 :memory: &quot;.mode csv&quot; &quot;.import /dev/stdin review&quot; \
 &quot;select year, rating from review where bean_origin = &#39;Vietnam&#39;&quot; | head -n 10</code></pre>
 <pre><code>2014,2.75
@@ -664,24 +729,43 @@ OPTIONS include:
 2016,2.75
 2016,3.0
 2016,3.5</code></pre>
-<p>Um zu erklären, was bei obigen Aufruf von sqlite3 passiert, wird dieser im Folgenden nochmal in seine Teile zerlegt und diskutiert:</p>
+<p>Um zu erklären, was bei obigen Aufruf von sqlite3 passiert, wird
+dieser im Folgenden nochmal in seine Teile zerlegt und diskutiert:</p>
 <pre class="bash"><code>sqlite3 \
 :memory: \
 &quot;.mode csv&quot; \
 &quot;.import /dev/stdin review&quot; \
 &quot;select year, rating from review where bean_origin = &#39;Vietnam&#39;&quot;</code></pre>
 <ul>
-<li><code>:memory:</code> ist ein spezieller “Dateiname” in SQLite, der andeutet, dass wir die Datenbank nicht in eine Datei auf den Datenträger speichern wollen, sondern mit einer temporären In-Memory-Datenbank arbeiten wollen, die so lange im Arbeitsspeicher existiert, wie das sqlite3 Kommando läuft.</li>
-<li><code>".mode csv"</code> müssen wir vor dem Import-Kommando verwenden, um CSV importieren zu können, und auch um CSV ausgeben zu lassen. Diese Notwendigkeit ergibt sich aus der Dokumentation: <em>„Note that it is important to set the “mode” to “csv” before running the “.import” command. This is necessary to prevent the command-line shell from trying to interpret the input file text as some other format.“</em></li>
-<li><code>".import /dev/stdin review"</code> veranlasst SQLite, von /dev/stdin zu lesen; das ist die Standardeingabe, also das was via cat review.csv an sqlite3 geliefert wird. Das CSV soll in die Tabelle review importiert werden.</li>
-<li><code>"select ..."</code> ist die SQL-Abfrage, die wir ausführen wollen.</li>
+<li><code>:memory:</code> ist ein spezieller “Dateiname” in SQLite, der
+andeutet, dass wir die Datenbank nicht in eine Datei auf den Datenträger
+speichern wollen, sondern mit einer temporären In-Memory-Datenbank
+arbeiten wollen, die so lange im Arbeitsspeicher existiert, wie das
+sqlite3 Kommando läuft.</li>
+<li><code>".mode csv"</code> müssen wir vor dem Import-Kommando
+verwenden, um CSV importieren zu können, und auch um CSV ausgeben zu
+lassen. Diese Notwendigkeit ergibt sich aus der Dokumentation: <em>„Note
+that it is important to set the “mode” to “csv” before running the
+“.import” command. This is necessary to prevent the command-line shell
+from trying to interpret the input file text as some other
+format.“</em></li>
+<li><code>".import /dev/stdin review"</code> veranlasst SQLite, von
+/dev/stdin zu lesen; das ist die Standardeingabe, also das was via cat
+review.csv an sqlite3 geliefert wird. Das CSV soll in die Tabelle review
+importiert werden.</li>
+<li><code>"select ..."</code> ist die SQL-Abfrage, die wir ausführen
+wollen.</li>
 </ul>
-<p>Um beispielsweise die Anzahl der Zeilen im Abfrageergebnis zu ermitteln, können wir den Output von sqlite3 zum Zeilenzählen an <code>wc</code> pipen, und sehen es gibt 38 Reviews von vietnamesischen Schokoladen:</p>
+<p>Um beispielsweise die Anzahl der Zeilen im Abfrageergebnis zu
+ermitteln, können wir den Output von sqlite3 zum Zeilenzählen an
+<code>wc</code> pipen, und sehen es gibt 38 Reviews von vietnamesischen
+Schokoladen:</p>
 <pre class="bash"><code>$ cat review.csv | sqlite3 :memory: &quot;.mode csv&quot; &quot;.import /dev/stdin review&quot; \
 &quot;select * from review where bean_origin = &#39;Vietnam&#39;&quot; | wc -l</code></pre>
 <pre><code>38</code></pre>
 <hr />
-<p>Download: <a href="db.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 25.05.2022.</p>
+<p>Download: <a href="db.pdf" title="Download PDF Version">PDF
+Version</a> dieses Tutorials. Erstellt am 05.07.2022.</p>
 </div>
 
 
