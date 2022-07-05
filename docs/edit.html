@@ -377,14 +377,21 @@ div.tocify {
 <hr />
 <p>Einführung von</p>
 <ul>
-<li><code>awk</code> in <a href="#zeilenweise-daten-verarbeiten">Zeilenweise Daten verarbeiten</a></li>
-<li><code>vim, nano</code> in <a href="#editoren-in-der-shell">Editoren in der Shell</a></li>
+<li><code>awk</code> in <a
+href="#zeilenweise-daten-verarbeiten">Zeilenweise Daten
+verarbeiten</a></li>
+<li><code>vim, nano</code> in <a href="#editoren-in-der-shell">Editoren
+in der Shell</a></li>
 </ul>
-<p><a href="http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7">Video: Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]</a></p>
+<p><a href="http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7">Video:
+Bashino - #09 Spalten verschieben und filtern mit awk und tr [6
+min]</a></p>
 <p><a href="http://www.youtube.com/watch?v=Swtrh7z6FnE?t=7"
                    title="Bashino - #09 Spalten verschieben und filtern mit awk und tr [6 min]"
                    ><img src="http://img.youtube.com/vi/Swtrh7z6FnE/0.jpg"></a></p>
-<p><a href="http://www.youtube.com/watch?v=M28zU56xWHY?t=7">Video: Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]</a></p>
+<p><a href="http://www.youtube.com/watch?v=M28zU56xWHY?t=7">Video:
+Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2
+irrelevant]</a></p>
 <p><a href="http://www.youtube.com/watch?v=M28zU56xWHY?t=7"
                    title="Bashinho - #08 Texteditoren in der Bash [9 min - letzten 2 irrelevant]"
                    ><img src="http://img.youtube.com/vi/M28zU56xWHY/0.jpg"></a></p>
@@ -392,15 +399,22 @@ div.tocify {
 <div id="zeilenweise-daten-verarbeiten" class="section level1">
 <h1>Zeilenweise Daten verarbeiten</h1>
 <ul>
-<li><code>awk</code> = “Programmiersprache” zur (<strong>zeilenweisen</strong>) Datenverarbeitung
+<li><code>awk</code> = “Programmiersprache” zur
+(<strong>zeilenweisen</strong>) Datenverarbeitung
 <ul>
-<li>Programme entweder direkt im Aufruf (<code>echo "A B" | awk '{print $2}'</code>) oder in Datei definiert (<code>awk -f programFile</code>)
+<li>Programme entweder direkt im Aufruf
+(<code>echo "A B" | awk '{print $2}'</code>) oder in Datei definiert
+(<code>awk -f programFile</code>)
 <ul>
-<li>Programme im Direktaufruf immer mit single tick <code>'</code> quoten “<code>-F</code>” = field separator zur spaltenweisen Datentrennung pro Zeile (setzt “<code>FS</code>” und “<code>OFS</code>” Variable, siehe unten)</li>
+<li>Programme im Direktaufruf immer mit single tick <code>'</code>
+quoten “<code>-F</code>” = field separator zur spaltenweisen
+Datentrennung pro Zeile (setzt “<code>FS</code>” und “<code>OFS</code>”
+Variable, siehe unten)</li>
 </ul></li>
 <li>Variablen
 <ul>
-<li>Spaltenelemente mittel <code>$SPALTENNUMMER</code> ansprechbar; <code>$0</code> = ganze Zeile</li>
+<li>Spaltenelemente mittel <code>$SPALTENNUMMER</code> ansprechbar;
+<code>$0</code> = ganze Zeile</li>
 <li>lokale Variablen via Zuweisung mit “<code>=</code>” angelegt
 <ul>
 <li><code>echo 4 | awk '{i=$1+2; print i}'</code></li>
@@ -408,14 +422,21 @@ div.tocify {
 <li>Spaltenelemente/-variablen können auch überschrieben werden!!
 <ul>
 <li><code>echo A B | awk '{$2="D"; print $0}'</code></li>
-<li><code>$0</code> = Zusammensetzung der aktuellen Spaltenelemente/Felder mit aktuellem (output) field separator (<code>OFS</code>) (kann auch geändert werden)</li>
+<li><code>$0</code> = Zusammensetzung der aktuellen
+Spaltenelemente/Felder mit aktuellem (output) field separator
+(<code>OFS</code>) (kann auch geändert werden)</li>
 </ul></li>
-<li><code>NF</code> = Anzahl Spalten (<code>$NF</code> = letzte Spalte) (number of fields)
+<li><code>NF</code> = Anzahl Spalten (<code>$NF</code> = letzte Spalte)
+(number of fields)
 <ul>
-<li>z.B. letzte Spalte ausgeben (<code>echo A B | awk '{print $NF}'</code>)</li>
-<li>oder Anzahl Spalten ausgeben (<code>echo A B | awk '{print NF}'</code>)</li>
+<li>z.B. letzte Spalte ausgeben
+(<code>echo A B | awk '{print $NF}'</code>)</li>
+<li>oder Anzahl Spalten ausgeben
+(<code>echo A B | awk '{print NF}'</code>)</li>
 </ul></li>
-<li><code>NR</code> = aktuelle Zeilennummer (number of rows), z.B. zeilennumerierte Ausgabe (<code>ls -l | awk '{print "Zeile "NR" : "$0}'</code>)</li>
+<li><code>NR</code> = aktuelle Zeilennummer (number of rows), z.B.
+zeilennumerierte Ausgabe
+(<code>ls -l | awk '{print "Zeile "NR" : "$0}'</code>)</li>
 <li><code>FS</code> = verwendetes Spaltentrennzeichen (field separator)
 <ul>
 <li>entweder via “<code>-F</code>” setzen (setzt auch OFS)<br />
@@ -423,7 +444,9 @@ z.B. <code>echo "A;B" | awk -F ";" '{print $1}'</code></li>
 <li>oder explizit für alle Zeilen vorm Einlesen<br />
 z.B. <code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code></li>
 </ul></li>
-<li><code>OFS</code> = aktuelles Spaltentrennzeichen der Ausgabe (output field separator); muss (für alle Zeilen) im “<code>BEGIN</code>”-block (siehe unten) gesetzt werden
+<li><code>OFS</code> = aktuelles Spaltentrennzeichen der Ausgabe (output
+field separator); muss (für alle Zeilen) im “<code>BEGIN</code>”-block
+(siehe unten) gesetzt werden
 <ul>
 <li><code>echo "A B" | awk 'BEGIN{OFS=":"}{print $1,"lala"}'</code></li>
 </ul></li>
@@ -433,7 +456,9 @@ z.B. <code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code></li>
 <ul>
 <li><code>echo "Hans Peter" | awk '{print "Name="$2"\nVorname="$1}'</code></li>
 <li>Ausgaben mit <strong>double tick</strong> <code>"</code> quoten</li>
-<li><strong>Variablen nicht in quotes</strong> einschliessen (stehen vor/zwischen/hinter den gequoteten Strings, siehe obiges Beispiel oder hier nachfolgend)</li>
+<li><strong>Variablen nicht in quotes</strong> einschliessen (stehen
+vor/zwischen/hinter den gequoteten Strings, siehe obiges Beispiel oder
+hier nachfolgend)</li>
 </ul></li>
 <li><code>printf</code> = Ausgabe OHNE Zeilenumbruch
 <ul>
@@ -441,10 +466,14 @@ z.B. <code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code></li>
 </ul></li>
 <li>Kontrollstrukturen
 <ul>
-<li><code>if( NR%2 == 0 ) {print "gerade"} else {print $0}</code> = <strong>if</strong> conditional</li>
-<li><code>for( i=0; i&lt;5; i++ ) { printf " i="i; }</code> = <strong>for</strong> looping</li>
+<li><code>if( NR%2 == 0 ) {print "gerade"} else {print $0}</code> =
+<strong>if</strong> conditional</li>
+<li><code>for( i=0; i&lt;5; i++ ) { printf " i="i; }</code> =
+<strong>for</strong> looping</li>
 </ul></li>
-<li>Vor- und Nachbereitung der Ausgabe (z.B. für Kopf-/Fusszeilen oder zum initialisieren von Variablen) mittels “<code>BEGIN{}</code>” und “<code>END{}</code>”-Block (jeweils optional),
+<li>Vor- und Nachbereitung der Ausgabe (z.B. für Kopf-/Fusszeilen oder
+zum initialisieren von Variablen) mittels “<code>BEGIN{}</code>” und
+“<code>END{}</code>”-Block (jeweils optional),
 <ul>
 <li><code>echo "Doe,John" | awk -F "," 'BEGIN{print "Vor Nach"}{print $2" "$1}END{print "#Ende"}'</code></li>
 </ul></li>
@@ -455,20 +484,28 @@ z.B. <code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code></li>
 <h2>&gt; Tutorials &lt;</h2>
 <p>Folgende kompakte Online awk Tutorials sind ein guter Einstieg</p>
 <ul>
-<li><a href="https://riptutorial.com/awk/topic/937/getting-started-with-awk">Getting started with awk</a> von riptutorial.com</li>
-<li><a href="https://riptutorial.com/awk/example/28060/extract-specific-column-field-from-specific-line">Extract specific column/field from specific line</a> von riptutorial.com</li>
+<li><a
+href="https://riptutorial.com/awk/topic/937/getting-started-with-awk">Getting
+started with awk</a> von riptutorial.com</li>
+<li><a
+href="https://riptutorial.com/awk/example/28060/extract-specific-column-field-from-specific-line">Extract
+specific column/field from specific line</a> von riptutorial.com</li>
 </ul>
 <hr />
 </div>
 </div>
 <div id="editoren-in-der-shell" class="section level1">
 <h1>Editoren in der Shell</h1>
-<p>Warum bzw. wann muss man sich mit Kommandozeileneditoren herumschlagen?</p>
+<p>Warum bzw. wann muss man sich mit Kommandozeileneditoren
+herumschlagen?</p>
 <ul>
 <li>weil man ein Nerd ist und es kann…</li>
-<li>weil das Betriebssystem keine graphische Benutzeroberfläche hat (z.B. high performance Rechencluster etc.)</li>
+<li>weil das Betriebssystem keine graphische Benutzeroberfläche hat
+(z.B. high performance Rechencluster etc.)</li>
 <li>weil die (Inter)netzverbindung schlecht ist</li>
-<li>weil man keine Maus braucht und ggf. damit “mal schnell(er)” was ändern kann (man ist ja schon vor Ort und muss sich nicht erst im “Datei öffnen”-Menü hinwühlen)</li>
+<li>weil man keine Maus braucht und ggf. damit “mal schnell(er)” was
+ändern kann (man ist ja schon vor Ort und muss sich nicht erst im “Datei
+öffnen”-Menü hinwühlen)</li>
 <li>…</li>
 </ul>
 <div id="vim" class="section level2">
@@ -479,35 +516,50 @@ z.B. <code>echo "A;B" | awk 'BEGIN{FS=";"}{print $1}'</code></li>
 <li><strong>ESC</strong>-Taste = Wechsel in den “Kommandomodus”</li>
 <li>im Kommandomodus
 <ul>
-<li>Taste “<strong>i</strong>” oder “<strong>a</strong>” = Wechsel in den “Einfügemodus” (insert/append), d.h. Eingaben werden an der Cursorposition eingefügt</li>
-<li>Taste “<strong>R</strong>” = Wechsel in den “Überschreibmodus” (replace), d.h. Eingaben überschreiben die aktuelle Cursorposition</li>
+<li>Taste “<strong>i</strong>” oder “<strong>a</strong>” = Wechsel in
+den “Einfügemodus” (insert/append), d.h. Eingaben werden an der
+Cursorposition eingefügt</li>
+<li>Taste “<strong>R</strong>” = Wechsel in den “Überschreibmodus”
+(replace), d.h. Eingaben überschreiben die aktuelle Cursorposition</li>
 <li>“<code>:</code>”-Präfix leitet Kommandos ein, z.B.
 <ul>
 <li>“<code>:w</code>” = speichert die aktuelle Datei (write)</li>
-<li>“<code>:w myFile.txt</code>” = speichert den Inhalt in Datei “myFile.txt”</li>
-<li>“<code>:w!</code>” = überschreiben der Datei auch wenn geschützt etc.</li>
-<li>“<code>:q</code>” = <strong>beendet vim</strong> (quit); nicht möglich bei ungespeicherten Änderungen</li>
-<li>“<code>:q!</code>” = wirklich beenden und ungespeicherte Änderungen gehen verloren</li>
+<li>“<code>:w myFile.txt</code>” = speichert den Inhalt in Datei
+“myFile.txt”</li>
+<li>“<code>:w!</code>” = überschreiben der Datei auch wenn geschützt
+etc.</li>
+<li>“<code>:q</code>” = <strong>beendet vim</strong> (quit); nicht
+möglich bei ungespeicherten Änderungen</li>
+<li>“<code>:q!</code>” = wirklich beenden und ungespeicherte Änderungen
+gehen verloren</li>
 <li>“<code>:wq</code>” = speichern und beenden (in einem Rutsch)</li>
 </ul></li>
 <li>“<code>d</code>”+ENTER = löscht aktuelle Zeile</li>
-<li>“<code>d2</code>”+ENTER = löscht aktuelle plus 2 Folgezeilen (also 3!)</li>
+<li>“<code>d2</code>”+ENTER = löscht aktuelle plus 2 Folgezeilen (also
+3!)</li>
 </ul></li>
 </ul></li>
 </ul>
-<p>Wer sich an vim versuchen will, sollte das schon direkt in Linux vorhandene “vim tutorial” bearbeiten, in dem man einfach <code>vimtutor</code> in der Konsole eingibt/aufruft!</p>
+<p>Wer sich an vim versuchen will, sollte das schon direkt in Linux
+vorhandene “vim tutorial” bearbeiten, in dem man einfach
+<code>vimtutor</code> in der Konsole eingibt/aufruft!</p>
 </div>
 <div id="nano" class="section level2">
 <h2>nano</h2>
-<p><code>nano</code> ist ein alternativer Editor zu <code>vim</code>, welcher einen anderen Befehlssatz bzw. eine andere Nutzerführung verwendet.</p>
-<p>Um mit <code>nano</code> vertraut zu werden, sollte man einen ersten Blick auf dessen <strong>eingebaute Hilfe</strong> werfen. Dazu</p>
+<p><code>nano</code> ist ein alternativer Editor zu <code>vim</code>,
+welcher einen anderen Befehlssatz bzw. eine andere Nutzerführung
+verwendet.</p>
+<p>Um mit <code>nano</code> vertraut zu werden, sollte man einen ersten
+Blick auf dessen <strong>eingebaute Hilfe</strong> werfen. Dazu</p>
 <ul>
 <li><code>nano</code> aufrufen</li>
 <li>mit “STRG+G” die Hilfe aufrufen</li>
-<li>mit “STRG+X” kann man diese und anschliessen das Programm verlassen</li>
+<li>mit “STRG+X” kann man die Hilfe und anschliessend den Texteditor
+<code>nano</code> verlassen</li>
 </ul>
 <hr />
-<p>Download: <a href="edit.pdf" title="Download PDF Version">PDF Version</a> dieses Tutorials. Erstellt am 25.05.2022.</p>
+<p>Download: <a href="edit.pdf" title="Download PDF Version">PDF
+Version</a> dieses Tutorials. Erstellt am 05.07.2022.</p>
 </div>
 </div>
 
