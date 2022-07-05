@@ -122,7 +122,7 @@ Um mit `nano` vertraut zu werden, sollte man einen ersten Blick auf dessen **ein
 
 -    `nano` aufrufen
 -    mit "STRG+G" die Hilfe aufrufen
--    mit "STRG+X" kann man diese und anschliessen das Programm verlassen
+-    mit "STRG+X" kann man die Hilfe und anschliessend den Texteditor `nano` verlassen
     
 
 
