@@ -18,7 +18,7 @@ Wer derzeit Windows 10 nutzt, kann ganz bequem "Linux als App" installieren, den
 Für diesen Kurs ist WSL1 völlig ausreichend, sodass in den meisten Win10 Rechnern direkt Folgendes gemacht werden kann (Stand Sept. 2021):
 
 1.    Microsoft Store App öffnen und die folgenden zwei Programme installieren:
-2.    "Ubuntu 20.04 LTS" suchen und installieren 
+2.    "Ubuntu" suchen und installieren 
       - falls nicht verfügbar oder nicht möglich, ggf. noch [WSL1 aktivieren](https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/)  
       - Diese "App" ist das Linux Subsystem, welches dann eine Eingabeaufforderung/Konsole bereitstellt, von der aus losgelegt werden kann.
 3.    "Windows Terminal" suchen und installieren  
