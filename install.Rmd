@@ -21,6 +21,10 @@ Für diesen Kurs ist WSL1 völlig ausreichend, sodass in den meisten Win10 Rechn
 2.    "Ubuntu" suchen und installieren 
       - falls nicht verfügbar oder nicht möglich, ggf. noch [WSL1 aktivieren](https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/)  
       - Diese "App" ist das Linux Subsystem, welches dann eine Eingabeaufforderung/Konsole bereitstellt, von der aus losgelegt werden kann.
+      - es ist möglich, dass auf dem System schon WSL2 aktiviert ist und sie in gruselige Fehlermeldungen ala `WslRegisterDistribution failed with error: 0x80370102` bekommen. In diesem Fall kann man wieder [auf WSL1 "downgraden"](https://learn.microsoft.com/de-de/windows/wsl/install):
+           - PowerShell öffnen
+           - `wsl --set-default-version 1` eingeben
+           - Ubuntu App neu starten
 3.    "Windows Terminal" suchen und installieren  
       - Diese (optionale) App liefert eine leistungsfähigere Konsolenumgebung mit mehreren Tabs etc., was die Arbeit erleichtert
       - Beachten sie: nach Installation können sie im Explorer in beliebigen Verzeichnissen mit "Rechtsklick" im Kontextmenü "Öffnen mit Windows Terminal" auswählen, und schon sind sie in der Konsole und an der richtigen Stelle!
