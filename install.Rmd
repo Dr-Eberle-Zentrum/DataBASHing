@@ -83,7 +83,7 @@ echo $SHELL
 
 ## Datendownload
 
-**In der Konsole:** [Daten für Online Tutorials](https://swcarpentry.github.io/shell-novice/setup.html) herunterladen und auspacken
+**In der Konsole:** [Daten für Online Tutorials](https://swcarpentry.github.io/shell-novice/index.html) herunterladen und auspacken
 
 1.    Konsole öffnen
 2.    Ins Verzeichnis für temporäre Daten wechseln
