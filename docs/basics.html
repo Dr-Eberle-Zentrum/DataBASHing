@@ -14,7 +14,7 @@
 
 <title>Konsolenbasics</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
@@ -146,11 +146,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -179,8 +183,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -188,16 +192,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -561,16 +558,16 @@ oder gaaaanz viel Output auf die Konsole schreibt),</li>
 <h2>Online Tutorials</h2>
 <ul>
 <li><a
-href="https://swcarpentry.github.io/shell-novice/01-intro/index.html">Shell
+href="https://swcarpentry.github.io/shell-novice/01-intro.html">Shell
 Intro</a> von swcarpentry</li>
 <li><a
-href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Navigating
+href="https://swcarpentry.github.io/shell-novice/02-filedir.html">Navigating
 Files and Directories</a> von swcarpentry</li>
 <li><a
-href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Working
+href="https://swcarpentry.github.io/shell-novice/02-filedir.html">Working
 with Files and Directories</a> von swcarpentry</li>
 <li><a
-href="https://carpentries-incubator.github.io/shell-extras/01-man-pages/index.html">man
+href="https://carpentries-incubator.github.io/shell-extras/01-man-pages.html">man
 Usage and Interpretation</a> von carpentries-incubator</li>
 </ul>
 </div>
@@ -586,7 +583,7 @@ in linux | link count field in ls -l [17 min]</a></p>
                    ><img src="https://img.youtube.com/vi/p_g_--ztI6Y/0.jpg"></a></p>
 <hr />
 <p>Download: <a href="basics.pdf" title="Download PDF Version">PDF
-Version</a> dieses Tutorials. Erstellt am 05.07.2022.</p>
+Version</a> dieses Tutorials. Erstellt am 16.05.2023.</p>
 </div>
 </div>
 

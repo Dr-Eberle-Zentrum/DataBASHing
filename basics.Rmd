@@ -130,10 +130,10 @@ kann man den Befehl mit "**STRG+C**" abbrechen (cancel).
 
 ## Online Tutorials
 
--    [Shell Intro](https://swcarpentry.github.io/shell-novice/01-intro/index.html) von swcarpentry
--    [Navigating Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir/index.html) von swcarpentry
--    [Working with Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir/index.html) von swcarpentry
--    [man Usage and Interpretation](https://carpentries-incubator.github.io/shell-extras/01-man-pages/index.html) von carpentries-incubator
+-    [Shell Intro](https://swcarpentry.github.io/shell-novice/01-intro.html) von swcarpentry
+-    [Navigating Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir.html) von swcarpentry
+-    [Working with Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir.html) von swcarpentry
+-    [man Usage and Interpretation](https://carpentries-incubator.github.io/shell-extras/01-man-pages.html) von carpentries-incubator
 
 
 ## Hard vs. Soft Links

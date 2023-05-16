@@ -110,7 +110,7 @@ Piping und Streams
 
 Im Anschluss empfehlen wir das folgende
 
-- Tutorial zu [Pipes and Filters](https://swcarpentry.github.io/shell-novice/04-pipefilter/index.html) von swcarpentry
+- Tutorial zu [Pipes and Filters](https://swcarpentry.github.io/shell-novice/04-pipefilter.html) von swcarpentry
 
 -------------------------------------------
 
