@@ -235,7 +235,7 @@ Dieses [Online-grep-regex-Tutorial](https://www.digitalocean.com/community/tutor
     - z.B. "\+" um ein Plus zu matchen statt es als Quantifikator zu nutzen
   - `sed`: 
     - *standardmässig genau umgekehrt* (BASIC REGULAR EXPRESSIONS), d.h. für den RegEx-Einsatz muss escaped werden
-      - z.B. der "0-oder-1-mal" Quantifikator muss mit "\?" kodiert werden, sonst wird ein Fragezeichen gematched
+      - z.B. der "0-oder-1-mal" Quantifikator muss mit "\\?" kodiert werden, sonst wird ein Fragezeichen gematched
     - *ABER* mit `-E` (EXTENDED REGULAR EXPRESSIONS): Escapingverhalten wie `grep`...
       - sowie POSIX character classes verfügbar
     
