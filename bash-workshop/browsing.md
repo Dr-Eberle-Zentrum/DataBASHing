@@ -6,6 +6,7 @@ Konkret sollen folgende Befehle zum Einsatz kommen:
 -   `ls` : *listed die Dateien* des aktuellen Verzeichnisses auf
 -   `cd ORDNER` : *wechselt in den Order* "ORDNER" (im aktuellen Verzeichnis)
 -   `cd ..` : wechselt in den *ÜBERgeordneten Ordner* (also "wieder raus" aus dem aktuellen Verzeichnis bzw. "eins hoch")
+-   `pwd` : zeigt aktuellen Verzeichnispfad an
 -   `cat DATEI` : zeigt den *Dateiinhalt* an
 -   `head DATEI` : zeigt die *ersten Zeilen* einer Datei
 -   `tail DATEI` : zeigt die *letzten Zeilen* einer Datei
@@ -18,6 +19,8 @@ Dazu öffnen sie zunächst die Konsole in einem Ordner ihrer Wahl.
 Entweder mit Hilfe des Kontextmenüs im Explorer (siehe Bild) oder indem sie die Konsole öffnen und in einen Ordner ihrer Wahl navigieren.
 
 [<img src="git-bash-via-context-menu.png" width="300"/>](git-bash-via-context-menu.png)
+
+Mit `pwd` können wir kurz prüfen, wo wir gelandet sind, damit wir das auch Wiederfinden.
 
 Anschliessend kopieren wir die Datei aus dem Internet direkt in ihre Verzeichnis, indem wir folgendes Kommando ausführen:
 
@@ -70,7 +73,7 @@ browsing/  browsing.tar.gz
 
 Nun gilt es im Unterordner `browsing` oder einem seiner Unterordner eine Datei zu finden, welche eine gar unglaubliche Information enthält!
 
-Verwenden sie hierzu die oben gelisteten Befehle `ls`, `cd` und `cat`.
+Verwenden sie hierzu die oben gelisteten Befehle `ls`, `cd`, `pwd` und `cat`.
 
 Viel Erfolg!
 
