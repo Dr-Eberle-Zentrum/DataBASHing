@@ -17,7 +17,7 @@ Zum Üben haben wir ihnen einen kleinen Satz an Verzeichnissen, Unterverzeichnis
 Dazu öffnen sie zunächst die Konsole in einem Ordner ihrer Wahl.
 Entweder mit Hilfe des Kontextmenüs im Explorer (siehe Bild) oder indem sie die Konsole öffnen und in einen Ordner ihrer Wahl navigieren.
 
-[<img src="https://github.com/Dr-Eberle-Zentrum/DataBASHing/raw/bash-workshop/bash-workshop/git-bash-via-context-menu.png" width="300" alt="mhh"/> lala](git-bash-via-context-menu.png)
+[<img src="git-bash-via-context-menu.png" width="300"/>](git-bash-via-context-menu.png)
 
 Anschliessend kopieren wir die Datei aus dem Internet direkt in ihre Verzeichnis, indem wir folgendes Kommando ausführen:
 
