@@ -17,7 +17,8 @@ Zum Üben haben wir ihnen einen kleinen Satz an Verzeichnissen, Unterverzeichnis
 Dazu öffnen sie zunächst die Konsole in einem Ordner ihrer Wahl.
 Entweder mit Hilfe des Kontextmenüs im Explorer (siehe Bild) oder indem sie die Konsole öffnen und in einen Ordner ihrer Wahl navigieren.
 
-[<img src="./git-bash-via-context-menu.png" width="0.5"/>](./git-bash-via-context-menu.png)
+[<img src="git-bash-via-context-menu.png" width="0.5"/>](git-bash-via-context-menu.png)
+
 
 Anschliessend kopieren wir die Datei aus dem Internet direkt in ihre Verzeichnis, indem wir folgendes Kommando ausführen:
 
@@ -25,7 +26,7 @@ Anschliessend kopieren wir die Datei aus dem Internet direkt in ihre Verzeichnis
 curl.exe https://github.com/Dr-Eberle-Zentrum/DataBASHing/raw/bash-workshop/bash-workshop/browsing.tar.gz -o browsing.tar.gz
 ```
 
-- `-o ZIELDATEI` = wo und unter welchem Namen soll der Download gespeichert werden
+-   `-o ZIELDATEI` = wo und unter welchem Namen soll der Download gespeichert werden
 
 Das Programm `curl` ist ein Programm zur Navigation und Interaktion mit Internetservern und kann auch verwendet werden (wir hier) um Dateien zu downloaden.
 Eigentlich ist für letztere Aufgabe das Programm `wget` geeigneter, welches allerdings in der "Git Bash" nicht direkt zur Verfügung steht.
@@ -54,7 +55,6 @@ tar -xzf browsing.tar.gz
 tar -x -z -f browsing.tar.gz
 ```
 
-- `-x` = bitte Entpacken
-- `-z` = Datei vorher mit GNU ZIP dekomprimieren
-- `-f DATEI` = Archivdatei um die es geht
-
+-   `-x` = bitte Entpacken
+-   `-z` = Datei vorher mit GNU ZIP dekomprimieren
+-   `-f DATEI` = Archivdatei um die es geht
