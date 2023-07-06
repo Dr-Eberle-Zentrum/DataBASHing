@@ -49,11 +49,31 @@ Also haben wir eine Archivdatei (welche mehrere Dateien und Ordner enthalten kan
 Zum Entpacken verwenden wir direkt `tar`:
 
 ```{bash}
-tar -xzf browsing.tar.gz
-# oder äquivalent dazu
 tar -x -z -f browsing.tar.gz
+# oder äquivalent dazu
+tar -xzf browsing.tar.gz
 ```
 
 -   `-x` = bitte Entpacken
 -   `-z` = Datei vorher mit GNU ZIP dekomprimieren
 -   `-f DATEI` = Archivdatei um die es geht
+
+Nun sollte sich in ihrem Verzeichnis ein Unterordner `browsing` befinden:
+
+```{bash}
+$ ls
+browsing/  browsing.tar.gz
+
+```
+
+## Schritt 3 - Die Suche beginnt...
+
+Nun gilt es im Unterordner `browsing` oder einem seiner Unterordner eine Datei zu finden, welche eine gar unglaubliche Information enthält!
+
+Verwenden sie hierzu die oben gelisteten Befehle `ls`, `cd` und `cat`.
+
+Viel Erfolg!
+
+😉👍
+
+
