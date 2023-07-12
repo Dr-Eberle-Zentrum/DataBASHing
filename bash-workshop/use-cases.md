@@ -21,9 +21,9 @@ Da unsere Tabellen z.B. die gleiche Struktur haben, also gleiche Spaltenordnung,
 
 ```sh
 # Liste von Einzeldateien
-$ cat x.csv y.csv z.csv > gesamt.csv
+cat x.csv y.csv z.csv > gesamt.csv
 # mit wildcards
-$ cat daten-*.csv > daten-gesamt.csv
+cat daten-*.csv > daten-gesamt.csv
 ```
 
 Hierbei ist jedoch zu beachten, dass etwaige Tabellenköpfe (Zeile mit Spaltennamen) nun mehrfach vorkommt.
@@ -67,7 +67,44 @@ for f in *.csv; do
 done
 ```
 
+Auch hier müssen wir ggf. um das Problem "herumarbeiten", dass Tabellenköpfe nicht als erste Zeile erhalten bleiben, sondern alle Zeilen gleichberechtigt sortiert werden.
+Aber auch hier hilft uns der Trick von oben, d.h. zweistufiges Arbeiten.
 
 
+```sh
+# über alle .csv Dateien iterieren, d.h. für jede das Folgende tun
+for f in *.csv; do
+  # Datei umbenennen, damit Dateiname für Zieldatei wieder zur Verfügung steht
+  mv $f sicherheitskopie;
+  # Befehlsgruppe starten
+  (
+    # Tabellenkopf ausgeben
+    head -n 1 sicherheitskopie;
+    # Datei sortieren, aber erste Zeile weglassen 
+    tail --lines=+2 sicherheitskopie | sort -t";" -k2 
+  # Ausgaben zusammenführen und wieder unter Originalnamen abspeichern
+  ) > $f
+  # Sicherheitskopie löschen
+  rm -f sicherheitskopie
+done
+```
 
+## Archivierung
 
+### Use case - Dateien sichern und vorhandene mit Zeitstempel backupen
+
+Wir haben einen Satz an Dateien, welcher wiederkehrend in einem bestimmten Verzeichnis gesichert werden soll.
+Im Zielverzeichnis sollen die aktuellen Dateien mit gleichem Namen beibehalten werden, weil dort auch andere Mitarbeiter auf diese zugreifen.
+Allerdings sollen vorhandene Dateien mit dem Zeitstempel der Sicherung beibehalten werden, um die Nachvollziehbarkeit der Datenänderung zu gewährleisten.
+
+Dies ist schon mit einem "einfachen" Kopiebefehl zu bewerkstelligen:
+
+```sh
+cp -b -S .stand-$(date +%y%m%d-%X) *-geteilte-Daten-*.xml /mnt/c/gemeinsameDateien/
+```
+
+Hierbei sorgen wir mit `-b` dafür, das vorhandene Dateien im Zielverzeichnis gebackuped werden, d.h. vorher umbenannt werden, bevor eine gleichnamige Datei ins Zielverzeichnis kopiert wird.
+
+Der Dateiname wird dabei mit dem nach `-S` angegebenen Suffix ergänzt. 
+Diese ist in diesem Fall `.stand-ZEITSTEMPEL`, wobei der Zeitstempel mittels `date` Befehl automatisch bestimmt und angehangen wird. 
+Das Format des Zeitstempels (hier "JahrMonatTag-Zeit") ist detailliert mittels `date` einstellbar.
