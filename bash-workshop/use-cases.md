@@ -12,7 +12,7 @@ Wir haben mehrere Tabellen als `.csv` Dateien vorliegen und wollen deren Inhalte
 
 Da unsere Tabellen z.B. die gleiche Struktur haben, also gleiche Spaltenordnung, wollen wir unsere Tabellen insgesamt aneinander hängen.
 
-```{sh}
+```sh
 # Liste von Einzeldateien
 $ cat x.csv y.csv z.csv > gesamt.csv
 # mit wildcards
