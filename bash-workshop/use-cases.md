@@ -8,7 +8,8 @@ Im Folgenden wollen wir einige Anwendungsbeispiele zeigen, bei denen die Shell z
   - [Tabellen "untereinander hängen"](#use-case---tabellen-untereinander-h%C3%A4ngen)
   - [Tabellen "spaltenweise erweitern"](#use-case---tabellen-spaltenweise-erweitern)
   - [Alle `.csv` Dateien nach der zweiten Spalte sortieren und wieder abspeichern](#use-case---alle-csv-dateien-nach-der-zweiten-spalte-sortieren-und-wieder-abspeichern)
-
+- [**Archivierung**](#archivierung)
+  - [Dateien sichern und vorhandene mit Zeitstempel backupen](#use-case---dateien-sichern-und-vorhandene-mit-zeitstempel-backupen)
 
 
 ## Tabellarische Daten verarbeiten
