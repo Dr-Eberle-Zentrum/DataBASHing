@@ -4,10 +4,10 @@
 Im Folgenden wollen wir einige Anwendungsbeispiele zeigen, bei denen die Shell zum Einsatz kommt.
 
 
-- [Tabellarische Daten verarbeiten](#tabellarische-daten-verarbeiten)
-  - [Tabellen "untereinander hängen"]()
-  - [Tabellen "spaltenweise erweitern"]()
-  - [Alle `.csv` Dateien nach der zweiten Spalte sortieren und wieder abspeichern]()
+- [**Tabellarische Daten verarbeiten**](#tabellarische-daten-verarbeiten)
+  - [Tabellen "untereinander hängen"](#use-case---tabellen-untereinander-h%C3%A4ngen)
+  - [Tabellen "spaltenweise erweitern"](#use-case---tabellen-spaltenweise-erweitern)
+  - [Alle `.csv` Dateien nach der zweiten Spalte sortieren und wieder abspeichern](#use-case---alle-csv-dateien-nach-der-zweiten-spalte-sortieren-und-wieder-abspeichern)
 
 
 
