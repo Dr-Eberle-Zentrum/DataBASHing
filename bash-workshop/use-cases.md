@@ -109,3 +109,6 @@ Hierbei sorgen wir mit `-b` dafür, das vorhandene Dateien im Zielverzeichnis ge
 Der Dateiname wird dabei mit dem nach `-S` angegebenen Suffix ergänzt. 
 Diese ist in diesem Fall `.stand-ZEITSTEMPEL`, wobei der Zeitstempel mittels `date` Befehl automatisch bestimmt und angehangen wird. 
 Das Format des Zeitstempels (hier "JahrMonatTag-Zeit") ist detailliert mittels `date` einstellbar.
+
+*Hinweis:* Für komplexere Archivierungsaufgaben, z.B. für die Sicherung auf andere Rechner etc., steht das leistungsstarke Programm `rsync` zur Verfügung, welches wir hier aber nicht näher beleuchten.
+
