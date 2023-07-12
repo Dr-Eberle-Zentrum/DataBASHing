@@ -22,7 +22,18 @@ $ cat daten-*.csv > daten-gesamt.csv
 Hierbei ist jedoch zu beachten, dass etwaige Tabellenköpfe (Zeile mit Spaltennamen) nun mehrfach vorkommt.
 Um das zu umgehen, können wir die Ausgabe in zwei Arbeitsschritte auftrennen und deren Ausgaben in eine Datei zusammenfassen.
 
-```{sh}
+```bash
+# Befehlsgruppe anlegen
+(
+  # Kopfzeile aus einer Datei extrahieren und ausgeben
+  head -n 1 x.csv;
+  # alle Dateien OHNE Kopfzeile nacheinander ausgeben
+  tail --lines=+2 -q ?.csv
+# Befehlsgruppe schliessen und Ausgabe in Datei bündeln
+) > Daten-gesamt.csv
+```
+
+```sh
 # Befehlsgruppe anlegen
 (
   # Kopfzeile aus einer Datei extrahieren und ausgeben
