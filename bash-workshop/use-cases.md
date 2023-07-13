@@ -8,6 +8,10 @@ Im Folgenden wollen wir einige Anwendungsbeispiele zeigen, bei denen die Shell z
   - [Tabellen "untereinander hängen"](#use-case---tabellen-untereinander-h%C3%A4ngen)
   - [Tabellen "spaltenweise erweitern"](#use-case---tabellen-spaltenweise-erweitern)
   - [Alle `.csv` Dateien nach der zweiten Spalte sortieren und wieder abspeichern](#use-case---alle-csv-dateien-nach-der-zweiten-spalte-sortieren-und-wieder-abspeichern)
+- [**Textverarbeitung**]()
+  - [Schnelle Suche welche Datei einen bestimmten Eintrag hat]()
+  - [Vorkommen von Textmustern zählen]()
+  - [XML Dokumente vereinen - z.B. `.rdf` Dateien für Zotero]()
 - [**Archivierung**](#archivierung)
   - [Dateien sichern und vorhandene mit Zeitstempel backupen](#use-case---dateien-sichern-und-vorhandene-mit-zeitstempel-backupen)
 
@@ -89,6 +93,107 @@ for f in *.csv; do
   rm -f sicherheitskopie
 done
 ```
+
+## Textverarbeitung
+
+
+### Use case - Schnelle Suche welche Datei einen bestimmten Eintrag hat
+
+Wir haben eine große Anzahl an Dateien und wissen derzeit nicht, in welcher eine bestimmte Information abgespeichert ist.
+Allerdings wissen wir ein zu unserer Information passendes Schlagwort, welches in der entsprechenden Datei enthalten ist.
+
+Konkret haben wir mehrere Bibliographiedateien im `.rdf` Format und suchen die Datei, welche die Bibliographiedaten für den Autor mit Nachnamen "Park" enthält.
+Nun könnten wir die Dateien nacheinander öffnen und nach dem Begriff suchen, oder wir verwenden `grep`, das Zaubertool zur Textsuche.
+
+```sh
+grep Park *.rdf
+```
+
+liefert
+
+```sh
+items_2.rdf:          <foaf:surname>Park</foaf:surname>
+items_4.rdf:  <dcterms:abstract>Introd [...] Exploring Parker 2.0 / Andrew Prescott [...]
+```
+
+Zwar haben wir damit unsere Suche erfolgreich beendet und wissen, dass `items_2.rdf` den gewünschten Eintrag enthält, aber wir sehen schon, das unser Suchmuster `Park` doch recht unspezifisch war, da es auch die Datei `items_4.rdf` liefert, da diese eine Zeile mit dem Wort `Parker` besitzt.
+Hier kommen nun *reguläre Ausdrücke* ins Spiel, welche der Zweck für `grep` sind.
+
+```sh
+# mit word boundaries --> immer noch Wortlokalisation in anderem Kontext möglich !!!
+grep -P "\bPark\b" *.rdf
+# mit flankierenden XML tags (aber Platz für Leerzeichen) für möglichst konkreten Treffer
+grep -P "<foaf:surname>\s*Park\s*</foaf:surname>" *.rdf
+```
+
+Hierbei sorgt `-P` dafür, dass die `Perl`-spezifische Erweiterung regulärer Ausdrücke verwendet wird.
+Ansonsten wird nur ein eingeschränktes RegEx Vokabular (BRE) verstanden oder mit `-E` "erweiterte" reguläre Ausdrücke (ERE).
+
+Auch kann man die Ausgabe von `grep` sehr gut steuern.
+So können wir zum Beispiel auch den Vornamen des Fundes ausgeben, indem wir mit `-A1` die nachfolgende Zeile eines jeden Fundes mitliefern lassen.
+
+```sh
+grep -A1 -P "<foaf:surname>\s*Park\s*</foaf:surname>" *.rdf
+```
+
+liefert
+
+```sh
+items_2.rdf:    <foaf:surname>Park</foaf:surname>
+items_2.rdf-    <foaf:givenName>David W. [Hrsg.]</foaf:givenName>
+```
+
+was es uns ermöglicht, den Fund zu verifizieren.
+
+
+
+### Use case - XML Dokumente vereinen - z.B. `.rdf` Dateien für Zotero
+
+Neben dem [Vereinen von tabellarischen Daten](#use-case---tabellen-untereinander-h%C3%A4ngen) kommt es auch häufig vor, dass strukturierte Daten, wie zum Beispiel XML Dokumente, zusammengefasst werden müssen.
+Ein Anwendungfall wäre zum Beispiel das *Vereinen von Bibliographiedaten im `.rdf` Format*, um diese gebündelt in Zotero zu importieren.
+
+Solche `.rdf` Dateien starten z.B. wie folgt:
+
+```xml
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:bib="http://purl.org/net/biblio#"
+ xmlns:vcard="http://nwalsh.com/rdf/vCard#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/">
+    <bib:Book rdf:about="urn:isbn:3-518-12679-2%20978-3-518-12679-0">
+        [...gekürzt...]
+    </bib:Book>
+</rdf:RDF>
+```
+
+Um derartige Dateien zu vereinen, müssen wir eine gültige XML Struktur beibehalten, sprich das allumschliessende `<rdfRDF [...]>` + `</rdf:RDF>` tag darf nur einmal im Dokument vorkommen und muss alle `<bib..> .. </bib..>` Teile umschliessen.
+
+Wenn wir davon ausgehen, dass alle `.rdf` Dateien gleich strukturiert sind, sprich *alle die gleichen 9 ersten Zeilen* haben, dann können wir (analog zur Vereinigung von `.csv` Dateien mit Kopfzeilen) die ersten und letzten Zeilen explizit behandeln und mit folgendem kleinen Skript alle `.rdf` Dateien im aktuellen Verzeichnis zusammenführen.
+
+```sh
+(
+# wir benötigen eine Datei, um Kopf und Fussbereich zu extrahieren
+# und picken uns hier einfach die lexikographisch erste Datei der Liste
+first=$(ls -AU *.rdf | head -n 1)
+# Kopfausgabe = erste 9 Zeilen (einmal) ausgeben
+head -n 9 "$first"
+# für alle .rdf Dateien nun einzeln nur deren Einträge ausgeben
+for file in *.rdf
+do
+  # Ausgabe des Dateiinhaltes OHNE Kopfzeilen (ab 10. Zeile) und OHNE letzte Zeile
+  tail -n +10 "$file" | head -n -1
+done
+# letzte Zeile (einmal) ausgeben
+echo $(tail -n 1 "$first")
+# alles zusammengefasst en bloc abspeichern
+) > gesammelte-daten.rdf 
+```
+
+
 
 ## Archivierung
 
