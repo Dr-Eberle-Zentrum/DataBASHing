@@ -8,7 +8,7 @@ Im Folgenden wollen wir einige Anwendungsbeispiele zeigen, bei denen die Shell z
   - [Tabellen "untereinander hängen"](#use-case---tabellen-untereinander-h%C3%A4ngen)
   - [Tabellen "spaltenweise erweitern"](#use-case---tabellen-spaltenweise-erweitern)
   - [Alle `.csv` Dateien nach der zweiten Spalte sortieren und wieder abspeichern](#use-case---alle-csv-dateien-nach-der-zweiten-spalte-sortieren-und-wieder-abspeichern)
-- [**Textverarbeitung**]()
+- [**Textverarbeitung**](#textverarbeitung)
   - [Schnelle Suche welche Datei einen bestimmten Eintrag hat](#use-case---schnelle-suche-welche-datei-einen-bestimmten-eintrag-hat)
   - [Vorkommen von Textmustern zählen](#use-case---vorkommen-von-textmustern-z%C3%A4hlen)
   - [XML Dokumente vereinen - z.B. `.rdf` Dateien für Zotero](#use-case---xml-dokumente-vereinen---zb-rdf-dateien-f%C3%BCr-zotero)
