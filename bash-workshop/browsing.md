@@ -24,11 +24,11 @@ Mit `pwd` können wir kurz prüfen, wo wir gelandet sind, damit wir das auch Wie
 
 Anschliessend kopieren wir die Datei aus dem Internet direkt in ihre Verzeichnis, indem wir folgendes Kommando ausführen:
 
-```{bash}
-curl.exe https://github.com/Dr-Eberle-Zentrum/DataBASHing/raw/bash-workshop/bash-workshop/browsing.tar.gz -o browsing.tar.gz
+```sh
+curl -O https://raw.githubusercontent.com/Dr-Eberle-Zentrum/DataBASHing/bash-workshop/bash-workshop/browsing.tar.gz
 ```
 
--   `-o ZIELDATEI` = wo und unter welchem Namen soll der Download gespeichert werden
+-   `-O` = speichert die Zieldatei unter dem gleichen Namen im aktuellen Verzeichnis
 
 Das Programm `curl` ist ein Programm zur Navigation und Interaktion mit Internetservern und kann auch verwendet werden (wir hier) um Dateien zu downloaden.
 Eigentlich ist für letztere Aufgabe das Programm `wget` geeigneter, welches allerdings in der "Git Bash" nicht direkt zur Verfügung steht.
@@ -39,7 +39,7 @@ Daher nehmen wir an dieser Stelle `curl`.
 Nun gilt es herauszufinden, ob der Download geklappt hat und was da so drin ist in der Datei!
 Hier verwenden wir einen erste `ls` Aufruf, welche ungefähr folgendes liefern sollte (in einem zuvor leeren Ordner).
 
-```{bash}
+```sh
 $ ls
 browsing.tar.gz
 
@@ -51,7 +51,7 @@ Also haben wir eine Archivdatei (welche mehrere Dateien und Ordner enthalten kan
 
 Zum Entpacken verwenden wir direkt `tar`:
 
-```{bash}
+```sh
 tar -x -z -f browsing.tar.gz
 # oder äquivalent dazu
 tar -xzf browsing.tar.gz
@@ -63,7 +63,7 @@ tar -xzf browsing.tar.gz
 
 Nun sollte sich in ihrem Verzeichnis ein Unterordner `browsing` befinden:
 
-```{bash}
+```sh
 $ ls
 browsing/  browsing.tar.gz
 

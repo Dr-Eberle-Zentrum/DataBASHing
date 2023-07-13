@@ -96,6 +96,24 @@ done
 
 ## Textverarbeitung
 
+Die `.rdf` Dateien, die im Folgenden verwendet werden, können sie [hier als `rdf-example.tar.gz`](rdf-example.tar.gz) zusammengefasst herunterladen.
+
+Oder mittels folgenden Befehlen:
+
+```sh
+# Archivdatei downloaden
+curl -O https://raw.githubusercontent.com/Dr-Eberle-Zentrum/DataBASHing/bash-workshop/bash-workshop/rdf-example.tar.gz
+# Dateien aus Archivdatei auspacken
+tar -xzf rdf-example.tar.gz
+```
+
+Am Ende sollten folgende Dateien im Ordner vorliegen (mittels `ls` geprüft):
+
+```sh
+# ls Ausgabe nach "curl" und "tar" Aufruf in vormals leerem Verzeichnis
+items_1.rdf  items_2.rdf  items_3.rdf  items_4.rdf  rdf-example.tar.gz
+```
+
 
 ### Use case - Schnelle Suche welche Datei einen bestimmten Eintrag hat
 
@@ -144,6 +162,25 @@ items_2.rdf-    <foaf:givenName>David W. [Hrsg.]</foaf:givenName>
 ```
 
 was es uns ermöglicht, den Fund zu verifizieren.
+
+
+### Use case - Vorkommen von Textmustern zählen
+
+Nun könnte es uns interessieren, wieviele Einträge denn nun eigentlich in den jeweiligen Bibliographiedateien abgespeichert sind.
+Auch hier kann uns `grep` direkt helfen, indem wir die `<bib` tags der Dateien zählen.
+
+```sh
+grep -c "<bib" *.rdf
+```
+
+liefert
+
+```sh
+items_1.rdf:40
+items_2.rdf:29
+items_3.rdf:29
+items_4.rdf:29
+```
 
 
 
