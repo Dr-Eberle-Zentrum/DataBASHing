@@ -96,9 +96,7 @@ done
 
 ## Textverarbeitung
 
-Die `.rdf` Dateien, die im Folgenden verwendet werden, können sie [hier als `rdf-example.tar.gz`](rdf-example.tar.gz) zusammengefasst herunterladen.
-
-Oder mittels folgenden Befehlen:
+Die `.rdf` Dateien, welche in den Use Cases zur Textverarbeitung verwendet werden, können sie mittels folgenden Befehlen zusammengefasst in der Archivdatei `rdf-example.tar.gz` herunterladen und auspacken, um z.B. selbst die Beispiele nachzuvollziehen.
 
 ```sh
 # Archivdatei downloaden
