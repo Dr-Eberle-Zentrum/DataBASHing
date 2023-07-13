@@ -238,7 +238,7 @@ Wir haben einen Satz an Dateien, welcher wiederkehrend in einem bestimmten Verze
 Im Zielverzeichnis sollen die aktuellen Dateien mit gleichem Namen beibehalten werden, weil dort auch andere Mitarbeiter auf diese zugreifen.
 Allerdings sollen vorhandene Dateien mit dem Zeitstempel der Sicherung beibehalten werden, um die Nachvollziehbarkeit der Datenänderung zu gewährleisten.
 
-Dies ist schon mit einem "einfachen" Kopiebefehl zu bewerkstelligen:
+Dies ist schon mit einem "einfachen" Kopierbefehl zu bewerkstelligen:
 
 ```sh
 cp -b -S .stand-$(date +%y%m%d-%X) *-geteilte-Daten-*.xml /mnt/c/gemeinsameDateien/
