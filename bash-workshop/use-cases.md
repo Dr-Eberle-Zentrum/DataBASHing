@@ -39,10 +39,10 @@ Um das zu umgehen, können wir die Ausgabe in zwei Arbeitsschritte auftrennen un
 (
   # Kopfzeile aus einer Datei extrahieren und ausgeben
   head -n 1 x.csv;
-  # alle Dateien OHNE Kopfzeile nacheinander ausgeben
+  # alle Dateien (x.csv, y.csv, z.csv) OHNE Kopfzeile nacheinander ausgeben
   tail --lines=+2 -q ?.csv
 # Befehlsgruppe schliessen und Ausgabe in Datei bündeln
-) > Daten-gesamt.csv
+) > xyz-gesamt.csv
 ```
 
 ### Use case - Tabellen "spaltenweise erweitern"
