@@ -9,9 +9,9 @@ Im Folgenden wollen wir einige Anwendungsbeispiele zeigen, bei denen die Shell z
   - [Tabellen "spaltenweise erweitern"](#use-case---tabellen-spaltenweise-erweitern)
   - [Alle `.csv` Dateien nach der zweiten Spalte sortieren und wieder abspeichern](#use-case---alle-csv-dateien-nach-der-zweiten-spalte-sortieren-und-wieder-abspeichern)
 - [**Textverarbeitung**]()
-  - [Schnelle Suche welche Datei einen bestimmten Eintrag hat]()
-  - [Vorkommen von Textmustern zählen]()
-  - [XML Dokumente vereinen - z.B. `.rdf` Dateien für Zotero]()
+  - [Schnelle Suche welche Datei einen bestimmten Eintrag hat](#use-case---schnelle-suche-welche-datei-einen-bestimmten-eintrag-hat)
+  - [Vorkommen von Textmustern zählen](#use-case---vorkommen-von-textmustern-z%C3%A4hlen)
+  - [XML Dokumente vereinen - z.B. `.rdf` Dateien für Zotero](#use-case---xml-dokumente-vereinen---zb-rdf-dateien-f%C3%BCr-zotero)
 - [**Archivierung**](#archivierung)
   - [Dateien sichern und vorhandene mit Zeitstempel backupen](#use-case---dateien-sichern-und-vorhandene-mit-zeitstempel-backupen)
 
