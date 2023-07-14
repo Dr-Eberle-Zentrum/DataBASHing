@@ -15,3 +15,6 @@
 - [Hands-on Navigation](browsing.md)
 - [Anwendungsbeispiele für die `bash`](use-cases.md)
 
+Und für danach zum Weitermachen
+
+- freies Online-Tutorial [Library Carpentry: The Unix Shell](https://librarycarpentry.org/lc-shell/)
