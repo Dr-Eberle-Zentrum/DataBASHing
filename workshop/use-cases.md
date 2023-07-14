@@ -1,5 +1,5 @@
 
-# Anwendungsbeispiele
+# Anwendungsbeispiele für die `bash`
 
 Im Folgenden wollen wir einige Anwendungsbeispiele zeigen, bei denen die Shell zum Einsatz kommt.
 
