@@ -25,7 +25,7 @@ Mit `pwd` können wir kurz prüfen, wo wir gelandet sind, damit wir das auch Wie
 Anschliessend kopieren wir die Datei aus dem Internet direkt in ihre Verzeichnis, indem wir folgendes Kommando ausführen:
 
 ```sh
-curl -O https://raw.githubusercontent.com/Dr-Eberle-Zentrum/DataBASHing/bash-workshop/bash-workshop/browsing.tar.gz
+curl -O https://raw.githubusercontent.com/Dr-Eberle-Zentrum/DataBASHing/main/workshop/browsing.tar.gz
 ```
 
 -   `-O` = speichert die Zieldatei unter dem gleichen Namen im aktuellen Verzeichnis

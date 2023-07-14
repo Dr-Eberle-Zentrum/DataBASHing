@@ -100,7 +100,7 @@ Die `.rdf` Dateien, welche in den Use Cases zur Textverarbeitung verwendet werde
 
 ```sh
 # Archivdatei downloaden
-curl -O https://raw.githubusercontent.com/Dr-Eberle-Zentrum/DataBASHing/bash-workshop/bash-workshop/rdf-example.tar.gz
+curl -O https://raw.githubusercontent.com/Dr-Eberle-Zentrum/DataBASHing/main/workshop/rdf-example.tar.gz
 # Dateien aus Archivdatei auspacken
 tar -xzf rdf-example.tar.gz
 ```
