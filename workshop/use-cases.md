@@ -12,6 +12,7 @@ Im Folgenden wollen wir einige Anwendungsbeispiele zeigen, bei denen die Shell z
   - [Schnelle Suche welche Datei einen bestimmten Eintrag hat](#use-case---schnelle-suche-welche-datei-einen-bestimmten-eintrag-hat)
   - [Vorkommen von Textmustern zählen](#use-case---vorkommen-von-textmustern-z%C3%A4hlen)
   - [XML Dokumente vereinen - z.B. `.rdf` Dateien für Zotero](#use-case---xml-dokumente-vereinen---zb-rdf-dateien-f%C3%BCr-zotero)
+  - [Daten umformatieren - TSV nach HTML](#use-case---daten-umformatieren---tsv-nach-html)
 - [**Archivierung**](#archivierung)
   - [Dateien sichern und vorhandene mit Zeitstempel backupen](#use-case---dateien-sichern-und-vorhandene-mit-zeitstempel-backupen)
 
@@ -243,8 +244,7 @@ welche z.B. in eine Webseite als Liste von Links eingebettet werden soll.
 Diese Linkliste können wir nun ganz elegant auf der Konsole erzeugen mittels `awk`, einem Datenverarbeitungstool, das Eingabedaten zeilenweise einliest und verarbeitet.
 
 ```sh
-awk -F"\t" 'BEGIN{print "<ul>"}{print " <a href=\""$2"\">"$1"</a
->"}END{print "</ul>"}' data.tsv > data.html
+awk -F"\t" 'BEGIN{print "<ul>"}{print " <a href=\""$2"\">"$1"</a>"}END{print "</ul>"}' data.tsv > data.html
 ```
 
 - mit `-F` legen wir das Spaltentrennzeichen auf "Tabulator" fest
