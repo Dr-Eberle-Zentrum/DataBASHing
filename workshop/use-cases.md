@@ -229,6 +229,39 @@ echo $(tail -n 1 "$first")
 ```
 
 
+### Use case - Daten umformatieren - TSV nach HTML
+
+Im Folgenden wollen wir ein Beispiel besprechen, bei dem wir Daten im tabellarischen `.tsv` Spaltenformat haben.
+
+```tsv
+Kultur der Digitalität	https://rds-tue.ibs-bw.de/link?kid=774437081
+Die Ladenhüterin Roman	https://rds-tue.ibs-bw.de/link?kid=1004893485
+Lesen im digitalen Zeitalter	https://rds-tue.ibs-bw.de/link?kid=1725334046
+```
+
+welche z.B. in eine Webseite als Liste von Links eingebettet werden soll. 
+Diese Linkliste können wir nun ganz elegant auf der Konsole erzeugen mittels `awk`, einem Datenverarbeitungstool, das Eingabedaten zeilenweise einliest und verarbeitet.
+
+```sh
+awk -F"\t" 'BEGIN{print "<ul>"}{print " <a href=\""$2"\">"$1"</a
+>"}END{print "</ul>"}' data.tsv > data.html
+```
+
+- mit `-F` legen wir das Spaltentrennzeichen auf "Tabulator" fest
+- im `BEGIN{}` Block geben wir das umschliessende `<ul>` tag der HTML Liste aus
+- im `{}` Block werden die Daten aus jeder Zeile aus `data.tsv` in einen `<a href="..">..</a>` HTML Link tag eingebettet. Hierbei werden die Spaltenelemente mittels `$1` und `$2` für erste und zweite Spalte referenziert.
+- im `END{}` Block wird dann das umschliessende HTML Listen tag mit `</ul>` geschlossen
+
+Sodass wir am Ende folgende Ausgabe in `data.html` erhalten.
+
+```html
+<ul>
+ <a href="https://rds-tue.ibs-bw.de/link?kid=774437081">Kultur der Digitalität</a>
+ <a href="https://rds-tue.ibs-bw.de/link?kid=1004893485">Die Ladenhüterin Roman</a>
+ <a href="https://rds-tue.ibs-bw.de/link?kid=1725334046">Lesen im digitalen Zeitalter</a>
+</ul>
+```
+
 
 ## Archivierung
 
