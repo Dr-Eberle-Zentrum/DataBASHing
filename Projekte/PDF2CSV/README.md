@@ -29,9 +29,9 @@ Hierbei ist zu beachten:
 - das CSV Format soll ";" als Trennzeichen verwenden
 - Verwenden sie `pdf2ps` zusammen mit `ps2ascii` um den Inhalt der pdf-Datei im Textformat zu extrahieren
 - Verwenden sie `grep` (ggf. mehrfach) um die relevanten Zeilen zu extrahieren
-  - Ignorieren sie 
+  - Ignorieren sie
     - Kontinentinformationszeilen
-    - Zeilen, die Statenteile beschreiben, z.B. "Western Sahara
+    - Zeilen, die Staatenteile beschreiben, z.B. "Western Sahara
     - Zeilen, die keine Zahlen enthalten
     - Zeilen, die nur die Gesamtsumme enthalten
 - Verwenden sie `sed` um die relevanten Informationen in CSV-Format zu konvertieren
