@@ -15,17 +15,20 @@ Ziel des Projektes ist es, eine gegeben Sammlung von Bildern aufzubereiten und i
 
 ## Schritte
 
-(1) Laden sie sich via `wget` die folgende Archivdatei mit Bilddateien herunter und packen sie diese mit Hilfe eines Kommandozeilenprogramms in einem Ordner ihrer Wahl aus.
-Diser Ordner wird im Folgenden als `Rohsammlung` bezeichnet.
+(1) Laden sie sich via `wget` die folgende [Archivdatei](Bilddaten.tar.gz) mit Bilddateien herunter und packen sie diese mit Hilfe eines Kommandozeilenprogramms in einem Ordner ihrer Wahl aus.
+Als URL für den Download verwenden sie den [`Raw` Link der Datei](https://zapier.com/blog/how-to-download-from-github/) von der GitHub Webseite.
+
+
+Dieser Ordner wird im Folgenden als `Rohsammlung` bezeichnet.
 
 (2) Erstellen sie ein Bash-Skript, das folgende Schritte zur Bilddateiaufarbeitung durchführt:
 
 Jedes Bild aus der `Rohsammlung` soll dabei in einen Unterordner `Bildsammlung` kopiert und anschliessend wie folgt verarbeitet werden.
 
 - Dateiformat via `identify` prüfen (`imagemagick` package) und Dateiendung entsprechend umbenennen (lower case)
-- EXIF Daten via `exiftool` bearbeiten [tutorial](https://www.baeldung.com/linux/exif-data-read-change)
+- EXIF Daten via `exiftool` bearbeiten ([Tutorial](https://www.baeldung.com/linux/exif-data-read-change))
   - Personalisierte Information (`Artist`, `XPAuthor`, `GPSInfo`, `Software`) entfernen
-  - früheste Modifikationszeit/-datum auslesen ([Hinweis](https://unix.stackexchange.com/questions/84381/how-to-compare-two-dates-in-a-shell))
+  - früheste Modifikationszeit/-datum auslesen  ([Hinweis](https://unix.stackexchange.com/questions/84381/how-to-compare-two-dates-in-a-shell))
 - Dateinamen nach festem Muster mit Zeitdaten umbenennen: `YYYYMMDD_HHMMSS.[Dateiendung]`
 - Thumbnail fester Größe via `convert` (`imagemagick` package) erstellen:
   - Dateityp `JPEG`
