@@ -17,7 +17,7 @@ Ziel des Projektes ist es, eine gegeben Sammlung von Bildern aufzubereiten und i
 
 (1) Laden sie sich via `wget` die folgende [Archivdatei](Bilddaten.tar.gz) mit Bilddateien herunter 
 
-- Verwenden sie den [`Raw` Link der Datei](https://zapier.com/blog/how-to-download-from-github/) von der GitHub Webseite als URL für den Download.
+- Verwenden sie den `Raw` Link der Datei von der gelinkten GitHub Webseite als URL für den Download.
 - Packen sie die heruntergeladene Archivdatei mit Hilfe eines Kommandozeilenprogramms in einem Ordner ihrer Wahl aus.
 - Der darin enthaltene Ordner wird im Folgenden als `Rohsammlung` bezeichnet.
 
