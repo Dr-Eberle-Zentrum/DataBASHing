@@ -15,15 +15,19 @@ Ziel des Projektes ist es, eine gegeben Sammlung von Bildern aufzubereiten und i
 
 ## Schritte
 
-(1) Laden sie sich via `wget` die folgende [Archivdatei](Bilddaten.tar.gz) mit Bilddateien herunter und packen sie diese mit Hilfe eines Kommandozeilenprogramms in einem Ordner ihrer Wahl aus.
-Als URL für den Download verwenden sie den [`Raw` Link der Datei](https://zapier.com/blog/how-to-download-from-github/) von der GitHub Webseite.
+(1) Laden sie sich via `wget` die folgende [Archivdatei](Bilddaten.tar.gz) mit Bilddateien herunter 
 
+Verwenden sie den [`Raw` Link der Datei](https://zapier.com/blog/how-to-download-from-github/) von der GitHub Webseite als URL für den Download.
 
-Dieser Ordner wird im Folgenden als `Rohsammlung` bezeichnet.
+Packen sie die heruntergeladene Archivdatei mit Hilfe eines Kommandozeilenprogramms in einem Ordner ihrer Wahl aus.
+
+Der darin enthaltene Ordner wird im Folgenden als `Rohsammlung` bezeichnet.
 
 (2) Erstellen sie ein Bash-Skript, das folgende Schritte zur Bilddateiaufarbeitung durchführt:
 
-Jedes Bild aus der `Rohsammlung` soll dabei in einen Unterordner `Bildsammlung` kopiert und anschliessend wie folgt verarbeitet werden.
+- Erstellen sie einen Unterordner `Bildsammlung` im gleichen Verzeichnis wie die `Rohsammlung`
+
+Jedes Bild aus der `Rohsammlung` soll in den Unterordner `Bildsammlung` kopiert und anschliessend wie folgt verarbeitet werden.
 
 - Dateiformat via `identify` prüfen (`imagemagick` package) und Dateiendung entsprechend umbenennen (lower case)
 - EXIF Daten via `exiftool` bearbeiten ([Tutorial](https://www.baeldung.com/linux/exif-data-read-change))
@@ -37,12 +41,15 @@ Jedes Bild aus der `Rohsammlung` soll dabei in einen Unterordner `Bildsammlung` 
 
 (3) Erstellen sie ein weiteres Bash-Skript, das folgende Schritte zur HTML-Präsentation durchführt:
 
-- HTML Datei `index.html` erstellen mit folgenden Elementen
+Das Skript soll später im Ordner `Bildsammlung` ausgeführt werden.
+
+- erstellen einer HTML Datei `index.html` im aktuellen Ordner
   - Überschrift
-  - Tabelle aller `Bildsammlung`-Bilddateien (ja, ja, HTML-Tabellen sind nicht mehr zeitgemäß, aber hier passend)
+  - Tabelle aller Bilddateien im aktuellen Ordner *(ja, ja, HTML-Tabellen sind nicht mehr zeitgemäß, aber hier passend)*
     - Thumbnail + Dateiname anzeigen
     - beides gemeinsam mit Komplettbild verlinken
     - aus EXIF Information Dateigröße und Bildauflösung anzeigen
+    - alle Links *OHNE PFADANGABE*, d.h. nur Dateiname
   - eigene Autoreninformationen
   - Datum/Zeitpunkt der Erstellung der HTML-Datei
 
