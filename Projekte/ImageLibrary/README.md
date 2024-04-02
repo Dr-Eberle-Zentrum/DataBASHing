@@ -17,11 +17,9 @@ Ziel des Projektes ist es, eine gegeben Sammlung von Bildern aufzubereiten und i
 
 (1) Laden sie sich via `wget` die folgende [Archivdatei](Bilddaten.tar.gz) mit Bilddateien herunter 
 
-Verwenden sie den [`Raw` Link der Datei](https://zapier.com/blog/how-to-download-from-github/) von der GitHub Webseite als URL für den Download.
-
-Packen sie die heruntergeladene Archivdatei mit Hilfe eines Kommandozeilenprogramms in einem Ordner ihrer Wahl aus.
-
-Der darin enthaltene Ordner wird im Folgenden als `Rohsammlung` bezeichnet.
+- Verwenden sie den [`Raw` Link der Datei](https://zapier.com/blog/how-to-download-from-github/) von der GitHub Webseite als URL für den Download.
+- Packen sie die heruntergeladene Archivdatei mit Hilfe eines Kommandozeilenprogramms in einem Ordner ihrer Wahl aus.
+- Der darin enthaltene Ordner wird im Folgenden als `Rohsammlung` bezeichnet.
 
 (2) Erstellen sie ein Bash-Skript, das folgende Schritte zur Bilddateiaufarbeitung durchführt:
 
@@ -43,7 +41,7 @@ Jedes Bild aus der `Rohsammlung` soll in den Unterordner `Bildsammlung` kopiert 
 
 Das Skript soll später im Ordner `Bildsammlung` ausgeführt werden.
 
-- erstellen einer HTML Datei `index.html` im aktuellen Ordner
+- Erstellen einer HTML Datei `index.html` im aktuellen Ordner
   - Überschrift
   - Tabelle aller Bilddateien im aktuellen Ordner *(ja, ja, HTML-Tabellen sind nicht mehr zeitgemäß, aber hier passend)*
     - Thumbnail + Dateiname anzeigen
