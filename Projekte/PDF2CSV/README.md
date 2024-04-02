@@ -58,15 +58,15 @@ Hierbei ist zu beachten:
 
 (5) Dokumentation
 
-- Erstellen sie eine `README.txt` Datei, die ihr Projekt und das erstellte Skript beschreibt
+- Erstellen sie eine `README.txt` Datei, die ihr Projekt und die erstellten Skripte beschreibt
 - Listen sie darin *alle* verwendeten Konsolenprogramme, um die Abhängigkeiten ihrer Skripte zu dokumentieren
 - Ergänzen sie ihre zwei Skriptdateien mit hinreichenden Kommentaren, um die Funktionsweise und Arbeitsschritte zu erklären
 
 ## Hinweise
 
-Alle Schritte sollen hierbei in einem Bash-Skript durchgeführt werden.
+Alle Schritte sollen hierbei in Bash-Skripten durchgeführt werden.
 Verwenden sie keine manuellen Schritte, um die Daten zu extrahieren bzw. anzupassen.
-Ihr Skript muss auf einem fremden System lauffähig sein und das gleiche Ergebnis produzieren.
+Ihre Skripte müssen auf einem fremden System lauffähig sein und das gleiche Ergebnis produzieren.
 
 
 Diese Aufgabenbeschreibung wurde mit Unterstützung von GitHub Copilot erstellt.
