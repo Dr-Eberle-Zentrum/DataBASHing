@@ -24,6 +24,7 @@ Ziel des Projektes ist es, eine gegeben Sammlung von Bildern aufzubereiten und i
 (2) Erstellen sie ein Bash-Skript, das folgende Schritte zur Bilddateiaufarbeitung durchführt:
 
 - Erstellen sie einen Unterordner `Bildsammlung` im gleichen Verzeichnis wie die `Rohsammlung`
+- Falls der Ordner bereits existiert, löschen sie alle Dateien darin
 
 Jedes Bild aus der `Rohsammlung` soll in den Unterordner `Bildsammlung` kopiert und anschliessend wie folgt verarbeitet werden.
 
