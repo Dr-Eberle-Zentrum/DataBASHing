@@ -58,7 +58,7 @@ Im allgemeinen gilt in Linux Shells:
   - ein "`*`" in einem Datei oder Pfadnamen dient als **Platzhalter** für kein oder *mehrere Zeichen*
   - ein "`?`" ist ein Platzhalter für *genau ein Zeichen*
 - "`;`" **beendet** das vorangehende Kommando, sodass mehrere Kommandos hintereinander in einer Zeile geschrieben werden können
-- Ordner-/Dateinamen mit **Leer-/Sonderzeichen** müssen "gequotet" (`cs "Mein Ordner"`) oder "escaped" (`cd Mein\ Ordner`) werden , daher besser derartige Namen vermeiden
+- Ordner-/Dateinamen mit **Leer-/Sonderzeichen** müssen "gequotet" (`cd "Mein Ordner"`) oder "escaped" (`cd Mein\ Ordner`) werden , daher besser derartige Namen vermeiden
 - alles nach einer "`#`" wird ignoriert, da dieses Zeichen einen **Kommentar** einleitet
 - **case sensitivity** bzw. Befehlen und Datei-/Ordnernamen, d.h. Gross-/Kleinschreibung ist wichtig
 
