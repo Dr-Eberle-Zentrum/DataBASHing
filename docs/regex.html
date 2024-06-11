@@ -460,14 +460,14 @@ die Worte von den nicht gesuchten zu unterscheiden. Daher könnten wir
 folgendes verwenden:</p>
 <ul>
 <li>“<code>.*a</code>” = wobei “<code>.</code>” für ein beliebiges
-Zeichen (Buchstaben, Zahlen, Leer-, Satzzeichen, …) steht und
+Zeichen (Buchstabe, Ziffer, Leer-, Satzzeichen, …) steht und
 “<code>*</code>” für eine beliebige Anzahl (auch 0) des vorherigen Teils
 (also hier “<code>.</code>”)</li>
 </ul>
 <p>Das funktioniert, liefert aber ggf. zu viel Variabilität, was ein
 häufiger Fallstrick bei regulären Ausdrücken ist. Sprich sie sind zu
 unkonkret. In unserem Fall passt der Ausdruck auch auf: “..a”, “lala”,
-“Hans-Anna”, … Sie sehen das Problem? Um dieses zu Umgehen, könnte man
+“Hans-Anna”, … Sie sehen das Problem? Um dieses zu umgehen, könnte man
 folgende Sachen machen:</p>
 <ul>
 <li>“<code>.+a</code>” = wir fordern mit “<code>+</code>”, dass vor dem
@@ -492,8 +492,8 @@ heraus holen muss.</p>
 <li><strong>character classes</strong>, d.h. Platzhalter die auf mehrere
 Buchstaben matchen, z.B.
 <ul>
-<li><code>.</code> = jedweder Buchstabe</li>
-<li><code>[xyz]</code> = explizite Buchstabenliste, hier x, y und z
+<li><code>.</code> = jedwedes Zeichen</li>
+<li><code>[xyz]</code> = explizite Zeichenliste, hier “x”, “y” und “z”
 <ul>
 <li>auch Reihen möglich, z.B. <code>[3-7]</code> = 3,4,5,6,7</li>
 </ul></li>
@@ -775,7 +775,7 @@ bei Textersetzungen/-formatierung! Daher immer (wieder) dran
 denken!</strong></p>
 <hr />
 <p>Download: <a href="regex.pdf" title="Download PDF Version">PDF
-Version</a> dieses Tutorials. Erstellt am 27.06.2023.</p>
+Version</a> dieses Tutorials. Erstellt am 11.06.2024.</p>
 </div>
 
 

@@ -80,9 +80,9 @@ Die einfachste (und am wenigsten flexible) Lösung wäre es, die gesuchten Worte
 
 Wenn man reguläre Ausdrücke baut, muss man genau schauen, was die gesuchten Wörter (oder Textpassagen) gemeinsam haben. In unserem Fall enden alle gesuchten Namen mit "a", was wir verwenden können. Was davor für Buchstaben kommen (und wieviele), ist erst einmal unerheblich, um die Worte von den nicht gesuchten zu unterscheiden. Daher könnten wir folgendes verwenden:
 
-- "`.*a`" = wobei "`.`" für ein beliebiges Zeichen (Buchstaben, Zahlen, Leer-, Satzzeichen, ...) steht und "`*`" für eine beliebige Anzahl (auch 0) des vorherigen Teils (also hier "`.`")
+- "`.*a`" = wobei "`.`" für ein beliebiges Zeichen (Buchstabe, Ziffer, Leer-, Satzzeichen, ...) steht und "`*`" für eine beliebige Anzahl (auch 0) des vorherigen Teils (also hier "`.`")
 
-Das funktioniert, liefert aber ggf. zu viel Variabilität, was ein häufiger Fallstrick bei regulären Ausdrücken ist. Sprich sie sind zu unkonkret. In unserem Fall passt der Ausdruck auch auf: "..a", "lala", "Hans-Anna", ... Sie sehen das Problem? Um dieses zu Umgehen, könnte man folgende Sachen machen:
+Das funktioniert, liefert aber ggf. zu viel Variabilität, was ein häufiger Fallstrick bei regulären Ausdrücken ist. Sprich sie sind zu unkonkret. In unserem Fall passt der Ausdruck auch auf: "..a", "lala", "Hans-Anna", ... Sie sehen das Problem? Um dieses zu umgehen, könnte man folgende Sachen machen:
 
 - "`.+a`" = wir fordern mit "`+`", dass vor dem "a" mindestens ein Buchstabe ist
 - "`[a-zA-Z]+a`" = wir geben in "`[]`" ganz genau an, welche Buchstaben wir erlauben (hier z.B. keine Umlaute)
@@ -95,8 +95,8 @@ Das Beispiel zeigt, dass reguläre Ausdrücke ganz allgemein ("`.*a`") oder sehr
 Grundlegend unterscheidet man bei regulären Ausdrücken
 
 - **character classes**, d.h. Platzhalter die auf mehrere Buchstaben matchen, z.B.
-  - `.` = jedweder Buchstabe
-  - `[xyz]` = explizite Buchstabenliste, hier x, y und z
+  - `.` = jedwedes Zeichen
+  - `[xyz]` = explizite Zeichenliste, hier "x", "y" und "z"
     -  auch Reihen möglich, z.B. `[3-7]` = 3,4,5,6,7
   - `\s` = whitespaces = Leerzeichen, Tabulator, ...
   - `\d` = digits = Zahlen = [0-9]
