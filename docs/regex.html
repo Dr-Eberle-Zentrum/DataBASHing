@@ -688,7 +688,7 @@ ausgeführt, pro Zeile)</li>
 Platzhalter für “letzte Zeile”)<br />
 z.B. <code>echo "1,2,3,4" | tr "," "\n" | sed "2,$ s/./X/"</code></li>
 <li><strong>RegEx</strong>-Match (in Zeile), z.B.
-<code>echo -e "#1\n2" | sed -r "/^#/ s/[:digit:]/X/"</code><br />
+<code>echo -e "#1\n2" | sed -r "/^#/ s/[[:digit:]]/X/"</code><br />
 (dieser Aufruf geht zwar auch ohne “<code>-r</code>”, aber sicher ist
 sicher! ;) )</li>
 <li>alle gematchten Zeilen werden verarbeitet und am Ende ausgeben</li>
@@ -775,7 +775,7 @@ bei Textersetzungen/-formatierung! Daher immer (wieder) dran
 denken!</strong></p>
 <hr />
 <p>Download: <a href="regex.pdf" title="Download PDF Version">PDF
-Version</a> dieses Tutorials. Erstellt am 11.06.2024.</p>
+Version</a> dieses Tutorials. Erstellt am 18.06.2024.</p>
 </div>
 
 
