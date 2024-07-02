@@ -29,6 +29,7 @@ Ziel des Projektes ist es, eine gegeben Sammlung von Bildern aufzubereiten und i
 Jedes Bild aus der `Rohsammlung` soll in den Unterordner `Bildsammlung` kopiert und anschliessend wie folgt verarbeitet werden.
 
 - Dateiformat via `identify` prüfen (`imagemagick` package) und Dateiendung entsprechend umbenennen (lower case)
+  - Falls noch nicht vorhanden, müsst ihr das [`imagemagick` package erst installieren](https://linuxcapable.com/how-to-install-imagemagick-on-ubuntu-linux/), am besten über den Paketmanager, zB. `apt`
 - EXIF Daten via `exiftool` bearbeiten ([Tutorial](https://www.baeldung.com/linux/exif-data-read-change))
   - Personalisierte Information (`Artist`, `XPAuthor`, `GPSInfo`, `Software`) entfernen
   - früheste Modifikationszeit/-datum auslesen  ([Hinweis](https://unix.stackexchange.com/questions/84381/how-to-compare-two-dates-in-a-shell))
