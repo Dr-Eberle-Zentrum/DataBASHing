@@ -32,7 +32,7 @@ Jedes Bild aus der `Rohsammlung` soll in den Unterordner `Bildsammlung` kopiert 
 - EXIF Daten via `exiftool` bearbeiten ([Tutorial](https://www.baeldung.com/linux/exif-data-read-change))
   - Personalisierte Information (`Artist`, `XPAuthor`, `GPSInfo`, `Software`) entfernen
   - früheste Modifikationszeit/-datum auslesen  ([Hinweis](https://unix.stackexchange.com/questions/84381/how-to-compare-two-dates-in-a-shell))
-- Dateinamen nach festem Muster mit Zeitdaten umbenennen: `YYYYMMDD_HHMMSS.[Dateiendung]`
+- Dateinamen nach festem Muster mit Zeitdaten der frühesten Modifikation (letzter Punkt) umbenennen: `YYYYMMDD_HHMMSS.[Dateiendung]`
 - Thumbnail fester Größe via `convert` (`imagemagick` package) erstellen:
   - Dateityp `JPEG`
   - Dateinamenmuster `YYYYMMDD_HHMMSS.small.jpg` (gleicher Ordner wie Originaldatei, d.h. `Bildsammlung`)
