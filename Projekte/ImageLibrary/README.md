@@ -43,7 +43,8 @@ Jedes Bild aus der `Rohsammlung` soll in den Unterordner `Bildsammlung` kopiert 
 
 Das Skript soll später im Ordner `Bildsammlung` ausgeführt werden.
 
-- Erstellen einer HTML Datei `index.html` im aktuellen Ordner
+- Die HTML Struktur soll dabei mit Hilfe von `echo`, `printf`, Variablen, etc. ausgegeben und in einer Datei gespeichert werden.
+- Konkret: Erstellen einer HTML Datei `index.html` im aktuellen Ordner
   - Überschrift
   - Tabelle aller Bilddateien im aktuellen Ordner *(ja, ja, HTML-Tabellen sind nicht mehr zeitgemäß, aber hier passend)*
     - Thumbnail + Dateiname anzeigen
