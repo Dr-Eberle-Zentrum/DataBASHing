@@ -33,7 +33,7 @@ Hierbei ist zu beachten:
 - Verwenden sie `grep` (ggf. mehrfach) um die relevanten Zeilen zu extrahieren
   - Ignorieren sie
     - Kontinentinformationszeilen
-    - Zeilen, die Staatenteile beschreiben, z.B. "Western Sahara
+    - Zeilen, die Staatenteile beschreiben, z.B. "Western Sahara"
       - diese lassen sich nur aufgrund der führenden Leerzeichen identifizieren
     - Zeilen, die keine Zahlen enthalten
     - Zeilen, die nur die Gesamtsumme enthalten
