@@ -27,18 +27,43 @@ Hierbei ist zu beachten:
 
 - Tabellenkopf muss gelistet sein
 - das CSV Format soll ";" als Trennzeichen verwenden
-- Verwenden sie `pdf2ps` zusammen mit `ps2ascii` um den Inhalt der pdf-Datei im Textformat zu extrahieren
+  - Beachten sie, dass manche Ländernamen auch Leerzeichen enthalten!
+- Verwenden sie `pdftoascii` um den Inhalt der pdf-Datei im Textformat zu extrahieren
+  - hierzu müssen sie ggf. noch die verfügbaren Argumente der `man` page durchschauen
 - Verwenden sie `grep` (ggf. mehrfach) um die relevanten Zeilen zu extrahieren
   - Ignorieren sie
     - Kontinentinformationszeilen
     - Zeilen, die Staatenteile beschreiben, z.B. "Western Sahara
+      - diese lassen sich nur aufgrund der führenden Leerzeichen identifizieren
     - Zeilen, die keine Zahlen enthalten
     - Zeilen, die nur die Gesamtsumme enthalten
 - Verwenden sie `sed` um die relevanten Informationen in CSV-Format zu konvertieren
+  - entfernen sie u.a. die Tausendertrennzeichen der Zahlen
 - Stellen sie sicher, dass alle erzeugten Zeilen auch die korrekte Anzahl Spalten aufweisen (ggf. mit `awk` prüfen; Zeilen mit falscher Anzahl Spalten ausgeben, Skript ggf. anpassen oder am Ende ggf. ignorieren/entfernen)
+- Sortieren sie die CSV Ausgabe nach Ländernamen 
+  - aber stellen sie sicher, dass die Spaltennamen immer noch in der ersten Zeile gelistet sind!
 - ggf. müssen sie temporäre Dateien erzeugen, um Zwischenschritte zu speichern
   - löschen sie erzeugte temporäre Dateien am Ende des Skripts
 - Testen sie ihr Skript mit mindestens einer der heruntergeladenen pdf-Dateien
+
+
+### Zum Überprüfen
+
+- Für das Jahr 2023 sieht der Kopf einer solchen CSV Datei wie folgt aus
+
+```
+Foreign State;Relatives;Special Immigrants1;Preference;Preference;Immigrants;Total
+Afghanistan;1249;18318;405;10;572;20554
+Albania;1373;2;415;93;1553;3436
+Algeria;637;15;135;25;3845;4657
+Andorra;0;0;0;0;0;0
+Angola;39;2;15;4;251;311
+Antigua and Barbuda;89;0;41;8;3;141
+Argentina;454;3;124;248;80;909
+```
+
+- Im Report für 2023 werden 197 Länder gelistet.
+
 
 (3) Schreiben sie ein Auswertungsskript welches
 
@@ -48,13 +73,22 @@ Hierbei ist zu beachten:
   - eine Zeile pro Jahr
   - das Jahr soll in einer führenden Spalte gelistet sein
   - gültiges CSV-Format der Ausgabe (Kopfzeile, Trennzeichen ";")
+  
+Eine korrekte Ausgabe wäre folgende:
+
+```
+2021;Germany;786;39;102;89;70;1086
+2022;Germany;621;37;135;113;283;1189
+2023;Germany;869;37;99;153;239;1397
+```
+  
 
 (4) Generalisierung
 
 - Schreiben sie ihr Skript aus (4) so um, dass es das Land der Wahl als Kommandozeilenargument akzeptiert
 - Verwenden sie als Standardwert "Germany"
 - Testen sie ihr Skript mit einem weiteren Land ihrer Wahl
-- Unterstützen sie auch Länder, die mehrere Wörter im Namen haben, z.B. "United States"
+- Unterstützen sie auch Länder, die mehrere Wörter im Namen haben, z.B. "Dominican Republic"
 
 (5) Dokumentation
 
