@@ -1,4 +1,4 @@
-## Musterlösung von Martin
+## Beispiellösung von Martin
 
 Lösung für [Projekt PDF2CSV](../../PDF2CSV) mit zwei Dateien
 
