@@ -6,7 +6,7 @@ author: "Martin Raden"
 
 -------------------------------------------
 
-Es gibt verschiedene Linux Distributionen (d.h. Zusammenstellungen von Softwarepaketen). In diesem Kurs nutzen wir als Standard **Ubuntu**, aber jedwede andere Distribution ist auch ok, aber wir können keine und nur begrenzte Unterstützung bei distibutionsspezifischen Fragen liefern..
+Es gibt verschiedene Linux Distributionen (d.h. Zusammenstellungen von Softwarepaketen). In diesem Kurs nutzen wir als Standard **Ubuntu**, aber jedwede andere Distribution ist auch ok. Jedoch können wir keine und nur begrenzte Unterstützung bei distibutionsspezifischen Fragen liefern..
 
 
 -------------------------------------------
@@ -32,12 +32,28 @@ Für diesen Kurs ist WSL1 völlig ausreichend, sodass in den meisten Win10 Rechn
 
 -------------------------------------------
 
-# Zudem nützlich
+# Zudem wichtig: ein Texteditor
+
+Um mit Skripten zu arbeiten, benötigen sie einen TEXTeditor. 
+Hier gibt es zwei Möglichkeiten:
 
 - ein leistungfähiger Texteditor, z.B.
   - Windows: [Notepad++](https://notepad-plus-plus.org/)
   - Linux: [Sublime](https://www.sublimetext.com/)
+  - MacOS: [BBEdit](https://www.barebones.com/products/bbedit/)
+  - ... wichtige und hilfreiche Feature:
+    - Syntax Highlighting (Farbliche Hervorhebung von Codeelementen)
+    - volle Kontrolle über Zeilenumbrüche, Zeichenkodierung und Einrückungen
 
+- ODER eine integrierte Entwicklungsumgebung (IDE), z.B.
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [PyCharm](https://www.jetbrains.com/pycharm/)
+  - ... aber das ist optional, da wir in diesem Kurs nur mit kleineren eigenständigen Skripten arbeiten
+
+*Wichtig:* Microsoft Word, LibreOffice Writer oder andere Textverarbeitungsprogramme sind **nicht** geeignet, da sie Formatierungen einfügen, die für die Skripte schädlich sind.
+
+Wer es ganz einfach haben will, kann auch den Texteditor `nano` nutzen, der in der Konsole direkt verfügbar ist. Hierzu einfach in der Konsole `nano` eingeben und loslegen. Die wichtigsten Befehle sind unten auf dem Bildschirm aufgelistet.
+Allerdings ist `nano` für Konsolenanfänger nicht unbedingt intuitiv, da es keine Menüs oder Tastenkombinationen gibt, sondern nur Tastenbelegungen. Aber es ist ein guter Einstieg in die Konsole.
 
 -------------------------------------------
 
