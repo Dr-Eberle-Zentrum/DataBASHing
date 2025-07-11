@@ -38,8 +38,8 @@ knitr::asis_output('<a href="https://www.youtube.com/watch?v=M28zU56xWHY?t=7"
 
 - `awk` = "Programmiersprache" zur (**zeilenweisen**) Datenverarbeitung
   - Programme entweder direkt im Aufruf (`echo "A B" | awk '{print $2}'`) oder in Datei definiert (`awk -f programFile`)
-    - Programme im Direktaufruf immer mit single tick `'` quoten
-        "`-F`" = field separator zur spaltenweisen Datentrennung pro Zeile (setzt "`FS`" und "`OFS`" Variable, siehe unten)
+    - **Achtung:** Programme im Direktaufruf immer mit single tick `'` quoten, damit `$` Variablen nicht von BASH gesetzt werden
+    - "`-F`" = field separator zur spaltenweisen Datentrennung pro Zeile (setzt "`FS`" und "`OFS`" Variable, siehe unten)
   - Variablen
     - Spaltenelemente mittel `$SPALTENNUMMER` ansprechbar; `$0` = ganze Zeile
     - lokale Variablen via Zuweisung mit "`=`" angelegt 

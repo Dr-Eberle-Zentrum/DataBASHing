@@ -403,10 +403,12 @@ irrelevant]</a></p>
 (<code>echo "A B" | awk '{print $2}'</code>) oder in Datei definiert
 (<code>awk -f programFile</code>)
 <ul>
-<li>Programme im Direktaufruf immer mit single tick <code>'</code>
-quoten “<code>-F</code>” = field separator zur spaltenweisen
-Datentrennung pro Zeile (setzt “<code>FS</code>” und “<code>OFS</code>”
-Variable, siehe unten)</li>
+<li><strong>Achtung:</strong> Programme im Direktaufruf immer mit single
+tick <code>'</code> quoten, damit <code>$</code> Variablen nicht von
+BASH gesetzt werden</li>
+<li>“<code>-F</code>” = field separator zur spaltenweisen Datentrennung
+pro Zeile (setzt “<code>FS</code>” und “<code>OFS</code>” Variable,
+siehe unten)</li>
 </ul></li>
 <li>Variablen
 <ul>
@@ -556,7 +558,7 @@ Blick auf dessen <strong>eingebaute Hilfe</strong> werfen. Dazu</p>
 </ul>
 <hr />
 <p>Download: <a href="edit.pdf" title="Download PDF Version">PDF
-Version</a> dieses Tutorials. Erstellt am 04.02.2025.</p>
+Version</a> dieses Tutorials. Erstellt am 11.07.2025.</p>
 </div>
 </div>
 
