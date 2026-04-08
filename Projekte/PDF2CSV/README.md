@@ -85,7 +85,7 @@ Eine korrekte Ausgabe wäre folgende:
 
 (4) Generalisierung
 
-- Schreiben sie ihr Skript aus (4) so um, dass es das Land der Wahl als Kommandozeilenargument akzeptiert
+- Schreiben sie ihr Skript aus (3) so um, dass es das Land der Wahl als Kommandozeilenargument akzeptiert
 - Verwenden sie als Standardwert "Germany"
 - Testen sie ihr Skript mit einem weiteren Land ihrer Wahl
 - Unterstützen sie auch Länder, die mehrere Wörter im Namen haben, z.B. "Dominican Republic"
