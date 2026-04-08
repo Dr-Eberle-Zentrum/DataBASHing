@@ -14,7 +14,7 @@
 
 <title>Softwareinstallation</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.31/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
@@ -378,19 +378,21 @@ von Softwarepaketen). In diesem Kurs nutzen wir als Standard
 Jedoch können wir keine und nur begrenzte Unterstützung bei
 distibutionsspezifischen Fragen liefern..</p>
 <hr />
-<div id="ubuntu-in-windows-10" class="section level1">
-<h1>Ubuntu in Windows 10</h1>
-<p>Wer derzeit Windows 10 nutzt, kann ganz bequem “Linux als App”
-installieren, denn Windows 10 unterstützt direkt die Installation eines
+<div id="ubuntu-in-windows-10-und-11" class="section level1">
+<h1>Ubuntu in Windows 10 und 11</h1>
+<p>Wer Windows 10 oder 11 nutzt, kann ganz bequem “Linux als App”
+installieren, denn Windows unterstützt direkt die Installation eines
 Linux Subsystems, quasi als zweites eingeschlossenes Betriebssystem. Die
 Basissoftware dazu heisst “Windows Subsystem Linux” (WSL) und ist
 mittlerweile in zwei Versionen verfügbar. WSL1 ist in der Regel direkt
-verfügbar. WSL2 ist neuer und schneller, braucht aber leistungsfähige
-Hardware und muss zusätzlich installiert/aktualisiert werden (siehe <a
-href="https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/">hier</a>).</p>
+in Windows 10 verfügbar. WSL2 ist neuer und schneller, braucht aber
+leistungsfähige Hardware und muss in Windows 10 zusätzlich
+installiert/aktualisiert werden (siehe <a
+href="https://beyond.lol/ubuntu-auf-windows-10-installieren-mit-wsl-windows-subsystem-linux/">hier</a>)
+wobei es bei Windows 11 der Standard ist.</p>
 <p>Für diesen Kurs ist WSL1 völlig ausreichend, sodass in den meisten
-Win10 Rechnern direkt Folgendes gemacht werden kann (Stand
-Sept. 2021):</p>
+<strong>Win10 Rechnern</strong> direkt Folgendes gemacht werden kann
+(Stand Sept. 2021):</p>
 <ol style="list-style-type: decimal">
 <li>Microsoft Store App öffnen und die folgenden zwei Programme
 installieren:</li>
@@ -406,10 +408,11 @@ kann.</li>
 <li>es ist möglich, dass auf dem System schon WSL2 aktiviert ist und sie
 in gruselige Fehlermeldungen ala
 <code>WslRegisterDistribution failed with error: 0x80370102</code>
-bekommen. In diesem Fall kann man wieder <a
-href="https://learn.microsoft.com/de-de/windows/wsl/install">auf WSL1
-“downgraden”</a>:
+bekommen. In diesem Fall kann man <a
+href="https://learn.microsoft.com/de-de/windows/wsl/install">ggf. auf
+WSL1 in Windows 10 “downgraden”</a>:
 <ul>
+<li><strong>NUR MACHEN WENN ES PROBLEME GIBT!</strong></li>
 <li>PowerShell öffnen</li>
 <li><code>wsl --set-default-version 1</code> eingeben</li>
 <li>Ubuntu App neu starten</li>
@@ -429,8 +432,8 @@ richtigen Stelle!</li>
 </div>
 <div id="zudem-wichtig-ein-texteditor" class="section level1">
 <h1>Zudem wichtig: ein Texteditor</h1>
-<p>Um mit Skripten zu arbeiten, benötigen sie einen TEXTeditor. Hier
-gibt es zwei Möglichkeiten:</p>
+<p>Um mit Skripten zu arbeiten, benötigen sie einen TEXTeditor (Kein MS
+Word, Google Docs, etc.!). Hier gibt es zwei Möglichkeiten:</p>
 <ul>
 <li>ein leistungfähiger Texteditor, z.B.
 <ul>
@@ -544,7 +547,7 @@ diesen Befehl</p>
 <pre><code>## 6</code></pre>
 <hr />
 <p>Download: <a href="install.pdf" title="Download PDF Version">PDF
-Version</a> dieses Tutorials. Erstellt am 04.02.2025.</p>
+Version</a> dieses Tutorials. Erstellt am 08.04.2026.</p>
 </div>
 </div>
 
