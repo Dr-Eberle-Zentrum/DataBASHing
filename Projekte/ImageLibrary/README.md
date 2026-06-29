@@ -12,16 +12,34 @@ Derartige Informationen sind i.d.R. im [EXIF-Format](https://de.wikipedia.org/wi
 
 Ziel des Projektes ist es, eine gegeben Sammlung von Bildern aufzubereiten und in einer HTML-Datei mit Hilfe von Thumbnails und Metadaten zu präsentieren.
 
+## Hinweise
+
+Alle der folgenden Schritte sollen hierbei in Bash-Skripten durchgeführt werden.
+Verwenden sie **keine manuellen Schritte**, um die Daten zu extrahieren bzw. anzupassen.
+Ihre Skripte müssen auf einem fremden System lauffähig sein und das gleiche Ergebnis produzieren.
+
+
 
 ## Schritte
 
-(1) Laden sie sich via `wget` die folgende [Archivdatei](Bilddaten.tar.gz) mit Bilddateien herunter 
+
+(1) Initialisierung der Daten
+
+- Erzeugen sie einen neuen Ordner ihrer Wahl, in dem sie diese Aufgabe angehen wollen.
+- Öffnen sie eine BASH Konsole und navigieren sie zu diesem Ordner.
+- Erstellen sie dort ein neues BASH Script (z.B. `init-ImageLibrary.sh`), das sie im Folgenden mit Leben füllen werden.
+  - starten sie z.B. mit einer Ausgabe von `# Starting: $0`
+- Testen sie ihr neues Script via `bash ./init-ImageLibrary.sh` in der geöffneten Konsole.
+
+> Erweitern sie das BASH Script, um die folgenden Schritte wiederholbar umzusetzen.
+
+Laden sie sich via `wget` die folgende [Archivdatei](Bilddaten.tar.gz) mit Bilddateien herunter 
 
 - Verwenden sie den `Raw` Link der Datei von der gelinkten GitHub Webseite als URL für den Download.
 - Packen sie die heruntergeladene Archivdatei mit Hilfe eines Kommandozeilenprogramms in einem Ordner ihrer Wahl aus.
 - Der darin enthaltene Ordner wird im Folgenden als `Rohsammlung` bezeichnet.
 
-(2) Erstellen sie ein Bash-Skript, das folgende Schritte zur Bilddateiaufarbeitung durchführt:
+(2) Erstellen sie ein weiteres Bash-Skript `update-ImageLibrary.sh`, das folgende Schritte zur Bilddateiaufarbeitung durchführt:
 
 - Erstellen sie einen Unterordner `Bildsammlung` im gleichen Verzeichnis wie die `Rohsammlung`
 - Falls der Ordner bereits existiert, löschen sie alle Dateien darin
@@ -39,7 +57,7 @@ Jedes Bild aus der `Rohsammlung` soll in den Unterordner `Bildsammlung` kopiert 
   - Dateinamenmuster `YYYYMMDD_HHMMSS.small.jpg` (gleicher Ordner wie Originaldatei, d.h. `Bildsammlung`)
   - maximale Auflösung pro Dimension 100 Pixel (Seitenverhältnis beibehalten)
 
-(3) Erstellen sie ein weiteres Bash-Skript, das folgende Schritte zur HTML-Präsentation durchführt:
+(3) Erstellen sie ein finales Bash-Skript `visualize-ImageLibrary.sh`, das folgende Schritte zur HTML-Präsentation durchführt:
 
 Das Skript soll später im Ordner `Bildsammlung` ausgeführt werden.
 
@@ -59,13 +77,6 @@ Das Skript soll später im Ordner `Bildsammlung` ausgeführt werden.
 - Erstellen sie eine `README.txt` Datei, die ihr Projekt und die erstellten Skripte beschreibt
 - Listen sie darin *alle* verwendeten Konsolenprogramme, um die Abhängigkeiten ihrer Skripte zu dokumentieren
 - Ergänzen sie ihre zwei Skriptdateien mit hinreichenden Kommentaren, um die Funktionsweise und Arbeitsschritte zu erklären
-
-
-## Hinweise
-
-Alle Schritte sollen hierbei in Bash-Skripten durchgeführt werden.
-Verwenden sie keine manuellen Schritte, um die Daten zu extrahieren bzw. anzupassen.
-Ihre Skripte müssen auf einem fremden System lauffähig sein und das gleiche Ergebnis produzieren.
 
 
 Diese Aufgabenbeschreibung wurde mit Unterstützung von GitHub Copilot erstellt.
