@@ -1,0 +1,419 @@
+id,name,country
+1,"A. Morin",France
+2,AMMA,Brazil
+3,Acalli,U.S.A.
+4,Adi,Fiji
+5,"Aequare (Gianduja)",Ecuador
+6,"Ah Cacao",Mexico
+7,"Akesson's (Pralus)",Switzerland
+8,"Alain Ducasse",France
+9,Alexandre,Netherlands
+10,"Altus aka Cao Artisan",U.S.A.
+11,Amano,U.S.A.
+12,"Amatller (Simon Coll)",Spain
+13,Amazona,Peru
+14,Ambrosia,Canada
+15,Amedei,Italy
+16,Anahata,U.S.A.
+17,Animas,U.S.A.
+18,Ara,France
+19,Arete,U.S.A.
+20,"Artisan du Chocolat",U.K.
+21,"Artisan du Chocolat (Casa Luker)",U.K.
+22,Askinosie,U.S.A.
+23,"Bahen & Co.",Australia
+24,Bakau,Peru
+25,"Bar Au Chocolat",U.S.A.
+26,"Baravelli's",Wales
+27,Batch,U.S.A.
+28,"Beau Cacao",U.K.
+29,Beehive,U.S.A.
+30,Belcolade,Belgium
+31,Bellflower,U.S.A.
+32,Belyzium,Germany
+33,"Benoit Nihant",Belgium
+34,Bernachon,France
+35,"Beschle (Felchlin)",Switzerland
+36,Bisou,U.S.A.
+37,"Bittersweet Origins",U.S.A.
+38,"Black Mountain",U.S.A.
+39,"Black River (A. Morin)",U.K.
+40,Blanxart,Spain
+41,"Blue Bandana",U.S.A.
+42,Bonnat,France
+43,"Bouga Cacao (Tulicorp)",Ecuador
+44,"Bowler Man",U.S.A.
+45,"Brasstown aka It's Chocolate",U.S.A.
+46,Brazen,U.S.A.
+47,"Breeze Mill",U.S.A.
+48,Bright,Australia
+49,Britarev,Russia
+50,"Bronx Grrl Chocolate",U.S.A.
+51,"Burnt Fork Bend",U.S.A.
+52,C-Amaro,Italy
+53,"Cacao Arabuco","Puerto Rico"
+54,"Cacao Atlanta",U.S.A.
+55,"Cacao Barry",France
+56,"Cacao Hunters",Colombia
+57,"Cacao Market",U.S.A.
+58,"Cacao Prieto",U.S.A.
+59,"Cacao Sampaka",Spain
+60,"Cacao Store",Japan
+61,"Cacao de Origen",Venezuela
+62,"Cacao de Origin",Venezuela
+63,"Cacaosuyo (Theobroma Inversiones)",Peru
+64,"Cacaoyere (Ecuatoriana)",Ecuador
+65,Callebaut,Belgium
+66,Cao,U.S.A.
+67,"Caoni (Tulicorp)",Ecuador
+68,"Captain Pembleton","New Zealand"
+69,Caribeans,"Costa Rica"
+70,"Carlotta Chocolat",Colombia
+71,Castronovo,U.S.A.
+72,Cello,U.S.A.
+73,Cemoi,France
+74,"Chaleur B",Canada
+75,"Charm School",U.S.A.
+76,"Chchukululu (Tulicorp)",Ecuador
+77,Chequessett,U.S.A.
+78,"Chloe Chocolat",France
+79,Chocablog,U.K.
+80,"Choco Del Sol",Germany
+81,"Choco Dong","South Korea"
+82,ChocoReko,Japan
+83,"Chocola'te",U.S.A.
+84,Chocolarder,U.K.
+85,"Chocolate Alchemist-Philly",U.S.A.
+86,"Chocolate Con Amor",U.S.A.
+87,"Chocolate Conspiracy",U.S.A.
+88,"Chocolate Makers",Amsterdam
+89,"Chocolate Tree, The",Scotland
+90,"Chocolats Privilege",Canada
+91,Chocosol,Canada
+92,Chocovic,Spain
+93,Chocovivo,U.S.A.
+94,Choklat,Canada
+95,"Chokolat Elot (Girard)",Martinique
+96,Choocsol,Canada
+97,"Christopher Morel (Felchlin)",Canada
+98,"Chuao Chocolatier",U.S.A.
+99,"Chuao Chocolatier (Pralus)",U.S.A.
+100,"Claudio Corallo","Sao Tome"
+101,Cloudforest,U.S.A.
+102,"Coleman & Davis",U.S.A.
+103,"Compania de Chocolate (Salgado)",Argentina
+104,Condor,U.S.A.
+105,Confluence,U.S.A.
+106,Coppeneur,Germany
+107,"Cote d' Or (Kraft)",Belgium
+108,Cravve,Australia
+109,Creo,U.S.A.
+110,DAR,U.S.A.
+111,Daintree,Australia
+112,Dalloway,U.S.A.
+113,Damson,U.K.
+114,Dandelion,U.S.A.
+115,Danta,Guatemala
+116,"Dark Forest",U.S.A.
+117,Davis,U.S.A.
+118,"De Mendes",Brazil
+119,"De Villiers","South Africa"
+120,DeVries,U.S.A.
+121,"Dean and Deluca (Belcolade)",U.S.A.
+122,"Debauve & Gallais (Michel Cluizel)",France
+123,Desbarres,Canada
+124,"Dick Taylor",U.S.A.
+125,"Doble & Bignall",U.K.
+126,"Dole (Guittard)",U.S.A.
+127,"Dolfin (Belcolade)",Belgium
+128,Domori,Italy
+129,Dormouse,U.K.
+130,"Duffy's",U.K.
+131,Dulcinea,U.S.A.
+132,Durand,France
+133,Durci,U.S.A.
+134,ENNA,U.S.A.
+135,"East Van Roasters",Canada
+136,"Eau de Rose",Canada
+137,"Eclat (Felchlin)",U.S.A.
+138,Edelmond,Germany
+139,"El Ceibo",Bolivia
+140,"El Rey",Venezuela
+141,"Emerald Estate","St. Lucia"
+142,"Emily's",Japan
+143,"Enric Rovira (Claudio Corallo)",Spain
+144,"Erithaj (A. Morin)",France
+145,Escazu,U.S.A.
+146,"Ethel's Artisan (Mars)",U.S.A.
+147,Ethereal,U.S.A.
+148,"Fearless (AMMA)",U.S.A.
+149,"Feitoria Cacao",Portugal
+150,Felchlin,Switzerland
+151,Finca,U.S.A.
+152,"Forever Cacao",U.K.
+153,"Forteza (Cortes)","Puerto Rico"
+154,Fossa,Singapore
+155,Franceschi,Venezuela
+156,"Frederic Blondeel",Belgium
+157,"French Broad",U.S.A.
+158,Fresco,U.S.A.
+159,"Friis Holm",Denmark
+160,"Friis Holm (Bonnat)",Denmark
+161,Fruition,U.S.A.
+162,"Garden Island",U.S.A.
+163,"Georgia Ramon",Germany
+164,Glennmade,U.S.A.
+165,"Goodnow Farms",U.S.A.
+166,"Grand Place",Vietnam
+167,"Green & Black's (ICAM)",U.K.
+168,"Green Bean to Bar",Japan
+169,"Grenada Chocolate Co.",Grenada
+170,"Guido Castagna",Italy
+171,Guittard,U.S.A.
+172,Habitual,Canada
+173,Hachez,Germany
+174,"Hacienda El Castillo",Ecuador
+175,Haigh,Australia
+176,"Harper Macaw",U.S.A.
+177,Heilemann,Germany
+178,"Heirloom Cacao Preservation (Brasstown)",U.S.A.
+179,"Heirloom Cacao Preservation (Fruition)",U.S.A.
+180,"Heirloom Cacao Preservation (Guittard)",U.S.A.
+181,"Heirloom Cacao Preservation (Manoa)",U.S.A.
+182,"Heirloom Cacao Preservation (Millcreek)",U.S.A.
+183,"Heirloom Cacao Preservation (Mindo)",U.S.A.
+184,"Heirloom Cacao Preservation (Zokoko)",U.S.A.
+185,Hogarth,"New Zealand"
+186,"Hoja Verde (Tulicorp)",Ecuador
+187,"Holy Cacao",Israel
+188,Honest,"South Africa"
+189,"Hotel Chocolat",U.K.
+190,"Hotel Chocolat (Coppeneur)",U.K.
+191,Hummingbird,Canada
+192,"Idilio (Felchlin)",Switzerland
+193,Indah,India
+194,Indaphoria,U.S.A.
+195,Indi,U.S.A.
+196,Isidro,U.S.A.
+197,Izard,U.S.A.
+198,"Jacque Torres",U.S.A.
+199,Jordis,"Czech Republic"
+200,"Just Good Chocolate",U.S.A.
+201,"K'ul",U.S.A.
+202,"Kah Kow","Domincan Republic"
+203,Kakao,Germany
+204,"Kallari (Ecuatoriana)",Ecuador
+205,"Kaoka (Cemoi)",France
+206,Kerchner,U.S.A.
+207,"Ki' Xocolatl",Mexico
+208,Kiskadee,U.S.A.
+209,Kto,U.S.A.
+210,Kyya,U.S.A.
+211,"L'Amourette",U.S.A.
+212,"L.A. Burdick (Felchlin)",U.S.A.
+213,"La Chocolaterie Nanairo",Japan
+214,"La Maison du Chocolat (Valrhona)",France
+215,"La Oroquidea",Peru
+216,"La Pepa de Oro",Ecuador
+217,"Laia aka Chat-Noir",France
+218,"Lajedo do Ouro",Brazil
+219,"Lake Champlain (Callebaut)",U.S.A.
+220,Letterpress,U.S.A.
+221,Levy,Finland
+222,Lilla,Finland
+223,"Lillie Belle",U.S.A.
+224,"Lindt & Sprungli",Switzerland
+225,Loiza,"Puerto Rico"
+226,Lonohana,U.S.A.
+227,"Love Bar",U.S.A.
+228,Luker,Colombia
+229,"Machu Picchu Trading Co.",Peru
+230,"Madecasse (Cinagra)",Madagascar
+231,Madre,U.S.A.
+232,Maglio,Italy
+233,Majani,Italy
+234,"Malagasy (Chocolaterie Robert)",Madagascar
+235,Malagos,Philippines
+236,"Malie Kai (Guittard)",U.S.A.
+237,Malmo,Sweden
+238,Mana,U.S.A.
+239,"Manifesto Cacao",Colombia
+240,Manoa,U.S.A.
+241,"Manufaktura Czekolady",Poland
+242,"Map Chocolate",U.S.A.
+243,Marana,Peru
+244,"Marigold's Finest",Canada
+245,Marou,Vietnam
+246,Mars,U.S.A.
+247,Marsatta,U.S.A.
+248,"Martin Mayer",Austria
+249,"Mast Brothers",U.S.A.
+250,Matale,Australia
+251,Maverick,U.S.A.
+252,Mayacama,U.S.A.
+253,Meadowlands,U.S.A.
+254,"Menakao (aka Cinagra)",Madagascar
+255,Mesocacao,Honduras
+256,Metiisto,Sweden
+257,Metropolitan,Amsterdam
+258,"Michel Cluizel",France
+259,Middlebury,U.S.A.
+260,"Millcreek Cacao Roasters",U.S.A.
+261,Mindo,U.S.A.
+262,Minimal,Japan
+263,Mission,Brazil
+264,Mita,Colombia
+265,Moho,U.S.A.
+266,Molucca,U.S.A.
+267,Momotombo,Nicaragua
+268,Monarque,Canada
+269,"Monsieur Truffe",Australia
+270,Montecristi,Ecuador
+271,"Muchomas (Mesocacao)",U.S.A.
+272,Mutari,U.S.A.
+273,Nahua,"Costa Rica"
+274,Naive,Lithuania
+275,Nanea,U.S.A.
+276,"Nathan Miller",U.S.A.
+277,"Na�ve",Lithuania
+278,"Neuhaus (Callebaut)",Belgium
+279,Nibble,U.S.A.
+280,"Night Owl",U.S.A.
+281,"Noble Bean aka Jerjobo",U.S.A.
+282,"Noir d' Ebine",U.S.A.
+283,"Nova Monda",Niacragua
+284,"Nova Monda",Nicaragua
+285,Nuance,U.S.A.
+286,Nugali,Brazil
+287,"Oakland Chocolate Co.",U.S.A.
+288,Obolo,Chile
+289,Ocelot,Scotland
+290,Ocho,"New Zealand"
+291,Ohiyo,U.S.A.
+292,"Oialla by Bojessen (Malmo)",Germany
+293,"Olive and Sinclair",U.S.A.
+294,Olivia,Canada
+295,Omanhene,Ghana
+296,Omnom,Iceland
+297,"Original Beans (Felchlin)",Switzerland
+298,"Original Hawaiin Chocolate Factory",U.S.A.
+299,Orquidea,Peru
+300,Pacari,Ecuador
+301,"Palette de Bine",Canada
+302,Pangea,Spain
+303,"Park 75",U.S.A.
+304,Parliament,U.S.A.
+305,Pascha,Peru
+306,Patric,U.S.A.
+307,"Paul Young",U.K.
+308,Peppalo,U.S.A.
+309,"Pierre Marcolini",Belgium
+310,Pinellas,U.S.A.
+311,"Pitch Dark",U.S.A.
+312,"Pomm (aka Dead Dog)",U.S.A.
+313,Potomac,U.S.A.
+314,Pralus,France
+315,"Pump Street Bakery",U.K.
+316,"Pura Delizia",Italy
+317,"Q Chocolate",Brazil
+318,"Quetzalli (Wolter)",Mexico
+319,Raaka,U.S.A.
+320,"Rain Republic",Guatemala
+321,"Rancho San Jacinto",Eucador
+322,Ranger,U.S.A.
+323,"Raoul Boulanger",France
+324,"Raw Cocoa",Poland
+325,"Republica del Cacao (aka Confecta)",Ecuador
+326,Ritual,U.S.A.
+327,"Roasting Masters","South Korea"
+328,"Robert (aka Chocolaterie Robert)",Madagascar
+329,"Rococo (Grenada Chocolate Co.)",U.K.
+330,Rogue,U.S.A.
+331,Rozsavolgyi,Hungary
+332,S.A.I.D.,Italy
+333,SRSLY,U.S.A.
+334,Sacred,U.S.A.
+335,Salgado,Argentina
+336,"Santander (Compania Nacional)",Colombia
+337,Santome,France
+338,"Scharffen Berger",U.S.A.
+339,Seaforth,U.K.
+340,"Shark Mountain",U.S.A.
+341,"Shark's",U.S.A.
+342,Shattel,Peru
+343,Shattell,Peru
+344,Sibu,"Costa Rica"
+345,"Sibu Sura",U.S.A.
+346,"Silvio Bessone",Italy
+347,Sirene,Canada
+348,Sjolinds,U.S.A.
+349,"Smooth Chocolator, The",Australia
+350,"Snake & Butterfly",U.S.A.
+351,"Sol Cacao",U.S.A.
+352,Solkiki,U.K.
+353,"Solomons Gold","New Zealand"
+354,Solstice,U.S.A.
+355,Soma,Canada
+356,Somerville,U.S.A.
+357,Soul,Canada
+358,Spagnvola,U.S.A.
+359,Spencer,Australia
+360,Spencer,U.S.A.
+361,"Sprungli (Felchlin)",Switzerland
+362,"StRita Supreme",U.S.A.
+363,Starchild,U.S.A.
+364,"Stella (aka Bernrain)",Switzerland
+365,"Stone Grindz",U.S.A.
+366,"Sublime Origins",U.S.A.
+367,Summerbird,Denmark
+368,"Suruca Chocolate",Venezuela
+369,"Svenska Kakaobolaget",Sweden
+370,"Szanto Tibor",Hungary
+371,TCHO,U.S.A.
+372,Tabal,U.S.A.
+373,"Tablette (aka Vanillabeans)",Japan
+374,"Tan Ban Skrati",Suriname
+375,Taza,U.S.A.
+376,Tejas,U.S.A.
+377,Terroir,U.S.A.
+378,"The Barn",Sweden
+379,Theo,U.S.A.
+380,Theobroma,Japan
+381,"Timo A. Meyer",Germany
+382,"To'ak (Ecuatoriana)",Ecuador
+383,"Tobago Estate (Pralus)",France
+384,Tocoti,U.S.A.
+385,Treehouse,U.S.A.
+386,"Tsara (Cinagra)",Madagascar
+387,"Two Ravens",U.S.A.
+388,"Un Dimanche A Paris",France
+389,Undone,U.S.A.
+390,Upchurch,U.S.A.
+391,Urzi,Italy
+392,Valrhona,France
+393,"Vanleer (Barry Callebaut)",U.S.A.
+394,"Vao Vao (Chocolaterie Robert)",Madagascar
+395,Vicuna,U.S.A.
+396,Videri,U.S.A.
+397,"Vietcacao (A. Morin)",France
+398,"Vintage Plantations",U.S.A.
+399,"Vintage Plantations (Tulicorp)",U.S.A.
+400,"Violet Sky",U.S.A.
+401,Vivra,U.S.A.
+402,"Wellington Chocolate Factory","New Zealand"
+403,Whittakers,"New Zealand"
+404,"Wilkie's Organic",Ireland
+405,"Willie's Cacao",U.K.
+406,Wm,U.S.A.
+407,Woodblock,U.S.A.
+408,Xocolat,"Domincan Republic"
+409,Xocolla,U.S.A.
+410,"Zak's",U.S.A.
+411,"Zart Pralinen",Austria
+412,Zokoko,Australia
+413,Zotter,Austria
+414,"hello cocoa",U.S.A.
+415,hexx,U.S.A.
+416,"iQ Chocolate",Scotland
+417,organicfair,Canada
+418,"twenty-four blackbirds",U.S.A.
